@@ -36,17 +36,26 @@ yum install -y wget && wget -O install.sh https://download.bt.cn/install/install
 CentOS 7.6.1810(Py2.7.5)
 4核8G 容量大于50G
 ## python
+```
 pip -V
+ 
 pip install --upgrade pip
-pip install websocket-client 
+ 
+pip install websocket-client
+ 
 pip install redis
+ 
 pip install websocket
+```
 ## 配置文件
 启动前需要先修改.env文件中对应的各种配置，如mysql、redis、wallet等
 ## 清理缓存
+```
 php artisan config:cache
-
+```
 ## 设置代理
+
+```
   location ~/(wss|socket.io) {
     # 此处改为 socket.io 后端的 ip 和端⼝即可 
     proxy_pass http://127.0.0.1:2000; 
@@ -55,8 +64,9 @@ php artisan config:cache
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $host;
   }
-
+```
 ## es安装
+```
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 vi /etc/yum.repos.d/elasticsearch.repo
 ---------------------------------------------
@@ -71,19 +81,27 @@ type=rpm-md
 ---------------------------------------------
 yum install elasticsearch -y
 service elasticsearch restart
-
+```
 ## 然后添加计划任务
-1
+```
 cd /www/wwwroot/Site/public/vendor/webmsgsender
+ 
 php start.php start -d
-2
+```
+  
+```
 cd /www/wwwroot/Site
+ 
 php artisan websocket:client restart
-3
+```
+  
+```
 cd /www/wwwroot/Site/python
+ 
 pkill python3
+ 
 python3 main.py
-
+```
 ## 数据库 
 上传futures.sql之后 附加到数据库，然后修改.env  数据库futures 账号futures 密码futures
 
