@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>重新设置密码</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+    .disabled{
+        background:#ddd;
+    }
+    .login_btn{height:50px;line-height: 50px;}
+
+    .agree {
+        background: #10172b;
+        border-color: #10172b;
+    }
+    a:focus, a:hover{color:#fff;}
+</style>
+<body style="background:#f6f6f6;">
+  <header >
+    <i class="iconfont icon-zuo font24  fontc_9 backPage"></i>
+  </header>
+   <div class="mgthead1">
+        <div style="margin:5rem 0 3rem 2rem;">
+                <h5 class="font24 fontc_hdl">重新设置密码</h5>
+                <span  class="font14 fontc_9">6-20个字符，不可以是纯数字 </span>
+            </div>
+        <form id="form_content" action="/users/creataccounts" method="post">
+            <div class="login_box">
+                <div class="login_tab" >
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input type="text" style="display: none;" id="name" value="">
+                        <input type="text" style="display: none;" id="verificate" value="">
+                        <input  type="password" id="setpassword" name="password"  value="" placeholder="请输入密码" class="mgl10" />
+                    </div>
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input  type="password" id="verifypassword" name="confirm_password" value="" placeholder="请再次输入密码" class="mgl10" />
+                    </div>
+                    <a class="login_btn" href="javascript:;" style="background:#10172b;" id="resetp" >重置密码</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script>
+        //验证密码
+        $("#setpassword").change(function () {
+            var pass = $("#setpassword").val();
+            if (pass.length < 6 || pass.length > 16) {
+               layer_msg("密码的长度在6~16位");
+
+            }
+        })
+        $("#verifypassword").change(function () {
+
+            if ($("#setpassword").val() != $("#verifypassword").val()) {
+               layer_msg("两次密码输入不一致");
+                return;
+            }
+        })
+        //重置密码
+        $('#resetp').click(function () {
+            var s = function () {
+                var ps = /^[a-zA-Z0-9]{6,16}$/;
+                if (!ps.test($('#setpassword').val())) {
+                    layer_msg('密码必须为 6-16 位');
+                } else {
+                    return true;
+                }
+            }
+
+            var ss = function () {
+                if ($('#verifypassword').val() == $('#setpassword').val()) {
+                    return true;
+                } else {
+                    layer_msg('两次密码输入不一致');
+                }
+            }
+
+            var names = $('#name').val();
+            var pass = $('#setpassword').val();
+            var repass = $('#verifypassword').val();
+            var verify = $("#verificate").val();
+
+            if (s() == true && ss() == true && verify != '') {
+                $.ajax({
+                    type: "post",
+                    url: _API+"user/forget",
+                    data: { account: names, password: pass, repassword: repass, code: verify },
+                    datatype: "json",
+                    success: function (data) {
+                        layer_msg(data.message);
+                        console.log(data.message);
+                        if (data.type == "ok") {
+                            $("#resetp").attr("disabled", "true");
+                            setTimeout(function () {
+                                $("#resetp").removeAttr("disabled");
+                                
+                                window.location.href = "login.html";
+                            }, 3000);
+
+
+                        }
+                    }
+                });
+            } else {
+                layer_msg('请检查输入信息')
+            }
+        })
+        //接收多值
+        function forgetvals() {
+            var url = window.location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        console.log(location.search.concat());
+        
+        var v = forgetvals();
+
+        $("#name").attr("value", v['user_string']);
+        $("#verificate").attr("value", v['code']);
+    </script>
+</body>
+</html>

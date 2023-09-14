@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安全设置</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/usercenter.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .sub-menu{border-left:18px solid #b83826;box-sizing: border-box;background: #eee;}
+    #tradelist{padding: 0;}
+</style>
+<body>
+<div class="header clearfix">
+
+</div>
+<!--左边内容区-->
+<div class="content">
+    <table class="leftbar" style="padding-top: 15px; height: 1663px;">
+        <tbody><tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr>
+                            <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                <div id="wrapper-250">
+                                    <ul class="accordion">
+                                        <li id="adn1" class="files">
+                                            <a href="javascript:;" class="menu-hide" style="border-top: none;">
+                                                <img src="img/funds/zijin.png" alt="我的资金">
+                                                我的资金
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myfunds"  href="myfunds.html">帐户资金</a></li>
+                                                <!--
+                                                <li><a data-id='interest' href="/myaccount/interest">每日利息</a></li>
+                                                <li><a data-id='dividend' href="/myaccount/dividend">我的分红</a></li>
+                                                -->
+                                                <li><a data-id="myreferrals" href="myreferrals.html">推广佣金</a></li>
+                                                <li><a data-id="mypurselog" href="javascript:;">账单明细</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn2" class="cloud">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/jiaoyi.png" alt="交易挂单">
+                                                交易挂单<span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myorders" href="myorders.html">我的挂单</a></li>
+                                                <li><a data-id="myhistory" href="javascript:;">成交记录</a></li>
+                                                <li><a data-id="myc2chistory" href="javascript:;">C2C成交记录</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn3" class="mail">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/chongzhi.png" alt="充值提现">
+                                                充值提现
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">购买USDT(C2C)</a></li>
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">点对点充值提现(C2C)</a></li>
+                                                <li><a data-id="deposit_coin" href="javascript:;">数字货币充值</a></li>
+                                                <li><a data-id="withdraw_coin" href="javascript:;">数字货币提现</a></li>
+                                                <li><a data-id="deposit_code" href="deposit_code.html">充值码</a></li>
+                                                <li><a data-id="mydeposits" href="mydeposits.html">最近充值记录</a></li>
+                                                <li><a data-id="mywithdrawals" href="mywithdrawals.html">最近提现记录</a></li>
+                                                <li><a data-id="lockbook" href="lockbook.html">领“通证”（分叉币提前领）</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn4" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/anquan.png" alt="安全设置">
+                                                安全设置
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="id_setup" href="javascript:;">身份认证</a></li>
+                                                <li><a data-id="id_setup2" href="javascript:;">高级认证</a></li>
+                                                <!--<li><a data-id='id_setup3' href="/myaccount/id_setup3">视频认证</a></li>-->
+                                                <li><a data-id="totp" class="mactive" href="totp.html">谷歌验证器绑定</a></li>
+                                                <li><a data-id="sms_setup" href="sms_setup.html;">手机绑定</a></li>
+                                                <li><a data-id="login2_setup"  href="login2_setup.html">两步登录保护</a></li>
+                                                <li><a data-id="apikeys" href="apikeys.html">API Keys</a></li>
+                                                <li><a data-id="resetpw" href="javascript:;">修改登录密码（自动登出）</a></li>
+                                                <li><a data-id="resetfpw" href="javascript:;">修改资金密码（自动登出）</a></li>
+                                                <li><a data-id="email_setup" href="javascript:;">邮箱绑定</a></li>
+                                                <li><a data-id="antiphishcode" href="javascript:;">防钓鱼码</a></li>
+                                                <li><a data-id="payment_setup" href="javascript:;">支付设置</a></li>
+                                                <li class="new-item"><a data-id="tradepassfrequency" href="javascript:;">交易密码输入频率</a></li>
+                                                <li><a data-id="mylogs" href="javascript:;">安全日志</a></li>
+                                                <li><a data-id="notify" href="javascript:;">通知设置</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="adn5" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/gongdan.png" alt="我的工单">
+                                                我的工单
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="ticket" href="javascript:;">提交工单</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="main_content acc-m-con">
+        <div class="warn">
+            <i>!</i>您尚未实名认证！为保障您的资金安全，在完成实名认证之前，您将不能进行c2c交易、提币等操作。
+            <a class="r-btn" href="/myaccount/id_setup">立即去认证</a>
+        </div>
+        <div class="right_mcontent myacc-con pddlr-30">
+            <div class="m_title"><h4>谷歌验证器绑定（Google Authentication）</h4></div>
+            <div class="sectioncont">
+                <p>用于登录，提现，修改密码及安全设置时使用。<b>经常不能收到短信验证码，建议绑定谷歌验证器。</b></p>
+
+                <div style="margin-top: 20px">
+                    <a class="sub-btn" href="/myaccount/totp/setup">立即启用谷歌验证</a>
+                </div>
+
+            </div>
+            <div class="sectioncont">
+                <br><br>
+                <h3>注意：</h3>
+                <p> 1. <b>切勿删除谷歌验证器应用程序内的谷歌验证码账户，否则会导致您无法进行账户操作</b>。如果遇到手机丢失，软件卸载等无法输入谷歌验证码的情况，请联系管理员 Email: support@mail.gate.io 。</p>
+                <p> 2. 如果一直提示谷歌验证码不对，请检查和校准手机时间，当前服务器时间: <b>2018-09-17 17:06:04 UTC+8</b></p>
+                <p> 3. 谷歌验证为您的交易密码带来第二重保护。启用这一功能后，在您每次登录，或者提取现金操作前都必须输入手机应用程序上显示的谷歌验证码。本功能目前支持 iOS 和 Android 设备。</p>
+                <!--<p>没有智能机？请看后面的 在Windows 电脑上使用Google Authenticator的方法。</p>-->
+                <p> 4. 谷歌验证详细信息请阅读：<a style="color:#329ddc" href="javascript:;" target="_blank">Google Authenticator安装及使用说明</a></p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<footer></footer>
+<script>
+    load_header();
+    load_footer();
+</script>
+
+</html>

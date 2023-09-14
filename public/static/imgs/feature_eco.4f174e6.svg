@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220px" height="170px" viewBox="0 0 220 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFD989" offset="0%"></stop>
+            <stop stop-color="#FFEE97" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+<path d="M158,6.5 C179.5,14.5 184,36.5 178.5,77 C174.874948,103.693568 210,107.175999 210,132 C210,156.5 178.5,169 147.5,145 C116.5,121 105.547679,145 65.5,145 C31.4279945,145 -14,110.5 6,77 C26,43.5 77.0441132,75.1899547 93.5,48.5 C113.5,16.0618154 136.5,-1.5 158,6.5 Z" fill="#F2F6FA"></path>
+<circle fill="#F2F6FA" cx="210.5" cy="82.5" r="9.5"></circle>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="87 123 100 123 124 109 106.5 101 87 117"></polygon>
+<polygon fill="#EAF2FA" fill-rule="nonzero" points="61 93 87 79 113 93 87 108"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="61 93 61 107 87 122 87 108"></polygon>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(100.000000, 107.500000) scale(-1, 1) translate(-100.000000, -107.500000) " points="87 93 87 107 113 122 113 108"></polygon>
+<polygon fill="#54748E" fill-rule="nonzero" points="113 99 113 99.8656264 87 115 61 99.8656264 61 99 87 113.846258"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="80 74 85.5 71 91 74 85.5 77.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="80 74 80 77 85.5 80 85.5 77.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(88.250000, 77.000000) scale(-1, 1) translate(-88.250000, -77.000000) " points="85.5 74 85.5 77 91 80 91 77.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="73 80 78.5 77 84 80 78.5 83.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="73 80 73 83 78.5 86 78.5 83.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(81.250000, 83.000000) scale(-1, 1) translate(-81.250000, -83.000000) " points="78.5 80 78.5 83 84 86 84 83.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="65 85 70.5 82 76 85 70.5 88.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="65 85 65 88 70.5 91 70.5 88.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(73.250000, 88.000000) scale(-1, 1) translate(-73.250000, -88.000000) " points="70.5 85 70.5 88 76 91 76 88.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="88 79 93.5 76 99 79 93.5 82.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="88 79 88 82 93.5 85 93.5 82.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(96.250000, 82.000000) scale(-1, 1) translate(-96.250000, -82.000000) " points="93.5 79 93.5 82 99 85 99 82.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="81 85 86.5 82 92 85 86.5 88.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="81 85 81 88 86.5 91 86.5 88.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(89.250000, 88.000000) scale(-1, 1) translate(-89.250000, -88.000000) " points="86.5 85 86.5 88 92 91 92 88.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="73 90 78.5 87 84 90 78.5 93.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="73 90 73 93 78.5 96 78.5 93.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(81.250000, 93.000000) scale(-1, 1) translate(-81.250000, -93.000000) " points="78.5 90 78.5 93 84 96 84 93.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="97 84 102.5 81 108 84 102.5 87.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="97 84 97 87 102.5 90 102.5 87.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(105.250000, 87.000000) scale(-1, 1) translate(-105.250000, -87.000000) " points="102.5 84 102.5 87 108 90 108 87.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="90 90 95.5 87 101 90 95.5 93.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="90 90 90 93 95.5 96 95.5 93.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(98.250000, 93.000000) scale(-1, 1) translate(-98.250000, -93.000000) " points="95.5 90 95.5 93 101 96 101 93.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="82 95 87.5 92 93 95 87.5 98.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="82 95 82 98 87.5 101 87.5 98.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(90.250000, 98.000000) scale(-1, 1) translate(-90.250000, -98.000000) " points="87.5 95 87.5 98 93 101 93 98.2142857"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="61 58 87 44 113 58 87 73"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="61 58 61 72 87 87 87 73"></polygon>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(100.000000, 72.500000) scale(-1, 1) translate(-100.000000, -72.500000) " points="87 58 87 72 113 87 113 73"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="77 162 90 162 114 148 96.5 140 77 156"></polygon>
+<polygon fill="#EAF2FA" fill-rule="nonzero" points="51 132 77 118 103 132 77 147"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="51 132 51 146 77 161 77 147"></polygon>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(90.000000, 146.500000) scale(-1, 1) translate(-90.000000, -146.500000) " points="77 132 77 146 103 161 103 147"></polygon>
+<polygon fill="#54748E" fill-rule="nonzero" points="103 138 103 138.865626 77 154 51 138.865626 51 138 77 152.846258"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="70 113 75.5 110 81 113 75.5 116.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="70 113 70 116 75.5 119 75.5 116.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(78.250000, 116.000000) scale(-1, 1) translate(-78.250000, -116.000000) " points="75.5 113 75.5 116 81 119 81 116.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="63 119 68.5 116 74 119 68.5 122.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="63 119 63 122 68.5 125 68.5 122.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(71.250000, 122.000000) scale(-1, 1) translate(-71.250000, -122.000000) " points="68.5 119 68.5 122 74 125 74 122.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="55 124 60.5 121 66 124 60.5 127.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="55 124 55 127 60.5 130 60.5 127.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(63.250000, 127.000000) scale(-1, 1) translate(-63.250000, -127.000000) " points="60.5 124 60.5 127 66 130 66 127.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="78 118 83.5 115 89 118 83.5 121.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="78 118 78 121 83.5 124 83.5 121.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(86.250000, 121.000000) scale(-1, 1) translate(-86.250000, -121.000000) " points="83.5 118 83.5 121 89 124 89 121.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="71 124 76.5 121 82 124 76.5 127.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="71 124 71 127 76.5 130 76.5 127.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(79.250000, 127.000000) scale(-1, 1) translate(-79.250000, -127.000000) " points="76.5 124 76.5 127 82 130 82 127.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="63 129 68.5 126 74 129 68.5 132.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="63 129 63 132 68.5 135 68.5 132.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(71.250000, 132.000000) scale(-1, 1) translate(-71.250000, -132.000000) " points="68.5 129 68.5 132 74 135 74 132.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="87 123 92.5 120 98 123 92.5 126.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="87 123 87 126 92.5 129 92.5 126.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(95.250000, 126.000000) scale(-1, 1) translate(-95.250000, -126.000000) " points="92.5 123 92.5 126 98 129 98 126.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="80 129 85.5 126 91 129 85.5 132.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="80 129 80 132 85.5 135 85.5 132.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(88.250000, 132.000000) scale(-1, 1) translate(-88.250000, -132.000000) " points="85.5 129 85.5 132 91 135 91 132.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="72 134 77.5 131 83 134 77.5 137.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="72 134 72 137 77.5 140 77.5 137.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(80.250000, 137.000000) scale(-1, 1) translate(-80.250000, -137.000000) " points="77.5 134 77.5 137 83 140 83 137.214286"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="51 97 77 83 103 97 77 112"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="51 97 51 111 77 126 77 112"></polygon>
+<ellipse fill="#FFFFFF" fill-rule="nonzero" cx="54" cy="105.5" rx="1" ry="1.5"></ellipse>
+<ellipse fill="#FFFFFF" fill-rule="nonzero" cx="57" cy="107.5" rx="1" ry="1.5"></ellipse>
+<ellipse fill="#FFFFFF" fill-rule="nonzero" cx="60" cy="109.5" rx="1" ry="1.5"></ellipse>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(90.000000, 111.500000) scale(-1, 1) translate(-90.000000, -111.500000) " points="77 97 77 111 103 126 103 112"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="140 141 153 141 177 127 159.5 119 140 135"></polygon>
+<polygon fill="#EAF2FA" fill-rule="nonzero" points="114 111 140 97 166 111 140 126"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="114 111 114 125 140 140 140 126"></polygon>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(153.000000, 125.500000) scale(-1, 1) translate(-153.000000, -125.500000) " points="140 111 140 125 166 140 166 126"></polygon>
+<polygon fill="#54748E" fill-rule="nonzero" points="166 117 166 117.865626 140 133 114 117.865626 114 117 140 131.846258"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="133 92 138.5 89 144 92 138.5 95.2142857"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="133 92 133 95 138.5 98 138.5 95.2142857"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(141.250000, 95.000000) scale(-1, 1) translate(-141.250000, -95.000000) " points="138.5 92 138.5 95 144 98 144 95.2142857"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="126 98 131.5 95 137 98 131.5 101.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="126 98 126 101 131.5 104 131.5 101.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(134.250000, 101.000000) scale(-1, 1) translate(-134.250000, -101.000000) " points="131.5 98 131.5 101 137 104 137 101.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="118 103 123.5 100 129 103 123.5 106.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="118 103 118 106 123.5 109 123.5 106.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(126.250000, 106.000000) scale(-1, 1) translate(-126.250000, -106.000000) " points="123.5 103 123.5 106 129 109 129 106.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="141 97 146.5 94 152 97 146.5 100.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="141 97 141 100 146.5 103 146.5 100.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(149.250000, 100.000000) scale(-1, 1) translate(-149.250000, -100.000000) " points="146.5 97 146.5 100 152 103 152 100.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="134 103 139.5 100 145 103 139.5 106.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="134 103 134 106 139.5 109 139.5 106.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(142.250000, 106.000000) scale(-1, 1) translate(-142.250000, -106.000000) " points="139.5 103 139.5 106 145 109 145 106.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="126 108 131.5 105 137 108 131.5 111.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="126 108 126 111 131.5 114 131.5 111.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(134.250000, 111.000000) scale(-1, 1) translate(-134.250000, -111.000000) " points="131.5 108 131.5 111 137 114 137 111.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="150 102 155.5 99 161 102 155.5 105.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="150 102 150 105 155.5 108 155.5 105.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(158.250000, 105.000000) scale(-1, 1) translate(-158.250000, -105.000000) " points="155.5 102 155.5 105 161 108 161 105.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="143 108 148.5 105 154 108 148.5 111.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="143 108 143 111 148.5 114 148.5 111.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(151.250000, 111.000000) scale(-1, 1) translate(-151.250000, -111.000000) " points="148.5 108 148.5 111 154 114 154 111.214286"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="135 113 140.5 110 146 113 140.5 116.214286"></polygon>
+<polygon fill="#FCA93E" fill-rule="nonzero" points="135 113 135 116 140.5 119 140.5 116.214286"></polygon>
+<polygon fill="#F57D00" fill-rule="nonzero" transform="translate(143.250000, 116.000000) scale(-1, 1) translate(-143.250000, -116.000000) " points="140.5 113 140.5 116 146 119 146 116.214286"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="114 76 140 62 166 76 140 91"></polygon>
+<polygon fill="#DAE5F4" fill-rule="nonzero" points="114 76 114 90 140 105 140 91"></polygon>
+<polygon fill="#8FAFD5" fill-rule="nonzero" transform="translate(153.000000, 90.500000) scale(-1, 1) translate(-153.000000, -90.500000) " points="140 76 140 90 166 105 166 91"></polygon>
+</svg>

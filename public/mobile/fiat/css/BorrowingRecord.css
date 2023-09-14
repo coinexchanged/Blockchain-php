@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+div#BorrowingRecord{
+	padding: 10px 3% 0;
+}
+div#header{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+div#header img{
+	width: 20px;
+}
+
+
+
+
+div#record{
+	overflow: hidden;
+}
+div#record h3{
+	margin: 0!important;
+	font-weight: bold;
+	letter-spacing:-2px;
+	font-size: 18px;
+}
+div#record P img{
+	width: 15px;
+	margin: -4px 0px 0 0;
+}
+div#record P span{
+	line-height: 35px;
+}
+div#record div{
+	padding: 50% 0;
+}
+div#record div p{
+	width: 40%;
+	
+	position: relative;
+	top: 0px;
+	left:30%;
+	text-align: center;
+	color: #bfbfbf;
+}
+div#record div p img{
+	width: 70px;
+	margin: 0 20px;
+}
+
+div#mask1 {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: none;
+	background: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+div#mask1 div#genre{
+	width: 100%;
+	position:fixed;
+	bottom: -40%;
+	padding: 0 5px
+}
+div#mask1 div#genre ul{
+	width: 100%;
+	list-style: none;
+	
+	
+}
+div#mask1 div#genre ul li{
+	text-align: center;
+	border: 1px solid #ECECEC;
+	background: #fff;
+	font-size: 14px;
+	color: #A1AFb8;
+}
+div#mask1 div#genre ul li:nth-child(2){
+	height: 40px;
+	line-height: 40px;
+	margin: 10px 0;
+}
+div#mask1 div#genre ul li p{
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	color: #1b3b51;
+	
+	border-bottom: 1px solid #ECECEC;
+}
+
+.p{
+	color: #6885AF !important;
+}
+.list{
+	width: 100%;
+	margin-top: 10px;
+}
+.list li{
+	justify-content: space-between;
+	line-height: 30px;
+	border-bottom: 1px solid #f1f1f1;
+}
+.list li p{
+	width: 29%;
+	text-align: center;
+}
+.list li p:last-child{
+	width:46% 
+}
+.bgBalck .list li{
+	border-bottom: 1px solid #12151c;
+}

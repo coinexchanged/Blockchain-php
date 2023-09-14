@@ -1,0 +1,406 @@
+<div class="kit-table">
+    <form class="layui-form" lay-filter="kit-search-form">
+        <div class="kit-table-header">
+            <div class="kit-search-btns">
+                <a href="javascript:;" data-action="add" class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe608;</i> 新增</a>
+                <a href="javascript:;" data-action="del-bulk" class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon">&#xe640;</i> 批量删除</a>
+            </div>
+            <div class="kit-search-inputs">
+                <div class="kit-search-keyword">
+                    <input type="text" class="layui-input" name="keyword" placeholder="搜索关键字.." />
+                    <button lay-submit lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                </div>
+                <div class="kit-search-more" id="kit-search-more">更多筛选<i class="layui-icon">&#xe61a;</i></div>
+            </div>
+        </div>
+        <div class="kit-search-mored layui-anim layui-anim-upbit">
+            <div class="kit-search-body">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">输入框</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">验证手机</label>
+                        <div class="layui-input-inline">
+                            <input type="tel" name="phone" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">验证邮箱</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="email" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">范围</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid">-</div>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">单行选择框</label>
+                    <div class="layui-input-block">
+                        <select name="interest" lay-filter="aihao">
+                            <option value=""></option>
+                            <option value="0">写作</option>
+                            <option value="1" selected="">阅读</option>
+                            <option value="2">游戏</option>
+                            <option value="3">音乐</option>
+                            <option value="4">旅行</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="kit-search-footer">
+                <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary kit-btn">重置</button>
+                <button lay-submit lay-filter="search" class="layui-btn layui-btn-sm kit-btn">确定</button>
+            </div>
+        </div>
+    </form>
+    <div class="kit-table-body">
+        <table id="demo" lay-filter="demo"></table>
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+    </div>
+</div>
+
+
+<script type="text/html" id="edit-tpl">
+    <div style="margin:10px">
+        <form class="layui-form" action="" lay-filter="form-edit">
+            <input type="hidden" name="id" value="{{d.user.id}}" />
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" required lay-verify="required" value="{{d.user.username}}" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码框</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">辅助文字</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-block">
+                    {{# var woman = d.user.sex === 0?'checked':'';}} {{# var man = d.user.sex === 1?'checked':'';}}
+                    <input type="radio" name="sex" value="男" title="男" {{man}} />
+                    <input type="radio" name="sex" value="女" title="女" {{woman}} />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">城市</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      {{# layui.each(d.citys,function(index,item){ }}                      
+                      {{# if(item.id===d.user.city){}}
+                      <option value="{{item.id}}" selected>{{item.name}}</option>
+                      {{#}else{}}
+                      <option value="{{item.id}}">{{item.name}}</option>
+                      {{#};}}
+                      {{# }); }}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">积分</label>
+                <div class="layui-input-block">
+                    <input type="number" name="experience" required lay-verify="required" value="{{d.user.experience}}" placeholder="请输入积分" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">评分</label>
+                <div class="layui-input-block">
+                    <input type="number" name="score" required lay-verify="required" value="{{d.user.score}}" placeholder="请输入评分" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">财富</label>
+                <div class="layui-input-block">
+                    <input type="number" name="wealth" required lay-verify="required" value="{{d.user.wealth}}" placeholder="请输入财富" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">职业</label>
+                <div class="layui-input-block">
+                    <select name="classify" lay-verify="required">
+                        <option value=""></option>                        
+                      {{# layui.each(d.classifies,function(index,item){ }}
+                      {{# if(item.id===d.user.classify){}}
+                      <option value="{{item.id}}" selected>{{item.name}}</option>
+                      {{#}else{}}
+                      <option value="{{item.id}}">{{item.name}}</option>
+                      {{#};}}
+                      {{# }); }}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">签名</label>
+                <div class="layui-input-block">
+                    <textarea name="sign" placeholder="请输入个性签名" class="layui-textarea">{{d.user.sign}}</textarea>
+                </div>
+            </div>
+            <div class="layui-form-item" style="display:none;">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formEdit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script>
+    layui.use(['table'], function() {
+        var table = layui.table,
+            $ = layui.jquery,
+            layer = layui.layer,
+            form = layui.form,
+            laytpl = layui.laytpl;
+        var tableIns = table.render({
+            elem: '#demo',
+            height: 'full-135', //容器高度
+            url: 'table.json',
+            page: true,
+            id: 'demo',
+            cols: [
+                [{
+                    checkbox: true,
+                    fixed: true
+                }, {
+                    field: 'id',
+                    title: 'ID',
+                    width: 80
+                }, {
+                    field: 'username',
+                    title: '用户名',
+                    width: 80
+                }, {
+                    field: 'sex',
+                    title: '性别',
+                    width: 80
+                }, {
+                    field: 'city',
+                    title: '城市',
+                    width: 80
+                }, {
+                    field: 'sign',
+                    title: '签名',
+                    width: 177
+                }, {
+                    field: 'experience',
+                    title: '积分',
+                    width: 80
+                }, {
+                    field: 'score',
+                    title: '评分',
+                    width: 80
+                }, {
+                    field: 'classify',
+                    title: '职业',
+                    width: 80
+                }, {
+                    field: 'wealth',
+                    title: '财富',
+                    width: 135,
+                    sort: true
+                }, {
+                    fixed: 'right',
+                    title: '操作',
+                    width: 150,
+                    align: 'center',
+                    toolbar: '#barDemo'
+                }]
+            ],
+            done: function(res, curr, count) {
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                // console.log(res);
+                // //得到当前页码
+                // console.log(curr);
+                // //得到数据总量
+                // console.log(count);
+            },
+            loading: true,
+            //method: 'post'
+        });
+        var staticData = {
+            citys: [{
+                id: 0,
+                name: '北京'
+            }, {
+                id: 1,
+                name: '广州'
+            }, {
+                id: 2,
+                name: '深圳'
+            }, {
+                id: 3,
+                name: '杭州'
+            }],
+            classifies: [{
+                id: 0,
+                name: '词人'
+            }, {
+                id: 1,
+                name: '诗人'
+            }, {
+                id: 2,
+                name: '作家'
+            }, {
+                id: 3,
+                name: '酱油'
+            }]
+        };
+        //监听搜索表单提交
+        form.on('submit(search)', function(data) {
+            console.log(data.field);
+            layer.msg(JSON.stringify(data.field));
+            //带条件查询
+            tableIns.reload({
+                where: data.field
+            });
+            return false;
+        });
+        //监听工具条
+        table.on('tool(demo)', function(obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+            if (layEvent === 'detail') { //查看
+                console.log(table.checkStatus('demo'));
+                //do somehing
+            } else if (layEvent === 'del') { //删除
+                layer.confirm('真的删除行么', function(index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            } else if (layEvent === 'edit') { //编辑
+                var d = {
+                    user: data,
+                    citys: staticData.citys,
+                    classifies: staticData.classifies
+                };
+                //do something
+                laytpl($('#edit-tpl').html()).render(d, function(html) {
+                    layer.open({
+                        type: 1,
+                        title: '表单',
+                        content: html,
+                        area: ['800px', '600px'],
+                        btn: ['提交', '重置', '取消'],
+                        yes: function(index, layero) {
+                            editIndex = index;
+                            $('form[lay-filter="form-edit"]').find('button[lay-submit]').click();
+                        },
+                        btn2: function(index, layero) {
+                            $('form[lay-filter="form-edit"]').find('button[type="reset"]').click();
+                            return false;
+                        },
+                        success: function() {
+                            form.render(null, 'form-edit');
+                        }
+                    });
+                });
+                //同步更新缓存对应的值
+                // obj.update({
+                //     username: '123',
+                //     title: 'xxx'
+                // });
+            }
+        });
+        form.render(null, 'kit-search-form');
+        $('#kit-search-more').on('click', function() {
+            $('.kit-search-mored').toggle();
+        });
+        var editIndex;
+        form.on('submit(formEdit)', function(data) {
+            layer.msg('formEdit');
+            editIndex && layer.close(editIndex); //关闭弹出层
+            return false;
+        });
+        $('.kit-search-btns').children('a').off('click').on('click', function() {
+            var $that = $(this),
+                action = $that.data('action');
+            switch (action) {
+                case 'add':
+                    var d = {
+                        user: {
+                            sign: '',
+                            city: '',
+                            classify: '',
+                            experience: '',
+                            id: 0,
+                            logins: '',
+                            score: '',
+                            sex: 1,
+                            sign: '',
+                            username: '',
+                            wealth: ''
+                        },
+                        citys: staticData.citys,
+                        classifies: staticData.classifies
+                    };
+                    //渲染
+                    laytpl($('#edit-tpl').html()).render(d,
+                        function(html) {
+                            layer.open({
+                                type: 1,
+                                title: '表单',
+                                content: html,
+                                area: ['800px', '600px'],
+                                btn: ['提交', '重置', '取消'],
+                                yes: function(index, layero) {
+                                    editIndex = index;
+                                    $('form[lay-filter="form-edit"]').find('button[lay-submit]').click();
+                                },
+                                btn2: function(index, layero) {
+                                    $('form[lay-filter="form-edit"]').find('button[type="reset"]').click();
+                                    return false;
+                                },
+                                success: function() {
+                                    form.render(null, 'form-edit');
+                                }
+                            });
+                        });
+                    break;
+                case 'del-bulk':
+                    var d = table.checkStatus('demo');
+                    if (d.data.length === 0) {
+                        layer.msg('请选择要删除的数据');
+                        return;
+                    }
+                    var data = d.data,
+                        names = [],
+                        ids = [];
+                    layui.each(data, function(index, item) {
+                        console.log(item);
+                        names.push(item.username);
+                        ids.push(item.id);
+                    });
+                    layer.msg(names.join(','));
+                    console.log(ids.join(','));
+                    break;
+            }
+        });
+    });
+</script>

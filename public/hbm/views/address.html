@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>提币地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+</style>
+<body style="background:#f5f5f5;">
+    <header class="borderB backF " >
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">提币地址</h1>
+    </header>
+    <div class="mgbfoot mgthead" id="app">
+        <section class="">
+            <div class="userinfo_box" style="margin-top:1rem;" id="ul">
+                <div class="userinfo_item" v-for="(aa) in List" @click="particulars(aa.id,aa.name,aa.has_address_num)" >
+                    <a  class="layer_flex1" style="margin-left:0;">
+                        <span class="fontc_hdl font14 font_bold">{{aa.name}}</span>
+                        <span class="fontc_9 font12" style="padding-right: 1.8rem;">{{aa.has_address_num}}</span>
+                    </a>
+                </div>
+                <!-- <div class="userinfo_item">
+                    <a  href="" class="layer_flex1" style="margin-left:0;">
+                        <span class="fontc_hdl font14 font_bold">HB10</span>
+                        <span class="fontc_9 font12" style="padding-right: 1.8rem;">0</span>
+                    </a>
+                </div> -->
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+            List:[]
+            },
+            mounted: function () {
+                var self = this;
+                var token = get_user_login();
+                $.ajax({
+                    url: _API + "wallet/currencylist",
+                    type: "GET",
+                    dataType: "json",
+                    async: true,
+                    beforeSend: function beforeSend(request) {
+                        request.setRequestHeader("Authorization", token);
+                    },
+                    success: function success(data) {
+                        console.log(data)
+                        self.List = data.message;
+                        if (data.type == 'ok') {
+                            
+                        } else if(data.type == '999'){
+                        window.location ='login.html';
+                        }
+                    }
+                });	
+            },
+                methods:{
+                particulars:function(id,name,has_address_num){
+                    console.log(33)
+                    window.location ='address_add.html?id='+ id+'&name='+name+'&has_address_num='+has_address_num;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

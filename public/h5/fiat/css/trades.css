@@ -1,0 +1,163 @@
+
+
+.bgBalck .main-asset{
+	border-bottom: 1px solid #12151c;
+}
+
+
+.main-name {
+	width: 33%;
+}
+
+.main-price {
+	width: 30%;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.main-rate {
+	width: 80px;
+}
+
+.name_1 {
+	margin-bottom: 1px;
+    font-size: 22px;
+}
+.bgBalck .name_1 h5,.bgBalck .main-price .name_1{
+	color: #fff;
+}
+.name_1 h5 {
+	display: inline-block;
+	color: #1A384A;
+	font-size: 16px;
+}
+
+.name_1 span {
+	font-size: 12px;
+	font-weight: bold;
+	color: #7d818a;
+}
+
+.name_2 {
+	color: #92A1A3;
+	font-size: 13px;
+}
+
+.name_2 span {
+	padding-left: 5px;
+}
+
+.main-price .name_1 {
+	color: #1A384A;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.main-rate .rate_green {
+	height: 35px;
+	line-height: 35px;
+	/* background: #02BF85; */
+	background: #00c087;
+	color: #FFFFFF;
+	width: 80px;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 2px;
+	/* margin-right: 16px; */
+}
+
+.rate_orange {
+	height: 35px;
+	line-height: 35px;
+	background:#e3046f;
+	color: #FFFFFF;
+	width: 80px;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+.pr15{
+	padding-right: 16px;
+}
+
+
+.wrap-tab ul li {
+	color: #fff;
+}
+.name_1 span{
+	color: #7d818a;
+	font-size: 14px;
+}
+.name_2 {
+	color: #7d818a;
+		font-size:12px;
+		font-weight: bold;
+}
+.cnyprice{
+	font-weight: normal;
+}
+.tabs div{
+	margin-left: 15px;
+	border-bottom: 2px solid #f0b90b;
+	width: 20%;
+	text-align: center;
+	padding-bottom: 6px;
+	color: #f0b90b;
+	font-size: 16px;
+	font-weight: bold;
+}
+.market-name{
+	color: #7d818a;
+	padding: 0 16px;
+}
+.main-asset{
+	border-bottom: 1px solid #f1f1f1;
+	padding: 5px 16px 13px;
+}
+.main-change{
+	position: relative;
+	top: 3px;
+}
+.header .title{
+	font-weight: bold;
+}
+.main-asset{
+	border-bottom: 1px solid #f1f1f1;
+		padding: 5px 16px 13px;
+		overflow: hidden;
+    display: block;
+    width: 100%;
+    color: #C9CDCC;
+}
+.texts{
+	font-size: 20px;
+}
+.content-tab{
+	width: 100%;
+	border-bottom: 1px solid #f1f1f1;
+	background-color: #fff;
+}
+.content-tab p{
+	width: 50%;
+	line-height: 40px;
+	text-align: center;
+}
+.content-tab .active{
+	border-bottom: 2px solid #f0b90b;
+	color: #f0b90b;
+}
+ul{
+	background-color: #fff;
+}
+.bgBalck .content-tab,.bgBalck ul{
+	background-color: #202833;
+}
+.bgBalck .content-tab{
+	border-bottom: 1px solid #12151c;
+}
+

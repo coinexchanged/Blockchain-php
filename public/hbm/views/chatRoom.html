@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>聊天室</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+
+<body style="background: #f5f5f5;">
+    <header class="borderB" style="background: #10172b;">
+        <i class="iconfont icon-xiangqing font24  fontc_f icon_aside"></i>
+        <h1 class="fontc_f">聊天室</h1>
+	</header>
+
+    <aside class="hide">
+		<!-- <div>
+			<img src="../img/default.jpg" alt="">
+			<h5>您还没有登录，点击登录</h5>
+		</div> -->
+		<div class="aside_mask"></div>
+		<section class="aside_box">
+			<div class="user_head_box" id="user_info" data-address="<%= address %>" >
+				<div class="user_head_info" style="text-align:center;">
+					<!--/users/user_photo-->
+					<a href="javascript:;" class="user_photo"><img id="user_info_photo" src="../img/default.jpg" alt=""></a> 
+					<div class="user_name" >
+						<p  style="line-height:1.2rem;" id="user_info_nickname"> mine </p>
+						<!--  -->
+					</div>
+					<!-- <button class="cop" data-clipboard-action="copy" data-clipboard-target="#user_address">复制</button> -->
+				</div>
+			</div>
+			<div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-qianbao font20 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">我的钱包</span>
+						</a>
+					</div>
+				</div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-zhanghu font22 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">账户管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-qia01 font20 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">支付管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-anquan font24 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">安全中心</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-wode-jiaoyisuoguanli-18 font20 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">费率标准</span>
+						</a>  
+					</div>
+				</div>
+				<div class="userinfo_box" style="border:0;">
+					<div class="userinfo_item">
+						<i class="iconfont icon-portal-icon-bangzhu font20 fontc_b "></i>
+						<a  href="javascript:;" >
+							<span class="fontc_73 font14">我的工单</span>
+						</a>  
+					</div>    
+					<div class="userinfo_item">
+						<i class="iconfont icon-hongqi-chengse font24 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">关于我们</span>
+						</a>
+					</div>     
+					<div class="userinfo_item">
+						<i class="iconfont icon-banbengengxin font24 fontc_b "></i>
+						<a  href="javascript:;" id="my_subTeam">
+							<span class="fontc_73 font14">版本更新</span>
+						</a>
+					</div>
+				</div>
+            </div>
+            <a class="login_btn quit_btn" href="login.html">退出登录</a>
+        </section>
+	</aside>
+
+    <div id="user_info" data-address="<%= address %>" class="mgthead mgbfoot">
+        <section>
+            <div class="tab_nav">
+                <div class="act">
+                    <a href="chatRoom.html">聊天室</a>
+                </div>
+                <div>
+                    <a href="">公告</a>
+                </div>
+                <div>
+                    <a  href="chatRoom_news.html">资讯</a>
+                </div>
+            </div>
+            <div class="chat_box">
+                <div class="chatRoom clearfix" style="overflow-y: scroll;padding-right:12px;"  >
+                   <div id="msg_content" class="speech_con">
+                        <div class="leftd">
+                            <span class="leftd_h">
+                                <img src="../img/usr.jpg" />
+                            </span>
+                            <div class="speech_boxl">
+                                <p class="speech_name">A零度</p>
+                                <div class="speech left" > 二货，你看你傻样！ </div>
+                            </div>
+                        </div>
+                        <div class="leftd">
+                            <span class="leftd_h">
+                                <img src="../img/usr.jpg" />
+                            </span>
+                            <div class="speech_boxl">
+                                <p class="speech_name">A零度</p>
+                                <div class="speech left" > 二货，你看你傻样！ </div>
+                            </div>
+                        </div>
+                        <div class="leftd">
+                            <span class="leftd_h">
+                                <img src="../img/usr.jpg" />
+                            </span>
+                            <div class="speech_boxl">
+                                <p class="speech_name">A零度</p>
+                                <div class="speech left" > 二货，你看你傻样！ </div>
+                            </div>
+                        </div>
+                        <div class="rightd">
+                            <span class="rightd_h">
+                            <img src="../img/usr.jpg" />
+                            </span>
+                            <div class="speech_boxr ">
+                                <p class="speech_name" style="text-align:right;">Summer</p>
+                                <div class="speech right">
+                                    <p> 嘻嘻嘻嘻。。。。。。</p>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                   <!--聊天输入框-->
+                   <div class="chat_input">
+                        <input id="content" value="" type="text" >
+                         <!--<i class="iconfont icon-xiaolian font28 fontc_6 "></i>-->
+                         <span id="send_msg" class="speech_send">发送</span>
+                   </div>
+                </div>
+                <!--<div class=" hide" >
+                  
+                </div>
+                <div class=" hide" >
+                  
+                </div>-->
+            </div>
+        </section>   
+    </div>
+    <footer  style="padding-top:0;">
+        <a href="index.html"  >
+            <img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">行情</span>
+        </a>
+        <a href="trade_index.html" id="trade_nav" >
+            <img src="../img/icon/icon_jiaoyi.png" width="24" style="margin:0 auto;" alt="">
+            <span class="fontc_9">交易</span>
+        </a>
+        <a href="ctc.html" style="position:relative;" >
+            <img src="../img/icon/icon_ctc.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">C2C</span>
+        </a>
+        <a href="chatRoom.html" >
+            <img src="../img/icon/icon_liaotian1.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_hdl">聊天室</span>
+        </a>
+        <a href="money_adm.html" >
+            <img src="../img/icon/icon_qianbao.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">钱包</span>
+        </a>
+    </footer>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <!-- <script type="text/javascript" src="../js/chatRoom.js"></script> -->
+    <script src='https://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
+    <script>
+       $(".tab_nav >div").click(function(){
+            var index = $(this).index();
+            $(this).addClass("act").siblings().removeClass("act");
+            $(".chat_box >div").eq(index).removeClass("hide").siblings().addClass("hide");
+       })
+
+       var headH = $("header").height() + $(".chat_input").height();
+       var bodyH = $(window).height();
+       $(".chatRoom").css("height",bodyH - headH);
+       $('.chatRoom').scrollTop( $('.chatRoom')[0].scrollHeight );
+    </script>
+</body>
+</html>

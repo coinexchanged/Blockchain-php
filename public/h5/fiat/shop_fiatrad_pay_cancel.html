@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>订单</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        img {
+            /* width: 10px; */
+            vertical-align: middle;
+        }
+
+        .bgGray3 {
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+
+        .brb {
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .active {
+            background-color: #f0b90b;
+            color: #fff;
+        }
+
+        .pay_box {
+            padding-bottom: 10px;
+            border-radius: 2px;
+        }
+
+        .what {
+            width: 15px
+        }
+
+        .tip p {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e8edf1;
+            position: relative;
+            top: -5px;
+            left: -5px;
+        }
+
+        .tip p:nth-child(2) {
+            left: 5px;
+        }
+
+        .celcolor {
+            color: #94a8c7
+        }
+
+        .confirm,
+        .pay_money {
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #code,
+        #wechatCode {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+        }
+
+        .code-modal,
+        .wechat-modal {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .code-content,
+        .wechat-content {
+            width: 210px;
+            height: 246px;
+            background-color: #fff;
+            border-radius: 2px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .code-content p,
+        .wechat-content p {
+            width: 210px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .code-img,
+        .wechat-img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .time-order {
+            display: none;
+        }
+
+        .mt40 {
+            margin-top: 62px;
+        }
+
+        .confirm-box,
+        .confirm-box2,
+        .cancel-box,
+        .code-modal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="baseBg">
+    <header class="header mainbg ">
+        <a class="back" href="javascript:;" onclick="javascript:history.go(-1);"></a>
+        <!-- <div class="tc title blue4" data-localize="td.ppay">请付款</div>    -->
+    </header>
+    <div class="plr15">
+        <div class="mt40 ptb10 ft10">
+            <div class="flex between alcenter">
+                <div>
+                    <p class="ft20 bold tt_statu"></p>
+                    <p class="blue mt5 celcolor tt_statu2"></p>
+                </div>
+                <a class="contactMan">
+                    <img src="images/msg.png" alt="" style="width:25px;">
+                    <p class="blue mt5" data-localize="td.call">联系对方</p>
+                </a>
+            </div>
+            <div class="bgWhite pay_box mt20">
+                <div class="bgGray3 plr10 ptb15">
+                    <p class="color1" data-localize="td.tdtotal">交易总额</p>
+                    <p class="blue ft18 mt10" id="deal_money"></p>
+                </div>
+                <div class="tip flex between">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="brb plr10 ft14">
+                    <div class="sell_info hide">
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 sell_buy"></span>
+                            <div><span class="color5 bankno"></span> </div>
+                        </div>
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 cardname"></span>
+                            <div><span data-localize="td.knum">卡号</span>：<span class="color5 cardno"></span> </div>
+                        </div>
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 " data-localize="td.bank_branch">开户支行</span>
+                            <div><span class="color5 bank_branch"></span> </div>
+                        </div>
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 " data-localize="td.alipay">支付宝</span>
+                            <div><span class="color5 zhifu"></span> <img id="code" src="" alt=""></div>
+                        </div>
+
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 " data-localize="td.wechat">微信</span>
+                            <div><span class="color5 wechat"></span> <img id="wechatCode" src="" alt=""></div>
+                        </div>
+                        <div class="flex ptb10 between alcenter">
+                            <span class="color1 " data-localize="met.realname">真实姓名</span>
+                            <div><span class="color5 realname"></span> </div>
+                        </div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.Sprice">单价</span>
+                        <div><span class="color5" id="price"></span></div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="assets.num">数量</span>
+                        <div><span class="color5" id="number"></span></div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.ptime">下单时间</span>
+                        <div><span class="color5" id="format_create_time"></span></div>
+                    </div>
+                    <!--<div class="flex ptb10 between alcenter">-->
+                    <!--<span class="color1" data-localize="contract.orderNumber">订单号</span>-->
+                    <!--<div><span class="color5">11565585885654866</span></div>-->
+                    <!--</div>-->
+                    <div class="flex ptb10 between alcenter">
+                        <div class="flex alcenter"><span class="color1" data-localize="td.cnum">参考号</span></div>
+                        <div><span class="color5" id="data_id"></span> </div>
+                    </div>
+
+                    <div class="flex ptb10 between alcenter pingzheng" style="display: block">
+                        <div class="block"><span class="color1" data-localize="td.pay_orders_img">支付凭证</span></div>
+                        <div style="padding: 10px;">
+                            <img class="pay_orders_img w100" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="time-order">
+                        <div class="flex blue">
+                            <p data-localize="contract.countDown">倒计时</p>:
+                            <p>
+                                <span data-localize="contract.text1">请于</span>
+                                <span class="times"></span>
+                                <span data-localize="contract.text2">内向</span>
+                                <span class="names"></span>
+                                <span data-localize="contract.text3">付款</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tr mt10">
+                        <a href="javascript:;" class="ptb10 plr10 bgLinearblue hide confirm white inblock tc mr10"
+                            data-localize="td.sureReceive">确认已收款</a>
+                    </div>
+                    <div class="tr mt10 flex">
+                        <a href="javascript:;"
+                            class="ptb10 plr10 ml20 bgLinear flex1 hide cancel white inblock  tc" data-localize="td.odCeil">取消订单</a>
+                        <a href="javascript:;"
+                            class="ptb10 plr10 flex2 bgLinearblue hide pay_money white " data-localize="contract.comfirmBtn">我已付款，请点击确认</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="confirm-box">
+            <div class="confirm-content ft16">
+                <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+                <div class="confirm-t" style="padding:30px 15px 25px">
+                    <div class="color1 mr10" data-localize="td.sureDpay">请确认买家已向您付款</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="confirm-box2">
+        <div class="confirm-content ft16">
+            <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <div class="color1" data-localize="td.payFast">付款确认后请尽快向卖家付款</div>
+                <div class="blue mt5" data-localize="td.badClick">恶意点击将直接冻结账户</div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 取消订单弹窗 -->
+    <div class="cancel-box">
+        <div class="cancel-content ft16">
+            <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <div class="blue" data-localize="td.notCeil">如果您已向卖家付款，请千万不要取消交易</div>
+                <div style="padding:20px 0 10px" class="ft16">
+                    <input type="checkbox" value=""
+                        style="-webkit-appearance: checkbox;vertical-align: middle;margin-right: 5px"><span
+                        data-localize="td.notpay">我还没有付款给对方</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 查看支付宝二维码弹窗 -->
+
+    <div class="code-modal">
+        <div class="flex jucenter alcenter mask">
+            <div class="code-content flex jucenter alcenter">
+                <p data-localize="contract.alipayCode">支付宝付款码</p>
+                <img class="code-img" src="" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="wechat-modal">
+        <div class="flex jucenter alcenter mask">
+            <div class="wechat-content flex jucenter alcenter">
+                <p data-localize="contract.wechatCode">微信付款码</p>
+                <img class="wechat-img" src="" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        $(function () {
+            // FastClick.attach(document.body);
+            var id = get_param('id');
+            var legal_deal_send_id;
+            initDataToken({
+                url: 'legal_deal',
+                data: {
+                    id: id
+                }
+            }, function (res) {
+                var text1 = '',
+                    text2;
+                $('.contactMan').attr('href', "tel:" + res.phone)
+                switch (res.is_sure) {
+                    case 0:
+                        text1 = getlg('nofinish');
+                        text2 = getlg('pwaitPay');
+                        break;
+                    case 1:
+                        text1 = getlg('finished');
+                        text2 = getlg('odFinish');
+                        break;
+                    case 2:
+                        text1 = getlg('ceiled');
+                        text2 = getlg('odCeil');
+                        break;
+                    case 3:
+                        text1 = getlg('payed');
+                        text2 = getlg('hasPay');
+                        break;
+                }
+                if (res.is_sure == 3 && res.type == 'sell') {
+                    $('.confirm').removeClass('hide');
+                } else {
+                    $('.confirm').addClass('hide');
+                }
+                if (res.is_sure == 0 && res.type == 'buy') {
+                    $('.pay_money').removeClass('hide')
+                } else {
+                    $('.pay_money').addClass('hide')
+                }
+                if (res.type == 'buy') {
+                	$('.pingzheng').hide()
+                    $('.sell_buy').html(getlg('seller'))
+                    var zhifuInfo = res.user_cash_info;
+                    $('.cardname').text(zhifuInfo.bank_name)
+                    $('.bankno').text(zhifuInfo.account_number)
+                    $('.cardno').text(zhifuInfo.bank_account)
+                    $('.bank_branch').text(zhifuInfo.bank_branch)
+                    $('.zhifu').text(zhifuInfo.alipay_account)
+                    $('.realname').text(zhifuInfo.real_name)
+                    $('.wechat').text(zhifuInfo.wechat_account)
+                    $('.sell_info').removeClass('hide')
+                    $('#code').attr('src', zhifuInfo.alipay_qr_code);
+                    $('.code-img').attr('src', zhifuInfo.alipay_qr_code)
+                    $('#wechatCode').attr('src', zhifuInfo.wechat_qr_code)
+                    $('.wechat-img').attr('src', zhifuInfo.wechat_qr_code)
+                    var times = res.cancel_time;
+                    if (res.is_sure == 0) {
+                        $('.names').text(res.user_cash_info.real_name);
+                        if (res.cancel_time) {
+                            if ((times - 0) < 3600) {
+                                setInterval(function () {
+                                    $('.time-order').show();
+                                    times--;
+                                    var time1 = parseInt(times / 60);
+                                    var time2 = times % 60;
+                                    if (time1 > 0 && time2 > 0) {
+                                        $('.times').text(time1 + getlg('minute') + time2 + getlg('second'));
+                                    } else if (time2 > 0) {
+                                        $('.times').text(time2 + getlg('second'));
+                                    } else if (time1 == 0 && time2 == 0) {
+                                        initDataToken({
+                                            url: 'handle_one',
+                                            type: 'post',
+                                            data: {
+                                                id: id
+                                            }
+                                        }, function (res) {
+                                            window.history.go(-1);
+                                        });
+                                    }
+                                }, 1000)
+                            } else {
+                                setInterval(function () {
+                                    $('.time-order').show();
+                                    times--;
+                                    var time1 = parseInt(times / 60 / 60);
+                                    var time3 = parseInt(times / 60) - (60 * time1);
+                                    var time2 = times % 60;
+                                    if (time1 > 0 && time2 > 0 && time3 > 0) {
+                                        $('.times').text(time1 + getlg('hour') + time3 + getlg('minute') + time2 +
+                                        getlg('second'));
+                                    } else if (time2 > 0 && time3 > 0) {
+                                        $('.times').text(time3 + getlg('minute') + time2 + getlg('second'));
+                                    } else if (time2 > 0) {
+                                        $('.times').text(time2 + getlg('second'));
+                                    } else if (time1 == 0 && time2 == 0 && time3 == 0) {
+                                        initDataToken({
+                                            url: 'handle_one',
+                                            type: 'post',
+                                            data: {
+                                                id: id
+                                            }
+                                        }, function (res) {
+                                            window.history.go(-1);
+                                        });
+                                    }
+                                }, 1000)
+                            }
+                        }
+                    }
+                } else {
+                    $('.sell_buy').html(getlg('recever'))
+
+                }
+                if (res.is_sure == 0 && res.type == 'buy') {
+                    $('.cancel').removeClass('hide')
+                } else {
+                    $('.cancel').addClass('hide')
+                }
+                $('.tt_statu').html(text1);
+                $('.tt_statu2').html(text2)
+                $('#deal_money').html('￥' + iTofixed(res.deal_money,3));
+                $('#price').html('￥' + iTofixed(res.price,3));
+                $('#seller_name').html(res.account_number);
+                $('#number').html(iTofixed(res.number,3) + res.currency_name);
+                $('#format_create_time').html(res.format_create_time);
+                $('#data_id').html(res.id);
+                if(res.pay_orders_img){
+                    $('.pay_orders_img').attr('src', res.pay_orders_img)
+                }else{
+                    $('.pingzheng').hide();
+                }
+                
+                legal_deal_send_id = res.legal_deal_send_id;
+                $('#code').click(function () {
+                    $('.code-modal').show();
+                })
+                $('.code-modal').click(function () {
+                    $('.code-modal').hide();
+                })
+                $('#wechatCode').click(function () {
+                    $('.wechat-modal').show();
+                })
+                $('.wechat-modal').click(function () {
+                    $('.wechat-modal').hide();
+                })
+
+            });
+            // 卖家确认付款
+            $('.confirm').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title: false,
+                    shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin: 'modals-confirm btn-text',
+                    content: $('.confirm-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'legal_deal_sure',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        });
+                    }
+
+                })
+            })
+            // 买家确认付款
+            //确认付款
+            $('.pay_money').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title: false,
+                    shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin: 'btn-text',
+                    content: $('.confirm-box2'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'user_legal_pay',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        });
+                    }
+
+                })
+            })
+            $('.cancel').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title: false,
+                    shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin: 'btn-text',
+                    content: $('.cancel-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'user_legal_pay_cancel',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        });
+                    }
+
+                })
+            })
+
+        });
+    </script>
+</body>
+
+</html>

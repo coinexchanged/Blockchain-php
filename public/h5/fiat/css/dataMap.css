@@ -1,0 +1,715 @@
+
+.bgBalck #header {
+	padding: 10px 3% 0;
+	background: #131f30;
+}
+
+#header div {
+	overflow: hidden;
+}
+
+.bgBalck .header {
+	width: 100%;
+	background: #131f30;
+	z-index: 99;
+}
+.insure-header{
+	margin-right: 10px
+}
+.insure div{
+	font-size: 10px;
+
+}
+/* .insure div p{
+	width: 30px;
+} */
+.insure span{
+	display: block;
+	margin-left: 6px;
+	border: 1px solid #f1f1f1;
+	border-radius: 2px;
+	padding: 0 5px;
+	line-height: 20px;
+	height: 20px;
+	margin-top: 10px;
+	color: #7d818a;
+}
+.bgBalck .insure span{
+	border: 1px solid #2c313c;
+}
+.bgBalck .bg_active{
+	background-color: #12151c;
+}
+.bgBalck #sideColumn ul li{
+	border-bottom: 1px solid #12151c;
+}
+#header div p img {
+	width: 30px;
+	margin: -6px 1px 0 0;
+}
+.bgBalck #sideColumn ul li strong{
+	color: #fff;
+}
+
+#header div P span {
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+.CNY {
+	margin-top: 45px;
+	padding: 5px 15px 10px;
+}
+
+.CNY div h2,
+.CNY div h4 {
+	margin: 0;
+}
+
+.CNY div h2 {
+	color: #00c087;
+	line-height: 40px;
+	text-align: left;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.CNY div h4 {
+	color: #5a718e;
+	font-size: 1.7rem;
+}
+
+.CNY div h4 span {
+	color: #00c087;
+}
+
+.CNY ul {
+	list-style: none;
+	width: 30%;
+}
+
+.CNY ul li {
+	line-height: 20px;
+	text-align: right;
+	/* color: #5a718e; */
+}
+
+.CNY ul li span {
+	padding: 0 6px;
+	/* color: #cfd3e9; */
+	font-size: 1.3rem;
+}
+
+
+.p {
+	color: #e3046f;
+}
+
+.g {
+	color: #03bd87;
+}
+
+
+.bgBalck #bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 0 1.5%;
+	height: 70px;
+	background: #152741;
+	font-size: 14px;
+}
+
+#bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 0 1.5%;
+	height: 70px;
+	background: #fff;
+	font-size: 14px;
+}
+
+#bottom button {
+	width: calc(48.50vw - 12px);
+	height: 50px;
+	font-size: 18px;
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	margin-top: 10px;
+}
+
+#bottom button:nth-child(2) {
+	margin-left: 0;
+}
+
+div#bottom button:nth-child(1) {
+	background: #00c087;
+}
+
+#bottom button:nth-child(2) {
+	background: #e3046f;
+}
+
+/* 买入卖出弹窗 */
+.data-modal {
+	display: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px 15px;
+}
+
+.modals {
+	background-color: #303032 !important;
+}
+
+.modals .layui-layer-btn a {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	line-height: 40px;
+	height: 40px;
+}
+
+.tab p {
+	width: 50%;
+}
+
+.tab span {
+	display: block;
+	padding: 0 10px 5px;
+}
+
+.tab .active {
+	border-bottom: 1px solid #1E9FFF;
+}
+
+.control {
+	line-height: 30px;
+	border: 1px solid #f1f1f1;
+	padding: 0 10px;
+	width: 100%;
+	border-radius: 2px;
+}
+
+.modals select {
+	background-color: #303032;
+	width: 100%;
+}
+
+.modals #share {
+	width: 40%;
+}
+
+.share-num {
+	width: 50%;
+	line-height: 30px;
+	border: 1px solid #f1f1f1;
+	padding: 0 10px;
+	border-radius: 2px;
+}
+
+.new-price {
+	color: #00c087;
+}
+
+#sideColumn h4 img {
+	width: 20px;
+	margin: -6px 5px 0 0;
+}
+
+#sideColumn {
+	z-index: 101;
+	position: fixed;
+	top: 0;
+	left: -70%;
+	width: 70%;
+	height: 100%;
+}
+
+#sideColumn h4 span {
+	margin: 0 10px;
+	color: #ccc;
+	border: none;
+}
+.insure .active{
+	color: #f0b90b!important;
+	border: 1px solid #f0b90b;
+}
+
+#sideColumn ol,
+#sideColumn ul {
+	list-style: none;
+}
+
+#sideColumn ol {
+	display: flex;
+}
+
+#sideColumn ol li {
+	float: left;
+	flex: 1;
+	text-align: center;
+	line-height: 35px;
+	color: #ccc;
+}
+
+#mask1 {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: none;
+	background: rgba(130, 129, 129, 0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+#sideColumn ul {
+	overflow-y: scroll;
+	height: calc(100.0vh - 70px)
+}
+
+#sideColumn ul li {
+	height: 60px;
+	line-height: 60px;
+	text-indent: 15px;
+	font-size: 1.2rem;
+}
+
+#sideColumn ul li strong {
+	padding: 0 20px 0 0;
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	color: #1A384A;
+}
+
+#sideColumn ul li strong b {
+	color: #7d818a;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#sideColumn ul li p {
+	float: right;
+	/* width: 72%; */
+	padding: 0 10px;
+	margin: 0;
+}
+
+.texts-lever {
+	margin-top: 10px;
+	line-height: 35px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+
+#sideColumn ul li {
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.fontC {
+	color: #e3046f;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.gre {
+	color: #00c087;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.tab_list {
+	display: none;
+	padding-bottom: 20px;
+}
+
+.CNY ul {
+	list-style: none;
+	width: 40%;
+	margin-top: 5px;
+}
+
+.CNY div h4 span.red {
+	color: #e3046f;
+}
+
+.red {
+	color: #e3046f !important;
+}
+
+.return {
+	width: 20px;
+}
+
+select {
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #f1f1f1;
+	padding: 5px 10px;
+	border-radius: 2px;
+}
+
+.tabs-data-map {
+	border: none;
+}
+
+.tabs-data-map img {
+	width: 20px !important;
+	position: relative;
+	top: 3px;
+	margin: -10px 5px 0 0 !important;
+}
+
+.bg_active {
+	background: #f4f8fb;
+}
+
+/* 倒计时下单弹窗 */
+.time-modal {
+	display: none;
+	padding: 0 15px 20px;
+	margin-top: 15px;
+	overflow-x: hidden;
+}
+
+.time-list {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.lists {
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.lists .fl {
+	width: calc(29.33vw - 15px);
+	height: calc(29.33vw - 15px);
+	margin-right: 10px;
+	position: relative;
+}
+
+.lists-child {
+	width: calc(29.33vw - 15px);
+	height: calc(29.33vw - 15px);
+	box-sizing: border-box;
+	text-align: center;
+	background: url(../images/clock.png) no-repeat;
+	background-size: cover;
+	background-color: #2c2d31;
+	border-radius: 5px;
+	box-sizing: border-box;
+	color: #6d6d6d;
+
+}
+
+.title {
+	width: calc(29.33vw - 15px);
+	line-height: 30px;
+}
+
+.lists-child div {
+	color: #fdbe19;
+	margin-top: 6px;
+}
+
+.lists-child div p {
+	position: relative;
+	top: -3px;
+	margin-right: 5px;
+}
+
+.profit {
+	color: #fa2e42;
+	background-color: #232227;
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-top: 16px;
+}
+
+.bgBalck .lists .active .profit {
+	margin-top: 13px;
+}
+
+.bgBalck .currency-list p {
+	border: 1px solid #12151c;
+}
+
+.bgBalck .time-num ul li {
+	border: 1px solid #12151c;
+}
+
+.bgBalck .balances {
+	border-bottom: 1px solid #12151c;
+}
+
+.bgBalck .time-num input {
+	color: #fff;
+	background-color: #12151c;
+}
+
+.time-num {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.time-num ul {
+	width: 100%;
+}
+
+.time-num ul li {
+	height: 29px;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	width: 22.7%;
+	text-align: center;
+	margin: 0 1.5%;
+	border: 1px solid #f1f1f1;
+	margin-bottom: 10px;
+}
+.time-num ul li:nth-child(4n +1){
+	margin: 0 1.5% 0 0;
+}
+.time-num ul li:nth-child(4n){
+	margin: 0 0 0 1.5%;
+}
+
+
+.time-num .active {
+	background: url(../images/selects.png) no-repeat right bottom;
+	background-size: 35px 30px;
+}
+
+.time-num input {
+	height: 29px;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #fff;
+	padding: 0 2px;
+	border: 1px solid #f1f1f1;
+}
+
+.balances {
+	width: 100%;
+	margin-top: 15px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.time-bottom span {
+	display: block;
+	margin-top: 5px;
+	font-size: 14px;
+}
+
+.yellowColor {
+	color: #fdbe19;
+}
+
+.time-btn {
+	width: 100%;
+	line-height: 40px;
+	height: 40px;
+	border-radius: 6px;
+	margin: 20px 0 10px;
+}
+
+.time-btn button {
+	width: 49%;
+	height: 100%;
+	border: none;
+	outline: none;
+	color: #fff;
+	border-radius: 6px;
+}
+
+.lists .active {
+	border: 1px solid #fdbe19;
+	background-size: contain;
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+.currency-list p {
+	border: 1px solid #f1f1f1;
+	font-size: 14px;
+	text-align: center;
+	width: 22.7%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin: 0 1.5% 10px;
+	
+
+}
+.currency-list p:first-child{
+	margin: 0 1.5% 10px 0;
+}
+.currency-list p:nth-child(4n){
+	margin: 0 0 10px 1.5%;
+}
+
+.currency-list .active {
+	background: url(../images/selects.png) no-repeat right bottom;
+	background-size: 35px 30px;
+}
+
+.orders {
+	display: none;
+	text-align: center;
+	padding: 20px 20px 30px;
+}
+
+.orders-list {
+	margin-top: 20px;
+}
+
+.orders-list span {
+	margin-top: 10px;
+	display: inline-block;
+	width: 40%;
+	text-align: left;
+}
+.orders-list p span:first-child{
+	text-align: right;
+	width: 80px;
+}
+
+.order-list {
+	width: 100%;
+	padding-bottom: 20px;
+}
+
+.order-list-header {
+	width: 100%;
+	line-height: 40px;
+	background-color: #fff;
+}
+
+.order-list-header p {
+	width: 50%;
+}
+
+.order-list-header .active {
+	border-bottom: 2px solid #f0b90b;
+}
+
+#bottom .second-buy {
+	width: 21.0vw;
+	/* padding: 0 20px; */
+	margin-right: 5px;
+}
+
+#bottom .second-sell {
+	width: 21.0vw;
+	/* padding: 0 20px; */
+}
+
+.bottom-left {
+	width: 52.0vw;
+}
+
+.logo-down {
+	width: 15px;
+	margin-top: 8px;
+}
+
+.logo-down img {
+	width: 100%;
+}
+
+.bottom-left {
+	height: 50px;
+	margin-top: 10px;
+	border: 1px solid #f1f1f1;
+	border-radius: 4px;
+	padding: 6px 5px;
+}
+#sideColumn ul li p b{
+	font-weight: normal;
+	color: #7d818a;
+}
+.second-modal .layui-layer-btn{
+	padding: 0!important;
+}
+.second-modal .layui-layer-btn0{
+background-color: #00c087!important;
+color: #fff!important;
+}
+.second-modal .layui-layer-btn1{
+	background-color: #e3046f!important;
+	}
+.buys .layui-layer-btn1{
+	background-color: #00c087!important;
+}
+.sells .layui-layer-btn1{
+	background-color: #e3046f!important;
+}
+.order-list li{
+	/* line-height: 30px; */
+	border-bottom: 1px solid #f1f1f1;
+	padding: 10px 0;
+}
+.lists li p{
+	width: 15.0vw;
+	text-align: center;
+}
+.lists li p:nth-child(2){
+	width: 25%;
+}
+.lists li p:nth-child(3){
+	width: 25%;
+}
+.bgBalck .order-list-header{
+	background-color: #131f30;
+}
+.bgBalck .order-list{
+	background-color: #131f30;
+}
+.bgBalck .order-list li{
+	border-bottom: 1px solid #12151c;
+}
+.bgBalck .bottom-left{
+	border: 1px solid #12151c;
+}
+.bgBalck  .time-num input{
+	border: 1px solid #12151c;
+	background-color: #202833;
+}
+.buys,.sells{
+	top: auto!important;
+	bottom: 10.0vh;
+}
+.buys .layui-layer-title{
+	background-color: #00c087!important;
+	color: #fff;
+}
+.sells .layui-layer-title{
+	background-color: #e3046f!important;
+	color: #fff;
+}
+.buys .orders,.sells .orders{
+	padding: 0 20px 10px;
+}
+.buys .layui-layer-btn,.sells .layui-layer-btn{
+	padding: 0 15px 10px;
+}
+.buys .orders-list span,.sells .orders-list span{
+	margin-top: 0;
+}

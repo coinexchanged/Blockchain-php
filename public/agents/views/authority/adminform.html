@@ -1,0 +1,38 @@
+
+
+<div class="layui-form" lay-filter="layuiadmin-form-admin" style="padding: 20px 30px 0 0;">
+  <div class="layui-form-item">
+    <label class="layui-form-label">角色名称</label>
+    <div class="layui-input-inline">
+      <script type="text/html" template>
+        <input type="text" name="name" value="" lay-verify="required" placeholder="请输入角色名称" autocomplete="off" class="layui-input">
+      </script>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">是否为超级管理员</label>
+    <div class="layui-input-inline">
+      <script type="text/html" template>
+        <select name="is_super">
+          <option value="0" onselect="selected" >否</option>
+          <option value="1" >是</option>
+        </select>
+      </script>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label"></label>
+    <div class="layui-input-inline">
+      <input type="button" lay-submit lay-filter="LAY-user-back-submit" value="确认" class="layui-btn">
+    </div>
+  </div>
+</div>
+
+<script>
+layui.use(['admin', 'form'], function(){
+  var $ = layui.$
+  ,form = layui.form;
+  
+});
+</script>

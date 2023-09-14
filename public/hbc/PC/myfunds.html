@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户资金</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/usercenter.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .sub-menu{border-left:18px solid #b83826;box-sizing: border-box;background: #eee;}
+    #tradelist{padding: 0;}
+</style>
+<body>
+<div class="header clearfix">
+
+</div>
+<!--左边内容区-->
+<div class="content">
+    <table class="leftbar" style="padding-top: 15px; height: 1663px;">
+        <tbody><tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr>
+                            <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                <div id="wrapper-250">
+                                    <ul class="accordion">
+                                        <li id="adn1" class="files">
+                                            <a href="javascript:;" class="menu-hide" style="border-top: none;">
+                                                <img src="img/funds/zijin.png" alt="我的资金">
+                                                我的资金
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myfunds" class="mactive" href="myfunds.html">帐户资金</a></li>
+                                                <!--
+                                                <li><a data-id='interest' href="/myaccount/interest">每日利息</a></li>
+                                                <li><a data-id='dividend' href="/myaccount/dividend">我的分红</a></li>
+                                                -->
+                                                <li><a data-id="myreferrals" href="myreferrals.html">推广佣金</a></li>
+                                                <li><a data-id="mypurselog" href="javascript:;">账单明细</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn2" class="cloud">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/jiaoyi.png" alt="交易挂单">
+                                                交易挂单<span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myorders" href="myorders.html">我的挂单</a></li>
+                                                <li><a data-id="myhistory" href="javascript:;">成交记录</a></li>
+                                                <li><a data-id="myc2chistory" href="javascript:;">C2C成交记录</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn3" class="mail">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/chongzhi.png" alt="充值提现">
+                                                充值提现
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">购买USDT(C2C)</a></li>
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">点对点充值提现(C2C)</a></li>
+                                                <li><a data-id="deposit_coin" href="javascript:;">数字货币充值</a></li>
+                                                <li><a data-id="withdraw_coin" href="javascript:;">数字货币提现</a></li>
+                                                <li><a data-id="deposit_code" href="deposit_code.html">充值码</a></li>
+                                                <li><a data-id="mydeposits" href="mydeposits.html">最近充值记录</a></li>
+                                                <li><a data-id="mywithdrawals" href="mywithdrawals.html">最近提现记录</a></li>
+                                                <li><a data-id="lockbook" href="lockbook.html">领“通证”（分叉币提前领）</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn4" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/anquan.png" alt="安全设置">
+                                                安全设置
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="id_setup" href="javascript:;">身份认证</a></li>
+                                                <li><a data-id="id_setup2" href="javascript:;">高级认证</a></li>
+                                                <!--<li><a data-id='id_setup3' href="/myaccount/id_setup3">视频认证</a></li>-->
+                                                <li><a data-id="totp" href="totp.html">谷歌验证器绑定</a></li>
+                                                <li><a data-id="sms_setup" href="sms_setup.html;">手机绑定</a></li>
+                                                <li><a data-id="login2_setup" href="login2_setup.html">两步登录保护</a></li>
+                                                <li><a data-id="apikeys" href="apikeys.html">API Keys</a></li>
+                                                <li><a data-id="resetpw" href="javascript:;">修改登录密码（自动登出）</a></li>
+                                                <li><a data-id="resetfpw" href="javascript:;">修改资金密码（自动登出）</a></li>
+                                                <li><a data-id="email_setup" href="javascript:;">邮箱绑定</a></li>
+                                                <li><a data-id="antiphishcode" href="javascript:;">防钓鱼码</a></li>
+                                                <li><a data-id="payment_setup" href="javascript:;">支付设置</a></li>
+                                                <li class="new-item"><a data-id="tradepassfrequency" href="javascript:;">交易密码输入频率</a></li>
+                                                <li><a data-id="mylogs" href="javascript:;">安全日志</a></li>
+                                                <li><a data-id="notify" href="javascript:;">通知设置</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="adn5" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/gongdan.png" alt="我的工单">
+                                                我的工单
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="ticket" href="javascript:;">提交工单</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $(".accordion").children("li").find("a").click(function () {
+                $(this).toggleClass("menu-hide").next("ul").toggle();
+                var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+                lb.css("height", mh)
+            });
+
+            var icoType='';
+            if(icoType==''){
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function(){
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 3,{ path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 4,{ path: '/' });
+            });
+
+            //左菜单active标识
+            var url=window.location.href,
+                    pagename=url.split('nt/')[1];
+            $('a[data-id="'+pagename+'"]').addClass("mactive");
+            if(url.indexOf('?coin_withdraw') > -1 || url.indexOf('aw/') > -1){
+                $('a[data-id=withdraw_coin]').addClass("mactive");
+            } else if(url.indexOf('?coin_deposit') > -1 || url.indexOf('it/') > -1){
+                $('a[data-id=deposit_coin]').addClass("mactive");
+            }
+            if(url.indexOf('totp/') > -1){
+                $('a[data-id=totp]').addClass("mactive");
+            }
+
+            /*$(window).scroll(function () {
+             var scrH=$(window).scrollTop();var accHeight=$(".myacc-con").height();
+             if(accHeight>834) {
+             if (scrH > 100) {
+             if(scrH > accHeight-721) {
+             $("#marketlist_wrapper").css({"position": "absolute", "top": "", "bottom": "10px", "width": "100%"});
+             } else {
+             $("#marketlist_wrapper").css({"position": "fixed", "top": "10px", "bottom": "", "width": "22%"});
+             }
+             } else {
+             $("#marketlist_wrapper").attr("style", "");
+             }
+             }
+             });*/
+        });
+    </script>
+    <div class="main_content acc-m-con">
+        <div class="warn">
+            <i>!</i>您尚未实名认证！为保障您的资金安全，在完成实名认证之前，您将不能进行c2c交易、提币等操作。
+            <a class="r-btn" href="/myaccount/id_setup">立即去认证</a>
+        </div>
+        <div class="right_mcontent myacc-con">
+            <div style="background: #fff;padding: 25px 0;border-radius: 4px;">
+                <ul class="my-top-info clearfix">
+                    <li>
+                        <h3>我的账号ID</h3>
+                        <b>2002365</b>
+                    </li>
+                    <li>
+                        <h3><a href="javascript:;" title="等级说明">当前等级</a></h3>
+                        <strong class="tier-level tier-icon0"></strong>
+                    </li>
+                    <li>
+                        <h3>交易费折扣</h3>
+                        <strong>无</strong>
+                    </li>
+                    <li>
+                        <h3>近30天交易量</h3>
+                        <strong>0.00000</strong><i class="vol30-unit"> BTC</i> <div class="fund-top-small">或 <strong>0.00</strong> CNY</div>
+                    </li>
+                </ul>
+                <div class="lv-prog">
+                    <span class="pro-dtl">升级还需要 <strong class="red">3.0</strong> BTC 或者 <strong class="red">129272</strong> CNY 30天交易量或等值资产</span>
+                    <div id="fprogrLi">
+                        <div id="fproBar" style="width: 0%;"><span>升级进度: <b>0.0%</b></span></div>
+                    </div>
+                </div>
+                <div id="crFund">当前资金总估：
+                    <i class="red">0.00 人民币</i> 或 <i class="red">0.00 美元</i> 或 <i class="red">0.00000 比特币</i>
+                    <p class="fund-tips">注：资金总估是由历史行情估算值，仅为用户提供一个参考，请以单项资金为准</p>
+                </div>
+
+            </div>
+
+
+            <div class="sectioncont funds-dtl myfunds-dtl">
+                <div style="background: #fff;padding: 0 30px;border-radius: 4px;margin-top: 28px;">
+                    <div class="m_title" id="wallet"> 资金(我的在线钱包):</div>
+
+                    <div class="HideZeroDiv pull-left" id="hideZbtn">
+                        <label for="hidezero">
+                            <input type="checkbox" id="hidezero" name="hidezero" style="width: 20px;" class="zero-active">
+                            <label for="hidezero" class="vr-btn"></label>
+                            <span class="hidezero-span">只显示有资金币种（隐藏0资金币种）</span>
+                        </label>
+                        <input type="hidden" id="min" value="0.00000001"><input type="hidden" id="max" value="9999999999">
+                    </div>
+                    <div id="defaultOrder" class="r-btn" style="display: none;">默认排序</div>
+                    <div id="fundsBox">
+                        <div id="funds_wrapper" class="dataTables_wrapper no-footer"><div class="top"><div id="funds_filter" class="dataTables_filter">
+                            <label>
+                                <input type="search" class="" placeholder="" aria-controls="funds">
+                            </label>
+                        </div>
+                        </div>
+                            <table id="funds" class="dataTable sf-grid all-funds-table no-footer" cellspacing="0" cellpadding="0" role="grid" aria-describedby="funds_info">
+                                <thead>
+                                <tr role="row" style="height:40px">
+                                    <!--<th class="sortable sorting_asc" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="币种: activate to sort column ascending"><b>币种</b></th>-->
+                                    <th class="sortable sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="币种: activate to sort column ascending"><b>币种</b></th>
+                                    <th class="sortable sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="可用余额: activate to sort column ascending"><b>可用余额</b></th>
+                                    <th class="sortable sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="挂单金额: activate to sort column ascending"><b>挂单金额</b></th>
+                                    <th class="sortable sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="总计: activate to sort column ascending"><b>总计</b></th>
+                                    <th class="sortable sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label="估算为人民币: activate to sort column ascending" aria-sort="descending"><b>估算为人民币</b></th><th class="sorting" tabindex="0" aria-controls="funds" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="操作"><b>操作</b></th></tr>
+                                </thead>
+                                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-usdt"></span><span style="color:#08a287"><b>USDT</b> Tether</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">13</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-usdt_eth"></span><span style="color:#3d6e91"><b>USDT_ETH</b> Tether(ERC20)</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">12</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="err-depo fund-withdraw">提暂停</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="err-depo fund-to-trade" title="交易暂停">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-btc"></span><span style="color:#f79118"><b>BTC</b> 比特币</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">11</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-eth"></span><span style="color:#3d6e91"><b>ETH</b> 以太币</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">10</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-qtum"></span><span style="color:#007dc7"><b>QTUM</b> 量子链</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">9</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-eos"></span><span style="color:#36383e"><b>EOS</b> EOS</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">8</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-etc"></span><span style="color:#639370"><b>ETC</b> 以太经典</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">5</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-ltc"></span><span style="color:#888"><b>LTC</b> 莱特币</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">4</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-abt"></span><span style="color:#8998f4"><b>ABT</b> ArcBlock</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">0</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-ada"></span><span style="color:#246ed3"><b>ADA</b> 艾达币</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">0</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="odd">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-add"></span><span class="auto-color" style="color:#41ef53"><b>ADD</b> EOSADD</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">0</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="err-depo fund-deposit" title="充值暂停，钱包维护中">充暂停</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr><tr data-id="zero" role="row" class="even">
+                                    <td align="right" class="sorting_3"><span class="icon-16 icon-16-ae"></span><span style="color:#de3f6b"><b>AE</b> Aeternity</span></td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="no-od">0.000000</td>
+                                    <td align="right">0.000000</td>
+                                    <td align="right" class="sorting_1">0.00</td>
+                                    <td class="sorting_2">0</td>
+                                    <td class="zero" align="right">
+                                        <a href="javascript:;" class="normal-depo fund-deposit" title="充值正常">充值</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" title="无资金" class="normal-depo fund-withdraw">提现</a>
+                                        &nbsp;&nbsp;
+                                        <a href="javascript:;" class="normal-depo fund-to-trade" title="交易正常">交易</a>
+                                    </td>
+                                </tr></tbody>
+                            </table><div class="bottom"><div class="dataTables_info" id="funds_info" role="status" aria-live="polite">当前显示第 1 至 12 币种，共 203 币种</div><div class="dataTables_paginate paging_simple_numbers" id="funds_paginate"><a class="paginate_button previous disabled" aria-controls="funds" data-dt-idx="0" tabindex="0" id="funds_previous">上页</a><span><a class="paginate_button current" aria-controls="funds" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="funds" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="funds" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="funds" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="funds" data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a class="paginate_button " aria-controls="funds" data-dt-idx="6" tabindex="0">17</a></span><a class="paginate_button next" aria-controls="funds" data-dt-idx="7" tabindex="0" id="funds_next">下页</a></div></div><div class="clear"></div></div>
+                    </div>
+
+                </div>
+
+
+                <div style="background: #fff;margin-top: 28px;border-radius: 4px;padding: 10px 30px;">
+                    <b class="delisted-title">已下架币种（请提现）: </b>
+
+                    <div id="delist_wrapper" class="dataTables_wrapper no-footer"><div class="top"><div id="delist_filter" class="dataTables_filter"><label><input type="search" class="" placeholder="" aria-controls="delist"></label></div></div><table id="delist" class="sf-grid all-funds-table dataTable delisted-table initial-order no-footer" role="grid" aria-describedby="delist_info">
+                        <thead>
+                        <tr class="pur-td" role="row" style="height:40px"><th class="sortable sorting_asc" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-label="类型: activate to sort column ascending"><b>类型</b></th><th class="sortable sorting" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-label="可用余额: activate to sort column ascending"><b>可用余额</b></th><th class="sortable sorting" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-label="挂单金额: activate to sort column ascending"><b>挂单金额</b></th><th class="sortable sorting" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-sort="descending" aria-label="总计: activate to sort column ascending"><b>总计</b></th><th class="sortable sorting" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-label="估算为人民币: activate to sort column ascending"><b>估算为人民币</b></th><th class="sorting" tabindex="0" aria-controls="delist" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="操作"><b>操作</b></th></tr>
+                        </thead>
+                        <tbody>
+                        <tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-arp"></span><span class="auto-color" style="color:#2be383"><b>ARP</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-bai"></span><span class="auto-color" style="color:#2755b1"><b>BAI</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-bkx"></span><span class="auto-color" style="color:#1339ff"><b>BKX</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-bwt"></span><span class="auto-color" style="color:#29ef6f"><b>BWT</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-cngx"></span><span class="auto-color" style="color:#4c1878"><b>CNGX</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-dai_1"></span><span class="auto-color" style="color:#4d8f08"><b>DAI_1</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-dmt"></span><span class="auto-color" style="color:#14db6f"><b>DMT</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-dta"></span><span class="auto-color" style="color:#3ddb7d"><b>DTA</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-dxt"></span><span class="auto-color" style="color:#136382"><b>DXT</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-edu_1"></span><span class="auto-color" style="color:#275bbb"><b>EDU_1</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="odd">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-exc"></span><span class="auto-color" style="color:#4b0116"><b>EXC</b> 极点币</span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr><tr data-id="zero" role="row" class="even">
+                            <td class="sorting_3">
+						<span class="cionpic">
+																<span class="icon-16-default"></span>
+
+													</span>
+                                <em><span class="icon-16 icon-16-hec"></span><span class="auto-color" style="color:#37dc41"><b>HEC</b> </span></em>
+                            </td>
+                            <td>0.000000</td>
+                            <td class="no-od">0.000000</td>
+                            <td class="sorting_1">0.000000</td>
+                            <td class="sorting_2">0.00</td>
+                            <td></td>
+                            <td class="zero">
+                                <a class="normal-depo fund-withdraw" href="javascript:;" title="无资金">提现</a>
+                            </td>
+                        </tr></tbody></table><div class="bottom"><div class="dataTables_info" id="delist_info" role="status" aria-live="polite">当前显示第 1 至 12 币种，共 40 币种</div><div class="dataTables_paginate paging_simple_numbers" id="delist_paginate"><a class="paginate_button previous disabled" aria-controls="delist" data-dt-idx="0" tabindex="0" id="delist_previous">上页</a><span><a class="paginate_button current" aria-controls="delist" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="delist" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="delist" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="delist" data-dt-idx="4" tabindex="0">4</a></span><a class="paginate_button next" aria-controls="delist" data-dt-idx="5" tabindex="0" id="delist_next">下页</a></div></div><div class="clear"></div></div>
+                </div>
+
+                <div  style="background: #fff;margin-top: 28px;border-radius: 4px;padding: 10px 30px;">
+                    <div class="m_title"> 最近充值记录（<a href="javascript:;">更多</a>）: </div>
+                    <table class="sf-grid table-inacc table-inacc-head">
+                        <thead>
+                        <tr>
+                            <th><b>单号</b></th>
+                            <th align="left"><b>时间</b></th>
+                            <th align="right"><b>金额</b></th>
+                            <th align="right"><b>转账ID</b></th>
+                            <th align="right"><b>确认个数</b></th>
+                            <th align="right"><b>状态</b></th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <div class="table-scroll">
+                        <table class="sf-grid table-inacc table-inacc-body" id="latestDepo">
+                            <tbody>
+                            <tr class="table-empty" style="display: table-row;">
+                                <td style="text-align: center"><p><i>i</i>暂无充值记录</p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div  style="background: #fff;margin-top: 28px;border-radius: 4px;padding: 10px 30px;">
+                    <div class="m_title"> 最近提现记录（<a href="javascript:;">更多</a>）: </div>
+                    <table class="sf-grid table-inacc table-inacc-head">
+                        <thead>
+                        <tr>
+                            <th><b>单号</b></th>
+                            <th align="left"><b>时间</b></th>
+                            <th align="right"><b>金额</b></th>
+                            <th align="right"><b>提现地址/转账ID</b></th>
+                            <th align="right"><b>状态</b></th>
+                            <th align="right"><b>操作</b></th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <div class="table-scroll">
+                        <table class="sf-grid table-inacc table-inacc-body" id="latestWith">
+                            <tbody>
+                            <tr class="table-empty" style="display: table-row;">
+                                <td style="text-align: center"><p><i>i</i>暂无提现记录</p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <!---->
+            <br>
+        </div> <!-- right_mcontent -->
+    </div> <!-- main content -->
+
+
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<footer></footer>
+<script>
+    load_header();
+    load_footer();
+</script>
+
+</html>

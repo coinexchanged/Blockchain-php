@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>华盾链交易</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+  
+</style>
+<body class="backf5">
+    <header class="borderB" style="background: #10172b;">
+        <i class="iconfont icon-xiangqing font24  fontc_f icon_aside"></i>
+        <h1 class="fontc_f">ETH</h1>
+	</header>
+    <aside class="hide">
+		<!-- <div>
+			<img src="../img/default.jpg" alt="">
+			<h5>您还没有登录，点击登录</h5>
+		</div> -->
+		<div class="aside_mask"></div>
+		<section class="aside_box">
+			<div class="user_head_box" id="user_info" data-address="<%= address %>" >
+				<div class="user_head_info" style="text-align:center;">
+					<!--/users/user_photo-->
+					<a href="javascript:;" class="user_photo"><img id="user_info_photo" src="../img/default.jpg" alt=""></a> 
+					<div class="user_name" >
+						<p  style="line-height:1.2rem;" id="user_info_nickname"> mine </p>
+						<!--  -->
+					</div>
+					<!-- <button class="cop" data-clipboard-action="copy" data-clipboard-target="#user_address">复制</button> -->
+				</div>
+			</div>
+			<div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-qianbao font20 fontc_b"></i>
+						<a  href="money_adm.html">
+							<span class="fontc_73 font14">我的钱包</span>
+						</a>
+					</div>
+				</div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-zhanghu font22 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">账户管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-qia01 font20 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">支付管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-anquan font24 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">安全中心</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-wode-jiaoyisuoguanli-18 font20 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">费率标准</span>
+						</a>  
+					</div>
+				</div>
+				<div class="userinfo_box" style="border:0;">
+					<div class="userinfo_item">
+						<i class="iconfont icon-portal-icon-bangzhu font20 fontc_b "></i>
+						<a  href="javascript:;" >
+							<span class="fontc_73 font14">我的工单</span>
+						</a>  
+					</div>    
+					<div class="userinfo_item">
+						<i class="iconfont icon-hongqi-chengse font24 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">关于我们</span>
+						</a>
+					</div>     
+					<div class="userinfo_item">
+						<i class="iconfont icon-banbengengxin font24 fontc_b "></i>
+						<a  href="javascript:;" id="my_subTeam">
+							<span class="fontc_73 font14">版本更新</span>
+						</a>
+					</div>
+				</div>
+            </div>
+            <a class="login_btn quit_btn" href="login.html">退出登录</a>
+        </section>
+	</aside>
+
+    <!--上部分的买入卖出-->
+    <section class="backF mgthead" id="user_info" data-address="<%= address %>">
+        <div>
+            <div class="trade_nav_indextab">
+                <div class="trade_nav_inout">
+                    <span class="act">买入</span>
+                    <span>卖出</span>
+                </div>
+                <div class="trade_nav_right">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-shuju font20 fontc_6"></i>
+                        <span class="font14">K线图</span>
+                    </a>
+                    <a href="globalMarket.html">
+                        <i class="iconfont icon-weibiaoti3 font20 fontc_6"></i>
+                        <span class="font14">全球行情</span>
+                    </a>
+                </div>
+            </div>
+            <div class="trade_body_indextab">
+                <div class="trade_body_inout">
+                    <div class="trade_bodu_in">
+                        <div class="entrust_box">
+                            <a href="javascript:;" class="borderR">
+                                 <i class="iconfont icon-minus font18 fontc_6"></i>
+                            </a>
+                           <input type="number" id="buy-price" class="trade_input" placeholder="委托价格">
+                            <a href="javascript:;" class="borderl">
+                                <i class="iconfont icon-jia font18 fontc_6"></i>
+                            </a>
+                        </div>
+                        <div class="fontc_9 font14">估值:0.002HDL</div>
+
+                        <div class="entrust_box">
+                            <a href="javascript:;" class="borderR">
+                                 <i class="iconfont icon-minus font18 fontc_6"></i>
+                            </a>
+                           <input type="number" class="trade_input" id="buy-num" placeholder="委托数量">
+                            <a href="javascript:;" class="borderl">
+                                <i class="iconfont icon-jia font18 fontc_6"></i>
+                            </a>
+                        </div>
+                        <div class="fontc_9 font14">可用BTC:0</div>
+
+                        <div class="entrust_box" style="padding:0 .4rem;">
+                           <input type="number" class="trade_input" style="text-align:left;" placeholder="交易量" id="buy-total">
+                            <span class="font14 fontc_9">HDL</span>
+                        </div>
+                        <div class="fontc_9 font14">估值:0.002HDL</div>
+
+                        <div class="trade_inout_btn">
+                            <button class="" id="buyIn">现货买入</button>
+                        </div>
+
+                        <div>
+                            <div>
+                                <p class="fontc_9 ">锁定（HDL）：</p>
+                                <span class="fontc_6 ">2</span>
+                            </div>
+                            <div>
+                                <p class="fontc_9 ">总资产：</p>
+                                <span class="fontc_6 ">￥2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trade_bodu_in hide">
+                        <div class="entrust_box">
+                            <a href="javascript:;" class="borderR">
+                                 <i class="iconfont icon-minus font18 fontc_6"></i>
+                            </a>
+                           <input type="number" id="sell-price" class="trade_input" placeholder="委托价格">
+                            <a href="javascript:;" class="borderl">
+                                <i class="iconfont icon-jia font18 font20 fontc_6"></i>
+                            </a>
+                        </div>
+                        <div class="fontc_9 font14">估值:0.002HDL</div>
+
+                        <div class="entrust_box">
+                            <a href="javascript:;" class="borderR">
+                                 <i class="iconfont icon-minus font18 fontc_6"></i>
+                            </a>
+                           <input type="number" class="trade_input" id="sell-num" placeholder="委托数量">
+                            <a href="javascript:;" class="borderl">
+                                <i class="iconfont icon-jia font18 font20 fontc_6"></i>
+                            </a>
+                        </div>
+                        <div class="fontc_9 font14">可用BTC:0</div>
+
+                        <div class="entrust_box" style="padding:0 .4rem;">
+                           <input type="number" id="sell-total" class="trade_input" style="text-align:left;" placeholder="交易量">
+                            <span class="font14 fontc_9">HDL</span>
+                        </div>
+                        <div class="fontc_9 font14">估值:0.002HDL</div>
+
+                        <div class="trade_inout_btn">
+                            <button  style="background:#29a555;">现货卖出</button>
+                        </div>
+
+                        <div>
+                            <div>
+                                <p class="fontc_9 ">锁定（HDL）：</p>
+                                <span class="fontc_6 ">2</span>
+                            </div>
+                            <div>
+                                <p class="fontc_9 ">总资产：</p>
+                                <span class="fontc_6 ">￥2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trade_body_right">
+                    <table class="">
+                		<tbody >
+                            <tr>
+                				<th>卖价</th>
+                				<th>数量</th>
+                			</tr>
+                			<tr>
+                				<td>0.00000157</td>
+                				<td>68000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000135</td>
+                				<td>30000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000126</td>
+                				<td>3080.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000125</td>
+                				<td>1000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.0000012</td>
+                				<td>383509.908</td>
+                			</tr>
+                		</tbody>
+                    </table>
+                    <p class="green mgt10">0.0000012&nbsp;BTC</p>
+                    <p class="mgb10 fontc_9 font14">≈￥0.05</p>
+                    <table class="">
+                		<tbody>
+                            <tr>
+                				<td>0.00000157</td>
+                				<td>68000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000135</td>
+                				<td>30000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000126</td>
+                				<td>3080.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.00000125</td>
+                				<td>1000.00</td>
+                			</tr>
+                			<tr>
+                				<td>0.0000012</td>
+                				<td>383509.908</td>
+                			</tr>
+                			<tr>
+                				<th>买价</th>
+                				<th>数量</th>
+                			</tr>
+                		</tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--下部分的成交记录-->
+    <section class="backF mgbfoot deal_record ">   
+        <div>
+            <ul class="deal_record_nav">
+                <li class="act">
+                    <span>当前委托</span>
+                </li>
+                <li>
+                    <span>我的成交</span>
+                </li>
+                <li>
+                    <span>全站成交</span>
+                </li>
+            </ul>
+            <div class="deal_record_body">
+                <section>
+                    <div class="choose_label_box">
+                        <div>
+                            <div>
+                                <input type="checkbox" name="sex" id="male" class="chooseBtn"  />
+                                <label for="male" class="choose-label"></label>
+                            </div>
+                            <p class="mgl10">仅当前市场</p>
+                        </div>
+                        <button class="btn_red">全部撤销</button>
+                    </div>
+                    <div class="black_png ">
+                        <img src="/images/hdl/blank_weituo.png">
+                    </div>
+                </section>
+                <section class="hide">
+                    <div class="choose_label_box">
+                        <div>
+                            <div>
+                                <input type="checkbox" name="sex" id="male" class="chooseBtn"  />
+                                <label for="male" class="choose-label"></label>
+                            </div>
+                            <p class="mgl10">仅当前市场</p>
+                        </div>
+                        <button class="btn_red">全部撤销</button>
+                    </div>
+                    <div class="black_png ">
+                        <img src="/images/hdl/blank_weituo.png">
+                    </div>
+                </section>
+                <section class="hide">
+                   <div style="padding:.6rem">
+                       <table class="deal_table">
+                            <tbody>
+                                <tr>
+                                    <th align="left">时间</th>
+                                    <th>价格</th>
+                                    <th>交易量(HDL)</th>
+                                </tr>
+                                <tr>
+                                    <td >2018-12</td>
+                                    <td>
+                                        <p class="green">0.05556445BTC</p>
+                                        <p class="fontc_9">~0.05556445CNY</p>
+                                    </td>
+                                    <td>68000.00</td>
+                                </tr>
+                                <tr>
+                                    <td >2018-12</td>
+                                    <td>
+                                        <p class="red">0.05556445BTC</p>
+                                        <p class="fontc_9">0.05556445CNY</p>
+                                    </td>
+                                    <td>68000.00</td>
+                                </tr>
+                                <tr>
+                                    <td >2018-12</td>
+                                    <td>
+                                        <p class="green">0.05556445BTC</p>
+                                        <p class="fontc_9">0.05556445CNY</p>
+                                    </td>
+                                    <td>68000.00</td>
+                                </tr>
+                                <tr>
+                                    <td >2018-12</td>
+                                    <td>
+                                        <p class="green">0.05556445BTC</p>
+                                        <p class="fontc_9">0.05556445CNY</p>
+                                    </td>
+                                    <td>68000.00</td>
+                                </tr>
+                                <tr>
+                                    <td >2018-12</td>
+                                    <td>
+                                        <p class="green">0.05556445BTC</p>
+                                        <p class="fontc_9">0.05556445CNY</p>
+                                    </td>
+                                    <td>68000.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                   </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer  style="padding-top:0;">
+        <a href="index.html"  >
+            <img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">行情</span>
+        </a>
+        <a href="trade_index.html" id="trade_nav" >
+            <img src="../img/icon/icon_jiaoyi1.png" width="24" style="margin:0 auto;" alt="">
+            <span class="fontc_hdl">交易</span>
+        </a>
+        <a href="ctc.html" style="position:relative;" >
+            <img src="../img/icon/icon_ctc.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">C2C</span>
+        </a>
+        <a href="chatRoom.html" >
+            <img src="../img/icon/icon_liaotian.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">聊天室</span>
+        </a>
+        <a href="money_adm.html" >
+            <img src="../img/icon/icon_qianbao.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">钱包</span>
+        </a>
+    </footer>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/trade_index.js"></script>
+
+    <script>
+        $(function(){
+            $(".deal_record_nav ").on("click","li",function(){
+                var index = $(this).index();
+                $(this).addClass("act").siblings().removeClass("act");
+                $(".deal_record_body>section").eq(index).removeClass("hide").siblings().addClass("hide");
+            })
+
+            $(".trade_nav_inout").on("click","span",function(){
+                var index = $(this).index();
+                $(this).addClass("act").siblings().removeClass("act");
+                $(".trade_body_inout>div").eq(index).removeClass("hide").siblings().addClass("hide");
+            })
+        })
+    </script>
+</body>
+</html>

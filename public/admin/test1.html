@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>html5+ js +css3 点击后水波纹扩散效果 兼容移动端-幸凡学习网</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .center {
+            text-align: center
+        }
+        
+        .btn {
+            position: relative;
+            width: 13em;
+            height: 3em;
+            margin: 2em;
+            border: none;
+            outline: none;
+            letter-spacing: .2em;
+            font-weight: bold;
+            background: #999;
+            cursor: pointer;
+            overflow: hidden;
+            user-select: none;
+            border-radius: 2px;
+            color: #fff;
+        }
+        
+        button:nth-child(2) {
+            background: #4285f4;
+        }
+        
+        button:nth-child(3) {
+            background: #00bad2;
+        }
+        
+        button:nth-child(4) {
+            background: #ff8a80;
+        }
+        
+        button:nth-child(5) {
+            background: #ffae00;
+        }
+        
+        button:nth-child(6) {
+            background: #aec156;
+        }
+        
+        button:nth-child(7) {
+            background: #a060a8;
+        }
+        
+        button:nth-child(8) {
+            background: #a78660;
+        }
+        
+        button:nth-child(9) {
+            background: #5da065;
+        }
+        
+        button:nth-child(10) {
+            background: #5e6b9a;
+        }
+        
+        button:nth-child(11) {
+            background: #9a5e5e;
+        }
+        
+        button:nth-child(12) {
+            background: #666;
+        }
+        
+        .ripple {
+            position: absolute;
+            background: rgba(0, 0, 0, .15);
+            border-radius: 100%;
+            transform: scale(0);
+            pointer-events: none;
+        }
+        
+        .ripple.show {
+            animation: ripple .75s ease-out;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="center">html5 +css3 点击后水波纹扩散效果 兼容移动端</h1>
+    <div class="main center">
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+    </div>
+    <script>
+        var addRippleEffect = function(e) {
+            var target = e.target;
+            if (target.className.toLowerCase() !== 'btn') return false;
+            var rect = target.getBoundingClientRect();
+            var ripple = target.querySelector('.ripple');
+            if (!ripple) {
+                ripple = document.createElement('span');
+                ripple.className = 'ripple'
+                ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px'
+                target.appendChild(ripple);
+            }
+            ripple.classList.remove('show');
+            var top = e.pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop;
+            var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
+            ripple.style.top = top + 'px'
+            ripple.style.left = left + 'px'
+            ripple.classList.add('show');
+            return false;
+        }
+        document.addEventListener('click', addRippleEffect, false);
+    </script>
+</body>
+
+</html>

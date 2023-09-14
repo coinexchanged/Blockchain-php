@@ -1,0 +1,212 @@
+html,body{ height: 100%}
+.accordion li > a { display: block; position: relative; min-width: 110px; padding: 0 10px 0 20px; height: 35px; font-size: 15px; text-align: left; line-height: 35px;  }
+.accordion > li > a{ padding-left: 0}
+.accordion > li:hover > a{ cursor: default}
+.accordion li > a span { display: block; position: absolute; top: 13px; right: 0; ; margin-right: 15px; width: 7px; height: 11px; }
+.accordion > li > a.active span { background-position: 0 }
+.accordion > li > a {border-bottom: 1px solid #d8d8d8;display: flex;align-items: center;border-top: 1px solid #d8d8d8;height: 80px;padding: 0 30px;}
+.accordion > li > a  img{margin-right: 10px;}
+.sub-menu li a { color: #666;font-weight: normal }
+.sub-menu li:hover a {background: #effdff;color: #000;}
+.sub-menu li a.mactive{color:#d86767;}
+.sub-menu li a.mactive:after{content:'>';margin-left: 10px;}
+.sub-menu em { position:absolute;top:15px;left:2px;width:5px;height:5px; border-radius:5px;background:#aaa;overflow:hidden; }
+.sub-menu .mactive em{ background: #d86767}
+.breadcrumb { margin: 15px 0 }
+.breadcrumb li { display: inline-block; margin-right: 2px; color: #888 }
+.breadcrumb li a { color: #058 }
+.breadcrumb li a:hover { color: #ff5e23 }
+.breadcrumb li a:after { content: ">"; margin-left: 5px; color: #aaa }
+.mybuy-icotype{ color:#ff5e23}
+.login_lan .more-lan a:hover, div #callService ul li:hover {color: #ff9191;background: #444c58;}
+.b-i-tip{ font-size:20px; margin-bottom:20px}
+.b-i-tip span{ margin-right:20px}
+.b-i-tip b{ font-size:30px; color:#ff5e23; font-weight:200}
+.zhu{color: #4a6b8a; font-size:12px;margin: 10px 0 0 5px;}
+.ico-h-total span{ font-size:18px; margin: 0 15px;}
+.ico-h-total b{ font-size:24px; color:#ff5e23}
+.ico-h-total i{ color:#333; font-style:normal; font-weight:normal}
+.ico-grid td{ text-align:right; padding:7px 0}
+.ico-grid .a-left,.myico-grid td:first-child{ text-align:left}
+.ico-grid thead tr td:first-child,.ico-grid thead tr td:last-child,.myico-grid td:first-child,.myico-grid td:last-child{padding:0 5px}
+.f-d-info {min-height: 198px;}
+.accordion li > a .umicon {width: 10px;/*margin: 0;*/color: #b5c6ce;padding: 6px;top: 24px;cursor: pointer;font-weight: 100; }
+.accordion li > a .umicon:after { /*content: '-'; line-height: 14px; */content: '';font-size: 24px; display: block;background: url("../img/funds/before.png");width: 22px;height: 22px;background-size: 100%;}
+.accordion li > a.menu-hide .umicon:after { /*content: '+';font-size: 18px;*/content: '';background: url("../img/funds/after.png");width: 22px;height: 22px; }
+.accordion li > a .umicon:hover:after{ color:#84c4e2}
+.sub-menu .new-item a:after,.sub-menu .hot-item a:after,.sub-menu li.new-item a.mactive:after{content:'NEW';border: 1px solid;margin-left: 10px;background: linear-gradient(to bottom, #049c79 0%,#00b3b3 50%,#005298 51%,#8cef53 100%);color: #4181b1;-webkit-background-clip: text;font-size: 14px;padding: 0 5px;}
+.sub-menu .hot-item a:after{content:'HOT';background: linear-gradient(to bottom, #ffc01e 0%,#ea6000 50%,#980015 51%,#ef8853 100%);color: #de5959;-webkit-background-clip: text;}
+.sectioncont .all-funds-table.dataTable td,.sectioncont .all-funds-table.dataTable th { width: 15% }
+.sectioncont .all-funds-table.dataTable td:first-child,.sectioncont .all-funds-table.dataTable th:first-child { width: auto }
+.sectioncont .all-funds-table.dataTable td:nth-child(6),.sectioncont .all-funds-table.dataTable th:nth-child(6),.sectioncont .delisted-table.dataTable th:nth-child(6),.sectioncont .delisted-table.dataTable td:nth-child(6) { width: 0 ;display: none }
+.sectioncont .all-funds-table.dataTable td:last-child,.sectioncont .all-funds-table.dataTable th:last-child { width: 22% }
+.zero .fund-withdraw,.zero .fund-withdraw:hover{background: #29a555;}
+#funds{max-height: 520px;overflow: hidden;}
+#delist{max-height: 501px;overflow: hidden}
+#funds th,#funds td,.delisted-table th,.delisted-table td{text-align:right}
+#funds th:first-child,#funds td:first-child,.delisted-table th:first-child,.delisted-table td:first-child{text-align:left}
+.delisted-table td:first-child > em{text-decoration: line-through;font-style:normal;color: #333;}
+.delisted-table .icon-16{ display: none}
+.delisted-table .cionpic img{ width: 16px; height: 16px; border-radius: 3px;float: left; margin-right: 5px}
+.delisted-title{margin: 10px 0 20px;display: block;font-size: 16px;}
+.all-funds-table .icon-16{ margin:0 3px}
+#defaultOrder{ display: none; float: left; margin: -3px 0 0 6px; cursor: pointer}
+.initial-order th.sorting_asc:first-child:after{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath fill='%23B0AFB1' d='M5.466 9.003L9.5 2.016l4.035 6.987M13.535 10.01L9.5 16.998 5.466 10.01'/%3E%3C/svg%3E")}
+#funds .sorting:hover,#callService li:hover a{ color:#d45858 }
+.en-body .fund-deposit,.en-body .fund-withdraw,.en-body .fund-to-trade{ width: 68px}
+.kr-body .fund-deposit,.kr-body .fund-withdraw,.kr-body .fund-to-trade{ width: 60px}
+.en-body .dp-page-title .fund-to-trade{ width: 78px}
+.kr-body .dp-page-title .fund-to-trade{width: 88px;}
+#tradeCenter li{float: left;width: 10%;height: 60px;padding: 1px;box-sizing:border-box;background: #000;}
+#tradeCenter li a{height:100%;text-align:  center;color: #fff;position:  relative;}
+#tradeCenter li i{display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index: 0;opacity: 0.7;}
+#tradeCenter li span{position: relative;z-index: 1;float: none;height: 16px;display: inline-block;}
+#tradeCenter li .auto{opacity: 0.3;}
+#tradeCenter li .icon-16{margin-right: 5px;}
+#tradeCenter li a:hover i{opacity: 1}
+.auto-color{filter: brightness(70%);}
+.curr-dp-table th,.curr-dp-table td{ width: 25%}
+.curr-trans-record td{width: 8%;}
+.latest-dp-con .table-scroll{min-height: 120px}
+/**/
+/*.top-up a,.login_lan .lang-option,.top-up .ask_ans,.gateio-nav > li > a{ color: #dbe2e4}
+.top-up .ask_ans{background:none;border:none;margin-top: 7px;}
+div.top-up {float:right;width:auto;background:none;margin-top:6px;padding-left:0;}
+div.top-dn {width:auto;height:45px;padding:0 20px;clear:none; float: none}
+#callService ul{background: #333a44;color: #fff;border-radius: 0;}
+.gateio-nav >li >a .caret:before{color:#151b23 !important; }
+.topprice{ display: none}
+#logoWhite{ fill:#eee}
+div.header {color: #aaa;background: #09162e;}*/
+/*.dark-body div.header {color: #aaa;background: none;}
+.header .caret:before{ color: #09162e}
+.leftbar,.main_content{border-top: none;min-width: 0;margin: 0;}
+.leftbar{ min-height: 834px;position: relative}
+.qqtel{ position: inherit; float: left;right: 10px;top: -6px;}*/
+#funds_wrapper{/*border-bottom:1px dashed #eee;*/padding-bottom:20px}
+#funds_wrapper .dataTables_filter,#delist_wrapper .dataTables_filter{ bottom: auto; top:-55px}
+#funds_wrapper input,#delist_wrapper input{ width: 100%}
+.dataTables_wrapper .dataTables_paginate,.dataTables_wrapper .dataTables_info{ padding-top: 15px}
+.bind-phone{ margin-bottom: 15px; color: #de5959; font-weight: normal}
+#funds td{ border: none}
+#funds th:first-child b,.delisted-table th:first-child b{ font-weight: bold;float: left}
+#funds th:first-child:after,.delisted-table th:first-child:after{ float: left}
+#funds tr[data-id="zero"],.delisted-table tr[data-id="zero"],.no-od{ color: #888}
+.en-body .funds-dtl tr td:nth-child(5),.en-body .funds-dtl tr th:nth-child(5){ padding-right: 5px}
+.table-inacc small{ color: #888}
+.table-scroll{ min-height: 212px; overflow-y: auto}
+.myfunds-dtl .table-scroll{ max-height: 268px;min-height:0}
+.myacc-con form table td{ border: none}
+.sectioncont #submit.sub-btn,.sectioncont form input,.sectioncont form select,.sectioncont .sub-btn,.payment-setup-con input,.payment-setup-con select{ width: 60%}
+form table td:first-child,.payment-setup-con td:first-child{ width: 25%;padding-right: 5px;}
+.formbox form table td:first-child{ padding-right: 0}
+#addr{ width: 60%; margin-right: 0; margin-top: 5px; float: left}
+#addrNameCon{ width: 22%; padding-left: 5px; display: inline-block; float: left}
+.wd-addr-tip{ clear: both; margin-bottom: 5px; color: #888}
+#servTime{ opacity: 0}
+.sectioncont #phone_number[readonly="readonly"]:focus{ border-color:#ccc !important }
+.table-empty{ display: none}
+.table-empty td{color: #888; padding: 30px 0; border: none}
+.table-empty i{display: inline-block; width: 18px; height: 18px; line-height: 18px; font-style: normal; border-radius: 50%; border: 2px solid #ccc; color: #ccc; font-weight: bold; margin-right: 3px; resize: none}
+.apikey-table textarea{ width: 98%;max-width: 98%;max-height:31px;min-width: 98%;min-height:31px; padding:10px; margin-top:5px;background: #eee;}
+.apikey-table .js-copy{ display: block;float: left; height:42px;margin: 15px 10px 0 0;}
+.apikey-table .copytip{ float: left; margin-top: 15px}
+.apikey-table .sub-btn,.ref-ul .sub-btn{ padding: 10px 15px}
+.apikey-table img{ width: 160px}
+.apikey-table p{ margin-top: -20px}
+.apikey-table td:nth-child(1){ width: 80%}
+.apikey-table td:nth-child(2){ text-align: center}
+.myacc-con .sectioncont .copytip{ padding: 0 0 10px;font-size: 16px; display: none}
+/*æœ€è¿‘å……å€¼ã€æçŽ°è®°å½•*/
+.funds-dtl tr td:first-child,.funds-dtl tr th:first-child{width: 8%}
+.funds-dtl tr td:nth-child(2),.funds-dtl tr th:nth-child(2){width: 15%}
+.funds-dtl tr td:nth-child(3),.funds-dtl tr th:nth-child(3){width: 15%}
+.funds-dtl tr td:nth-child(5),.funds-dtl tr th:nth-child(5){width: 10%}
+.funds-dtl tr td:nth-child(6),.funds-dtl tr th:nth-child(6){width: 5%}
+/*æœ€è´¦å•æ˜Žç»†*/
+.purselog-con tr td:first-child,.purselog-con tr th:first-child{width: 5%}
+.purselog-con tr td:nth-child(2),.purselog-con tr th:nth-child(2){width: 13%}
+.purselog-con tr td:nth-child(3),.purselog-con tr th:nth-child(3){width: 10%}
+.purselog-con tr td:nth-child(4),.purselog-con tr th:nth-child(4){width: 18%}
+.purselog-con tr td:nth-child(5),.purselog-con tr th:nth-child(5){width: 18%}
+.purselog-con tr td:nth-child(6),.purselog-con tr th:nth-child(6){width: 18%}
+/*æˆ‘çš„æˆäº¤è®°å½•*/
+.mytradehistory-con tr td:first-child,.mytradehistory-con tr th:first-child{width: 20%}
+.mytradehistory-con tr td:nth-child(2),.mytradehistory-con tr th:nth-child(2){width: 7%}
+.mytradehistory-con tr td:nth-child(3),.mytradehistory-con tr th:nth-child(3){width: 15%}
+.mytradehistory-con tr td:nth-child(4),.mytradehistory-con tr th:nth-child(4){width: 20%}
+.mytradehistory-con tr td:nth-child(5),.mytradehistory-con tr th:nth-child(5){width: 20%}
+.mytradehistory-con tr td:nth-child(6),.mytradehistory-con tr th:nth-child(6){width: 18%}
+/*æˆ‘çš„C2Cæˆäº¤è®°å½•*/
+.mytradehistory-con tr td:first-child,.mytradehistory-con tr th:first-child{width: 7%}
+.mytradehistory-con tr td:nth-child(2),.mytradehistory-con tr th:nth-child(2){width: 10%}
+.mytradehistory-con tr td:nth-child(3),.mytradehistory-con tr th:nth-child(3){width: 10%}
+.mytradehistory-con tr td:nth-child(4),.mytradehistory-con tr th:nth-child(4){width: 10%}
+.mytradehistory-con tr td:nth-child(5),.mytradehistory-con tr th:nth-child(5){width: 10%}
+.mytradehistory-con tr td:nth-child(6),.mytradehistory-con tr th:nth-child(6){width: 10%}
+.mytradehistory-con tr td:nth-child(7),.mytradehistory-con tr th:nth-child(7){width: 10%}
+.mytradehistory-con tr td:nth-child(8),.mytradehistory-con tr th:nth-child(8){width: 10%}
+.mytradehistory-con tr td:nth-child(9),.mytradehistory-con tr th:nth-child(9){width: 10%}
+/*æˆ‘çš„æŒ‚å•*/
+.myorders-con tr td:first-child,.myorders-con tr th:first-child{width: 20%}
+.myorders-con tr td:nth-child(2),.myorders-con tr th:nth-child(2){width: 5%}
+.myorders-con tr td:nth-child(3),.myorders-con tr th:nth-child(3){width: 10%}
+.myorders-con tr td:nth-child(4),.myorders-con tr th:nth-child(4){width: 15%}
+.myorders-con tr td:nth-child(5),.myorders-con tr th:nth-child(5){width: 15%}
+.myorders-con tr td:nth-child(6),.myorders-con tr th:nth-child(6){width: 15%}
+.myorders-con tr td:nth-child(7),.myorders-con tr th:nth-child(7){width: 10%}
+/*æ—¥å¿—*/
+.logs-con tr td:first-child,.logs-con tr th:first-child{width: 5%}
+.logs-con tr td:nth-child(3),.logs-con tr th:nth-child(3){width: 20%}
+.logs-con tr td:nth-child(4),.logs-con tr th:nth-child(4){width: 20%}
+.logs-con tr td:nth-child(5),.logs-con tr th:nth-child(5){width: 20%}
+/*æ”¶æ¬¾è®¾ç½®*/
+#bindAli{ margin: 10px 0 0}
+.payment-setup td label{ padding-top: 0}
+.bind-acc-btn{ margin-top: 15px}
+.payment-setup-con tbody tr:first-child td{ padding-bottom: 15px}
+.bind_title h3{ font-size: 17px; font-weight: normal; margin-bottom: 25px;border-bottom: 1px solid #eee;padding-bottom: 10px;}
+.payment-setup .deposit-table tbody{ border: none}
+.payment-setup .i-z{ width: 128px;max-height: 195px;min-height: 128px;position: relative;margin-bottom: 10px;}
+.payment-setup #file{ position: absolute; top:1px; left:1px; width: 100%;height: 100%; margin: 0; opacity: 0}
+.payment-setup .sfz-img{  width: 100%;height: 100%;min-height: 128px;overflow: hidden; background:#eee;border: 1px solid #ccc;border-radius: 3px}
+.payment-setup .sfz-img img{ width: 100%;max-height: 195px;min-height: 64px;text-align: center;line-height: 128px; color: #888; display: block}
+#tableAli .sfz-img,#tableWechat .sfz-img{ background-image: url("/images/upcode.svg")}
+.re-select{position: absolute;top: 0;left:0; width: 100%;height: 100%; text-align: center; z-index:2;display: none}
+.re-select .r-btn{padding: 9px 13px;cursor: pointer;opacity: 0;margin-top: 50%;display: inline-block;}
+.re-select:hover .r-btn{ opacity: 1}
+.my-top-info{ margin: 25px 0 20px}
+.my-top-info li{width: 25%; float: left; text-align: center; font-size: 24px;    box-sizing: border-box;border-right: 1px solid #d8d8d8;padding: 15px 0; }
+.my-top-info li:last-child{border-right: none;}
+.my-top-info li h3{ font-size: 16px; font-weight: normal; margin-bottom: 10px}
+.my-top-info li b,.my-top-info li strong{ font-weight: normal;color: #de5959}
+.lv-prog{ text-align: center; margin-top: 15px; padding-bottom: 30px; position: relative}
+#crFund i,#crFund{ font-style: normal; font-size: 16px;text-align: center}
+#crFund i{ font-size: 20px}
+.fund-top-small{ font-size: 14px; margin-top: 5px; color: #666}
+.pro-dtl{ margin-left: 20px; color: #888; font-size: 12px; position: absolute;left: -15px;top: -20px; display: none}
+.lv-prog:hover .pro-dtl{ display: inline-block}
+.vol30-unit{ color: #666; font-style: normal;font-size: 14px;}
+#fproBar span{white-space: nowrap;padding-top: 5px;display: inline-block;}
+.has-pro-val b{color: #1cb69b;}
+#wallet{ margin-top: 0}
+#wallet .item{border: 1px solid #ccc;border-bottom: none;border-top-left-radius: 3px;border-top-right-radius: 3px;position: relative;padding: 6px;top: 3px; background-color: #f8f8f8; font-size:14px; margin-left:10px;}
+#wallet .item.active{background-color: #fff;border-bottom: 1px solid #FFF;}
+.fund-tips{ font-size: 12px; color: #888;margin: 5px 0 0px;}
+.txt-memo{ font-family: "Microsoft Yahei",sans-serif;height: 80px;max-width: 60%;min-width: 60%; min-height:80px }
+#gatecodeSucc h3{ margin-bottom: 15px}
+#gatecodeSucc > div span:first-child{ font-weight: normal}
+#uGatecode{margin:10px 0 0;outline:none;display:block;width:100%;height:58px;box-sizing:border-box;padding:10px;font-size:15px;font-weight:bold;letter-spacing:1px;background:#000;}
+#gatecodeSucc .r-btn{ padding:9px 30px; display: inline-block; cursor: pointer}
+#gatecodeSucc .c-tip{font-weight: normal; color: #00b393; margin-left: 5px}
+.clear-all{font: normal 100 28px/38px Microsoft YaHei;width:25px;height: 40px;position: absolute;top: 5px;left: 57.5%;display: inline-block;cursor: pointer}
+.clear-all:hover{ color: #d45858;}
+.half-w .clear-all{left: 29.5%;}
+#smscode{ width: 32%}
+@media screen and (max-width: 1410px) {
+    .sectioncont #submit.sub-btn, .sectioncont form input, .sectioncont form select, .sectioncont .sub-btn, .payment-setup-con input, .payment-setup-con select,#addr,#payment_id,#selectaddr,.addr-ico{ width: 70%}
+    .txt-memo{ min-width: 70%; max-width: 70%}
+    form table td:first-child, .payment-setup-con td:first-child{ width: 22%}
+    .clear-all{left: 66.5%;}
+    .half-w .clear-all{left: 28.5%;}
+}

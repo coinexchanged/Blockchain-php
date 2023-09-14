@@ -1,0 +1,491 @@
+*{
+	margin: 0;
+	padding:0;
+}
+.hr{
+	margin: 0;
+	height: 10px;
+    background: #131F30;
+	border-top: none;
+}
+div#header,
+div#data,
+div#entrust{
+	padding:10px 3%;
+	overflow: hidden;
+}
+/*===========头部==================*/
+div#header div{
+	overflow: hidden;
+	margin: 10px 0 20px;
+}
+div#header div P{
+	margin: 0;
+}
+div#header div P.pull-right{
+	margin-top: 5px!important;
+}
+div#header div P img,
+div#sideColumn h4 img{
+	width: 20px;
+	margin: -10px 10px 0 0;
+}
+div#header div P span{
+	font-size: 2rem;
+	color: #fff;
+}
+div#header ul{
+	list-style:none;
+	overflow: hidden;
+	
+	display: flex;
+}
+div#header ul li{
+	flex: 1;
+	float: left;
+	text-align: center;
+}
+div#header ul li strong,
+div#header ul li span{
+	display: block;
+	font-size: 1.5rem;
+}
+div#header ul li span{
+	color: #b3b3b3;
+}
+div#header>p{
+	color: #828181;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+
+/*==========数据==============*/
+div#data div.active{
+	width:56%;	
+}
+.bor{
+	border: 1px solid #00c087 !important;	
+}
+.borl{
+	border-left: 1px solid #00c087 !important;
+}
+.bor2{
+	border: 1px solid#e3046f !important;	
+}
+.borr{
+	border-right: 1px solid #00c087 !important;
+}
+.borr2{
+	border-right: 1px solid#e3046f !important;
+}
+.col{
+	color: #00c087 !important;
+}
+.col2{
+	color:#e3046f !important;
+}
+div#data div.active div.deal{
+	height:40px ;
+	overflow: hidden;
+	margin: 10px 0;
+}
+div#data div.active div.deal span{
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	height: 40px;
+	border:1px solid #ccc;
+}
+
+div#data div.active div.deal span em{
+	z-index: 1;
+	position: absolute;
+	right:14px;
+	margin-top:-30px;
+	display: inline-block;
+	width:17px;
+	height:200px;
+	background: #1C1734;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	transform:rotate(25deg);
+	-ms-transform:rotate(25deg); /* Internet Explorer */
+	-moz-transform:rotate(25deg); /* Firefox */
+	-webkit-transform:rotate(25deg); /* Safari 和 Chrome */
+	-o-transform:rotate(25deg); /* Opera */	
+}
+div#data div.active div.deal span a{
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+div#data div.active div.LimitedPrice{
+	padding: 10px 0;
+}
+div#data div.active div.LimitedPrice p{
+	color: #fff;
+	font-size: 1.6rem;
+}
+div#data div.active div.LimitedPrice p img{
+	width: 15px;
+}
+div#data div.active div.LimitedPrice ul.Price{
+	list-style: none;
+	border: 1px solid #AAAAAA;
+	overflow: hidden;
+}
+div#data div.active div.LimitedPrice ul.Price li{
+	float: left;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	overflow: hidden;
+	width: 40%;
+	color: #333;
+}
+div#data div.active div.LimitedPrice ul.Price input{
+	background-color: rgba(0,0,0,0);
+	color: #fff;
+}
+div#data div.active div.LimitedPrice ul.Price li:nth-child(1){
+	width:60%;
+	border-right: 1px solid #AAAAAA;
+}
+div#data div.active div.LimitedPrice ul.Price li span{
+	display: block;
+	float: left;
+	width: 40%;
+}
+div#data div.active div.LimitedPrice ul.Price li span:nth-child(2){
+	width: 20%;
+	font-size: 1.5rem;
+}
+div#data div.active div.LimitedPrice h6{
+	color: #ccc;
+}
+div#data div.active div.LimitedPrice p.num{
+	height: 40px;
+	border: 1px solid #AAAAAA;
+	line-height: 40px;
+	padding: 0 5px;
+}
+div#data div.active div.LimitedPrice p.num span{
+	/*margin: 0 10px;*/
+}
+div#data div.active div.LimitedPrice p.num span:nth-child(1){
+	display: inline-block;
+	width: 60%;
+	height: 40px;
+	outline: none;
+	overflow: hidden;
+	color: #ccc;
+}
+
+
+
+
+div#data div.active div.LimitedPrice ul.Btc{
+	list-style: none;
+	width: 100%;
+	margin-left:20px;
+}
+
+div#data div.active div.LimitedPrice ul.Btc li {
+	float: left;
+	margin-left: -3px;
+	position: relative;
+}
+
+div#data div.active div.LimitedPrice ul.Btc>li>a {
+	display: inline-block;
+	width: 90%;
+	height: 2px;
+	background: #ccc;
+	position: relative;
+	top: 0px;
+	left: 5px;
+}
+div#data div.active div.LimitedPrice ul.Btc>li>span i {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	background: #ccc;
+	margin: 5px 0;
+}
+div#data div.active div.LimitedPrice>p.p{
+    margin: 15px 0 0 0;
+}
+.cc{
+	background: #00c087 !important;
+	margin: 4px !important;
+}
+.span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	border: 1px solid #CCC;
+	background: #fff;
+}
+.back{
+	background: #00c087 !important;
+}
+.absolute{
+	position: absolute;
+	right: -3px;
+	top: 4px;
+}
+.width {
+	width: 23%;
+}
+div#data div.active div.LimitedPrice>p{
+	line-height: 30px;
+	padding: 0 5px;
+}
+
+
+
+
+div#data div.active div.transactionAmount button{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	outline: none;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	background: #00c087;
+}
+
+
+div#data div.active div.transactionAmount button.activesell{
+	background:#e3046f;
+}
+
+
+div#data div.active1{
+	width: 44%;
+	padding-left:5%;
+}
+div#data div.active1 table{
+	width: 100%;
+	color: #ccc;
+	font-size: 1.3rem;
+}
+div#data div.active1 table tr{
+	height: 30px;
+	font-size: 10px;
+}
+div#data div.active1 table tr td{
+	text-align:right;
+	
+}
+div#data div.active1 table tr td:nth-child(1),
+div#data div.active1 table tr th:nth-child(1){
+	text-align: left;
+	width: 24%;
+}
+div#data div.active1 table tr td span img{
+	width: 15px;
+	margin: 0 5px;
+}
+div#data div.active1 table tr td span{
+	font-size: 1.6rem;
+}
+.red{
+	color:#e3046f;
+}
+.gre{
+	color: #00c087;
+}
+
+
+div#mask1 {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: none;
+	background: rgba(130,129,129,0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+div#mask1 div#Limited{
+	width: 100%;
+	position:fixed;
+	bottom: 0;
+}
+div#mask1 div#Limited ul{
+	width: 98%;
+	margin: 0 auto;
+	list-style: none;
+	
+	
+}
+div#mask1 div#Limited ul li{
+	text-align: center;
+	border: 1px solid #828181;
+	background: #fff;
+	font-size: 1.7rem;
+	color: #ccc;
+}
+div#mask1 div#Limited ul li:nth-child(2){
+	height: 40px;
+	line-height: 40px;
+	margin: 10px 0;
+}
+div#mask1 div#Limited ul li p{
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	color: #ccc;
+	
+}
+
+
+/*============当前委托============*/
+div#entrust>div:nth-child(1){
+	overflow: hidden;
+	padding:10px 0;
+}
+div#entrust>div:nth-child(1) h3{
+	margin: 0!important;
+	font-weight: bold;
+}
+div#entrust>div:nth-child(1) P img{
+	width: 20px;
+	margin: -6px 0px 0 0;
+}
+div#entrust>div:nth-child(1) P span{
+	font-size: 1.6rem;
+	color: #828181;	
+}
+div#entrust div:nth-child(2){
+	padding: 50px 0;
+}
+div#entrust div:nth-child(2) p{
+	width: 40%;
+	position: relative;
+	top: 20px;
+	left:30%;
+	text-align: center;
+	color: #bfbfbf;
+}
+div#entrust div:nth-child(2) p img{
+	width: 80px;
+	margin: 0 20px;
+}
+
+div#sideColumn{
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left:-80%;
+	width: 80%;
+	height:100%;
+}
+div#sideColumn h4{
+	margin:30px 10px;
+}
+div#sideColumn h4 span{
+	margin: 0 10px;
+	color: #FFF;
+	
+	border: none;
+}
+div#sideColumn ol,
+div#sideColumn ul{
+	list-style: none;
+}
+div#sideColumn ol{
+	display: flex;
+}
+div#sideColumn ol li{
+	float: left;
+	flex: 1;
+	text-align: center;
+	line-height: 35px;
+}
+div#sideColumn ul{
+	display: none;
+}
+div#sideColumn ul li{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 15px;
+	color: #879BAA;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0)!important;
+}
+div#sideColumn ul li strong{	
+	padding: 0 20px 0 0;
+	float: left;
+	color: #FFF;
+}
+div#sideColumn ul li p{
+	float: right;
+	width: 72%;
+	padding: 0 10px;
+	margin: 0;
+}
+.side{
+	color: #fff !important;
+	border-bottom: 2px solid #FD5C3F;
+}
+.fontC{
+	color:#e3046f;
+}
+.bt{
+    border-bottom:1px solid #ccc;
+    height:30px;
+    line-height:30px;
+    color:#ccc;
+}
+.bt li{
+    width:30%;
+    float:left;
+    text-align:center;
+    font-size:15px;
+}
+.tab-sj{
+    width:100%;
+    height:auto;
+}
+.border{
+    border-bottom:1px solid black;
+    color:black;
+}
+.tab{
+    width:100%;
+}
+.tab thead tbody{
+width:100%;
+}
+.tab thead tbody tr{
+    width:100%;
+    padding:5px 0 0 5px;
+}
+.tab thead tbody tr .center{
+    text-align:center;
+}
+.tab thead tr th{
+    width:33%;
+    padding:5px 0 0 5px;
+    text-align:center;
+    color:#ccc;
+}

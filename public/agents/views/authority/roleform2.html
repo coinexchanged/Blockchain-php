@@ -1,0 +1,47 @@
+
+
+<div class="layui-form" lay-filter="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <script type="text/html" template>
+                <input type="text" name="username" value="" lay-verify="required" placeholder="请输入管理员用户名" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <script type="text/html" template>
+                <input type="text" name="password" value="" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-inline">
+            <script type="text/html" template>
+                <select name="role_id">
+                    {{#  layui.each(d.params, function(index, item){ }}
+                    <option value="{{item.id}}"  onselect="selected" >{{item.name}}</option>
+                    {{#  }); }}
+                </select>
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <input type="button" lay-submit lay-filter="LAY-user-role-submit" value="确认" class="layui-btn">
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use(['admin', 'form'], function(){
+        var $ = layui.$
+                ,form = layui.form;
+
+    });
+</script>

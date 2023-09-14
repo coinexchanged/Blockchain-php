@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>币币交易</title>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--<link rel="stylesheet" href="css/marketlist.css" />-->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .tn_selected{border:none;border-bottom:2px solid #b83826;color: #b83826;}
+    #globalInfoCon{background: #fff;}
+    #sectioncont{background: #fff;}
+    .content{background: #f5f5f5;}
+    #globalInfoCon .m_title{margin: 0;}
+    .pddlr-30{padding: 0 30px;border-radius: 4px;background: #fff;overflow: hidden;margin-top: 28px;}
+    .usdtTbody img{width: 100%;height: 100%;}
+    .icon-16 img{width: 100%;}
+
+</style>
+<body>
+<div class="header clearfix">
+    <div class="top-up">
+        <div class="top-con">
+            <ul class="topprice">
+                <li> BTC/CNY : ￥ <span class="topnum">50158.30</span><i class="icon-arrow-up">↑</i> </li>
+                <li> ETH/CNY : ￥ <span class="topnum">1933.92</span><i class="icon-arrow-down">↓</i> </li>
+                <li> LTC/CNY : ￥ <span class="topnum">462.74</span><i class="icon-arrow-up">↑</i> </li>
+                <li> QTUM/CNY : ￥ <span class="topnum">32.10</span><i class="icon-arrow-down">↓</i> </li>
+            </ul>
+            <div class="qqtel">
+                <div id="callService" class="ask_ans">
+                    <p> <i class="serv-icon tico"><img src="img/c2c/kefu.png" alt="客服" /></i> <span>客服咨询</span> </p>
+                    <ul>
+                        <li id="callNow" onclick="unLoginTip(1);">在线客服</li>
+                        <li onclick="ticketsRoute()">提交工单</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="login_lan" style="padding-left: 20px;">
+                <li class="toplogin" style="padding-right: 0;"><a style="border:1px solid #b83826;background:#333;color: #b83826;padding: 2px 10px" href="">注册&nbsp;</a> </li>
+                <li class="toplogin" style="" id="toplogin"><a style="background:#b83826;border:1px solid #b83826;padding: 2px 10px"  href="">登录</a></li>
+                <li class="lang-option" style="display: none;"> <span>中文版</span><i class="caret"></i>
+                    <div class="more-lan">
+                        <a href="https://gateio.io/lang/en">English</a>
+                        <a href="https://gateio.io/lang/kr">한국어</a>
+                    </div> </li>
+            </ul>
+            <ul id="theme" class="clearfix" style="display: none;">
+                <li id="dark" title="深色主题">☽</li>
+                <li id="light" title="浅色主题" class="cur-theme">☼</li>
+            </ul>
+            <ul id="topLinks">
+                <li class="top-links"> <a href="" target="_blank"> <img style="float: left;margin-top: 18px;padding-right: 5px;" src="img/index/phone.png" alt=""> <span>手机APP<i class="caret"></i></span>
+                    <div class="add-dn-qr">
+                        <h3>扫码下载hdl APP</h3>
+                        <!--<img src="./Gate.io - The Gate of Blockchain Assets Exchange_files/app-code.png" alt="gate.io APP" />-->
+                    </div> </a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="top-dn">
+        <div class="logo">
+            <a href="javascript:;" target="_top">
+                <!--[if !IE]--><img src="img/index/logo.png" alt="gate.io LOGO" />
+                <!--[endif]-->
+                <!--[if IE]><img src="img/index/logo.png" alt="LOGO"/><![endif]--> </a>
+        </div>
+        <ul class="gateio-nav">
+            <li class=""> <a href="index.html">网站首页</a> </li>
+            <li class=""> <a href="c2c.html" class="tooltip joyride-lead" title="">C2C交易</a> </li>
+            <li class="nav-trade-item nav-active"> <a href="javascript:;">币币交易<i class="caret"></i></a>
+                <ul class="second-nav clearfix">
+                    <li> <a href="javascript:;">对BTC交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href=""><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+                            <li><a href=""><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+                            <li><a href=""><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+                            <li><a href=""><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+                            <li><a href=""><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+                            <li><a href=""><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+                            <li><a href=""><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+                            <li><a href=""><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href=""><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+                            <li><a href=""><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                            <li><a href=""><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+                            <li><a href=""><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+                            <li><a href=""><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+                            <li><a href=""><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+                            <li><a href=""><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+                            <li><a href=""><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+                            <li><a href=""><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+                            <li><a href=""><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+                            <li><a href=""><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+                            <li><a href=""><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+                            <li><a href=""><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+                            <li><a href=""><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+                            <li><a href=""><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href=""><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+                            <li><a href=""><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-ledu icon-16"></span><strong>Education LEDU</strong></a></li>
+                            <li><a href=""><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+                            <li><a href=""><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+                            <li><a href=""><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+                            <li><a href=""><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+                            <li><a href=""><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+                            <li><a href=""><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+                            <li><a href=""><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+                            <li><a href=""><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+                            <li><a href=""><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+                            <li><a href=""><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+                            <li><a href=""><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+                            <li><a href=""><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+                            <li><a href=""><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+                            <li><a href=""><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+                            <li><a href=""><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+                            <li><a href=""><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+                            <li><a href=""><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+                            <li><a href=""><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+                            <li><a href=""><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+                            <li><a href=""><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+                            <li><a href=""><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+                            <li><a href=""><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+                            <li><a href=""><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+                            <li><a href=""><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+                            <li><a href=""><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+                            <li><a href=""><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+                            <li><a href=""><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+                            <li><a href=""><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">对ETH交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href=""><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+                            <li><a href=""><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+                            <li><a href=""><span class="icon-16-arn icon-16"></span><strong>Aeron ARN</strong></a></li>
+                            <li><a href=""><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+                            <li><a href=""><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+                            <li><a href=""><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+                            <li><a href=""><span class="icon-16-bnt icon-16"></span><strong>Bancor BNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+                            <li><a href=""><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+                            <li><a href=""><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href=""><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href=""><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+                            <li><a href=""><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:;">对USDT交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="javascipt:;"><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+                            <li><a href="javascipt:;><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btc icon-16"></span><strong>比特币 BTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cdt icon-16"></span><strong>CoinDash CDT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cofi icon-16"></span><strong>CoinFi COFI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cs icon-16"></span><strong>Credits CS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cvc icon-16"></span><strong>Civic CVC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dadi icon-16"></span><strong>DADI DADI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dai icon-16"></span><strong>Dai DAI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-data icon-16"></span><strong>Streamr DATA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dgd icon-16"></span><strong>DigixDAO DGD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dock icon-16"></span><strong>Dock DOCK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dpy icon-16"></span><strong>Delphy DPY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-drgn icon-16"></span><strong>DragonChain DRGN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dx icon-16"></span><strong>DxChain DX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-elec icon-16"></span><strong>ElectrifyAsia ELEC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-elf icon-16"></span><strong>aelf ELF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eosdac icon-16"></span><strong>eosDAC EOSDAC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fil icon-16"></span><strong>IPFS六月 FIL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fti icon-16"></span><strong>FansTime FTI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fuel icon-16"></span><strong>Etherparty FUEL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fun icon-16"></span><strong>FunFair FUN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gard icon-16"></span><strong>临界 GARD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gem icon-16"></span><strong>Gems GEM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gnt icon-16"></span><strong>Golem GNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gnx icon-16"></span><strong>Genaro GNX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gse icon-16"></span><strong>GSENetwork GSE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hav icon-16"></span><strong>Havven HAV</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hit icon-16"></span><strong>Hitchain HIT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hsc icon-16"></span><strong>哈希币 HSC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-icx icon-16"></span><strong>ICON ICX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-iht icon-16"></span><strong>云产币 IHT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href="javascipt:;T"><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-iotx icon-16"></span><strong>IoTeX IOTX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-kick icon-16"></span><strong>KickCoin KICK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-knc icon-16"></span><strong>Kyber KNC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lba icon-16"></span><strong>LibraCredit LBA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lemo icon-16"></span><strong>Lemo LEMO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lend icon-16"></span><strong>ETHLend LEND</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-link icon-16"></span><strong>ChainLink LINK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lrn icon-16"></span><strong>路印NEO LRN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lun icon-16"></span><strong>Lunyr LUN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-man icon-16"></span><strong>MatrixAI MAN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mana icon-16"></span><strong>Decentraland MANA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mco icon-16"></span><strong>Monaco MCO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mda icon-16"></span><strong>Moeda MDA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mds icon-16"></span><strong>MediShares MDS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-medx icon-16"></span><strong>MediBlocX MEDX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-met icon-16"></span><strong>Metronome MET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mith icon-16"></span><strong>秘银币 MITH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mkr icon-16"></span><strong>MakerDAO MKR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mtn icon-16"></span><strong>Medicalchain MTN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nkn icon-16"></span><strong>NKN NKN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ont icon-16"></span><strong>本体 ONT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-open icon-16"></span><strong>OpenPlatform OPEN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ost icon-16"></span><strong>SimpleToken OST</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-pst icon-16"></span><strong>Primas PST</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qkc icon-16"></span><strong>夸克链 QKC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qsp icon-16"></span><strong>Quantstamp QSP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rating icon-16"></span><strong>大炮评级 RATING</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rcn icon-16"></span><strong>Ripio RCN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rdn icon-16"></span><strong>雷电网络 RDN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-red icon-16"></span><strong>RedLang RED</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rem icon-16"></span><strong>Remme REM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-req icon-16"></span><strong>Request REQ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rfr icon-16"></span><strong>Refereum RFR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rlc icon-16"></span><strong>iExec RLC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-salt icon-16"></span><strong>SALT SALT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-senc icon-16"></span><strong>Sentinel SENC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-skm icon-16"></span><strong>Skrumble SKM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-smt icon-16"></span><strong>SmartMesh SMT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-snet icon-16"></span><strong>Snetwork SNET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-sop icon-16"></span><strong>SoPay SOP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-soul icon-16"></span><strong>Phantasma SOUL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-stx icon-16"></span><strong>Stox STX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-swth icon-16"></span><strong>Switcheo SWTH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tct icon-16"></span><strong>TokenClub TCT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-theta icon-16"></span><strong>Theta THETA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tio icon-16"></span><strong>trade.io TIO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tnt icon-16"></span><strong>Tierion TNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tomo icon-16"></span><strong>TomoChain TOMO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-trx icon-16"></span><strong>波场 TRX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-vet icon-16"></span><strong>唯链 VET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zil icon-16"></span><strong>Zilliqa ZIL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zsc icon-16"></span><strong>宙斯盾 ZSC</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">对QTUM交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="https://gateio.io/trade/BOT_QTUM"><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/INK_QTUM"><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href="https://gateio.io/trade/LLT_SNET"><span class="icon-16-llt icon-16"></span><strong>流量币 LLT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/MED_QTUM"><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+                            <li><a href="https://gateio.io/trade/QBT_QTUM"><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/TSL_QTUM"><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">限时交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="https://gateio.io/trade/ADD_ETH"><span class="icon-16-add icon-16"></span><strong>EOSADD ADD</strong></a></li>
+                            <li><a href="https://gateio.io/trade/ATMI_ETH"><span class="icon-16-atmi icon-16"></span><strong>Atonomi ATMI</strong></a></li>
+                            <li><a href="https://gateio.io/trade/BBK_ETH"><span class="icon-16-bbk icon-16"></span><strong>Brickblock BBK</strong></a></li>
+                            <li><a href="https://gateio.io/trade/BNB_USDT"><span class="icon-16-bnb icon-16"></span><strong>BinanceCoin BNB</strong></a></li>
+                            <li><a href="https://gateio.io/trade/EDR_ETH"><span class="icon-16-edr icon-16"></span><strong>Endor EDR</strong></a></li>
+                            <li><a href="https://gateio.io/trade/EON_ETH"><span class="icon-16-eon icon-16"></span><strong>EON EON</strong></a></li>
+                            <li><a href="https://gateio.io/trade/HT_USDT"><span class="icon-16-ht icon-16"></span><strong>HuobiToken HT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/IQ_ETH"><span class="icon-16-iq icon-16"></span><strong>Everipedia IQ</strong></a></li>
+                            <li><a href="https://gateio.io/trade/MEETONE_ETH"><span class="icon-16-meetone icon-16"></span><strong>MEET.ONE MEETONE</strong></a></li>
+                            <li><a href="https://gateio.io/trade/NBAI_ETH"><span class="icon-16-nbai icon-16"></span><strong>智云链 NBAI</strong></a></li>
+                            <li><a href="https://gateio.io/trade/NPXS_ETH"><span class="icon-16-npxs icon-16"></span><strong>PundiX NPXS</strong></a></li>
+                            <li><a href="https://gateio.io/trade/PLY_ETH"><span class="icon-16-ply icon-16"></span><strong>PlayCoin PLY</strong></a></li>
+                            <li><a href="https://gateio.io/trade/PPS_USDT"><span class="icon-16-pps icon-16"></span><strong>Prophet PPS</strong></a></li>
+                            <li><a href="https://gateio.io/trade/TMT_ETH"><span class="icon-16-tmt icon-16"></span><strong>TRAXIA TMT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/UPP_ETH"><span class="icon-16-upp icon-16"></span><strong>SentinelProtocol UPP</strong></a></li>
+                        </ul> </li>
+                </ul> </li>
+            <li class=""> <a href="my_funds.html">我的财务</a> </li>
+            <li class=""> <a href="anquan.html">安全设置</a> </li>
+            <li class=""> <a href="ann.html">公告</a> </li>
+            <li class=""> <a href="javascript:;">上币申请</a> </li>
+            <li class=""> <a href="javascript:;">帮助<i class="caret"></i></a>
+                <ul class="second-nav clearfix">
+                    <li> <a href="javascript:;">问题中心</a> </li>
+                    <li> <a href="javascript:ticketsRoute();">提交工单</a> </li>
+                    <li> <a href="javascript:;">资料下载<i class="caret"></i></a>
+                        <ul class="third-nav nav-help clearfix">
+                            <li><a href="javascript:;">手机APP</a></li>
+                            <li><a href="javascript:;" target="_blank">Windows APP</a></li>
+                            <li><a href="javascript:;" target="_blank">Mac APP</a></li>
+                            <li><a href="javascript:;">币种资料</a></li>
+                        </ul> </li>
+                </ul> </li>
+
+        </ul>
+        <ul class="jiaoyi-nav-right fr" style="display: none;">
+            <li class="">
+                <a href=""><img src="img/index/telegram.png" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="img/index/twitter.png" alt=""></a>
+
+            </li>
+            <li class="tjgd">
+                <a href="">
+                    <div><img src="img/index/help.png" alt=""></div>
+                    <div class="text"><span>提交工单</span></div>
+
+                </a>
+
+            </li>
+        </ul>
+        <div id="top_last_rate" style="display: none"></div>
+    </div>
+</div>
+<div class="content index-content clearfix">
+    <div class="leftbar trade-warn-mark">
+        <table class="marketlist dataTable" id="tradelist">
+            <tbody>
+            <tr>
+                <td style="border-bottom:0;text-align: right;">
+                    <div id="market_controller" class="clearfix" style="display: block;">
+                        <!--<button value="USDT" class="tline_btn left_btn tn_selected" title="对USDT交易">USDT</button>
+                         <button value="BTC" class="tline_btn left_btn" title="对BTC交易">BTC</button>
+                         <button value="ETH" class="tline_btn left_btn" title="对ETH交易">ETH</button>
+                         <button value="QTUM" class="tline_btn left_btn" title="对QTUM交易">QTUM</button>
+                         <button value="LIMITED" class="tline_btn left_btn" title="限时交易区">限时</button>
+                         <button value="CUSTOM" class="tline_btn left_btn" title="我的自选区">自选</button>-->
+                    </div>
+                    <div style="position: relative;">
+                        <input type="text" class="search" id="marketSearch" placeholder="搜索...">
+                        <img style="position: absolute;right: 28px;top: 9px; z-index: 999;"src="img/trad/search.png" alt="">
+                        <div style="position: absolute;width: 76px;height: 36px;right: 1px;background: #ccc;top: 1px;"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr id="marketlistTabCon">
+                <!-- <td class="alignRight">
+                    <div class="market_wrapper">
+                        <table id="marketlist_usdt">
+                            <thead>
+                            <tr style="height:40px">
+                                <th class="sortable sorting"><b>币种</b></th>
+                                <th class="sortable sorting">价格<span class="left-price-type">(USDT)</span></th>
+                                <th class="sortable sorting">日涨跌</th>
+                                <th class="sorting_disabled sorting">自选</th>
+                            </tr>
+                            </thead>
+                            <tbody class="btcTbody">
+                            <tr  title="交易量21,716,129 USDT" style="display: block;"><td><span class="icon-16 icon-16-doge"></span><span class="bizhong_en">DOGE</span> <span class="cname" title="狗狗币">狗狗币</span> </td><td><span class="left-price rate_up">0.006821</span></td><td class="rzd"><span class="red">+<span class="p-num">9.11</span> %</span></td><td class="custom-option"><i class="add-fav"  title="加自选"></i></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td> -->
+                <td class="alignRight">
+                    <div class="market_wrapper">
+                        <table id="marketlist_btc">
+                            <thead>
+                            <tr style="height:40px">
+                                <th class="sortable sorting"><b>币种</b></th>
+                                <th class="sortable sorting">价格<span class="left-price-type">(BTC)</span></th>
+                                <th class="sortable sorting">日涨跌</th>
+                                <th class="sorting_disabled sorting">自选</th>
+                            </tr>
+                            </thead>
+                            <tbody class="usdtTbody" >
+                            <!--<tr id="market_doge_btc_btc" data-trade="doge_btc" title="交易量189.22 BTC" style="display: block;">
+                                <td>
+                                    <span class="icon-16 icon-16-doge"></span>
+                                    <span class="bizhong_en">DOGE</span>
+                                    <span class="cname" title="狗狗币">狗狗币</span>
+                                </td>
+                                <td>
+                                    <span class="left-price rate_up">0.0000011</span>
+                                </td>
+                                <td class="rzd"><span class="red">+<span class="p-num">8.70</span> %</span></td>
+                                <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td class="alignRight">
+                    <div class="market_wrapper">
+                        <table id="marketlist_btc">
+                            <thead>
+                            <tr style="height:40px">
+                                <th class="sortable sorting"><b>币种</b></th>
+                                <th class="sortable sorting">价格<span class="left-price-type">(BTC)</span></th>
+                                <th class="sortable sorting">日涨跌</th>
+                                <th class="sorting_disabled sorting">自选</th>
+                            </tr>
+                            </thead>
+                            <tbody class="usdtTbodys" >
+                            <!--<tr id="market_doge_btc_btc" data-trade="doge_btc" title="交易量189.22 BTC" style="display: block;">
+                                <td>
+                                    <span class="icon-16 icon-16-doge"></span>
+                                    <span class="bizhong_en">DOGE</span>
+                                    <span class="cname" title="狗狗币">狗狗币</span>
+                                </td>
+                                <td>
+                                    <span class="left-price rate_up">0.0000011</span>
+                                </td>
+                                <td class="rzd"><span class="red">+<span class="p-num">8.70</span> %</span></td>
+                                <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td class="alignRight">
+                    <div class="market_wrapper">
+                        <table id="marketlist_btc">
+                            <thead>
+                            <tr style="height:40px">
+                                <th class="sortable sorting"><b>币种</b></th>
+                                <th class="sortable sorting">价格<span class="left-price-type">(BTC)</span></th>
+                                <th class="sortable sorting">日涨跌</th>
+                                <th class="sorting_disabled sorting">自选</th>
+                            </tr>
+                            </thead>
+                            <tbody class="usdtTbodys" >
+                            <!--<tr id="market_doge_btc_btc" data-trade="doge_btc" title="交易量189.22 BTC" style="display: block;">
+                                <td>
+                                    <span class="icon-16 icon-16-doge"></span>
+                                    <span class="bizhong_en">DOGE</span>
+                                    <span class="cname" title="狗狗币">狗狗币</span>
+                                </td>
+                                <td>
+                                    <span class="left-price rate_up">0.0000011</span>
+                                </td>
+                                <td class="rzd"><span class="red">+<span class="p-num">8.70</span> %</span></td>
+                                <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td class="alignRight">
+                    <div class="market_wrapper">
+                        <table id="marketlist_btc">
+                            <thead>
+                            <tr style="height:40px">
+                                <th class="sortable sorting"><b>币种</b></th>
+                                <th class="sortable sorting">价格<span class="left-price-type">(BTC)</span></th>
+                                <th class="sortable sorting">日涨跌</th>
+                                <th class="sorting_disabled sorting">自选</th>
+                            </tr>
+                            </thead>
+                            <tbody class="usdtTbodys" >
+                            <!--<tr id="market_doge_btc_btc" data-trade="doge_btc" title="交易量189.22 BTC" style="display: block;">
+                                <td>
+                                    <span class="icon-16 icon-16-doge"></span>
+                                    <span class="bizhong_en">DOGE</span>
+                                    <span class="cname" title="狗狗币">狗狗币</span>
+                                </td>
+                                <td>
+                                    <span class="left-price rate_up">0.0000011</span>
+                                </td>
+                                <td class="rzd"><span class="red">+<span class="p-num">8.70</span> %</span></td>
+                                <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                
+                
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="main_content" class="main_content">
+        <div class="main_title has-t-warn">
+            <h1>
+				<span id="mianTlist" class="clearfix">
+					<span class="coin-title">
+                        <a href="javascript:;" target="_blank">
+                            <span class="icon-32 icon-32-btc">
+
+                            </span>
+                        </a>
+                        <a href="javascript:;" target="_blank">比特币 BTC</a>
+                        对<strong style="margin-right: 20px"> Tether USDT </strong>
+                    </span>
+					<span class="top_last_li">
+						<span style="display:none;" id="market_unit_symbol">$</span>
+						<span id="top_last_rate_change">
+                            <span class="price-dl">
+                                <em>$</em>
+                                <i id="currPrice">6358</i>
+                                <small> 或 </small>
+                                <i id="currFiat">
+                                    <em>￥</em>43234.4</i></span>
+                            <em>
+                                <span class="red">+<strong id="currRateNum">0.53</strong>%</span></em>
+                        </span>
+						<span class="arr-con">
+                            <i class="caret" id="upArrow" style="opacity: 0;"></i>
+                            <i class="caret" id="dnArrow" style="opacity: 0;"></i>
+                        </span>
+						<i id="currVol" title="24h 成交量">
+                            <small>量：</small>$<span id="ticker_vol_b">529.27万</span>
+                        </i>
+					</span>
+
+				</span>
+            </h1>
+        </div>
+
+        <div class="right_mcontent clearfix has-trade-warn">
+            <div id="topSection" class="">
+                <div class="kline-title">BTC / USDT K线图</div>
+                <div class="top-risk-tip">
+                    <span class="red"><b>提示：</b> USDT币种说明<a target="_blank" href="https://www.gateio.io/article/16269">请点击这里查看详情</a>，充提请使用C2C <a target="_blank" href="https://www.gateio.io/c2c/usdt_cny">请点击这里进行C2C交易</a> 。</span>
+                </div>
+                <div class="k-line-container box-padding clearfix">
+                    <ul class="top_botton">
+                        <li>
+                            <span class="button k-tools" title="工具"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.4 120.9 600 600" width="17" height="17"><path d="M594 473.5V368.8h-76c-5.7-23.8-15.2-46.4-27.5-66.4l53.8-53.8-73.9-73.9-53.8 53.4c-20.6-12.8-42.7-21.8-66.4-27.5v-75.9H245.5v75.9c-23.8 5.7-46.4 15.2-66.4 27.5l-53.8-53.8-73.9 73.9 53.4 53.8C92 322.6 83 344.7 77.3 368.4h-76V473h75.9c5.7 23.8 15.2 46.4 27.5 66.4L51 593.3l73.9 73.9 53.8-53.4c20.6 12.8 42.7 21.8 66.4 27.5v75.9h104.6v-75.9c23.8-5.7 46.4-15.2 66.4-27.5l53.8 53.8 73.9-73.9-53.4-53.8c12.8-20.6 21.8-42.7 27.5-66.4H594zm-296.4 69.7c-67.3 0-122.3-54.6-122.3-122.3 0-67.3 54.6-122.3 122.3-122.3 67.3 0 122.3 54.6 122.3 122.3-.4 67.4-54.9 122.3-122.3 122.3z"></path></svg></span>
+                        </li>
+                        <li>
+                            <span class="button fullscreen" title="全屏"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M4.712 10.043L2.045 12.71 0 10.667V16h5.334L3.29 13.955l2.667-2.667M5.334 0H0v5.334L2.045 3.29l2.667 2.667 1.245-1.245L3.29 2.045M10.666 0l2.045 2.045-2.666 2.667 1.245 1.245 2.666-2.667L16 5.334V0m-4.712 10.043l-1.245 1.245 2.668 2.667L10.668 16H16v-5.334l-2.045 2.045"></path></svg></span>
+                        </li>
+                        <li>
+                            <span class="button kline-on-off" title="隐藏"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M0 0v5.333h16V0H0zm15 4.167H1v-3h14v3zM0 16v-5.333h7.12v-1.5H4.23L8 5.393l3.77 3.772H8.88v1.5H16V16H0z"></path></svg></span>
+                        </li>
+                    </ul>
+                    <div id="kline" class="box-container clearfix"><div data-reactroot="" style="background: #fff"><i id="resizeChart"> </i><i id="bigChart"> </i><i id="smallChart"> </i><i id="lightChart"> </i><i id="darkChart"> </i><div class="line-type" style=""><ul class="choosen"><li><button class="btnOn timeline_btn">K线图</button></li><li><button class=" timeline_btn">单线图</button></li><li><button class=" timeline_btn">深度图</button></li></ul><ul id="klineType"><li><button class=" timeline_btn">10秒</button></li><li><button class=" timeline_btn">1分钟</button></li><li><button class=" timeline_btn">5分钟</button></li><li><button class=" timeline_btn">15分钟</button></li><li><button class="btnOn timeline_btn">30分钟</button></li><li><button class=" timeline_btn">1小时</button></li><li><button class=" timeline_btn">8小时</button></li><li><button class=" timeline_btn">1天</button></li></ul></div><div class="line-type line-option"><ul><li><button class="btnOff timeline_btn">技术指标</button></li><li><button class="btnOff timeline_btn">画线工具</button></li></ul></div><ul class="draw-tools" id="drawTools" style="display: none;"><li class="tool-active"><svg class="tool-cursor" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M14.607,10.842l-8.19-1.317l-4.045,7.018v-16L14.607,10.842z"></path></svg><span><i class="caret"></i><!-- react-text: 292 -->光标<!-- /react-text --></span></li><li class=""><svg class="tool-crosscursor" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M-0.013,8.5h7 M10.013,8.5h7 M8.5,17.013v-7 M8.5,6.987v-7"></path></svg><span><i class="caret"></i><!-- react-text: 298 -->十字光标<!-- /react-text --></span></li><li class=""><svg class="tool-segline" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M2.06,14.94l12.879-12.88 M0,12.878l4.12,4.123 M12.881,0L17,4.121"></path></svg><span><i class="caret"></i><!-- react-text: 304 -->线段<!-- /react-text --></span></li><li class=""><svg class="tool-straightline" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M10.484,6.515L17,0.001 M6.512,10.48L0,16.998 M4.351,8.322l4.329,4.326 M8.322,4.351l4.324,4.329"></path></svg><span><i class="caret"></i><!-- react-text: 310 -->直线<!-- /react-text --></span></li><li class=""><svg class="tool-rayline" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M2.002,14.995L17,0.001 M-0.492,12.505l4.989,4.985 M4.928,7.084l4.987,4.987"></path></svg><span><i class="caret"></i><!-- react-text: 316 -->射线<!-- /react-text --></span></li><li class=""><svg class="tool-fibretrace" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M0,2.479h17 M8.5-0.021v5 M17,13.479H0 M8.5,10.979v5 M0,8.499h17"></path></svg><span><i class="caret"></i><!-- react-text: 322 -->斐波纳契回调<!-- /react-text --></span></li><li class=" tool-clear-item"><svg class="tool-clear" x="0px" y="0px" width="19px" height="19px" viewBox="-1 -1 19 19"><path d="M11,3V1V0h-1H6H5v1v2H0v1h2v12v1h1h10h1v-1V4h2V3H11z M6,1h4v2H6V1z M13,16H3V4h2h1h4h1h2V16z M6,6h1v8H6V6zM9,6h1v8H9V6z"></path></svg><span><i class="caret"></i><!-- react-text: 328 -->清除<!-- /react-text --></span></li></ul><div class="react-stockchart" style="position: relative; width: 971px; height: 300px;"><div style="position: absolute; z-index: 1;"><canvas id="bg" width="2427.5" height="750" style="position: absolute; width: 971px; height: 300px;"></canvas><canvas id="axes" width="2427.5" height="750" style="position: absolute; width: 971px; height: 300px;"></canvas><canvas id="hover" width="2427.5" height="750" style="position: absolute; width: 971px; height: 300px;"></canvas><canvas id="mouseCoord" width="2427.5" height="750" style="position: absolute; width: 971px; height: 300px;"></canvas></div><svg class="react-stockchart" width="971" height="300" style="position: absolute; z-index: 6;"><style type="text/css">
+                        .react-stockcharts-grabbing-cursor {
+                            pointer-events: all;
+                            cursor: -webkit-grabbing;
+                        }
+                        .react-stockcharts-crosshair-cursor {
+                            pointer-events: all;
+                            cursor: crosshair;
+                        }
+                        .react-stockcharts-toottip-hover {
+                            pointer-events: all;
+                            cursor: pointer;
+                        }
+                        .react-stockcharts-avoid-interaction {
+                            pointer-events: none;
+                        }
+                        .react-stockcharts-enable-interaction {
+                            pointer-events: all;
+                        }
+                        .react-stockcharts-toottip {
+                            pointer-events: all;
+                            cursor: pointer;
+                        }
+                        .react-stockcharts-default-cursor {
+                            cursor: default;
+                        }
+                        .react-stockcharts-move-cursor {
+                            cursor: move;
+                        }
+                        .react-stockcharts-ns-resize-cursor {
+                            cursor: ns-resize;
+                        }
+                        .react-stockcharts-ew-resize-cursor {
+                            cursor: ew-resize;
+                        }</style><defs><clippath id="chart-area-clip"><rect x="0" y="0" width="806" height="265"></rect></clippath><clippath id="chart-area-clip-1"><rect x="0" y="0" width="806" height="260"></rect></clippath><clippath id="chart-area-clip-2"><rect x="0" y="0" width="806" height="70"></rect></clippath><clippath id="chart-area-clip-3"><rect x="0" y="0" width="806" height="100"></rect></clippath></defs><g transform="translate(65.5, 10.5)"><rect class="react-stockcharts-crosshair-cursor" width="806" height="265" style="opacity: 0;"></rect><g class="react-stockcharts-avoid-interaction"><g transform="translate(0, 0)"><g transform="translate(0, 260)"><rect class="react-stockcharts-enable-interaction react-stockcharts-default-cursor" x="0" y="0" opacity="0" height="25" width="806"></rect><!-- react-empty: 352 --></g><g transform="translate(806, 0)"><!-- react-empty: 354 --></g><!-- react-empty: 355 --><!-- react-empty: 356 --><!-- react-empty: 357 --><div><!-- react-empty: 359 --><!-- react-empty: 360 --><!-- react-empty: 361 --><!-- react-empty: 362 --><!-- react-empty: 363 --></div><!-- react-empty: 364 --><!-- react-text: 365 --><!-- /react-text --><g><g class="react-stockcharts-toottip-hover undefined" transform="translate(-50, 0)"><text font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" x="0" y="0" class="react-stockcharts-tooltip"><tspan class="react-stockcharts-tooltip-label" fill="#4682B4" x="0" dy="5">日期: </tspan><tspan>2018-09-06 01:30:00</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> 开盘: </tspan><tspan>6913.97</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> 最高: </tspan><tspan>6941.62</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> 最低: </tspan><tspan>6899.90</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> 闭盘: </tspan><tspan>6920.00</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> 成交量: </tspan><tspan>36.85</tspan></text></g></g><!-- react-text: 381 --><!-- /react-text --><!-- react-text: 382 --><!-- /react-text --><!-- react-text: 383 --><!-- /react-text --><!-- react-text: 384 --><!-- /react-text --><g><g style="clip-path: url(&quot;#chart-area-clip-1&quot;);"></g></g><g><g style="clip-path: url(&quot;#chart-area-clip-1&quot;);"></g></g></g><g transform="translate(0, 189)"><g transform="translate(0, 0)"><!-- react-empty: 391 --></g><!-- react-empty: 392 --><!-- react-empty: 393 --><!-- react-empty: 394 --><!-- react-text: 395 --><!-- /react-text --><!-- react-empty: 396 --></g><g transform="translate(0, 365)"><g transform="translate(0, 100)"><rect class="react-stockcharts-enable-interaction react-stockcharts-default-cursor" x="0" y="0" opacity="0" height="25" width="806"></rect><!-- react-empty: 400 --></g><g transform="translate(806, 0)"><rect class="react-stockcharts-enable-interaction react-stockcharts-default-cursor" x="0" y="0" opacity="0" height="100" width="40"></rect><!-- react-empty: 403 --></g><!-- react-empty: 404 --><!-- react-empty: 405 --><g class="react-stockcharts-macd-series"><!-- react-empty: 407 --><!-- react-empty: 408 --><!-- react-empty: 409 --><!-- react-empty: 410 --></g><g><g class="react-stockcharts-toottip" transform="translate(-38, 20)"><text font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" x="0" y="0" class="react-stockcharts-tooltip"><tspan class="react-stockcharts-tooltip-label" fill="#4682B4">MACD (</tspan><tspan fill="#FF0000">30</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4">, </tspan><tspan fill="#FF0000">10</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4">): </tspan><tspan fill="#FF0000">-134.59</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> Signal (</tspan><tspan fill="#00F300">9</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4">): </tspan><tspan fill="#00F300">-127.70</tspan><tspan class="react-stockcharts-tooltip-label" fill="#4682B4"> Divergence: </tspan><tspan fill="#4682B4">-6.89</tspan></text></g></g></g><!-- react-empty: 426 --></g></g></svg></div><ul class=" choose-chart"><li class="bc-active">MACD</li><li class="">RSI</li><li class="">ATR</li><li class="">Fast STO</li><li class="">Slow STO</li></ul><ul class=" choose-chart cc2"><li class="">BOLL</li><li class="">SAR</li></ul><style>.react-stockcharts-crosshair-cursor {cursor: crosshair}</style><!-- react-text: 437 --><!-- /react-text --></div></div>
+                </div>
+                <div id="globalInfoCon">
+                    <div id="gInfoTitle" class="m_title clearfix">
+                        <span id="gmTitle" class="rightinfo-active r-title">全球行情</span>
+                        <span class="button gm-on-off pull-right" title="隐藏"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M16 0h-5.333v16H16V0zm-4.167 15V1h3v14h-3zM0 0h5.333v7.12h1.5V4.23L10.607 8l-3.772 3.77V8.88h-1.5V16H0V0z"></path></svg></span>
+                    </div>
+                    <div id="gmCon" class="">
+                        <div class="gm-head clearfix">
+                            <span>交易所</span><span>交易对</span><span>交易价</span><span>成交量(BTC)</span>
+                        </div>
+                        <div id="globalMarkets">
+                            <ul id="ulGlobalMarkets" data-id="global-markets"><li class="clearfix"><span class="ex-name">gate.io</span><span class="ex-pair">BTC/USDT</span><span class="ex-price">6358.00<div class="green">￥43234.40</div></span><span class="ex-amount">838.62<div class="green">￥3625.7万</div></span></li><li class="clearfix"><span class="ex-name">bithumb</span><span class="ex-pair">BTC/KRW</span><span class="ex-price">7297000.00<div class="green">￥44263.60</div></span><span class="ex-amount">3.5万<div class="green">￥15.5亿</div></span></li><li class="clearfix"><span class="ex-name">binance</span><span class="ex-pair">BTC/USDT</span><span class="ex-price">6358.00<div class="green">￥43234.40</div></span><span class="ex-amount">3.3万<div class="green">￥14.0亿</div></span></li><li class="clearfix"><span class="ex-name">okex<div><i>!</i><span><em class="caret"></em>有交易量造假嫌疑，容易误导投资者，请谨慎对待此行数据。<a href="https://medium.com/@sylvainartplayribes/ea1a3c1e0b5e" target="_blank">信息来源</a></span></div></span><span class="ex-pair">BTC/USDT</span><span class="ex-price">6355.30<div class="green">￥43216.05</div></span><span class="ex-amount">2.2万<div class="green">￥9.4亿</div></span></li><li class="clearfix"><span class="ex-name">huobipro</span><span class="ex-pair">BTC/USDT</span><span class="ex-price">6358.03<div class="green">￥43234.60</div></span><span class="ex-amount">1.7万<div class="green">￥7.2亿</div></span></li><li class="clearfix"><span class="ex-name">quoine</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707254.50<div class="green">￥43477.06</div></span><span class="ex-amount">1.5万<div class="green">￥6.4亿</div></span></li><li class="clearfix"><span class="ex-name">bitfinex</span><span class="ex-pair">BTC/USD</span><span class="ex-price">6357.70<div class="green">￥43611.28</div></span><span class="ex-amount">1.5万<div class="green">￥6.4亿</div></span></li><li class="clearfix"><span class="ex-name">zaif</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707645.00<div class="green">￥43501.06</div></span><span class="ex-amount">7858.75<div class="green">￥3.4亿</div></span></li><li class="clearfix"><span class="ex-name">fisco</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707645.00<div class="green">￥43501.06</div></span><span class="ex-amount">7858.75<div class="green">￥3.4亿</div></span></li><li class="clearfix"><span class="ex-name">gdax</span><span class="ex-pair">BTC/USD</span><span class="ex-price">6353.11<div class="green">￥43579.79</div></span><span class="ex-amount">7179.23<div class="green">￥3.1亿</div></span></li><li class="clearfix"><span class="ex-name">btcbox</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707876.00<div class="green">￥43515.26</div></span><span class="ex-amount">6582.51<div class="green">￥2.9亿</div></span></li><li class="clearfix"><span class="ex-name">bitstamp</span><span class="ex-pair">BTC/USD</span><span class="ex-price">6346.57<div class="green">￥43534.93</div></span><span class="ex-amount">5853.69<div class="green">￥2.5亿</div></span></li><li class="clearfix"><span class="ex-name">bitflyer</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707500.00<div class="green">￥43492.15</div></span><span class="ex-amount">5790.36<div class="green">￥2.5亿</div></span></li><li class="clearfix"><span class="ex-name">itbit</span><span class="ex-pair">BTC/USD</span><span class="ex-price">6349.01<div class="green">￥43551.67</div></span><span class="ex-amount">3709.89<div class="green">￥1.6亿</div></span></li><li class="clearfix"><span class="ex-name">upbit</span><span class="ex-pair">BTC/KRW</span><span class="ex-price">7297000.00<div class="green">￥44263.60</div></span><span class="ex-amount">3051.58<div class="green">￥1.3亿</div></span></li><li class="clearfix"><span class="ex-name">coincheck</span><span class="ex-pair">BTC/JPY</span><span class="ex-price">707673.00<div class="green">￥43502.78</div></span><span class="ex-amount">2994.46<div class="green">￥1.3亿</div></span></li><li class="clearfix"><span class="ex-name">coinsbank</span><span class="ex-pair">BTC/USD</span><span class="ex-price">6342.94<div class="green">￥43510.03</div></span><span class="ex-amount">2263.61<div class="green">￥9848.9万</div></span></li></ul>
+                        </div>
+                        <span class="gdata-from">数据来源 <a href="https://block.cc/coin/BTC?exchange=gate-io" target="_blank">block.cc</a></span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--<div class="right-kline">
+                <div id="chartContainer"></div>
+            </div>-->
+            <div class="trade-main clearfix">
+                <div class="pddlr-30">
+                    <div class="maichu maichu-form">
+                        <div class="m_title">
+                            <span>买入BTC</span>
+                        </div>
+                        <div class="m_con_buy">
+
+                            <table class="dealbox" cellspacing="0">
+                                <tbody><tr class="tableOrderTr" t="static" style="display: none">
+                                    <td width="16%" align="right">最佳买价</td>
+                                    <td width="61%"><span id="rate_best_ask" style="font-weight:600">6358.0000000000</span><span class="coin-unit">USDT/BTC</span></td>
+                                    <td width="23%"></td>
+                                </tr>
+                                <tr class="tableOrderTr" t="static">
+                                    <td align="right" colspan="3">
+                                        <span class="red">我的余额</span>
+                                        <span id="buyYuE" class="red"><span id="balance_ask_able" style="font-weight:bold">0.0000</span><span class="coin-unit" style="color:#de5959">USDT</span><a class="dp-link" href="https://www.gateio.io/myaccount/deposit/USDT">充值</a><a class="dp-link" href="https://www.gateio.io/myaccount/withdraw/USDT">提现</a></span>
+                                    </td>
+                                </tr>
+                                <tr class="tableOrderTr" t="static">
+                                    <td align="right" colspan="3">可买入量
+                                        <span id="amount_ask_able" style="font-weight:bold">0.0000</span><span class="coin-unit">BTC</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!--<td align="right">买入价</td>-->
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit ask-bid-price input-title">买入价 <span>USDT/BTC</span></span>
+                                        <input id="ask_rate" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_ask_rate();_page.obj.recalc_fee(&#39;ask&#39;);" value="">
+                                    </td>
+                                    <!--<td class="b-unit ask-bid-price">USDT/BTC</td>-->
+                                </tr>
+                                <tr>
+                                    <!--<td align="right">买入量</td>-->
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit input-title">买入量 BTC</span>
+                                        <input id="ask_vol" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_ask_vol();_page.obj.recalc_fee(&#39;ask&#39;);" value="0">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <!--<td align="right">兑换额</td>-->
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit input-title" id="bid_total_label">兑换额 <span class="currb-unit">USDT</span></span>
+                                        <input id="ask_amount" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_ask_amount();_page.obj.recalc_fee(&#39;ask&#39;);" value="0">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="3">手续费
+                                        <span id="ask_fee">0</span><span class="coin-unit">USDT</span>
+                                        <i>(<span class="red">0.2%</span> 成交才收，撤单退回)</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="input-td" style="border:0">
+                                        <input type="button" class="btnAskBid jiaoyi_btn  button button-flat-action" t="ask" onclick="_page.obj.on_request_ask_bid( &#39;ask&#39;,  get_element(&#39;ask_rate&#39;).value, get_element(&#39;ask_vol&#39;).value );" value="买入 (USDT→BTC)">
+                                    </td>
+                                </tr>
+                                </tbody></table>
+
+                        </div>
+                    </div>
+                    <div class="mairu mairu-form">
+                        <div class="m_title">
+                            <span>卖出BTC</span>
+
+                            <div class="b-s-t-right" id="showFiatRate" style="display: none;">
+                                <label for="hideprice" class="fiat-hide-show" title="实际成交价以币币交易价格为准，CNY计价只提供估值参考">
+                                    <input type="checkbox" id="hideprice" name="hideprice" style="width: 20px;">
+                                    <label for="hideprice" class="vr-btn"></label>
+                                    <span class="hidefiat-span" >CNY计价</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="m_con">
+
+                            <table class="dealbox" cellspacing="0">
+
+                                <tbody><tr class="tableOrderTr" t="static" style="display: none">
+                                    <td width="16%" align="right">最佳卖价</td>
+                                    <td width="61%"><span id="rate_best_bid" style="font-weight:bold">6354.4400000000</span><span class="coin-unit">USDT/BTC</span></td>
+                                    <td width="23%"></td>
+                                </tr>
+                                <tr class="tableOrderTr" t="static">
+                                    <td align="right" colspan="3">
+                                        <span class="green">我的余额</span>
+                                        <span id="sellYuE" class="green"><span id="balance_bid_able" style="font-weight:bold">0.0000</span><span class="coin-unit" style="color:#36a792">BTC</span><a class="dp-link" href="https://www.gateio.io/myaccount/deposit/BTC">充值</a><a class="dp-link" href="https://www.gateio.io/myaccount/withdraw/BTC">提现</a></span>
+                                    </td>
+                                </tr>
+                                <tr class="tableOrderTr" t="static">
+                                    <td align="right" colspan="3">可兑换额
+                                        <span id="amount_bid_able" style="font-weight:bold">0.0000</span><span class="coin-unit">USDT</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit ask-bid-price input-title">卖出价 <span>USDT/BTC</span></span>
+                                        <input id="bid_rate" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_bid_rate();_page.obj.recalc_fee(&#39;bid&#39;);" value="">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit input-title">卖出量 BTC</span>
+                                        <input id="bid_vol" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_bid_vol();_page.obj.recalc_fee(&#39;bid&#39;);" value="0">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="input-td">
+                                        <span class="b-unit input-title" id="ask_total_label">兑换额 <span class="currb-unit">USDT</span></span>
+                                        <input id="bid_amount" class="inputRate" maxlength="14" onkeyup="_page.obj.on_input_bid_amount();_page.obj.recalc_fee(&#39;bid&#39;);" value="0">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="3">手续费
+                                        <span id="bid_fee">0</span><span class="coin-unit">BTC</span>
+                                        <i>(<span class="green">0.2%</span> 成交才收，撤单退回)</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="input-td" style="border:0">
+                                        <input type="button" class="btnAskBid jiaoyi_btn  button button-flat-action" t="bid" value="卖出 (BTC→USDT)">
+                                    </td>
+                                </tr>
+                                </tbody></table>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="divMyOrderSection">
+                    <div class="pddlr-30">
+                        <div class="mairu my-order-box">
+
+                            <div id="myOrderTab" class="m_title">
+                                <span class="order-tab order-t-active">当前委托</span>
+                                <span id="hisTab" class="order-tab">历史委托</span>
+                            </div>
+
+                            <div id="currOrder" class="m_con cjbox" style="height: 272px;background: #fff;">
+                                <div id="order-info-box" class="box">
+                                    <div class="list-wrapper">
+                                        <ul class="trade-list_re">
+                                            <li class="number sorting dealtop">
+                                                <span class="right-align" id="tlist-date">日期</span>
+                                                <span class="right-align my-type">类型</span>
+							<span class="right-align">
+								<em id="odPriceCol">价格(USDT)
+                                </em>
+							</span>
+                                                <span class="right-align">挂单量(BTC)</span>
+                                                <span class="right-align">操作</span>
+                                            </li>
+                                        </ul>
+                                        <ul id="ulMyOrderList" class="trade-list_re" style="height: 231px; overflow-y: scroll; overflow-x: hidden;">
+
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="index-modal"><a class="sub-btn" href="javascript:;">登录后查看</a></div>-->
+                                </div>
+                            </div>
+                            <div id="historyOrder" class="m_con cjbox" style="height: 272px;background: #fff;display: none">
+                                <div id="history-info-box" class="box">
+                                    <div class="list-wrapper">
+                                        <ul class="trade-list_re" id="my-tlist-title">
+                                            <li class="number sorting dealtop">
+                                                <span class="right-align" id="tlist-date">日期</span>
+                                                <span class="right-align my-type">类型</span>
+                                                <span class="right-align">价格(USDT)</span>
+                                                <span class="right-align">成交量(BTC)</span>
+                                            </li>
+                                        </ul>
+                                        <ul id="my-trade-list" class="trade-list_re" style="height: 231px; overflow-y: scroll; overflow-x: hidden;">
+                                        </ul>
+                                    </div>
+                                    <!--<div class="index-modal"><a class="sub-btn" href="https://www.gateio.io/login">登录后查看</a></div>-->
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="pddlr-30">
+                        <div class="maichu my-order-box">
+
+                            <div class="m_title" id="myFunds">
+                                我的资金
+                                <em>
+                                    (<a href="https://www.gateio.io/myaccount">查看全部</a>)
+                                </em>
+                                <label for="hidezero" class="fund-hide-show">
+                                    <input type="checkbox" id="hidezero" name="hidezero" style="width: 20px;">
+                                    <label for="hidezero" class="vr-btn"></label>
+                                    <span class="hidezero-span">隐藏零资金币种</span>
+                                </label>
+                            </div>
+
+                            <div id="currFunds" class="m_con cjbox" style="background: #fff;">
+                                <div id="fund-info-box" class="box">
+                                    <div class="list-wrapper">
+                                        <ul class="trade-list_re" id="my-fund-title">
+                                            <li class="number sorting dealtop">
+                                                <span class="right-align my-type">币种</span>
+                                                <span class="right-align">可用余额<span style="float: right;padding-right: 28px;">充值/提现</span></span>
+                                                <span class="right-align">挂单金额</span>
+                                                <span class="right-align">总计</span>
+                                            </li>
+                                        </ul>
+                                        <div id="myFundCon" style="height: 231px; overflow-y: auto; overflow-x: hidden; text-align: center;position: relative">
+                                            <ul id="my-fund-list" class="trade-list_re" style="height: 3885px;">
+                                                <li data-id="zero">
+                                                    <span class="right-align my-type">ABT</span>
+                                                <span class="right-align ">
+                                                    <i>0.000000</i>
+                                                    <em>
+                                                        <a class="normal-depo fund-deposit" title="充值正常" href="javascript:;">充值</a>
+                                                        <a class="normal-depo fund-withdraw" title="提现正常" href="javascript:;">提现</a>
+                                                    </em>
+                                                </span>
+                                                    <span class="right-align ">0.000000</span>
+                                                    <span class="right-align">0.000000</span>
+                                                </li>
+
+                                                <li data-id="zero">
+                                                    <span class="right-align my-type">BTF</span>
+                                                <span class="right-align ">
+                                                    <i>0.000000</i>
+                                                <em>
+                                                    <a class="err-depo fund-deposit" title="充值暂停，钱包维护中" href="javascript:;">充暂停</a>
+                                                    <a class="err-depo fund-withdraw" title="提现暂停，钱包维护中" href="javascript:;">提暂停</a>
+                                                </em>
+                                                </span>
+                                                    <span class="right-align ">0.000000</span>
+                                                    <span class="right-align">0.000000</span>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--<div class="index-modal"><a class="sub-btn" href="https://www.gateio.io/login">登录后查看</a></div>-->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <!--end of place order box -->
+
+
+            <div id="sectioncont" class="buy-sell-order clearfix ">
+                <div id="tableAskList" data-id="sectioncont">
+
+                    <div class="mairu">
+                        <div class="b-s-title clearfix">
+                            <div class="b-s-t-left">
+                                最新价 <span class="unit-symbol" id="orderUnitSymbol">$</span><span class="unit-symbol hide" id="cnySymbol" style="display: none;">￥</span>
+                                <span class="red" id="orderbook_last_rate">6358</span>
+                            </div>
+                        </div>
+                        <div class="m_con maidan">
+                            <div class="right-list list">
+                                <div class="title-line sorting" style="height:30px; margin-top:10px;border-bottom: 1px solid #e4ebf0">
+                                    <span class="right-align price"><b>价格(<span class="currb-unit">USDT</span>)</b></span>
+                                    <span class="volume right-align"><b>数量(BTC)</b></span>
+                                    <span class="total right-align"><b>总计(<span class="currb-unit">USDT</span>)</b></span>
+                                </div>
+                                <div id="ask-list">
+                                    <ul id="ul-ask-list" data-id="ask-list"><li onclick="set_price(1,6358.00,1.3162,8368.4)">		<span data-id="price" class="price right-align">6358.00</span>   <span data-id="volume" class="volume right-align">1.3162</span>  <span data-id="total" class="right-align total">8368.40</span>  <span data-id="rect" class="right-align rect orange" style="width: 8.541109969891448px;"></span> </li><li onclick="set_price(1,6359.00,2.4095,15320.689999999999)">		<span data-id="price" class="price right-align">6359.00</span>   <span data-id="volume" class="volume right-align">1.0933</span>  <span data-id="total" class="right-align total">6952.29</span>  <span data-id="rect" class="right-align rect orange" style="width: 11.556247530265582px;"></span> </li><li onclick="set_price(1,6360.00,2.5773,16387.899999999998)">		<span data-id="price" class="price right-align">6360.00</span>   <span data-id="volume" class="volume right-align">0.1678</span>  <span data-id="total" class="right-align total">1067.21</span>  <span data-id="rect" class="right-align rect orange" style="width: 11.951869905154217px;"></span> </li><li onclick="set_price(1,6360.98,3.1453,20000.87)">		<span data-id="price" class="price right-align">6360.98</span>   <span data-id="volume" class="volume right-align">0.5680</span>  <span data-id="total" class="right-align total">3612.97</span>  <span data-id="rect" class="right-align rect orange" style="width: 13.203358267579823px;"></span> </li><li onclick="set_price(1,6362.47,3.2151,20444.969999999998)">		<span data-id="price" class="price right-align">6362.47</span>   <span data-id="volume" class="volume right-align">0.0698</span>  <span data-id="total" class="right-align total">444.10</span>  <span data-id="rect" class="right-align rect orange" style="width: 13.349057786862712px;"></span> </li><li onclick="set_price(1,6362.54,3.2251,20508.6)">		<span data-id="price" class="price right-align">6362.54</span>   <span data-id="volume" class="volume right-align">0.0100</span>  <span data-id="total" class="right-align total">63.63</span>  <span data-id="rect" class="right-align rect orange" style="width: 13.369801611202817px;"></span> </li><li onclick="set_price(1,6369.04,4.0301,25635.68)">		<span data-id="price" class="price right-align">6369.04</span>   <span data-id="volume" class="volume right-align">0.8050</span>  <span data-id="total" class="right-align total">5127.08</span>  <span data-id="rect" class="right-align rect orange" style="width: 14.945528657749009px;"></span> </li><li onclick="set_price(1,6369.05,4.966,31596.47)">		<span data-id="price" class="price right-align">6369.05</span>   <span data-id="volume" class="volume right-align">0.9359</span>  <span data-id="total" class="right-align total">5960.79</span>  <span data-id="rect" class="right-align rect orange" style="width: 16.590395066199715px;"></span> </li><li onclick="set_price(1,6371.91,5.096,32424.82)">		<span data-id="price" class="price right-align">6371.91</span>   <span data-id="volume" class="volume right-align">0.1300</span>  <span data-id="total" class="right-align total">828.35</span>  <span data-id="rect" class="right-align rect orange" style="width: 16.806143986339116px;"></span> </li><li onclick="set_price(1,6374.20,5.1607,32837.23)">		<span data-id="price" class="price right-align">6374.20</span>   <span data-id="volume" class="volume right-align">0.0647</span>  <span data-id="total" class="right-align total">412.41</span>  <span data-id="rect" class="right-align rect orange" style="width: 16.912494841633336px;"></span> </li><li onclick="set_price(1,6374.22,6.6607,42398.560000000005)">		<span data-id="price" class="price right-align">6374.22</span>   <span data-id="volume" class="volume right-align">1.5000</span>  <span data-id="total" class="right-align total">9561.33</span>  <span data-id="rect" class="right-align rect orange" style="width: 19.21380182724099px;"></span> </li><li onclick="set_price(1,6382.64,7.4619,47512.270000000004)">		<span data-id="price" class="price right-align">6382.64</span>   <span data-id="volume" class="volume right-align">0.8012</span>  <span data-id="total" class="right-align total">5113.71</span>  <span data-id="rect" class="right-align rect orange" style="width: 20.336587641227187px;"></span> </li><li onclick="set_price(1,6384.80,12.6997,80954.58)">		<span data-id="price" class="price right-align">6384.80</span>   <span data-id="volume" class="volume right-align">5.2378</span>  <span data-id="total" class="right-align total">33442.31</span>  <span data-id="rect" class="right-align rect orange" style="width: 26.530785069055963px;"></span> </li><li onclick="set_price(1,6385.73,13.2081,84201.09)">		<span data-id="price" class="price right-align">6385.73</span>   <span data-id="volume" class="volume right-align">0.5084</span>  <span data-id="total" class="right-align total">3246.51</span>  <span data-id="rect" class="right-align rect orange" style="width: 27.056620147207752px;"></span> </li><li onclick="set_price(1,6388.33,13.2408,84409.98999999999)">		<span data-id="price" class="price right-align">6388.33</span>   <span data-id="volume" class="volume right-align">0.0327</span>  <span data-id="total" class="right-align total">208.90</span>  <span data-id="rect" class="right-align rect orange" style="width: 27.090092204089146px;"></span> </li><li onclick="set_price(1,6390.77,13.2908,84729.52999999998)">		<span data-id="price" class="price right-align">6390.77</span>   <span data-id="volume" class="volume right-align">0.0500</span>  <span data-id="total" class="right-align total">319.54</span>  <span data-id="rect" class="right-align rect orange" style="width: 27.141192904064823px;"></span> </li><li onclick="set_price(1,6394.87,14.2908,91124.39999999998)">		<span data-id="price" class="price right-align">6394.87</span>   <span data-id="volume" class="volume right-align">1.0000</span>  <span data-id="total" class="right-align total">6394.87</span>  <span data-id="rect" class="right-align rect orange" style="width: 28.143729050141914px;"></span> </li><li onclick="set_price(1,6397.01,14.291,91125.67999999998)">		<span data-id="price" class="price right-align">6397.01</span>   <span data-id="volume" class="volume right-align">0.0002</span>  <span data-id="total" class="right-align total">1.28</span>  <span data-id="rect" class="right-align rect orange" style="width: 28.14392598544703px;"></span> </li><li onclick="set_price(1,6397.05,14.2957,91155.67999999998)">		<span data-id="price" class="price right-align">6397.05</span>   <span data-id="volume" class="volume right-align">0.0047</span>  <span data-id="total" class="right-align total">30.00</span>  <span data-id="rect" class="right-align rect orange" style="width: 28.148553568478498px;"></span> </li><li onclick="set_price(1,6397.06,14.3007,91187.66999999998)">		<span data-id="price" class="price right-align">6397.06</span>   <span data-id="volume" class="volume right-align">0.0050</span>  <span data-id="total" class="right-align total">31.99</span>  <span data-id="rect" class="right-align rect orange" style="width: 28.1534756941388px;"></span> </li><li onclick="set_price(1,6397.27,20.6783,131986.9)">		<span data-id="price" class="price right-align">6397.27</span>   <span data-id="volume" class="volume right-align">6.3776</span>  <span data-id="total" class="right-align total">40799.23</span>  <span data-id="rect" class="right-align rect orange" style="width: 33.85406207946274px;"></span> </li><li onclick="set_price(1,6399.00,22.5328,143853.65)">		<span data-id="price" class="price right-align">6399.00</span>   <span data-id="volume" class="volume right-align">1.8545</span>  <span data-id="total" class="right-align total">11866.75</span>  <span data-id="rect" class="right-align rect orange" style="width: 35.339544814163176px;"></span> </li><li onclick="set_price(1,6399.58,22.537100000000002,143881.3)">		<span data-id="price" class="price right-align">6399.58</span>   <span data-id="volume" class="volume right-align">0.0043</span>  <span data-id="total" class="right-align total">27.65</span>  <span data-id="rect" class="right-align rect orange" style="width: 35.34291662755628px;"></span> </li><li onclick="set_price(1,6400.00,27.5441,175926.03999999998)">		<span data-id="price" class="price right-align">6400.00</span>   <span data-id="volume" class="volume right-align">5.0070</span>  <span data-id="total" class="right-align total">32044.74</span>  <span data-id="rect" class="right-align rect orange" style="width: 39.07218185143051px;"></span> </li><li onclick="set_price(1,6401.83,27.7912,177507.93)">		<span data-id="price" class="price right-align">6401.83</span>   <span data-id="volume" class="volume right-align">0.2471</span>  <span data-id="total" class="right-align total">1581.89</span>  <span data-id="rect" class="right-align rect orange" style="width: 39.24705014258746px;"></span> </li><li onclick="set_price(1,6405.15,27.8512,177892.24)">		<span data-id="price" class="price right-align">6405.15</span>   <span data-id="volume" class="volume right-align">0.0600</span>  <span data-id="total" class="right-align total">384.31</span>  <span data-id="rect" class="right-align rect orange" style="width: 39.289393643199716px;"></span> </li><li onclick="set_price(1,6410.00,28.4503,181732.47)">		<span data-id="price" class="price right-align">6410.00</span>   <span data-id="volume" class="volume right-align">0.5991</span>  <span data-id="total" class="right-align total">3840.23</span>  <span data-id="rect" class="right-align rect orange" style="width: 39.709717321913224px;"></span> </li><li onclick="set_price(1,6416.88,35.547,227271.14)">		<span data-id="price" class="price right-align">6416.88</span>   <span data-id="volume" class="volume right-align">7.0967</span>  <span data-id="total" class="right-align total">45538.67</span>  <span data-id="rect" class="right-align rect orange" style="width: 44.3869033415592px;"></span> </li><li onclick="set_price(1,6419.99,36.753299999999996,235015.46000000002)">		<span data-id="price" class="price right-align">6419.99</span>   <span data-id="volume" class="volume right-align">1.2063</span>  <span data-id="total" class="right-align total">7744.32</span>  <span data-id="rect" class="right-align rect orange" style="width: 45.13376259186488px;"></span> </li><li onclick="set_price(1,6420.00,36.98759999999999,236519.86000000002)">		<span data-id="price" class="price right-align">6420.00</span>   <span data-id="volume" class="volume right-align">0.2343</span>  <span data-id="total" class="right-align total">1504.40</span>  <span data-id="rect" class="right-align rect orange" style="width: 45.277396504935666px;"></span> </li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="maichu">
+                        <div class="m_con maidan">
+                            <div class="right-list list">
+                                <div id="bid-list">
+                                    <ul id="ul-bid-list" data-id="bid-list"><li onclick="set_price(0,6356.36,0.0051,32.42)"><span data-id="price" class="price right-align">6356.36</span>  <span data-id="volume" class="right-align volume">0.0051</span>   <span data-id="total" class="right-align total">32.42</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 1px;"></span></li><li onclick="set_price(0,6356.35,0.3051,1939.3200000000002)"><span data-id="price" class="price right-align">6356.35</span>  <span data-id="volume" class="right-align volume">0.3000</span>   <span data-id="total" class="right-align total">1906.90</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 4.857158448429889px;"></span></li><li onclick="set_price(0,6356.33,1.1948,7594.549999999999)"><span data-id="price" class="price right-align">6356.33</span>  <span data-id="volume" class="right-align volume">0.8897</span>   <span data-id="total" class="right-align total">5655.23</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 9.611884771671404px;"></span></li><li onclick="set_price(0,6354.42,1.4549,9247.65)"><span data-id="price" class="price right-align">6354.42</span>  <span data-id="volume" class="right-align volume">0.2601</span>   <span data-id="total" class="right-align total">1653.10</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 10.606527569613322px;"></span></li><li onclick="set_price(0,6354.41,1.4843000000000002,9434.47)"><span data-id="price" class="price right-align">6354.41</span>  <span data-id="volume" class="right-align volume">0.0294</span>   <span data-id="total" class="right-align total">186.82</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 10.713127826927051px;"></span></li><li onclick="set_price(0,6348.77,2.9843,18957.629999999997)"><span data-id="price" class="price right-align">6348.77</span>  <span data-id="volume" class="right-align volume">1.5000</span>   <span data-id="total" class="right-align total">9523.16</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 15.186215356610127px;"></span></li><li onclick="set_price(0,6347.70,3.4254000000000002,21757.6)"><span data-id="price" class="price right-align">6347.70</span>  <span data-id="volume" class="right-align volume">0.4411</span>   <span data-id="total" class="right-align total">2799.97</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 16.269081211958618px;"></span></li><li onclick="set_price(0,6345.01,4.5284,28756.149999999998)"><span data-id="price" class="price right-align">6345.01</span>  <span data-id="volume" class="right-align volume">1.1030</span>   <span data-id="total" class="right-align total">6998.55</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 18.703500823441935px;"></span></li><li onclick="set_price(0,6345.00,7.1585,45444.13)"><span data-id="price" class="price right-align">6345.00</span>  <span data-id="volume" class="right-align volume">2.6301</span>   <span data-id="total" class="right-align total">16687.98</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 23.512371210629723px;"></span></li><li onclick="set_price(0,6342.33,8.1585,51786.46)"><span data-id="price" class="price right-align">6342.33</span>  <span data-id="volume" class="right-align volume">1.0000</span>   <span data-id="total" class="right-align total">6342.33</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 25.09953324156427px;"></span></li><li onclick="set_price(0,6339.97,8.1587,51787.729999999996)"><span data-id="price" class="price right-align">6339.97</span>  <span data-id="volume" class="right-align volume">0.0002</span>   <span data-id="total" class="right-align total">1.27</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 25.09984100745314px;"></span></li><li onclick="set_price(0,6336.91,8.2541,52392.27)"><span data-id="price" class="price right-align">6336.91</span>  <span data-id="volume" class="right-align volume">0.0954</span>   <span data-id="total" class="right-align total">604.54</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 25.245916455903018px;"></span></li><li onclick="set_price(0,6336.90,12.9941,82429.18)"><span data-id="price" class="price right-align">6336.90</span>  <span data-id="volume" class="right-align volume">4.7400</span>   <span data-id="total" class="right-align total">30036.91</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 31.6663511014026px;"></span></li><li onclick="set_price(0,6335.07,18.4206,116806.44)"><span data-id="price" class="price right-align">6335.07</span>  <span data-id="volume" class="right-align volume">5.4265</span>   <span data-id="total" class="right-align total">34377.26</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 37.69562313026017px;"></span></li><li onclick="set_price(0,6335.00,18.4222,116816.58)"><span data-id="price" class="price right-align">6335.00</span>  <span data-id="volume" class="right-align volume">0.0016</span>   <span data-id="total" class="right-align total">10.14</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 37.697259278590046px;"></span></li><li onclick="set_price(0,6332.55,18.9349,120063.28)"><span data-id="price" class="price right-align">6332.55</span>  <span data-id="volume" class="right-align volume">0.5127</span>   <span data-id="total" class="right-align total">3246.70</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 38.21753172483018px;"></span></li><li onclick="set_price(0,6331.97,18.9474,120142.43)"><span data-id="price" class="price right-align">6331.97</span>  <span data-id="volume" class="right-align volume">0.0125</span>   <span data-id="total" class="right-align total">79.15</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 38.230126829956646px;"></span></li><li onclick="set_price(0,6330.74,18.947599999999998,120143.7)"><span data-id="price" class="price right-align">6330.74</span>  <span data-id="volume" class="right-align volume">0.0002</span>   <span data-id="total" class="right-align total">1.27</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 38.230328890680596px;"></span></li><li onclick="set_price(0,6328.95,28.947599999999998,183433.2)"><span data-id="price" class="price right-align">6328.95</span>  <span data-id="volume" class="right-align volume">10.0000</span>   <span data-id="total" class="right-align total">63289.50</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 47.238544103337524px;"></span></li><li onclick="set_price(0,6326.57,28.958599999999997,183502.79)"><span data-id="price" class="price right-align">6326.57</span>  <span data-id="volume" class="right-align volume">0.0110</span>   <span data-id="total" class="right-align total">69.59</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 47.24750381881px;"></span></li><li onclick="set_price(0,6323.52,28.960399999999996,183514.17)"><span data-id="price" class="price right-align">6323.52</span>  <span data-id="volume" class="right-align volume">0.0018</span>   <span data-id="total" class="right-align total">11.38</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 47.24896883265982px;"></span></li><li onclick="set_price(0,6321.35,29.643799999999995,187834.18000000002)"><span data-id="price" class="price right-align">6321.35</span>  <span data-id="volume" class="right-align volume">0.6834</span>   <span data-id="total" class="right-align total">4320.01</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 47.80186538922783px;"></span></li><li onclick="set_price(0,6319.95,29.645299999999995,187843.48)"><span data-id="price" class="price right-align">6319.95</span>  <span data-id="volume" class="right-align volume">0.0015</span>   <span data-id="total" class="right-align total">9.30</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 47.803048751716894px;"></span></li><li onclick="set_price(0,6319.90,36.12929999999999,228821.71000000002)"><span data-id="price" class="price right-align">6319.90</span>  <span data-id="volume" class="right-align volume">6.4840</span>   <span data-id="total" class="right-align total">40978.23</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 52.76016515373424px;"></span></li><li onclick="set_price(0,6318.20,36.829299999999996,233244.45)"><span data-id="price" class="price right-align">6318.20</span>  <span data-id="volume" class="right-align volume">0.7000</span>   <span data-id="total" class="right-align total">4422.74</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 53.26760765170411px;"></span></li><li onclick="set_price(0,6310.51,37.499599999999994,237474.47)"><span data-id="price" class="price right-align">6310.51</span>  <span data-id="volume" class="right-align volume">0.6703</span>   <span data-id="total" class="right-align total">4230.02</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 53.74845642512335px;"></span></li><li onclick="set_price(0,6308.00,37.504599999999996,237506.01)"><span data-id="price" class="price right-align">6308.00</span>  <span data-id="volume" class="right-align volume">0.0050</span>   <span data-id="total" class="right-align total">31.54</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 53.75202558780392px;"></span></li><li onclick="set_price(0,6305.42,37.5693,237913.97)"><span data-id="price" class="price right-align">6305.42</span>  <span data-id="volume" class="right-align volume">0.0647</span>   <span data-id="total" class="right-align total">407.96</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 53.79817024706895px;"></span></li><li onclick="set_price(0,6304.62,39.2193,248316.59)"><span data-id="price" class="price right-align">6304.62</span>  <span data-id="volume" class="right-align volume">1.6500</span>   <span data-id="total" class="right-align total">10402.62</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 54.96173081872863px;"></span></li><li onclick="set_price(0,6304.11,39.224199999999996,248347.48)"><span data-id="price" class="price right-align">6304.11</span>  <span data-id="volume" class="right-align volume">0.0049</span>   <span data-id="total" class="right-align total">30.89</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 54.965149267469194px;"></span></li><li onclick="set_price(0,6300.68,39.27419999999999,248662.51)"><span data-id="price" class="price right-align">6300.68</span>  <span data-id="volume" class="right-align volume">0.0500</span>   <span data-id="total" class="right-align total">315.03</span>   <span data-id="rect" class="right-align rect fenlv" style="width: 55px;"></span></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="depth-pre clearfix">
+                    <div id="depthBox" class="b-s-t-left depth-precision-container">
+                        <span class="color-hover">深度合并</span>
+                        <span class="color-hover" id="depth-precision">0.01</span>
+                        <i class="color-hover caret depth-precision-arrow"></i>
+                        <ul id="depth-precision_ul" class="hide"><li class="active">0.01</li><li>0.1</li></ul>
+                    </div>
+                    <div class="b-s-t-right" id="moreOrders">
+                        <span>更多<i class="caret"></i></span>
+                    </div>
+                </div>
+                <div class="chengjiao clearfix">
+                    <div class="bottom_maidan">
+                        <div class="m_title" style="margin:10px 0 0">
+                            最新成交
+                            <ul class="high-low">
+                                <li>
+                                    最高价: <b id="tHigh">6390</b>
+                                </li>
+                                <li>
+                                    最低价: <b id="tLow">6222.06</b>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="m_con maidan cjbox clearfix" id="sectioncont-history">
+                            <div id="deal-info-box" class="box">
+                                <div class="list-wrapper">
+                                    <ul class="trade-list_re">
+                                        <li class="number sorting dealtop">
+                                            <span class="time">时间</span>
+                                            <!--<span class="type">交易类型</span>-->
+                                            <span class="price">成交价(<span class="currb-unit">USDT</span>)</span>
+                                            <span class="amount">成交量(BTC)</span>
+                                            <span class="total">总计(<span class="currb-unit">USDT</span>)</span>
+                                        </li>
+                                    </ul>
+                                    <div id="trade-list">
+                                        <ul id="ul-trade-list" data-id="trade-list" class="trade-list_re"><li title="buy" data-id="list-item" tid="89332838" class="up"><span class="time" data-id="time">10:59:12</span><span class="price" data-id="price">6358.00</span><span class="amount" data-id="amount">0.2855</span><span class="total" data-id="total">1815.21</span></li><li title="sell" data-id="list-item" tid="89332762" class="down"><span class="time" data-id="time">10:59:04</span><span class="price" data-id="price">6356.35</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">31.78</span></li><li title="buy" data-id="list-item" tid="89332581" class="up"><span class="time" data-id="time">10:58:10</span><span class="price" data-id="price">6358.00</span><span class="amount" data-id="amount">0.0296</span><span class="total" data-id="total">188.20</span></li><li title="buy" data-id="list-item" tid="89331913" class="up"><span class="time" data-id="time">10:55:11</span><span class="price" data-id="price">6358.00</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">31.79</span></li><li title="buy" data-id="list-item" tid="89331555" class="up"><span class="time" data-id="time">10:53:41</span><span class="price" data-id="price">6357.94</span><span class="amount" data-id="amount">0.0050</span><span class="total" data-id="total">31.79</span></li><li title="sell" data-id="list-item" tid="89331327" class="down"><span class="time" data-id="time">10:52:40</span><span class="price" data-id="price">6354.42</span><span class="amount" data-id="amount">0.8399</span><span class="total" data-id="total">5336.76</span></li><li title="sell" data-id="list-item" tid="89331326" class="down"><span class="time" data-id="time">10:52:40</span><span class="price" data-id="price">6354.53</span><span class="amount" data-id="amount">0.8778</span><span class="total" data-id="total">5578.01</span></li><li title="sell" data-id="list-item" tid="89331325" class="down"><span class="time" data-id="time">10:52:40</span><span class="price" data-id="price">6354.55</span><span class="amount" data-id="amount">0.3000</span><span class="total" data-id="total">1906.37</span></li><li title="sell" data-id="list-item" tid="89331181" class="down"><span class="time" data-id="time">10:52:05</span><span class="price" data-id="price">6354.53</span><span class="amount" data-id="amount">0.0547</span><span class="total" data-id="total">347.59</span></li><li title="sell" data-id="list-item" tid="89331144" class="down"><span class="time" data-id="time">10:51:55</span><span class="price" data-id="price">6354.44</span><span class="amount" data-id="amount">0.0610</span><span class="total" data-id="total">387.75</span></li><li title="buy" data-id="list-item" tid="89330830" class="up"><span class="time" data-id="time">10:50:14</span><span class="price" data-id="price">6358.65</span><span class="amount" data-id="amount">0.0060</span><span class="total" data-id="total">38.15</span></li><li title="sell" data-id="list-item" tid="89330738" class="down"><span class="time" data-id="time">10:49:53</span><span class="price" data-id="price">6358.65</span><span class="amount" data-id="amount">0.0077</span><span class="total" data-id="total">49.04</span></li><li title="sell" data-id="list-item" tid="89330707" class="down"><span class="time" data-id="time">10:49:44</span><span class="price" data-id="price">6358.65</span><span class="amount" data-id="amount">0.0007</span><span class="total" data-id="total">4.45</span></li><li title="buy" data-id="list-item" tid="89330656" class="up"><span class="time" data-id="time">10:49:31</span><span class="price" data-id="price">6358.67</span><span class="amount" data-id="amount">0.0075</span><span class="total" data-id="total">47.69</span></li><li title="buy" data-id="list-item" tid="89330496" class="up"><span class="time" data-id="time">10:48:50</span><span class="price" data-id="price">6358.67</span><span class="amount" data-id="amount">0.0007</span><span class="total" data-id="total">4.45</span></li><li title="buy" data-id="list-item" tid="89330461" class="up"><span class="time" data-id="time">10:48:41</span><span class="price" data-id="price">6358.67</span><span class="amount" data-id="amount">0.0090</span><span class="total" data-id="total">57.23</span></li><li title="sell" data-id="list-item" tid="89330440" class="down"><span class="time" data-id="time">10:48:38</span><span class="price" data-id="price">6358.67</span><span class="amount" data-id="amount">0.0152</span><span class="total" data-id="total">96.65</span></li><li title="buy" data-id="list-item" tid="89330402" class="up"><span class="time" data-id="time">10:48:26</span><span class="price" data-id="price">6358.98</span><span class="amount" data-id="amount">0.0134</span><span class="total" data-id="total">85.21</span></li><li title="sell" data-id="list-item" tid="89330351" class="down"><span class="time" data-id="time">10:48:13</span><span class="price" data-id="price">6358.70</span><span class="amount" data-id="amount">0.0324</span><span class="total" data-id="total">206.02</span></li><li title="sell" data-id="list-item" tid="89330291" class="down"><span class="time" data-id="time">10:47:46</span><span class="price" data-id="price">6358.70</span><span class="amount" data-id="amount">0.0007</span><span class="total" data-id="total">4.45</span></li><li title="buy" data-id="list-item" tid="89330234" class="up"><span class="time" data-id="time">10:47:24</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.1133</span><span class="total" data-id="total">720.47</span></li><li title="buy" data-id="list-item" tid="89330002" class="up"><span class="time" data-id="time">10:46:04</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0072</span><span class="total" data-id="total">45.78</span></li><li title="buy" data-id="list-item" tid="89329974" class="up"><span class="time" data-id="time">10:45:56</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0104</span><span class="total" data-id="total">66.13</span></li><li title="buy" data-id="list-item" tid="89329972" class="up"><span class="time" data-id="time">10:45:56</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0159</span><span class="total" data-id="total">101.11</span></li><li title="buy" data-id="list-item" tid="89329970" class="up"><span class="time" data-id="time">10:45:56</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0010</span><span class="total" data-id="total">6.65</span></li><li title="buy" data-id="list-item" tid="89329856" class="up"><span class="time" data-id="time">10:45:31</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0246</span><span class="total" data-id="total">156.43</span></li><li title="buy" data-id="list-item" tid="89329730" class="up"><span class="time" data-id="time">10:44:46</span><span class="price" data-id="price">6359.00</span><span class="amount" data-id="amount">0.0072</span><span class="total" data-id="total">45.67</span></li><li title="buy" data-id="list-item" tid="89329486" class="up"><span class="time" data-id="time">10:43:45</span><span class="price" data-id="price">6360.00</span><span class="amount" data-id="amount">0.0358</span><span class="total" data-id="total">227.44</span></li></ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--end of order lists -->
+
+        </div> <!--end of right content-->
+    </div> <!-- end of main content-->
+
+</div>
+
+</body>
+<script src="js/echarts.common.min.js"></script>
+
+<footer></footer>
+<script src="js/main.js"></script>
+<script>
+    load_footer();
+    $(function(){
+         var datas;
+        var token = get_user_login();
+
+        $.ajax({
+            url: _API + 'currency/quotation',
+            type: 'get',
+            dataType: 'json',
+            beforeSend: function beforeSend(request) {
+                request.setRequestHeader("Authorization", token);
+            },
+            success: function (res) {
+                console.log(res);
+
+                if (res.type == 'ok') {
+                    datas = res.message;
+                    var legal_html = '';
+                    var currency_html = '';
+                    var msg = res.message;
+                    console.log(msg)
+                    for (var i = 0; i < msg.length; i++) {
+                        legal_html += `<button class="tline_btn left_btn">${msg[i].name}</button>`
+						if(i==0){
+                            $.each(msg[i].quotation,function(k,v){
+                                currency_html +=  `
+                                <tr  title="">
+                                        <td>
+                                        <span class="icon-16 icon-16-doge"><img src="${msg[i].logo}"></span>
+                                        <span class="bizhong_en">${v.name}</span>
+                                        <span class="cname" title="">${msg[i].name}</span>
+                                        </td>
+                                        <td>
+                                        <span class="left-price rate_up">${v.last_price}</span>
+                                        </td>
+                                        <td class="rzd"><span class=""><span class="p-num" style="color:${v.proportion>=0?'#29a555':'#b83826'}">${v.proportion >= 0 ? '+' + v.proportion : '-' + v.proportion}%</span></span></td>
+                                        <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                                        </tr>
+
+                                `
+                            })
+                        }
+                    };
+                    // console.log(currency_html);
+                    $('.usdtTbody').html(currency_html)
+                    //法币赋值
+                    $('#market_controller').html(legal_html);
+
+                    $("#market_controller button:first").addClass("tn_selected").siblings().addClass("old");
+                    $("#marketlistTabCon .alignRight:first").show().siblings().hide();
+                    //$(".inContent:first").show().siblings().hide();
+
+                    $("#market_controller button").click(function () {
+                        console.log(datas)
+                        var arr_list = '';
+                        var idx = $(this).index();
+                        console.log(idx)
+                        $(this).addClass("tn_selected").removeClass("old").siblings().addClass("old").removeClass("tn_selected");
+                        $(".alignRight").hide().eq($("#market_controller button").index(this)).show();
+                        $.each(datas, function (k, v) {
+                            if (idx == k) {
+                                console.log(idx);
+                                console.log(k);
+                                $.each(datas[k].quotation,function(m,n){
+                                    arr_list += `
+                                <tr  title="">
+                                        <td>
+                                        <span class="icon-16 icon-16-doge"><img src="${msg[k].logo}"></span>
+                                        <span class="bizhong_en">${n.name}</span>
+                                        <span class="cname" title="">${v.name}</span>
+                                        </td>
+                                        <td>
+                                        <span class="left-price rate_up">${n.last_price}</span>
+                                        </td>
+                                        <td class="rzd"><span class=""><span class="p-num" style="color:${n.proportion>=0?'#29a555':'#b83826'}">${n.proportion >= 0 ? '+' + n.proportion : '-' + v.proportion}%</span></span></td>
+                                        <td class="custom-option"><i class="add-fav" data-id="doge_btc" title="加自选"></i></td>
+                                        </tr>                                    
+										`
+                                })
+
+                            }
+                        });
+                        $('.usdtTbodys').html(arr_list);
+
+                    });
+
+                }
+            }
+        })
+
+        var flag =true 
+        $('.sortable').on('click', function() {
+            //alert($(this).text())  
+             if(flag == true){
+                 $(this).removeClass("sorting")
+                 $(this).removeClass("sorting_desc")
+                 $(this).addClass("sorting_asc")   
+                 flag = false
+                }else if(flag == false){
+                 $(this).removeClass("sorting_asc")
+                 $(this).addClass("sorting_desc")
+                    flag = true
+                }
+            
+        });
+
+
+    })
+
+</script>
+</html>

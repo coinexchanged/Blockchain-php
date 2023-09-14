@@ -1,0 +1,176 @@
+#app {
+	height: 100%;
+}
+.pt20{
+	padding-top: 20px;
+}
+.tab-header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 40px;
+	line-height: 40px;
+	left: 0;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.tab-list {
+	width: 80%;
+	margin: 3px auto;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 2px;
+	font-size: 0;
+	display: flex;
+	color: #7d818a;
+	/* border: 1px solid #f0b90b; */
+
+}
+
+.tab-list div {
+	/* width: 33.33%; */
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+.tab-header span {
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.tab-header .active {
+	color: #f0b90b;
+	border-bottom: 2px solid #f0b90b;
+}
+
+.list-header {
+	line-height: 1.4;
+	font-size: 13px;
+	padding-top: 10px;
+}
+
+.list-content {
+	width: 100%;
+}
+
+/* .list-content div {
+	width: 33.3%;
+} */
+
+.no_record {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 20px;
+
+}
+
+.list>li:nth-child(2n){
+	background-color: #f1f1f1;
+}
+.bgBalck .list>li:nth-child(2n){
+	background-color: #12151c;
+}
+
+.no_record img {
+	width: 80px;
+	margin-top: 60px;
+}
+
+.btns {
+	width: 100%;
+	margin-top: 10px;
+	padding-top: 10px;
+	text-align: right;
+}
+
+.btns button {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 25px;
+	background-color: #f0b90b;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 16px;
+	position: relative;
+	top: 5px;
+}
+
+.modals {
+	display: none;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.modals div {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.prices-modals {
+	display: inline-block;
+	line-height: 30px;
+	position: relative;
+	top: -10px;
+}
+
+.inputs {
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #f1f1f1;
+	border-radius: 2px;
+	width: 70%;
+	display: inline-block;
+}
+
+.reduce {
+	border-right: 1px solid #f1f1f1;
+	font-size: 40px;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+
+.reduce i {
+	font-weight: normal;
+	position: relative;
+	top: -3px;
+}
+
+.modals input {
+	width: 58%;
+	line-height: 28px;
+	text-align: center;
+	color: #333;
+}
+
+.add {
+	border-left: 1px solid #f1f1f1;
+	font-size: 40px;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+}
+
+.yl,
+.ks {
+	width: 100%;
+	text-align: center;
+	margin: 10px 0;
+}
+.lever-rate{
+	width: 100%;
+	background-color: #fff;
+	padding: 10px 10px;
+}
+.bgBlackColor .bdt{
+	border-top: 1px solid #12151c;
+}
+.bgBalck .modals input{
+	color: #fff;
+}

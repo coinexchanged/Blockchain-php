@@ -1,0 +1,125 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #fff;
+}
+
+div#header,
+div#Trading{
+	padding:10px 3% 0;
+}
+div#header div,
+div#Trading div{
+	overflow: hidden;
+	padding: 10px 0;
+}
+div#header P img,
+div#Trading P img{
+	width: 16px;
+	margin: -6px 5px 0 0;
+}
+div#header P span,
+div#Trading P span{
+	font-size: 14px;
+	color: #828181;	
+}
+
+
+div#Trading{
+	padding-top: 0;
+	position: relative;
+}
+div#Trading div h2{
+	margin: 0!important;
+	font-weight: bold;
+}
+div#Trading hr{
+	background: red;
+	margin: 0;
+}
+.span{
+	color: #5686D2 !important;
+}
+div#Trading div.Tradingon{
+	display: none;
+}
+div#Trading div.Tradingon p{
+	font-size: 14px;
+	font-weight: bold;
+	color: #828181
+}
+div#Trading div.Tradingon span{
+	display: inline-block;
+	width: 2%;
+	height: 45px;
+	font-size: 3rem;
+	position: relative;
+	top: 7px;
+}
+div#Trading div.Tradingon input{
+	width: 47%;
+	height: 45px;
+	text-indent: 10px;
+	color: #ccc !important;
+	font-size: 1.5rem;
+	margin-bottom: 15px;
+	background: #fff;
+	outline: none;
+	border: 1px solid #ccc;
+}
+div#Trading div.Tradingon input.select{
+	background:url(images/pulldown.png) no-repeat right;
+	background-size: 20px;
+}
+div#Trading div.Tradingon ul{
+	list-style: none;
+	overflow: hidden;
+}
+div#Trading div.Tradingon ul.selectCurrency{
+	display: none;
+}
+div#Trading div.Tradingon ul li{
+	float: left;
+	width: 30%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 1.5%;
+}
+div#Trading div.Tradingon div{
+	display: flex;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 0
+}
+div#Trading div.Tradingon div button{
+	flex: 1;
+	height: 45px;
+	border: none;
+	background: #fff;
+	color: #1f3f59;
+	font-size: 14px;
+	border-radius: 0
+}
+.btn{
+	background: #5686D2!important;
+	color: #fff!important;
+}
+div#Trading div.record{
+	text-align: center;
+	color: #ccc;
+	
+	position: absolute;
+	top: 100px;
+	left: 20%;
+}
+div#Trading div.record img{
+	width: 40%;
+}
+div#Trading div.record span{
+	width: 100%;
+	display: block;
+	text-align: center;
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>管理钱包</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/swiper-3.4.2.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+	
+</head>
+<style>
+	.money_add{
+		position: fixed;
+		display: block;
+		width: 3rem;
+		height: 3rem;
+		background: #1a83d4;
+		border-radius: 50%;text-align: center;
+		line-height: 3rem;
+		right: 1rem;
+		bottom: 6rem;
+		box-shadow: 0px 3px 8px rgba(0,0,0,.3);
+	}
+	.top_tab{
+		line-height: 2rem;
+		text-align: center;
+		padding:.6rem;
+		width:80%;
+	}
+	.top_tab span{
+		position: relative;
+		display: inline-block;
+		width:4rem;
+		text-align: center;
+		color:#999;
+	}
+	.top_tab span.active{
+		color:#10172b;
+	}
+	.top_tab span.active::before{
+		content: "";
+		position:absolute;
+		left:1rem;
+		bottom:0;
+		height:2px;
+		width:2rem;
+		background:#10172b;
+	}
+	.header-scroll {
+		box-shadow: 0 2px 6px rgba(0,0,0,.2);
+	}
+</style>
+<body class="backf5">
+	<!-- 侧导航 -->
+	<aside class="hide">
+		<!-- <div>
+			<img src="../img/default.jpg" alt="">
+			<h5>您还没有登录，点击登录</h5>
+		</div> -->
+		<div class="aside_mask"></div>
+		<section class="aside_box">
+			<div class="user_head_box"  >
+				<i class="iconfont icon-shezhiset font24  fontc_f" style="text-align: right;display:inherit;padding:1rem 1rem 0 0;"></i>
+				<div class="user_head_info" id="ooo">
+					<a href="javascript:;" class="user_photo"><img id="user_info_photo" src="../img/default.png" width="32" alt=""></a> 
+					<div class="user_name" >
+						<p  class="font18" id="user_info_nickname"> 13717876729 </p>
+						<p class="font14" >UID:<span class="UID"></span></p>
+					</div>
+					
+				</div>
+				<div class="user_head_info" id="login" >
+					<a href="javascript:;" class="user_photo"><img  src="../img/default.png" width="32" alt=""></a> 
+					<div class="user_name"  >
+						<p  class="font24" 点击登录 </p>
+						<p class="font14" >欢迎来到</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_zichang.png" width="14" alt="">
+						<a  href="money_adm.html">
+							<span class="fontc_hdl font14">我的资产</span>
+						</a>
+					</div>
+				</div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+							<img src="../img/icon/icon_user_order.png" width="14" alt="">
+						<a  href="order_item.html">
+							<span class="fontc_hdl font14">订单管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_yao.png" width="14" alt="">
+						<a  href="cashback.html">
+							<span class="fontc_hdl font14">邀请返佣</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_jiedian.png" width="14" alt="">
+						<a  href="javascript:;">
+							<span class="fontc_hdl font14">超级节点</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_union.png" width="14" alt="">
+						<a  href="javascript:;">
+							<span class="fontc_hdl font14">联盟节点</span>
+						</a>  
+					</div>
+				</div>
+				<div class="userinfo_box" style="border:0;">
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_anquan.png" width="14" alt="">
+						<a  href="safe_center.html" >
+							<span class="fontc_hdl font14">安全中心</span>
+						</a>  
+					</div>    
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_shoukuan.png" width="14" alt="">
+						<a  href="payment_item.html">
+							<span class="fontc_hdl font14">收款方式</span>
+						</a>
+					</div>     
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_user_tibi.png" width="14" alt="">
+						<a  href="address.html">
+							<span class="fontc_hdl font14">提币地址</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<img src="../img/icon/icon_users.png" width="14" alt="">
+						<a  href="javascript:;" style="border:0;">
+							<span class="fontc_hdl font14">关于我们</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- <a class="login_btn quit_btn" href="login.html">退出登录</a> -->
+		</section>
+	</aside>
+
+	<div class="money_header mgbfoot" id="app" style="margin-top:3.8rem">
+		<header class="backF" >
+			<i class="iconfont icon-xiangqing font24  fontc_hdl icon_aside"></i>
+			<div class="top_tab tc">
+				<span class="active">交易</span>
+				<span>法币</span>
+			</div>
+			<i class="iconfont icon-shezhiset font24  fontc_f "></i>
+		</header>
+		<div class="swiper-container bgwhite">
+			<div class="swiper-wrapper">
+				<div class="font14 fontc_f swiper-slide">
+					<p style="display: flex;align-items: center;justify-content: center;">
+						<span>总资产折合（CNY）</span></span><i class="iconfont icon-yanjing font20  fontc_f yanjing1"  ></i>
+					</p>
+					<p  class="font24 mgt10 total1"> </p>
+				</div>
+				<div class="font14 fontc_f swiper-slide level02">
+					<p style="display: flex;align-items: center;justify-content: center;">
+						<span>总资产折合（CNY）</span></span><i class="iconfont icon-yanjing font20  fontc_f yanjing2"  ></i>
+					</p>
+					<p  class="font24 mgt10 total2"> </p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="level_con" >
+			<ul class="money_item" id="trade_box">
+				<script type="text/html" id="trade_item">
+					<%for(i in list){%>
+						<li class="backF">
+							<div class="money_item_name">
+								<img src="../img/icon/icon_b.png" width="30" />
+								<h4 class="fontc_hdl mgl10"><%=list[i].currency_name%></h4>
+							</div>
+							<h4 class="font24 fontc_hdl font_bold" style="text-align: center">1064.88</h4>
+							<div class="money_item_con">
+								<p>
+									<span >可用</span>
+									<span ><%=list[i].change_balance%></span>
+								</p>
+								<p>
+									<span >锁定</span>
+									<span ><%=list[i].lock_change_balance%></span>
+								</p>
+							</div>
+							<div class="money_btn_box">
+								<a href="money_rechange.html?id=<%=list[i].currency%>&name=<%=list[i].currency_name%>">充币</a>
+								<a href="money_mention.html">提币</a>
+								<a href="javascript:;">财务记录</a>
+								<a href="javascript:;">法币交易</a>
+							</div>
+						</li>
+					<%}%>
+				</script>
+			</ul>
+		</div>
+		<div class="level_con" >
+			<ul class="money_item" id="fabi_box">
+				<script type="text/html" id="fabi_item">
+					<%for(i in list){%>
+						<li class="backF">
+							<div class="money_item_name">
+								<img src="../img/icon/icon_b.png" width="30" />
+								<h4 class="fontc_hdl mgl10"><%=list[i].currency_name%></h4>
+							</div>
+							<h4 class="font24 fontc_hdl font_bold" style="text-align: center">1064.88</h4>
+							<div class="money_item_con">
+								<p>
+									<span >可用</span>
+									<span ><%=list[i].legal_balance%></span>
+								</p>
+								<p>
+									<span >锁定</span>
+									<span ><%=list[i].lock_legal_balance%></span>
+								</p>
+							</div>
+							<div class="money_btn_box">
+								<a href="fb_transfer.html">划转</a>
+								<a href="javascript:;">财务记录</a>
+								<a href="javascript:;">法币交易</a>
+							</div>
+						</li>
+					<%}%>
+				</script>
+			</ul>
+		</div>
+	</div>
+
+	<footer  style="padding-top:0;">
+		<a href="index.html"  >
+			<img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+			<span class="fontc_9">行情</span>
+		</a>
+		<a href="trade_index.html" id="trade_nav" >
+			<img src="../img/icon/icon_jiaoyi.png" width="24" style="margin:0 auto;" alt="">
+			<span class="fontc_9">交易</span>
+		</a>
+		<a href="ctc.html" style="position:relative;" >
+			<img src="../img/icon/icon_ctc.png" width="22" style="margin:0 auto;" alt="">
+			<span class="fontc_9">C2C</span>
+		</a>
+		<a href="chatRoom.html" >
+			<img src="../img/icon/icon_liaotian.png" width="22" style="margin:0 auto;" alt="">
+			<span class="fontc_9">聊天室</span>
+		</a>
+		<a href="money_adm.html" >
+			<img src="../img/icon/icon_qianbao1.png" width="22" style="margin:0 auto;" alt="">
+			<span class="fontc_hdl">钱包</span>
+		</a>
+	</footer>	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/monry_adm.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+
+	<script>
+		$(function(){
+			var token = get_user_login();
+			$.ajax({
+				url: _API + "user/info",
+				type: "GET",
+				dataType: "json",
+				async: true,
+				beforeSend: function beforeSend(request) {
+					request.setRequestHeader("Authorization", token);
+				},
+				success: function success(data) {
+					console.log(data)
+					if (data.type == 'ok') {
+						$("#ooo").removeClass("hide");
+						$("#login").css("display","none");    
+						$("#user_info_nickname").html(data.message.account);
+						$(".UID").html(data.message.id);
+					} else {
+						$("#ooo").addClass("hide");
+						$("#login").css("display","block");  
+					}
+				}
+			});	
+
+			$.ajax({
+				url: _API + "wallet/list",
+				type: "post",
+				dataType: "json",
+				async: true,
+				beforeSend: function beforeSend(request) {
+					request.setRequestHeader("Authorization", token);
+				},
+				success: function success(data) {
+					$(".total1").html(data.message.change_wallet.totle);
+					$(".total2").html(data.message.legal_wallet.totle);
+					render_tpl("trade_item", { list: data.message.change_wallet.balance}, $("#trade_box"));
+					render_tpl("fabi_item", { list: data.message.legal_wallet.balance}, $("#fabi_box"));
+
+					var money1 = $(".total1").html();
+					var money2 = $(".total2").html();
+					$("#app").on("click",".yanjing1",function(){
+						if($(this).hasClass("icon-yanjing")){
+							var newMoney = replaceStr(money1,0,money1.length,'*');
+							$(this).removeClass("icon-yanjing").addClass("icon-yanjing1")
+							$(this).parents(".swiper-slide").find(".total1").html(newMoney);
+						}else{
+							$(this).removeClass("icon-yanjing1").addClass("icon-yanjing")
+							$(this).parents(".swiper-slide").find(".total1").html(money1); 
+						}
+					})
+
+					$("#app").on("click",".yanjing2",function(){
+						if($(this).hasClass("icon-yanjing")){
+							var newMoney = replaceStr(money2,0,money2.length,'*');
+							$(this).removeClass("icon-yanjing").addClass("icon-yanjing1")
+							$(this).parents(".swiper-slide").find(".total2").html(newMoney);
+						}else{
+							$(this).removeClass("icon-yanjing1").addClass("icon-yanjing")
+							$(this).parents(".swiper-slide").find(".total2").html(money2); 
+						}
+					})
+
+					// 隐藏切换
+					//替换某个字符串从start到end的内容为char字符
+					function replaceStr(str,start,end, char){
+						var len = str.length;
+						var prev = str.substr(0, start);
+						var latter = str.substr(end, len-end);
+						var num = end - start;
+						
+						return prev + repeatStr(char, num) + latter; 
+					}
+					//重复某个字符多次
+					function repeatStr(char, length){
+						var str = '';
+						for(var i=0; i<length; ++i){
+							str += char;
+						}
+						return str;
+					}
+					
+				}
+			});	
+		})
+
+
+		
+   
+	</script>
+</body>
+</html>

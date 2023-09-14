@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>账户明细</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+
+<body style="background: #f5f5f5;">
+    <header class="borderB" style="background: #fff;">
+        <i class="iconfont icon-jianzuo font24  fontc_3 backPage"></i>
+        <h1 class="fontc_3">账户明细</h1>
+    </header>
+    <div id="user_info" data-address="<%= address %>" class="mgthead">
+        <section>
+            <div class="tab_box">
+                <div class="record_info " id="all_details"  >
+                    <ul class="record_item " id="data_ul" data-page="1">
+                        
+                    </ul>
+                    <!--空页面-->
+                    <div class="black_png hide">
+                        <img src="/images/home/blank.png">
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </div>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/account_details.js"></script>
+    
+</body>
+</html>

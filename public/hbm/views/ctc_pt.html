@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>华盾链交易</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+</style>
+<body class="backf5">
+     <header class="borderB" style="background: #10172b;">
+        <i class="iconfont icon-jianzuo font24  fontc_f backPage"></i>
+        <h1 class="fontc_f">华盾链交易</h1>
+        <div class="header_nav">
+            <a href="ctc_pt.html" class="act">普通</a>
+            <a href="ctc.html"  >商家</a>
+        </div>
+    </header>
+
+    <!--上部分的买入卖出-->
+    <section class=" mgthead mgbfoot">
+        <div>
+            <div class="trade_nav_indextab backF" style="position:fixed;width:100%;top:2.8rem;left:0;padding:0;">
+                <div class="trade_nav_inout">
+                    <span class="act">买入</span>
+                    <span>卖出</span>
+                    <span>当前订单</span>
+                    <span>历史订单</span>
+                </div>
+            </div>
+            <div class="ctc_body_tab" style="margin-top:6.4rem;">
+                <div class="" style="width:100%;">
+                    <!--买入-->
+                    <div class="business_in ">
+                        <ul class="out_details backF pd10" style="margin-top:0;">
+                            <li style="border:0;">
+                                <span>买入价格</span>
+                                <div class="out_input">
+                                    3.69 CNY
+                                </div>
+                                <span>余额￥0.00</span>
+                            </li>
+                            <li >
+                                <span>买入数量</span>
+                                <div class="out_input">
+                                    <input type="text"  onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"  placeholder="请输入数量" >
+                                </div>
+                                <span>USDT</span>
+                            </li>
+                            <li >
+                                <span>兑换金额</span>
+                                <div class="out_input">
+                                    <input type="text" placeholder="请输入金额" >
+                                </div>
+                                <span>CNY</span>
+                            </li>
+                        </ul>
+                        <div class="trade_inout_btn pd10 backF"  style="margin-top:0;margin-bottom:0;">
+                            <button>立即买入</button>
+                        </div>
+                         <div class="ctc_trade_box">
+                            <p style="font-size:13px;" class="pd10">交易金额（只显示在线商家）</p>
+                            <ul class="ctc_trade_list">
+                                <li >
+                                    <a href="javascript:;">
+                                        <div>
+                                            <p class="font16 fontc_2">丁**</p>
+                                            <p>
+                                                <span>成交：<span>569</span></span>
+                                            </p>
+                                            <p>
+                                                <span>用时：<span>569</span>分钟</span>
+                                            </p>
+                                            <p>在线：17分钟</p>
+                                            <p>
+                                                <i class="iconfont icon-alipay font18  fontc_blue"></i>
+                                                <i class="iconfont icon-zhifu font20  fontc_yellow "></i>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="font16 fontc_2">8787.24CNY</p>
+                                            <p>
+                                                <span>价格：<span>56.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>限额：<span>100.00-10000.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>数量：<span>2000.00</span></span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="ctc_trade_icon">买入</span>
+                                            <i class="iconfont icon-jianyou fontc_9 font20"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:;">
+                                        <div>
+                                            <p class="font16 fontc_2">丁**</p>
+                                            <p>
+                                                <span>成交：<span>569</span></span>
+                                            </p>
+                                            <p>
+                                                <span>用时：<span>569</span>分钟</span>
+                                            </p>
+                                            <p>在线：17分钟</p>
+                                            <p>
+                                                <i class="iconfont icon-alipay font18  fontc_blue"></i>
+                                                <i class="iconfont icon-zhifu font20  fontc_yellow "></i>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="font16 fontc_2">8787.24CNY</p>
+                                            <p>
+                                                <span>价格：<span>56.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>限额：<span>100.00-10000.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>数量：<span>2000.00</span></span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="ctc_trade_icon">买入</span>
+                                            <i class="iconfont icon-jianyou fontc_9 font20"></i>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--卖出-->
+                    <div class="business_in hide">
+                        <ul class="out_details backF pd10" style="margin-top:0;">
+                            <li style="border:0;">
+                                <span>卖出价格</span>
+                                <div class="out_input">
+                                    3.69 CNY
+                                </div>
+                                <span>余额￥0.00</span>
+                            </li>
+                            <li >
+                                <span>卖出数量</span>
+                                <div class="out_input">
+                                    <input type="text"  onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"  placeholder="请输入数量" >
+                                </div>
+                                <span>USDT</span>
+                            </li>
+                            <li >
+                                <span>兑换金额</span>
+                                <div class="out_input">
+                                    <input type="text" placeholder="请输入金额" >
+                                </div>
+                                <span>CNY</span>
+                            </li>    
+                        </ul>
+                        <div class="trade_inout_btn pd10 backF" style="margin-top:0;margin-bottom:0;">
+                            <button style="background:#29a555;">立即卖出</button>
+                        </div>
+                        <div class="ctc_trade_box">
+                            <p style="font-size:13px;" class="pd10">交易金额（只显示在线商家）</p>
+                            <ul class="ctc_trade_list">
+                                <li >
+                                    <a href="javascript:;">
+                                        <div>
+                                            <p class="font16 fontc_2">丁**</p>
+                                            <p>
+                                                <span>成交：<span>569</span></span>
+                                            </p>
+                                            <p>
+                                                <span>用时：<span>569</span>分钟</span>
+                                            </p>
+                                            <p>在线：17分钟</p>
+                                            <p>
+                                                <i class="iconfont icon-alipay font18  fontc_blue"></i>
+                                                <i class="iconfont icon-zhifu font20  fontc_yellow "></i>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="font16 fontc_2">8787.24CNY</p>
+                                            <p>
+                                                <span>价格：<span>56.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>限额：<span>100.00-10000.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>数量：<span>2000.00</span></span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="ctc_trade_icon">卖出</span>
+                                            <i class="iconfont icon-jianyou fontc_9 font20"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:;">
+                                        <div>
+                                            <p class="font16 fontc_2">丁**</p>
+                                            <p>
+                                                <span>成交：<span>569</span></span>
+                                            </p>
+                                            <p>
+                                                <span>用时：<span>569</span>分钟</span>
+                                            </p>
+                                            <p>在线：17分钟</p>
+                                            <p>
+                                                <i class="iconfont icon-alipay font18  fontc_blue"></i>
+                                                <i class="iconfont icon-zhifu font20  fontc_yellow "></i>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p class="font16 fontc_2">8787.24CNY</p>
+                                            <p>
+                                                <span>价格：<span>56.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>限额：<span>100.00-10000.00</span></span>
+                                            </p>
+                                            <p>
+                                                <span>数量：<span>2000.00</span></span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="ctc_trade_icon">卖出</span>
+                                            <i class="iconfont icon-jianyou fontc_9 font20"></i>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="business_in hide">
+                        <div class="black_png  mgthead">
+                            <img src="/images/home/blank.png">
+                        </div>
+                    </div>
+
+                     <div class="business_in hide">
+                        <div class="black_png  mgthead">
+                            <img src="/images/home/blank.png">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer  style="padding-top:0;">
+        <a href="index.html"  >
+            <img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">行情</span>
+        </a>
+        <a href="trade_index.html" id="trade_nav" >
+            <img src="../img/icon/icon_jiaoyi.png" width="24" style="margin:0 auto;" alt="">
+            <span class="fontc_9">交易</span>
+        </a>
+        <a href="ctc.html" style="position:relative;" >
+            <img src="../img/icon/icon_ctc1.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_hdl">C2C</span>
+        </a>
+        <a href="chatRoom.html" >
+            <img src="../img/icon/icon_liaotian.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">聊天室</span>
+        </a>
+        <a href="money_adm.html" >
+            <img src="../img/icon/icon_qianbao.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">钱包</span>
+        </a>
+    </footer>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+
+    <script>
+        $(function(){
+
+            $(".trade_nav_inout").on("click","span",function(){
+                var index = $(this).index();
+                $(this).addClass("act").siblings().removeClass("act");
+                $(".business_in").eq(index).removeClass("hide").siblings().addClass("hide");
+            })
+            $(".trade_nav_inout span:nth-child(4)").click(function(){
+                window.location.href = "ctc_hisorder.html"
+            })
+            $(".trade_nav_inout span:nth-child(3)").click(function(){
+                window.location.href = "ctc_curorder.html"
+            })
+            // $(".trade_nav_inout span:nth-child(2)").click(function(){
+            //     window.location.href = "ctc_pt.html"
+            // })
+            $(".trade_nav_inout span:nth-child(1)").click(function(){
+                window.location.href = "ctc_pt.html"
+            })
+        })
+    </script>
+</body>
+</html>

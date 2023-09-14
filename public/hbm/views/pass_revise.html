@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>忘记密码</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+    .code{
+        height:26px;
+        width:80px;
+        text-align: center;
+        border-radius: 6px;
+        color:#ff5e43;
+        font-size:14px;
+        line-height: 26px;
+        
+    }
+    .disabled{
+        background:#ddd;
+    }
+    .login_btn{height:50px;line-height: 50px;}
+</style>
+<body style="background:#f6f6f6;">
+    <header class="borderB backF " >
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">登录密码修改</h1>
+    </header>
+    <div class="loginPage mgthead">
+        <form>
+            <div class="login_box">
+                <div class="login_tab" style="margin-top:2%;">
+                    
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input  type="password" name="pwd" class="mgl10" placeholder="请输入旧密码"/>
+                    </div>
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input  type="password" name="re_pwd" class="mgl10" placeholder="请输入新密码"/>
+                    </div>
+                    <div class="input-con">
+                        <img src="../img/icon/icon_duanxin.png" alt="" width="24">
+                        <input  type="text" name="code" style="margin-left:16px;" placeholder="请输入短信验证码"/>
+                        <div class="code">获取验证码</div>
+                    </div>
+                </div>
+            </div>
+            <input name="content" type="hidden" id="input_content">
+            <input name="address" type="hidden" id="address" value="">
+            <a class="login_btn" href="javascript:;" style="background:#10172b;">确认</a>
+        </form>
+    </div>
+    
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script>
+        $(function () {
+        $(".login_btn").click(function () {
+            valid();
+        });
+        function mobile_valid() {
+            var reg = /^1[345678]\d{9}$/;
+            var mobile = $("input[name=mobile]").val();
+            if (!reg.test(mobile)) {
+                layer.open({
+                    content: '请输入正确的手机号',
+                    skin: 'msg',
+                    time: 3
+                });
+                return;
+            }
+            return true;
+        }
+        function pwd_valid() {
+            var reg = /^[0-9a-zA-Z]{6,25}$/;
+            var pwd = $("input[name=pwd]").val();
+            var re_pwd = $("input[name=re_pwd]").val();
+            if (!reg.test(pwd)) {
+                layer.open({
+                    content: '请输入6-25位数字或字母',
+                    skin: 'msg',
+                    time: 3
+                });
+                return;
+            }
+            if (re_pwd !== "" && pwd !== re_pwd) {
+                layer.open({
+                    content: '两次输入密码不一致',
+                    skin: 'msg',
+                    time: 3
+                });
+
+                return;
+            }
+            return true;
+        }
+        function re_pwd_valid() {
+            var pwd = $("input[name=pwd]").val();
+            var re_pwd =$("input[name=re_pwd]").val();
+            if (pwd !== "" && pwd !== re_pwd) {
+                layer.open({
+                    content: '两次输入密码不一致',
+                    skin: 'msg',
+                    time: 3
+                });
+                return;
+            }
+            return true;
+        }
+        function code_valid() {
+            var reg = /^[0-9]{6}$/;
+            var code = $("input[name=code]").val();
+            if (!reg.test(code)) {
+                layer.open({
+                    content: '请输入正确的验证码',
+                    skin: 'msg',
+                    time: 3
+                });
+                return false;
+            }
+            return true;
+        }
+        function valid() {
+            if (mobile_valid() && pwd_valid() && re_pwd_valid() && code_valid()) {
+                $.ajax({
+                    dataType: "json",
+                    type: "POST",
+                    url: laravel_api + "/user/password",
+                    data: {
+                        mobile: $("input[name=mobile]").val(),
+                        password: $("input[name=pwd]").val(),
+                        verification_code: $("input[name=code]").val()
+                    },
+                    success: function success(data) {
+                        console.log(data);
+                        if (data.type == "ok") {
+                            layer.open({
+                                content: data.message + "请使用新密码登录",
+                                btn:["好的"],
+                                yes:function(){
+                                    location.href = "/users/login";
+                                }
+                            });
+                        } else {
+                            layer.open({
+                                content: data.message,
+                                skin: 'msg',
+                                time: 3
+                            });
+                        }
+                    }
+                });
+            }
+        }
+
+        $(".code").removeClass("disabled").on("click", function () {
+            get_code();
+        });
+        
+        function get_code() {
+            var time = 60;
+            var mobile = $("input[name=mobile]").val();
+            if (mobile_valid()) {
+                $(".code").addClass("disabled").html(time).off();
+                $.ajax({
+                    url: laravel_api + "/sms_send",
+                    dataType: "json",
+                    type: "POST",
+                    data: { 
+                        mobile: $("input[name=mobile]").val(),
+                        type:"password"
+                    },
+                    success: function success(data) {
+                        console.log(data);
+                        if (data.type == "ok") {
+                            layer_msg("发送成功");
+                            var timer = setInterval(function () {
+                                if (time === 1) {
+                                    clearInterval(timer);
+                                    $(".code").removeClass("disabled").html("获取验证码").on("click", function () {
+                                        get_code();
+                                    });
+                                    time = 6;
+                                } else {
+                                    time--;
+                                    $(".code").addClass("disabled").html(time).off();
+                                }
+                            }, 1000);
+                        } else {
+                            layer.open({
+                                content: '发送失败，请重试',
+                                skin: 'msg',
+                                time: 3
+                            });
+                        }
+                    }
+                });
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>

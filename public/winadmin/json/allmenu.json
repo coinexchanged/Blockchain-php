@@ -1,0 +1,113 @@
+﻿{
+  "code": 1,
+  "message": "成功",
+  "data": [
+    {
+      "title": "主题",
+      "pageURL": "theme",
+      "name": "主题",
+      "icon": "fa-television",
+      "openType": 1,
+      "extend": false,
+      "childs": null,
+      "id": 1
+    },
+    {
+      "title": "系统设置",
+      "pageURL": null,
+      "name": "系统设置",
+      "icon": "fa-cog",
+      "openType": 1,
+      "extend": false,
+      "childs": [
+        {
+          "title": "基础设置",
+          "pageURL": "/admin/setting/index",
+          "name": "基础设置",
+          "icon": "fa-navicon",
+          "openType": 2,
+          "extend": false,
+          "childs": null,
+          "id": 2
+        },
+        {
+          "title": "操作员管理",
+          "pageURL": "/admin/manager/manager_index",
+          "name": "操作员管理",
+          "icon": "fa-user",
+          "openType": 2,
+          "extend": false,
+          "childs": null,
+          "id": 19
+        },
+        {
+          "title": "角色管理",
+          "pageURL": "/admin/manager/manager_roles",
+          "name": "角色管理",
+          "icon": "fa-th-large",
+          "openType": 2,
+          "extend": false,
+          "childs": null,
+          "id": 22
+        }
+      ],
+      "id": 23
+    },
+    {
+      "title": "图标展示",
+      "pageURL": null,
+      "name": "图标展示",
+      "icon": "fa-user",
+      "openType": 1,
+      "extend": false,
+      "childs": [
+
+
+        {
+          "title": "日历",
+          "pageURL": null,
+          "name": "日历",
+          "icon": "fa-calendar",
+          "openType": 1,
+          "extend": false,
+          "childs": null,
+          "id": 30
+        },
+
+
+        {
+          "title": "桌面",
+          "pageURL": null,
+          "name": "桌面",
+          "icon": "fa-desktop",
+          "openType": 1,
+          "extend": false,
+          "childs": null,
+          "id": 33
+        },
+
+        {
+          "title": "设置",
+          "pageURL": null,
+          "name": "设置",
+          "icon": "fa-cog",
+          "openType": 1,
+          "extend": false,
+          "childs": null,
+          "id": 35
+        },
+        {
+          "title": "标签",
+          "pageURL": null,
+          "name": "标签",
+          "icon": "fa-tags",
+          "openType": 1,
+          "extend": false,
+          "childs": null,
+          "id": 40
+        }
+      ],
+      "id": 27
+    }
+  ]
+}

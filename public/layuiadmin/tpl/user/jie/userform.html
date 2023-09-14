@@ -1,0 +1,141 @@
+
+
+<div class="layui-form" lay-filter="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-inline">
+      <script type="text/html" template>
+        {{# if(d.params.username){ }}
+          <input type="text" name="username" value="{{ d.params.username || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" disabled="">
+        {{# }else{ }}
+          <input type="text" name="username" value="{{ d.params.username || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        {{# } }}
+        <input type="hidden" name="user_id" value="{{ d.params.user_id || 0 }}">
+        <input type="hidden" name="id" value="{{ d.params.id || 0 }}">
+      </script>
+    </div>
+  </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">下级身份</label>
+        <div class="layui-input-inline">
+            <script type="text/html" template>
+                {{# if(d.params.son_level == 1   &&  !d.params.id){ }}
+                    <button class="layui-btn layui-btn-normal layui-btn-radius">一级代理商</button>
+                {{# }else if(d.params.son_level == 2   &&  !d.params.id){ }}
+                    <button class="layui-btn layui-btn-normal layui-btn-radius">二级代理商</button>
+                {{# }else if(d.params.son_level == 3   &&  !d.params.id){ }}
+                    <button class="layui-btn layui-btn-normal layui-btn-radius">三级代理商</button>
+                {{# }else if(d.params.son_level == 4   &&  !d.params.id){ }}
+                    <button class="layui-btn layui-btn-normal layui-btn-radius">四级代理商</button>
+                {{# }else if (d.params.id && d.params.id>0) { }}
+                    <button class="layui-btn layui-btn-normal layui-btn-radius">{{d.params.self_info}}</button>
+                {{# }else{ }}
+                    <button class="layui-btn layui-btn-danger layui-btn-radius">不能添加代理商</button>
+                {{# } }}
+            </script>
+        </div>
+    </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">头寸比例（%）</label>
+    <div class="layui-input-inline">
+      <script type="text/html" template>
+        <input type="text" name="pro_loss" value="{{ d.params.pro_loss || '' }}" lay-verify="pro_loss" placeholder="请输入该代理商的头寸比例,不超过{{ d.params.max_pro_loss || '100' }}" autocomplete="off" class="layui-input">
+      </script>
+    </div>
+      <script type="text/html" template>
+          <div class="layui-form-mid layui-word-aux">设置下级代理商的头寸比例，该值不能超过<span class="layui-badge">{{ d.params.max_pro_loss || '100' }}</span>。只需要输入数字，如20.85%，则输入20.85</div>
+      </script>
+  </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">手续费比例（%）</label>
+        <div class="layui-input-inline">
+            <script type="text/html" template>
+                <input type="text" name="pro_ser" value="{{ d.params.pro_ser || '' }}" lay-verify="pro_ser" placeholder="请输入该代理商的手续费比例,不超过{{ d.params.max_pro_ser || '100' }}" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+        <script type="text/html" template>
+            <div class="layui-form-mid layui-word-aux">设置下级代理商的手续费比例，该值不能超过<span class="layui-badge">{{ d.params.max_pro_ser || '100' }}</span>。只需要输入数字，如20.85%，则输入20.85</div>
+        </script>
+    </div>
+  <div class="layui-form-item" lay-filter="sex">
+    <label class="layui-form-label">是否锁定</label>
+    <div class="layui-input-block">
+      <script type="text/html" template>
+          {{# if(d.params.is_lock){ }}
+            <input type="radio" name="is_lock" value="0" title="开启" {{ d.params.is_lock == '0' ? 'checked' : '' }}>
+              <input type="radio" name="is_lock" value="1" title="锁定" {{ d.params.is_lock == '1' ? 'checked' : '' }}>
+          {{# }else{ }}
+                <input type="radio" name="is_lock" value="0" title="开启" checked>
+              <input type="radio" name="is_lock" value="1" title="锁定">
+          {{# } }}
+      </script>
+    </div>
+      <div class="layui-form-mid layui-word-aux">当锁定时，该用户不能登录代理商管理平台</div>
+  </div>
+    <div class="layui-form-item" lay-filter="sex">
+        <label class="layui-form-label">是否拉新</label>
+        <div class="layui-input-block">
+            <script type="text/html" template>
+                {{# if(d.params.is_lock){ }}
+                <input type="radio" name="is_addson" value="0" title="禁止" {{ d.params.is_addson == '0' ? 'checked' : '' }}>
+                <input type="radio" name="is_addson" value="1" title="允许" {{ d.params.is_addson == '1' ? 'checked' : '' }}>
+                {{# }else{ }}
+                <input type="radio" name="is_addson" value="1" title="允许" checked>
+                <input type="radio" name="is_addson" value="0" title="禁止">
+                {{# } }}
+            </script>
+        </div>
+        <div class="layui-form-mid layui-word-aux">当禁止填加新代理商时，该用户不能添加自己的下级代理商</div>
+    </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label"></label>
+    <div class="layui-input-inline">
+      <input type="button" lay-submit lay-filter="LAY-user-front-submit" value="确认" class="layui-btn">
+    </div>
+  </div>
+</div>
+
+<script>
+layui.use(['admin', 'form', 'upload' ,'layer'], function(){
+  var $ = layui.$
+  ,form = layui.form
+  ,upload = layui.upload;
+
+
+    //自定义验证
+    form.verify({
+        nickname: function(value, item){ //value：表单的值、item：表单的DOM对象
+            if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+                return '用户名不能有特殊字符';
+            }
+            if(/(^\_)|(\__)|(\_+$)/.test(value)){
+                return '用户名首尾不能出现下划线\'_\'';
+            }
+            if(/^\d+\d+\d$/.test(value)){
+                return '用户名不能全为数字';
+            }
+        }
+
+        //我们既支持上述函数式的方式，也支持下述数组的形式
+        //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+        ,pass: [
+            /^[\S]{6,12}$/
+            ,'密码必须6到12位，且不能出现空格'
+        ]
+    });
+  
+  //上传头像
+  upload.render({
+    elem: '#layuiadmin-upload-useradmin'
+    ,url: './json/upload/demo.js'
+    ,accept: 'images'
+    ,method: 'get'
+    ,acceptMime: 'image/*'
+    ,done: function(res){
+      $(this.item).prev("div").children("input").val(res.data.src)
+    }
+  });
+})
+</script>

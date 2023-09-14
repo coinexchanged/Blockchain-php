@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="53px" viewBox="0 0 66 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>编组 27</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-943.000000, -1050.000000)">
+            <g id="编组-39" transform="translate(834.000000, 1052.000000)">
+                <g id="编组-27" transform="translate(108.000000, 0.000000)">
+                    <g id="分组-24" transform="translate(7.000000, 0.000000)" fill-rule="nonzero">
+                        <rect id="矩形" fill="#B6DDFF" x="4.40536496e-13" y="16" width="47.3142857" height="2.62857143"></rect>
+                        <rect id="矩形-copy-167" fill="#5AA4F0" x="4.40536496e-13" y="28.2285714" width="47.3142857" height="2.62857143"></rect>
+                        <rect id="矩形" stroke="#0A4BC1" stroke-width="2.6" x="1.31428571" y="5.62857143" width="46" height="43.3714286" rx="2"></rect>
+                        <g id="分组-13" transform="translate(7.885714, 0.000000)">
+                            <polyline id="路径-21" stroke="#021EA2" stroke-width="2.6" points="3.94285714 29.2857143 19.7142857 14.1714286 26.9428571 21.4 42.7142857 5.62857143"></polyline>
+                            <g id="编组-25" transform="translate(0.114286, 22.000000)" fill="#FFFFFF">
+                                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="2" cx="6" cy="6" r="7"></circle>
+                                <circle id="椭圆形" stroke="#021EA2" stroke-width="3.16521739" cx="6" cy="6" r="4.4173913"></circle>
+                            </g>
+                            <g id="编组-25备份" transform="translate(37.228571, 0.000000)" fill="#FFFFFF">
+                                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="2" cx="6" cy="6" r="7"></circle>
+                                <circle id="椭圆形" stroke="#021EA2" stroke-width="3.16521739" cx="6" cy="6" r="4.4173913"></circle>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="编组-26" transform="translate(0.000000, 36.000000)" fill="#FFFFFF">
+                        <rect id="矩形" x="4" y="0" width="54" height="7"></rect>
+                        <path d="M7.08258727,12.298377 L2.81513398,7.29837702 C2.09806015,6.45821103 2.19784607,5.19581872 3.03801206,4.47874489 C3.40004909,4.16974967 3.8604176,4 4.33638909,4 L22.0929204,4 C22.9213475,4 23.5929204,4.67157288 23.5929204,5.5 C23.5929204,6.32842712 24.2644932,7 25.0929204,7 L37.4557522,7 C38.2841793,7 38.9557522,6.32842712 38.9557522,5.5 C38.9557522,4.67157288 39.6273251,4 40.4557522,4 L58.0588215,4 C59.163391,4 60.0588215,4.8954305 60.0588215,6 C60.0588215,6.42459921 59.9236908,6.83818077 59.6729928,7.18086871 L56.0151757,12.1808687 C55.6385383,12.6957078 55.0389033,13 54.4010044,13 L8.60384238,13 C8.01851891,13 7.46257255,12.7435902 7.08258727,12.298377 Z" id="路径-8" stroke="#0A4BC1" stroke-width="2.6" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

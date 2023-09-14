@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>邀请榜单</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="../css/swiper-3.4.2.min.css" />
+	<!-- <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css"> -->
+</head>
+<style>
+	.ass li{
+		border-bottom:1px solid #eee;padding:.6rem 0;
+		font-size:14px;
+	}
+	.ass li .label{
+		display: inline-block;
+		width:20px;
+		height:20px;
+		background: #10172b;
+		color:#fff;
+		line-height:20px;
+		text-align: center;
+		border-radius: 4px;font-size:12px;
+	}
+	.ass li>div{
+		display: flex;
+		justify-content:space-between;
+		align-items: center;
+	}
+</style>
+<body class="backf5">
+	<header class="borderB backF " >
+		<i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+		<h1 class="fontc_3">邀请榜单</h1>
+	</header>
+
+	<div id="app">
+		<!-- content -->
+		<section class="backF mgthead">
+			<div>
+				<div class="coin_scroll cashback_label">
+					<div class="swiper-container" style="padding-bottom:20px;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="coin_roll" style="margin-top: 1rem;">
+									<img src="../img/icon/icon_2.png"   width="70" style="margin:0 auto;" alt="">
+									<p class=" font12 mgt10">{{List2.account}}</p>
+									<span class="font_9 font12">{{List2.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="coin_roll">
+									<img src="../img/icon/icon_1.png" width="80" style="margin:0 auto;"  alt="">
+									<p class=" font12 mgt10">{{List1.account}}</p>
+									<span class="font_9 font12">{{List1.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="coin_roll" style="margin-top: 1rem;">
+									<img src="../img/icon/icon_3.png" width="70" style="margin:0 auto;"  alt="">
+									<p class=" font12 mgt10">{{List3.account}}</p>
+									<span class="font_9 font12">{{List3.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="ass">
+						<li v-for="(aa) in List">
+							<div>
+								<div>
+									<span class="label">{{aa.num}}</span>
+									<span>{{aa.account}}</span>
+								</div>
+								<span>{{aa.total}}USDT</span>
+							</div>
+						</li>
+						<!-- <li >
+							<div>
+								<div>
+									<span class="label">2</span>
+									<span>123455</span>
+								</div>
+								<span>111USDT</span>
+							</div>
+						</li>
+						<li >
+							<div>
+								<div>
+									<span class="label">2</span>
+									<span>123455</span>
+								</div>
+								<span>111USDT</span>
+							</div>
+						</li> -->
+					</ul>	
+				</div>
+			</div>
+		</section>
+	
+
+	
+	
+	</div>
+
+
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<!-- <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script> -->
+	<script> 
+		var mySwiper = new Swiper('.coin_scroll .swiper-container ',{
+			slidesPerView : 3,
+			slidesPerGroup : 3,
+		})
+
+		var h = $(".coin_scroll .swiper-slide").width()-12;
+		$(".coin_scroll .swiper-slide").css("width",h);
+		
+	</script>
+	<script>
+		$(function(){
+			
+			
+	 var vue = new Vue({
+        el: '#app',
+        data: {
+         List:[],
+         List1:[],
+         List2:[],
+         List3:[],
+        },
+        mounted: function () {
+             var self = this;
+		     var token = get_user_login();
+		     $.ajax({
+            url: _API + "user/invite_list",
+            type: "POST",
+            dataType: "json",
+            async: true,
+            beforeSend: function beforeSend(request) {
+                request.setRequestHeader("Authorization", token);
+            },
+            success: function success(data) {
+            	//console.log(data)
+            	
+                if (data.type == 'ok') {
+                	
+                	self.List1 = data.message[0];
+                	self.List2 = data.message[1];
+                	self.List3 = data.message[2];
+                	var arr= data.message;
+                	if(arr.length >3){
+                		for(i in arr){
+                           var num =1;
+                           num+=Math.floor(i);
+                           arr[i].num= num;
+
+                	     }
+                	     //console.log(arr);
+                	     arr=arr.slice(3);
+                	    // console.log(arr);
+                	     self.List=arr;
+
+                	}else{
+                		$('.ass').hide();
+
+                	}
+                	
+                	console.log(arr);
+
+                } else if(data.type == '999'){
+                 window.location =_SERVER+'login.html';
+                }
+            }
+        });	
+	    },
+	    	methods:{
+            particulars:function(id,name,has_address_num){
+				window.location =_SERVER+'detailed.html?id='+ id+'&name='+name+'&has_address_num='+has_address_num;
+			}
+	    }
+	});
+	
+	
+	
+		})
+	</script>
+</body>
+</html>

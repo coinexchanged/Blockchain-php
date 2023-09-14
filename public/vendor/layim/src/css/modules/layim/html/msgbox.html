@@ -1,0 +1,254 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>好友申请</title>
+
+<link rel="stylesheet" href="../../../layui.css?v=1">
+<style>
+.layim-msgbox{margin: 15px;}
+.layim-msgbox li{position: relative; margin-bottom: 10px; padding: 0 130px 10px 60px; padding-bottom: 10px; line-height: 22px; border-bottom: 1px dotted #e2e2e2;}
+.layim-msgbox .layim-msgbox-tips{margin: 0; padding: 10px 0; border: none; text-align: center; color: #999;}
+.layim-msgbox .layim-msgbox-system{padding: 0 10px 10px 10px;}
+.layim-msgbox li p span{padding-left: 5px; color: #999;}
+.layim-msgbox li p em{font-style: normal; color: #FF5722;}
+
+.layim-msgbox-avatar{position: absolute; left: 0; top: 0; width: 50px; height: 50px;}
+.layim-msgbox-user{padding-top: 5px;}
+.layim-msgbox-content{margin-top: 3px;}
+.layim-msgbox .layui-btn-small{padding: 0 15px; margin-left: 5px;}
+.layim-msgbox-btn{position: absolute; right: 0; top: 12px; color: #999;}
+</style>
+</head>
+<body>
+
+<form class="layui-form" action="" style="margin-top: 20px;">
+  <div class="layui-form-item">
+    <label class="layui-form-label">搜索好友</label>
+    <div class="layui-input-block">
+      <input type="text" name="mobile" id="mobile" lay-verify="title" autocomplete="off" placeholder="请输入用户手机号" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">附言</label>
+    <div class="layui-input-block">
+      <input type="text" name="postscript" id="postscript" autocomplete="off" placeholder="请输入附言号" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label"></label>
+    <button class="layui-btn" id="addsure" type="button" lay-filter="demo2">确认添加</button>
+  </div>
+</form>
+
+<ul class="layim-msgbox" id="LAY_view"></ul>
+
+
+<textarea title="消息模版" id="LAY_tpl" style="display:none;">
+{{# layui.each(d.data, function(index, item){
+  if(item.from){ }}
+    <li data-uid="{{ item.uid }}" data-id="{{ item.id }}" data-fromGroup="{{ item.from_group }}">
+      <a href="javascript:void(0)" target="_blank">
+        <img src="{{ item.user.avatar }}" class="layui-circle layim-msgbox-avatar">
+      </a>
+      <p class="layim-msgbox-user">
+        <a href="javascript:void(0)" target="_blank">{{ item.user.username||'' }}</a>
+        <span>{{ item.time }}</span>
+      </p>
+      <p class="layim-msgbox-content">
+        {{ item.content }} 
+        <span>{{ item.remark ? '附言: '+item.remark : '' }}</span>
+      </p>
+      <p class="layim-msgbox-btn">
+        <button class="layui-btn layui-btn-small" data-type="agree">同意</button>
+        <button class="layui-btn layui-btn-small layui-btn-primary" data-type="refuse">拒绝</button>
+      </p>
+    </li>
+  {{# } else { }}
+    <li class="layim-msgbox-system">
+      <p><em>系统：</em>{{ item.content }}<span>{{ item.time }}</span></p>
+    </li>
+  {{# }
+}); }}
+</textarea>
+
+<!-- 
+上述模版采用了 laytpl 语法，不了解的同学可以去看下文档：http://www.layui.com/doc/modules/laytpl.html 
+-->
+
+
+<script type="text/javascript" src="../../../../../../../miboo/themes/js/jquery.min.js?v=1"></script>
+<script src="../../../../layui.js?v=1"></script>
+<script type="text/javascript" src="../../../../../../../js/main.js?v=2"></script>
+<script>
+layui.use(['form','layim', 'flow'], function(){
+  var layim = layui.layim
+  ,layer = layui.layer
+  ,form  = layui.form
+  ,laytpl = layui.laytpl
+  ,$ = layui.jquery
+  ,flow = layui.flow;
+
+  var cache = {}; //用于临时记录请求到的数据
+
+  //请求消息
+  var renderMsg = function(page, callback){
+
+    $.ajax({
+      url: _SERVER + 'seller/user/applyfriend',
+      type: "GET",
+      dataType: 'json',
+      data:{},
+      success: function(data) {
+//        if(data.type == "ok"){
+          //记录来源用户信息
+          layui.each(data.message, function(index, item){
+            cache[item.from] = item.user;
+          });
+//        }
+        callback && callback(data.message, 1);
+      }
+    });
+
+  };
+
+  //消息信息流
+  flow.load({
+    elem: '#LAY_view' //流加载容器
+    ,isAuto: false
+    ,end: '<li class="layim-msgbox-tips">暂无更多新消息</li>'
+    ,done: function(page, next){ //加载下一页
+      renderMsg(page, function(data, pages){
+        var html = laytpl(LAY_tpl.value).render({
+          data: data
+          ,page: page
+        });
+        next(html, page < pages);
+      });
+    }
+  });
+
+  //打开页面即把消息标记为已读
+  /*
+  $.post('/message/read', {
+    type: 1
+  });
+  */
+
+  //操作
+  var active = {
+    //同意
+    agree: function(othis){
+      var li = othis.parents('li')
+      ,id = li.data('id')
+      ,uid = li.data('uid')
+      ,from_group = li.data('fromGroup')
+      ,user = cache[id];
+
+      //选择分组
+      parent.layui.layim.setFriendGroup({
+        type: 'friend'
+        ,username: user.username
+        ,avatar: user.avatar
+        ,group: parent.layui.layim.cache().friend //获取好友分组数据
+        ,submit: function(group, index){
+
+          $.ajax({
+            url: _SERVER + 'seller/user/applyfriend',
+            type: "POST",
+            dataType: 'json',
+            data:{
+              id: id //对方用户ID
+              ,from_group: from_group //对方设定的好友分组
+              ,status: '1' //对方设定的好友分组
+              ,group: group //我设定的好友分组
+            },
+            success: function(data) {
+              if(data.type == "ok"){
+                //将好友追加到主面板
+                parent.layui.layim.addList({
+                  type: 'friend'
+                  ,avatar: user.avatar //好友头像
+                  ,username: user.username //好友昵称
+                  ,groupid: group //所在的分组id
+                  ,id: uid //好友ID
+                  ,sign: user.sign //好友签名
+                });
+                parent.layer.close(index);
+                othis.parent().html('已同意');
+              }else{
+                layer.msg(data.message)
+              }
+            }
+          });
+          
+        }
+      });
+    }
+
+    //拒绝
+    ,refuse: function(othis){
+      var li = othis.parents('li')
+              ,id = li.data('id')
+      ,uid = li.data('uid');
+
+      layer.confirm('确定拒绝吗？', function(index){
+        $.ajax({
+          url: _SERVER + 'seller/user/applyfriend',
+          type: "POST",
+          dataType: 'json',
+          data:{
+            id: id //对方用户ID
+            ,status: '2'
+          },
+          success: function(data) {
+            if(data.type == "ok"){
+              layer.close(index);
+              othis.parent().html('<em>已拒绝</em>');
+            }else{
+              layer.close(index);
+              return layer.msg(data.message)
+            }
+          }
+        });
+      });
+    }
+  };
+  $('body').on('click', '#addsure', function(){
+    var mobile = $("#mobile").val()
+    if(mobile == "" || mobile == undefined)
+    {
+      layer.msg("请填写用户手机号");
+      return false;
+    }
+    var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+    if (!myreg.test(mobile)) {
+      layer.msg("请输入正确的手机号");
+      return false;
+    }
+    $.ajax({
+      url: _SERVER + 'seller/user/addfriend',
+      type: "POST",
+      dataType: 'json',
+      data:{
+        mobile:mobile,
+        postscript:$("#postscript").val(),
+      },
+      success: function(data) {
+          layer.msg(data.message)
+      },
+      error:function(XMLHttpRequest, textStatus, errorThrown){
+        alert(textStatus.error)
+      }
+    });
+  });
+  $('body').on('click', '.layui-btn', function(){
+    var othis = $(this), type = othis.data('type');
+    active[type] ? active[type].call(this, othis) : '';
+  });
+});
+</script>
+</body>
+</html>

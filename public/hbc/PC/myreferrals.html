@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推广佣金</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/usercenter.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .sub-menu{border-left:18px solid #b83826;box-sizing: border-box;background: #eee;}
+    #tradelist{padding: 0;}
+</style>
+<body>
+<div class="header clearfix">
+
+</div>
+<!--左边内容区-->
+<div class="content">
+    <table class="leftbar" style="padding-top: 15px; height: 1663px;">
+        <tbody><tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr>
+                            <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                <div id="wrapper-250">
+                                    <ul class="accordion">
+                                        <li id="adn1" class="files">
+                                            <a href="javascript:;" class="menu-hide" style="border-top: none;">
+                                                <img src="img/funds/zijin.png" alt="我的资金">
+                                                我的资金
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myfunds"  href="myfunds.html">帐户资金</a></li>
+                                                <!--
+                                                <li><a data-id='interest' href="/myaccount/interest">每日利息</a></li>
+                                                <li><a data-id='dividend' href="/myaccount/dividend">我的分红</a></li>
+                                                -->
+                                                <li><a data-id="myreferrals" class="mactive" href="myreferrals.html">推广佣金</a></li>
+                                                <li><a data-id="mypurselog" href="javascript:;">账单明细</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn2" class="cloud">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/jiaoyi.png" alt="交易挂单">
+                                                交易挂单<span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myorders" href="myorders.html">我的挂单</a></li>
+                                                <li><a data-id="myhistory" href="javascript:;">成交记录</a></li>
+                                                <li><a data-id="myc2chistory" href="javascript:;">C2C成交记录</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn3" class="mail">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/chongzhi.png" alt="充值提现">
+                                                充值提现
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">购买USDT(C2C)</a></li>
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">点对点充值提现(C2C)</a></li>
+                                                <li><a data-id="deposit_coin" href="javascript:;">数字货币充值</a></li>
+                                                <li><a data-id="withdraw_coin" href="javascript:;">数字货币提现</a></li>
+                                                <li><a data-id="deposit_code" href="deposit_code.html">充值码</a></li>
+                                                <li><a data-id="mydeposits" href="mydeposits.html">最近充值记录</a></li>
+                                                <li><a data-id="mywithdrawals" href="mywithdrawals.html">最近提现记录</a></li>
+                                                <li><a data-id="lockbook" href="lockbook.html">领“通证”（分叉币提前领）</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn4" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/anquan.png" alt="安全设置">
+                                                安全设置
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="id_setup" href="javascript:;">身份认证</a></li>
+                                                <li><a data-id="id_setup2" href="javascript:;">高级认证</a></li>
+                                                <!--<li><a data-id='id_setup3' href="/myaccount/id_setup3">视频认证</a></li>-->
+                                                <li><a data-id="totp" href="totp.html">谷歌验证器绑定</a></li>
+                                                <li><a data-id="sms_setup" href="sms_setup.html;">手机绑定</a></li>
+                                                <li><a data-id="login2_setup" href="login2_setup.html">两步登录保护</a></li>
+                                                <li><a data-id="apikeys" href="apikeys.html">API Keys</a></li>
+                                                <li><a data-id="resetpw" href="javascript:;">修改登录密码（自动登出）</a></li>
+                                                <li><a data-id="resetfpw" href="javascript:;">修改资金密码（自动登出）</a></li>
+                                                <li><a data-id="email_setup" href="javascript:;">邮箱绑定</a></li>
+                                                <li><a data-id="antiphishcode" href="javascript:;">防钓鱼码</a></li>
+                                                <li><a data-id="payment_setup" href="javascript:;">支付设置</a></li>
+                                                <li class="new-item"><a data-id="tradepassfrequency" href="javascript:;">交易密码输入频率</a></li>
+                                                <li><a data-id="mylogs" href="javascript:;">安全日志</a></li>
+                                                <li><a data-id="notify" href="javascript:;">通知设置</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="adn5" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/gongdan.png" alt="我的工单">
+                                                我的工单
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="ticket" href="javascript:;">提交工单</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $(".accordion").children("li").find("a").click(function () {
+                $(this).toggleClass("menu-hide").next("ul").toggle();
+                var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+                lb.css("height", mh)
+            });
+
+            var icoType='';
+            if(icoType==''){
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function(){
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 3,{ path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 4,{ path: '/' });
+            });
+
+            //左菜单active标识
+            var url=window.location.href,
+                    pagename=url.split('nt/')[1];
+            $('a[data-id="'+pagename+'"]').addClass("mactive");
+            if(url.indexOf('?coin_withdraw') > -1 || url.indexOf('aw/') > -1){
+                $('a[data-id=withdraw_coin]').addClass("mactive");
+            } else if(url.indexOf('?coin_deposit') > -1 || url.indexOf('it/') > -1){
+                $('a[data-id=deposit_coin]').addClass("mactive");
+            }
+            if(url.indexOf('totp/') > -1){
+                $('a[data-id=totp]').addClass("mactive");
+            }
+
+            /*$(window).scroll(function () {
+             var scrH=$(window).scrollTop();var accHeight=$(".myacc-con").height();
+             if(accHeight>834) {
+             if (scrH > 100) {
+             if(scrH > accHeight-721) {
+             $("#marketlist_wrapper").css({"position": "absolute", "top": "", "bottom": "10px", "width": "100%"});
+             } else {
+             $("#marketlist_wrapper").css({"position": "fixed", "top": "10px", "bottom": "", "width": "22%"});
+             }
+             } else {
+             $("#marketlist_wrapper").attr("style", "");
+             }
+             }
+             });*/
+        });
+    </script>
+    <div class="main_content acc-m-con">
+        <div class="warn">
+            <i>!</i>您尚未实名认证！为保障您的资金安全，在完成实名认证之前，您将不能进行c2c交易、提币等操作。
+            <a class="r-btn" href="/myaccount/id_setup">立即去认证</a>
+        </div>
+        <div class="right_mcontent myacc-con">
+            <style>
+                .js-copy1,.js-copy2{ margin: 20px 0; display: inline-block}
+                .ref-ul li{ width: 50%; float: left; text-align: center;/* margin: 20px 0 0;*/ box-sizing: border-box;padding: 100px 0;}
+                .ref-ul li:first-child{border-right: 1px solid #ddd; position: relative}
+               /* .ref-ul li:first-child:after{content: '\6216'; display: inline-block; position: absolute; right: -8px; top:46%; background: #fff; padding: 5px 0; color: #888}*/
+                .ref-ul input{ display: inline-block; text-align: center; font-size: 20px; padding: 0; border: none; font-weight: bold}
+                .ref-ul .sub-btn {padding: 10px 33px;border-radius: 4px;}
+                .sf-grid td {padding: 12px 0;}
+                .QrCode{ cursor: pointer}
+                .QrCode p{ padding-top: 0;}
+                .QrCode:hover{color: #de5959;}
+                .QrCode:hover img{opacity: 0.8}
+                .dark-body .ref-ul li:first-child{border-color: #343a48;}
+                .dark-body .ref-ul li:first-child:after,.dark-body .ref-ul input{ background: #131a21}
+                #toSignIn .ewml,#toIndex .ewml{width: 50%;float: left;}
+                #toSignIn .ewmr,#toIndex .ewmr{width: 50%;float: left;margin-top: 50px;}
+                .sectioncont input{width: 100%;}
+                .outter {position: relative; padding: 5px;width: 200px;height: 200px;margin-left: 10px;}
+                /* 外层右上有左下 2 个角*/
+                 .outter::before, .outter::after {position: absolute;content: '';height: 30px;width: 30px;}
+                .outter::before {right: 0;top: 0;border-right: 1px solid #b83826; border-top: 1px solid #b83826;}
+                .outter::after {left: 0; bottom: 0;border-left: 1px solid #b83826;border-bottom: 1px solid #b83826;}
+               /* 内层左上和右下 2 个角*/
+                .cont {width: 200px;height: 200px;position: relative;}
+                .cont::before,.cont::after { position: absolute;content: '';height: 30px;width:30px;}
+                .cont::before {left: -5px;top: -5px;border-left: 1px solid #b83826;border-top: 1px solid #b83826;}
+                .cont::after {right: -5px;bottom: -5px;border-right: 1px solid #b83826;border-bottom: 1px solid #b83826;}
+                .cont img{width: 160px; height: 160px;margin: 0 auto;padding-top:20px;}
+                .ewml .clearfix{display: flex;justify-content: space-around;}
+                .ref-ul{padding: 10px 0;border-bottom: 1px solid #d8d8d8;border-top: 1px solid #d8d8d8;}
+                .ref-way{margin-top: 50px;}
+
+            </style>
+            <div class="pddlr-30">
+                <div class="m_title" style="margin-top: 50px;text-align: center;"><h4>我的推广链接</h4></div>
+                <div class="sectioncont">
+                    <div style="text-align: center;padding-bottom: 60px;">
+                        <p>通过以下链接推荐其他用户访问本站并注册，您可以获得被推荐用户一年内交易手续的 <span class="red"><strong>30%</strong></span> 作为佣金，被推荐用户享受一年内交易费<span class="red"><strong> 9折 </strong></span>优惠。</p>
+                        <p>注：推荐用户跟本人账户IP地址相同的推荐无效，新注册1天内的帐号推荐别人无效。</p>
+                    </div>
+                    <ul class="ref-ul clearfix">
+                        <li id="toSignIn">
+                            <div class="ewml">
+                                <div class="clearfix">
+                                <span id="" class="QrCode">
+                                    <div class="outter">
+                                        <div class="cont">
+                                            <img class="QrCodeImg" src="img/myreferrals/ewm.png" alt="" style=" ">
+                                        </div>
+                                    </div>
+                                    <!--<div class="imgborder">
+                                        <img class="QrCodeImg" src="img/myreferrals/ewm.png" alt="" style="width: 160px; height: 160px;margin: 0 auto;">
+                                    </div>-->
+
+                                    <p>点击保存二维码，去您的社交媒体推广</p>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="ewmr">
+                                <p>推荐到gate.io注册页面的链接：</p>
+                                <input type="text" value="http://huadunlian.cn/2003546" readonly="">
+                                <div>
+                            <span class="js-copy1" data-clipboard-text="">
+                                <span class="sub-btn">点击复制链接</span>
+                            </span>
+                                </div>
+                                <p class="copytip c-tip1 green">复制成功，现在您可以去您的社交媒体粘贴了</p>
+                            </div>
+
+
+
+
+                        </li>
+                        <li id="toIndex">
+                            <div class="ewml">
+                                <div class="clearfix">
+                                <span id="toSignInCode" class="QrCode">
+                                    <div class="outter">
+                                        <div class="cont">
+                                            <img class="QrCodeImg" src="img/myreferrals/ewm.png" alt="" style=" ">
+                                        </div>
+                                    </div>
+                                    <!--<div class="imgborder">
+                                        <img class="QrCodeImg" src="img/myreferrals/ewm.png" alt="" style="width: 160px; height: 160px;margin: 0 auto;">
+                                    </div>-->
+
+                                    <p>点击保存二维码，去您的社交媒体推广</p>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="ewmr">
+                                <p>推荐到gate.io注册页面的链接：</p>
+                                <input type="text" value="http://huadunlian.cn/2003546" readonly="">
+                                <div>
+                            <span class="js-copy1" data-clipboard-text="">
+                                <span class="sub-btn">点击复制链接</span>
+                            </span>
+                                </div>
+                                <p class="copytip c-tip1 green">复制成功，现在您可以去您的社交媒体粘贴了</p>
+                            </div>
+
+
+
+
+                        </li>
+                       <!-- <li id="toIndex">
+                            <p>推荐到gate.io首页的链接：</p>
+                            <input type="text" value="gateio.io/signup/2131293" readonly="">
+                            <div>
+                <span class="js-copy2" data-clipboard-text="">
+                    <span class="sub-btn">点击复制链接</span>
+                </span>
+                            </div>
+                            <p class="copytip c-tip2 green">复制成功，现在您可以去您的社交媒体粘贴了</p>
+                            <div class="clearfix">
+                <span class="QrCode">
+                    <img class="QrCodeImg" src="img/myreferrals/ewm.png" alt="code" style="width: 160px; height: 160px">
+                    <p>点击保存二维码，去您的社交媒体推广</p>
+                </span>
+                            </div>
+                        </li>-->
+                    </ul>
+                    <div class="ref-way">
+                        <h4>推广方法：</h4>
+                        <p>1. 复制以上任一推广链接，或者下载保存以上二维码，去您的社交媒体推广，让您的朋友们通过此链接访问本站并注册。</p>
+                        <p>2. 移动端扫码以上二维码，并把打开的gate.io页面分享到您的社交媒体。如微信，扫码以上二维码后，在打开的gate.io页面，点击微信右上角菜单，在弹窗的对话框中，点击发送给朋友、分享到朋友圈、分享到手机QQ或者分享到QQ空间即可。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pddlr-30" style="margin-top: 28px;">
+                <div class="m_title"><h4>最近接受推荐的用户</h4></div>
+                <div class="sectioncont">
+                    <div id="divMyReferralsList" style="overflow-y: scroll; overflow-x:hidden; max-height: 550px;">
+                        <table class="sf-grid" id="refUser">
+                            <thead>
+                            <tr>
+                                <td align="center" width="200px"><b>注册日期</b></td>
+                                <td align="center"><b>用户名</b></td>
+                            </tr>
+                            </thead>
+                            <tbody><tr class="table-empty" style="display: table-row;">
+                                <td colspan="2" style="text-align: center"><p><i>i</i>暂无有效推荐用户</p></td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+
+                    <br>
+                    <p>我的有效推荐用户个数为：<font color="red"><strong>0</strong></font></p>
+
+                </div>
+            </div>
+            <div class="pddlr-30" style="margin-top: 28px;">
+                <div class="m_title"><h4>我的最近30天佣金</h4></div>
+                <div class="sectioncont">
+                    <div id="divMyReferralFundsList" style="overflow-y: scroll; overflow-x:hidden; max-height: 550px;">
+                        <table class="sf-grid" id="refFund">
+                            <thead>
+                            <tr>
+                                <td align="center" width="200px"><b>类型</b></td>
+                                <td align="right" width="200px"><b>金额</b></td>
+                                <td align="right"><b>笔数</b></td>
+                            </tr>
+                            </thead>
+                            <tbody><tr class="table-empty" style="display: table-row;">
+                                <td colspan="3" style="text-align: center"><p><i>i</i>暂无佣金</p></td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+
+                </div>
+            </div>
+            <script>
+                //复制
+                var clipboard1 = new Clipboard('.js-copy1'),clipboard2 = new Clipboard('.js-copy2');
+                clipboard1.on('success', function(e) {
+                    $(".c-tip1").show();
+                    $(".c-tip2").hide();
+                    setTimeout(function () {
+                        $(".c-tip1").hide();
+                    },6000)
+                });
+                clipboard2.on('success', function(e) {
+                    $(".c-tip2").show();
+                    $(".c-tip1").hide();
+                    setTimeout(function () {
+                        $(".c-tip2").hide();
+                    },6000)
+                });
+
+                var $user=$("#refUser"), $fund=$("#refFund");
+                if($user.find("tr").size() == 2){
+                    $user.find(".table-empty").show()
+                }
+                if($fund.find("tr").size() == 2){
+                    $fund.find(".table-empty").show()
+                }
+
+                window.downloadFile = function (sUrl,isSign) {
+
+                    //iOS devices do not support downloading. We have to inform user about this.
+                    if (/(iP)/g.test(navigator.userAgent)) {
+                        alert('Your device does not support files downloading. Please try again in desktop browser.');
+                        return false;
+                    }
+
+                    //If in Chrome or Safari - download via virtual link click
+                    if (window.downloadFile.isChrome || window.downloadFile.isSafari) {
+                        //Creating new link node.
+                        var link = document.createElement('a');
+                        link.href = sUrl;
+
+                        if (link.download !== undefined) {
+                            //Set HTML5 download attribute. This will prevent file from opening if supported.
+                            var fileName = 'gateio';
+                            if(isSign)
+                                fileName = 'gateio注册';
+                            else
+                                fileName = 'gateio首页';
+                            link.download = fileName;
+                        }
+
+                        //Dispatching click event.
+                        if (document.createEvent) {
+                            var e = document.createEvent('MouseEvents');
+                            e.initEvent('click', true, true);
+                            link.dispatchEvent(e);
+                            return true;
+                        }
+                    }
+
+                    // Force file download (whether supported by server).
+                    if (sUrl.indexOf('?') === -1) {
+                        sUrl += '?download';
+                    }
+                    window.open(sUrl, '_self');
+                    return true;
+                };
+
+                window.downloadFile.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+                window.downloadFile.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
+
+                $(".QrCode").click(function () {
+                    var imgurl=$(this).find("img").attr("src"), qcId=$(this).attr("id"), isSign=0;
+                    if(qcId == 'toSignInCode')
+                        isSign=1;
+
+                    downloadFile(imgurl,isSign)
+                });
+
+                $(".ref-ul").on("click","input",function () {
+                    $(this).select()
+                })
+            </script>
+            <br>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<footer></footer>
+<script>
+    load_header();
+    load_footer();
+</script>
+
+</html>

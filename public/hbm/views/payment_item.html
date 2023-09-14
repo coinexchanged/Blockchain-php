@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>手机验证</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+   html {
+        font-size: 10px;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    .text-all label{
+        color: #999;
+        font-size: 1.25rem;
+        display: block;
+        height: 3.2rem;
+        line-height: 3.2rem;
+        margin-right: .8rem;
+        vertical-align: middle;
+    }
+    .con{
+        overflow-x: hidden;
+        max-width: 100%;
+        min-width: 320px;
+        min-height: 100vh
+    }
+    .text-all {
+        border-bottom: 1px solid #f6f6f9;
+        padding: .6rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    .input-text {
+        position: relative;
+        width:72%;
+    }
+    .input-text input{
+        border: 0;
+        height: 3.1rem;
+        line-height: 3.1rem;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        color: #333;
+        font-size: 1.4rem;
+        padding-right: 1rem;
+        background:#fff;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color:    #999;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #999;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #999;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    #999;
+    }
+
+    .login_btn{height:50px;line-height: 50px;background:#10172b;}
+</style>
+<body style="background:#f6f6f6;">
+    <header class="borderB backF "  style="height:44px;">
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">添加方式</h1>
+    </header>
+    <section id="app" class="" style="background:#fff;margin-top:3.8rem;">
+        <div class="con " id="checkPage" style="display: block;">
+            <div>
+                <section class="" style="margin:0 1.1rem">
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>姓名</label>
+                        <div class="box-flex input-text">
+                            <input  type="text" name="real_name" id="name" placeholder="请填写真实姓名" value="">
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>开户行名称</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name=""  id="yinhang" value="">
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>银行账号</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name="" id="yinHu"  value="">
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>支付宝账号</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name="" id="zfb"  value="">
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>微信昵称</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name="" wxname  value="">
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>微信账号</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name="wxzhanghu"   value="">
+                        </div>
+                    </div>
+                    <div>
+                        <a class="login_btn" @click="add()" >保存</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+        
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                List:[]
+            },
+            mounted: function () {
+                var self = this;
+                var token = get_user_login();
+                $.ajax({
+                    url: _API + "user/cash_info",
+                    type: "POST",
+                    dataType: "json",
+                    async: true,
+                    data:{},
+                    beforeSend: function beforeSend(request) {
+                        request.setRequestHeader("Authorization", token);
+                    },
+                    success: function success(data) {
+                        console.log(data)
+                        if (data.type == 'ok') {
+                                var data = data.message;
+                            $("#name").attr("value",data.real_name);
+                            $("#yinhang").attr("value",data.bank_name);
+                            $("#yinHu").attr("value",data.bank_account);
+                            $("#zfb").attr("value",data.alipay_account);
+                            $("#wxname").attr("value",data.wechat_nickname);
+                            $("#wxzhanghu").attr("value",data.wechat_account) ;	
+                        } else{
+                            layer_msg(data.message);
+                        };
+                        if(data.type == '999'){
+                            window.location =_SERVER+'login.html';
+                        }
+                    }
+                });	
+            },
+            methods:{
+                //跳详情
+                particulars:function(id){
+                    window.location =_SERVER+'Transferred.html?Id='+ id;
+                },
+                add:function(){
+                    var self = this;
+                    var token = get_user_login();
+                    var name=$("#name").val();
+                    var yinhang=$("#yinhang").val();
+                    var yinHu=$("#yinHu").val();
+                    var zfb=$("#zfb").val();
+                    var wxname=$("#wxname").val();
+                    var wxzhanghu=$("#wxzhanghu").val();
+                    $.ajax({
+                        url: _API + "user/cash_save",
+                        type: "POST",
+                        dataType: "json",
+                        async: true,
+                        data:{
+                            real_name:name,
+                            bank_name:yinhang,
+                            bank_account:yinHu,
+                            alipay_account:zfb,
+                            wechat_nickname:wxname,
+                            wechat_account:wxzhanghu
+                        },
+                        beforeSend: function beforeSend(request) {
+                            request.setRequestHeader("Authorization", token);
+                        },
+                        success: function success(data) {
+                            console.log(data)
+                            self.List = data.message;
+                            if (data.type == 'ok') {
+                                layer_msg('操作成功');
+                                window.location.reload();
+                            } else{
+                                layer_msg(data.message);
+                            }
+                        }
+                    });	
+                }
+            }
+        });
+    </script>
+</body>
+</html>

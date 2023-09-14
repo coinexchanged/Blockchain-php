@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>绑定邮箱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+    .nav{
+        width: 95%;
+        margin-left:5%;
+    }
+    .nav p{
+        width: 100%;
+        line-height: 47px;
+        font-size: 20px;	
+    }
+    .nav li{
+        width: 108%;
+        border-bottom: 1px solid #2873fb;
+        line-height: 40px;
+        font-size: 16px;
+    }
+    .login_tab {
+        width:87%;
+    }
+    .login_tab .input-con{
+        border-bottom:0;
+        width:95%;
+    }
+    .code{
+        height:26px;
+        width:80px;
+        text-align: center;
+        border-radius: 6px;
+        color:#ff5e43;
+        font-size:14px;
+        line-height: 26px;
+    }
+    input[disabled]{
+        color:#999;
+    }
+    .login_btn{height:50px;line-height: 50px;background:#10172b;}
+</style>
+<body style="background:#f6f6f6;">
+    <header class="borderB backF " >
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">绑定邮箱</h1>
+    </header>
+    <div class="nav" style="margin-top:3.8rem">
+        <ul class="login_tab" style="margin-top:2%;">
+            <!-- <li class="input-con">
+                <img src="../img/icon/icon_user.png" alt="" width="24">
+                <input  type="text" name="phone" class="mgl10" placeholder="请输入旧密码"/>
+            </li>
+            <li class="input-con">
+                <img src="../img/icon/icon_duanxin.png" alt="" width="24">
+                <input  type="text" name="code" style="margin-left:16px;" placeholder="请输入短信验证码"/>
+                <div class="code">获取验证码</div>
+            </li> -->
+        </ul>
+    </div>
+    <div class="none" style="display: none;">
+        <a class="login_btn" onclick="bindetel()">下一步</a>
+    </div>    
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script>
+        function check_email() {
+            var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (!emreg.test($("#email").val())) {
+                //$("#email").html("");
+				$("#email").html("输入的邮箱不符合规则");
+				return false
+            } else{
+				return true;
+			}
+        };
+    </script>
+    <script>
+        $(document).ready(function(){
+          var token = get_user_login();
+            $.ajax({
+                url: _API + "safe/safe_center",
+                type: "post",
+                dataType: "json",
+                async: true,
+                beforeSend: function beforeSend(request) {
+                    request.setRequestHeader("Authorization", token);
+                },
+                success: function success(data) {
+                    var email=data.message.email;
+                    console.log(data)
+                    console.log(email);
+                    if(email==null||email==''){
+                        var html = "<li class='input-con'><img src='../img/icon/icon_user.png' alt='' width='24'><input  type='text' id='email' name='email' class='mgl10'  onchange='check_email()' placeholder='请输入邮箱'/></li>"+
+                        "<li class='input-con'><img src='../img/icon/icon_duanxin.png' alt='' width='24'><input  type='text' name='code' id='code' style='margin-left:16px;' placeholder='请输入短信验证码'/><input onclick='sendCode(this)' class='code'  value='获取验证码' /></li>"
+                        $(".nav>ul").html(html);
+                        $(".none").show();
+                    }else{
+                        var html="<li><span class='font14 fontc_6'>绑定手机号：</span>"+email+'</li>'
+                        $(".nav>ul").html(html);
+                        $(".none").hide();
+                    }
+                }         
+            })
+        })
+
+        var clock = '';
+        var nums = 60;
+        var btn;   
+        function sendCode(thisBtn){ 
+            var res=check_email();
+            var email = $('#email').val();
+            if(res==true){
+                $.ajax({
+                    type:"post",
+                    url:_API+"sms_mail",
+                    data:{user_string:email,type:''},
+                    dataType: "json",
+                    success:function(data){
+                        console.log(data);						
+                        if(data == 'OK'){							
+                            
+                        }else{
+                            layer_msg(data.message)
+                        }							
+                    }							
+                });		
+            }else{
+              layer_msg('请输入正确的邮箱格式');
+              return false;
+            }
+            btn = thisBtn;
+            btn.disabled = true; //将按钮置为不可点击
+            btn.value = nums+'秒后重新获取';
+            clock = setInterval(doLoop, 1000); //一秒执行一次			
+        }				
+        function doLoop(){
+            nums--;
+            if(nums > 0){
+                btn.value = nums+'秒后重新获取';
+            }else{
+                clearInterval(clock); //清除js定时器
+                btn.disabled = false;
+                btn.value = '发送验证码';
+                nums = 60; //重置时间
+            }			
+        }
+        function bindetel(){
+            var email = $('#email').val();
+            var code = $('#code').val();
+            var token = get_user_login();
+            if(email!=''&&code!=''){
+                $.ajax({
+                    type:"post",
+                    url:_API+"safe/email",
+                    data:{email:email,code:code},
+                    dataType: "json",
+                    beforeSend: function beforeSend(request) {
+                    request.setRequestHeader("Authorization", token);
+                    },
+                    success:function(data){
+                        console.log(data);						
+                        if (data.type == "ok") {
+                            setTimeout(function () {
+                            window.location.href = "safe_center.html";
+                            }, 1000);
+                        }else{
+                            layer_msg(data.message)
+                        }							
+                    }							
+                });		
+            }else{
+                layer_msg('请输入信息');
+            }
+        }
+    </script>
+
+</body>
+</html>

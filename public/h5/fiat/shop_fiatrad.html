@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <title>我的店铺</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fiatrad.css" />
+    <style>
+         #fiatrad .mainlist{
+           margin-top: 0px;
+        }
+        .pt40{
+            padding-top: 48px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header  mainbg">
+        <a class="back" href="javascript:;" onclick="location.href='../#/ucenter';"></a>
+        <div class="tc title ft20 bold" data-localize="contract.personalStores">我的商铺</div>   
+    </header>
+    <div id="fiatrad" class="pt40">
+        <div class="tab-content">
+          <div role="tabpanel"  >
+            <!-- <div class="fitab">
+                <ul class="fabi nav nav-tabs  flex alcenter" role="tablist">
+                
+                </ul>
+            </div> -->
+              <div class="tab-content mainlist">
+                <div role="tabpanel"  >
+                    <ul>
+                       
+                    </ul>
+                </div>
+               
+                
+              </div>
+          </div>
+         
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        $(function(){
+            // FastClick.attach(document.body);
+            var currency_id;
+            $('.records').click(function(){
+                location.href='fiatrad_detail.html?id='+currency_id;
+            })
+            getData();
+            // 获取店铺列表
+            function getData(){
+                initDataToken({url:'my_seller'},function(res){
+                   if(res.data&&res.data.length>0){
+                       renderList2(res.data)
+                   }else{
+                    //    layer_msg('没有更多数据了...')
+                   }
+                })
+            }
+            function renderList2(data){
+                var html='';
+                for(var i in data){
+                    html+=` <li>
+                            <a href="shop_fiatrad_list.html?id=${data[i].id}"><p>
+                                <em>${data[i].name.substr(0,1)}</em><b class=''>${data[i].name}</b></p>
+                            <small class="frcolor1 hide">${getlg('fatbalance')}</small>
+                            <p class='white_gray mt10 mb10'><small>${getlg('register_time')} ${data[i].create_time}<br /> ${getlg('fiatSub')} ${data[i].currency_name}</small><span>${iTofixed(data[i].legal_balance,3)}</span></p>
+                            <img src="images/zhi.png" style="display:" />
+                            <img src="images/WeChat.jpg" class="ml10" style="display:"/>
+                            <img src="images/card.png" class="ml10" style="display:"/>
+                            <div class="btn btn-default " href="javascript:;" >${getlg('enterShop')} </div>
+                            </a>
+                        </li>`
+                }
+               $('.mainlist ul').html(html)
+            }
+           
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>添加方式</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+</head>
+
+<body>
+	<div id="app" v-cloak>
+		<header class="header">
+			<a class="back mt5" href="javascript:history.go(-1)">
+			</a>
+			<h4 class="ft16" data-localize="index.pay">收币地址</h4>
+		</header>
+		<div class="header-space"></div>
+		<ul class="nav receivables ml15 mr10">
+			<li>
+				<p class="title ft16" data-localize="met.open">USDT</p>
+				<div class="clearfix">
+					<!-- <img src="images/bank-name.png" alt=""> -->
+					<input id="yinhang" type="text" placeholder="请输入收币地址" data-localize="met.popen">
+					<!-- <select id="bank_id_select" name="bank_id" class="flex2 ptb10 plr10">
+
+					</select> -->
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.bank">BTC</p>
+				<div class="clearfix">
+					<!-- <img src="images/bank.png" alt=""> -->
+					<input id="yinHu" type="text" placeholder="请输入收币地址" data-localize="met.pbank">
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.bank_branch">ETH</p>
+				<div class="clearfix">
+					<!-- <img src="images/bank.png" alt=""> -->
+					<input id="bank_branch" type="text" placeholder="请输入收币地址" data-localize="met.pbank_branch">
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.realname">LTC</p>
+				<div class="clearfix">
+					<!-- <img src="images/user-icon.png" alt=""> -->
+					<input id="name" type="text" placeholder="请输入收币地址" data-localize="met.pname">
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.alipay">EOS</p>
+				<div class="clearfix">
+					<!-- <img src="images/alipay-icon.png" alt=""> -->
+					<input id="zfb" type="text" placeholder="请输入收币地址" data-localize="met.palipay">
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.wename">ADA</p>
+				<div class="clearfix">
+					<!-- <img src="images/wechat-icon.png" alt=""> -->
+					<input id="wxname" type="text" placeholder="请输入收币地址" data-localize="met.pwename">
+				</div>
+			</li>
+			<li>
+				<p class="title ft16" data-localize="met.wechat">BCH</p>
+				<div class="clearfix">
+					<!-- <img src="images/wechat-icon.png" alt=""> -->
+					<input id="wxzhanghu" type="text" placeholder="请输入收币地址" data-localize="met.pweaccount">
+				</div>
+			</li>
+		</ul>
+		<div class="uploads flex ml15 mr10">
+			<div class="uploads-list tc">
+				<p class="title ft16" data-localize="met.alipayCode">USDT</p>
+				<div>
+					<img class="alipay-img" src="images/myimg/688660269851391423.png" alt="">
+					<input type="file" id="alipay" @change="uploads(1)">
+				</div>
+			</div>
+			<div class="uploads-list tc">
+				<p class="title ft16" data-localize="met.wechatCode">BTC</p>
+				<div>
+					<img class="wechat-img" src="images/myimg/688660269851391423.png" alt="">
+					<input type="file" name="" id="wechat" @change="uploads(2)">
+				</div>
+			</div>
+		</div>
+		<!-- 保存按钮 -->
+		<div class="save ft15 ftw" style="margin: 35px 20px;">
+			<button class="ftw" type="button" @click="add()" data-localize="met.save">保存</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+	<script type="text/javascript" src="lib/vue.min.js"></script>
+	<script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+	<script type="text/javascript" src="lib/language_cookie.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+	<script>
+			var vue = new Vue({
+				el: '#app',
+				data: {
+					List: []
+				},
+				mounted: function () {
+					var self = this;
+					// FastClick.attach(document.body);
+					var token = get_user_login();
+					$.ajax({
+						url: _API + "user/cash_info",
+						type: "POST",
+						dataType: "json",
+						async: true,
+						data: {},
+						beforeSend: function beforeSend(request) {
+							request.setRequestHeader("Authorization", token);
+						},
+						success: function success(data) {
+							if (data.type == 'ok') {
+								var data = data.message;
+								$("#name").attr("value", data.real_name);
+								$("#yinhang").attr("value", data.bank_name);
+								$("#yinHu").attr("value", data.bank_account);
+								$("#bank_branch").attr("value", data.bank_branch);
+								$("#zfb").attr("value", data.alipay_account);
+								$("#wxname").attr("value", data.wechat_nickname);
+								$("#wxzhanghu").attr("value", data.wechat_account);
+								if(data.alipay_qr_code){
+									$(".alipay-img").attr("src", data.alipay_qr_code);
+								}
+								if(data.wechat_qr_code){
+									$(".wechat-img").attr("src", data.wechat_qr_code);
+								}
+								var select_html = "";
+								select_html += "<option value='0'>请选择银行</option>";
+								for(i in data.banks){
+								    if(data.banks[i]['id'] == data.bank_id){
+								        var selected = 'selected';
+									}else{
+                                        var selected = '';
+									}
+								    //select_html += "<option value="+data.banks[i]['id']+" "+selected+">data.banks[i]['name']</option>"
+									select_html += `<option value='${data.banks[i]['id']}' ${selected}>${data.banks[i]['name']}</option>`;
+								}
+								console.log(select_html)
+                                $("#bank_id_select").html(select_html)
+							} else {
+								layer_msg(data.message);
+							};
+							if (data.type == '999') {
+								window.location = 'login.html';
+							}
+						}
+					});
+				},
+				methods: {
+					//跳详情
+					particulars: function (id) {
+						window.location = 'Transferred.html?Id=' + id;
+					},
+					add: function () {
+						var self = this;
+						var token = get_user_login();
+						var name = $("#name").val();
+						var yinhang = $("#yinhang").val();
+						var bank_id = $("#bank_id_select").val();
+						var yinHu = $("#yinHu").val();
+						var bank_branch = $("#bank_branch").val();
+						var zfb = $("#zfb").val();
+						var wxname = $("#wxname").val();
+						var wxzhanghu = $("#wxzhanghu").val();
+						var alipayImg = '';
+						var wechatImg = '';
+
+						// if (!yinhang) {
+						// 	layer_msg('请输入开户行名称');
+						// 	return false;
+						// }
+						// if (!yinHu) {
+						// 	layer_msg('请输入银行账户');
+						// 	return false;
+						// }
+						// if (!name) {
+						// 	layer_msg('请输入真实姓名');
+						// 	return false;
+						// }
+						// if (!zfb) {
+						// 	layer_msg('请输入支付宝账号');
+						// 	return false;
+						// }
+						// if (!wxname) {
+						// 	layer_msg('请输入微信昵称');
+						// 	return false;
+						// }
+						// if (!wxzhanghu) {
+						// 	layer_msg('请输入微信账号');
+						// 	return false;
+						// }
+						// if (alipayImg == 'images/myimg/688660269851391423.png') {
+						// 	layer_msg('请上传支付宝收款码');
+						// 	return false;
+						// }
+						// if (wechatImg == 'images/myimg/688660269851391423.png') {
+						// 	layer_msg('请上传微信收款码');
+						// 	return false;
+						// }
+						if ($('.alipay-img').attr('src') == 'images/myimg/688660269851391423.png') {
+							alipayImg = '';
+						}else{
+							alipayImg = $('.alipay-img').attr('src');
+						}
+						if ($('.wechat-img').attr('src') == 'images/myimg/688660269851391423.png') {
+							wechatImg = '';
+						}else{
+							wechatImg =	$('.wechat-img').attr('src');
+						}
+		
+						$.ajax({
+							url: _API + "user/cash_save",
+							type: "POST",
+							dataType: "json",
+							async: true,
+							data: {
+								real_name: name,
+								bank_name: yinhang,
+								// bank_id: bank_id,
+								bank_account: yinHu,
+                                bank_branch: bank_branch,
+								alipay_account: zfb,
+								wechat_nickname: wxname,
+								wechat_account: wxzhanghu,
+								alipay_qr_code: alipayImg,
+								wechat_qr_code: wechatImg
+							},
+							beforeSend: function beforeSend(request) {
+								request.setRequestHeader("Authorization", token);
+							},
+							success: function success(data) {
+								self.List = data.message;
+								if (data.type == 'ok') {
+									layer_confirm(data.message, function () {
+										location.href = '../#/'
+									})
+								} else {
+									layer_msg(data.message);
+								}
+								if (data.type == '999') {
+									window.location = 'login.html';
+								}
+							}
+						});
+					},
+					// 上传图片
+					uploads(type) {
+						var formData = new FormData();
+						if (type == 1) {
+							formData.append("file", $("#alipay")[0].files[0]);
+						} else {
+							formData.append("file", $("#wechat")[0].files[0]);
+						}
+		
+		
+						var i = layer_loading()
+						$.ajax({
+							url: _API + 'upload',
+							type: 'post',
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function (msg) {
+								if (msg.type == 'ok') {
+									setTimeout(function () {
+										layer_close(i);
+									}, 3000)
+									if (type == 1) {
+										$(".alipay-img").attr("src", msg.message);
+									} else {
+										$(".wechat-img").attr("src", msg.message);
+									}
+								} else {
+									if (type == 1) {
+										$(".alipay-img").attr("src", 'images/myimg/688660269851391423.png');
+									} else {
+										$(".wechat-img").attr("src", 'images/myimg/688660269851391423.png');
+									}
+									layer_msg(msg.message)
+								}
+							}
+						});
+					}
+		
+				}
+			});
+		</script>
+</body>
+
+</html>

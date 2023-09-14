@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/common.css">
+    <title>付款</title>
+    <style>
+        img {
+            /* width: 10px; */
+            vertical-align: baseline;
+        }
+
+        .active {
+            background-color: #f0b90b;
+            color: #fff;
+        }
+
+        .pay_box {
+            border-radius: 2px;
+        }
+
+        .btns>div {
+            padding: 10px 15px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .name,
+        .tip {
+            margin: 15px;
+            padding: 10px 15px;
+            border-radius: 2px;
+            border: 1px solid #F7F7FF;
+            font-size: 12px;
+            background-color: #fff;
+        }
+
+        .tip .title {
+            color: #f0b90b;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #e8edf1;
+            border-radius: 50%;
+        }
+
+        .cir_left {
+            left: -4px;
+            bottom: -4px;
+        }
+
+        .cir_right {
+            right: -4px;
+            bottom: -4px;
+        }
+
+        #code {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        #hes_account {
+            display: block;
+            line-height: 30px;
+        }
+
+        .code-modal {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .code-content {
+            width: 210px;
+            height: 246px;
+            background-color: #fff;
+            border-radius: 2px;
+            text-align: center;
+            flex-wrap: wrap
+        }
+
+        .code-content p {
+            width: 210px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .code-img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .time-order {
+            display: none;
+        }
+
+        .mt40 {
+            margin-top: 62px;
+        }
+
+        .confirm-box,
+        .cancel-box {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="baseBg">
+    <header class="header baseBg ">
+        <a class="back" href="javascript:;" onclick="javascript:history.go(-1);"></a>
+        <h4 class="tc title" data-localize="td.ppay">请付款</h4>
+    </header>
+    <div class="plr15">
+        <div class="mt40  bgWhite ft10 pay_box">
+            <div class="bgGray3 plr10 ptb10 color1 reltive">
+                <p class="ft14" data-localize="td.paynext">请向以下账户付款</p>
+                <div class="flex between alcenter">
+                    <div class="ft22 blue2 bold"></div>
+                    <div class="">
+                        <div class="flex between alcenter ft14" style="position:relative;top:-16px;">
+                            <span data-localize="td.tdPrice">交易单价</span>
+                            <span id="price"></span>
+                        </div>
+                        <div class="flex between alcenter ft14" style="position:relative;top:-10px;">
+                            <span data-localize="td.tdNum">交易数量</span>
+                            <span class="ml10" id="number">1.000ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="circle cir_left abstrot"></span>
+                <span class="circle cir_right abstrot"></span>
+            </div>
+            <div class="plr10">
+                <div class="bdb">
+                    <div class="flex alcenter between ptb10">
+
+                    </div>
+                    <div class="card-info flex between mb10 ft14">
+                        <div class="ft14" data-localize="td.payInfo">付款信息</div>
+                        <div id="way"></div>
+                    </div>
+                    <div class="bgGray3 ptb10 pl10 flex between ft14">
+                        <span id="hes_account"></span>
+                        <img id="code" src="" alt="">
+                    </div>
+                    <div class="flex ptb10 between alcenter ft14">
+                        <span class="color1" data-localize="td.receiver">收款人</span>
+                        <div><span id="hes_realname"></span>
+                        </div>
+                    </div>
+                    <div class="flex between pb10 alcenter ft14">
+                        <span class="color1" data-localize="td.cnum">参考号</span>
+                        <div><span id="data_id"></span>
+
+                        </div>
+                    </div>
+                    <div class="flex between pb10 alcenter ft14">
+                        <span class="color1" data-localize="td.pay_orders_img">支付凭证</span>
+                        <div style="width: 80%">
+                            <input type="file" id="pay_orders" onchange="uploads(1)">
+                        </div>
+                    </div>
+                    <div class="block" id="pay_orders_img">
+
+                    </div>
+                </div>
+                <p class="blue ptb10" data-localize="td.payClick">
+                    如您已向卖家转账付款，请务必点击右下角“我已付款”按钮，否则有可能造成资金损失。
+                </p>
+                <div class="time-order">
+                    <div class="flex blue">
+                        <p data-localize="contract.countDown">倒计时</p>:
+                        <p>
+                            <span data-localize="contract.text1">请于</span>
+                            <span class="times"></span>
+                            <span data-localize="contract.text2">内向</span>
+                            <span class="names"></span>
+                            <span data-localize="contract.text3">付款</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="ptb10 flex alcenter between  btns">
+                    <div class="flex1 bgLinear mr10 btn-cancel white ft14 bold" data-localize="td.odCeil">取消订单</div>
+                    <div class="flex2 tian bgLinearblue btn-confirm white ft14 bold"><span data-localize="contract.comfirmBtn">我已付款，请点击确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="name flex between goshop hide">
+        <div id="seller_name"><img src="images/vip.png" alt=""></div>
+        <div><img width="10" src="images/mores.png" alt=""></div>
+    </div>
+
+    <div class="tip">
+        <div class="title mt10 mb10 ft14"><i>!</i> <span data-localize="td.tdAttion">交易提醒</span></div>
+        <ul class="colorGrey ml10">
+            <li data-localize="td.at01">您的汇款将直接进入卖家账户,交易过程中卖家出售的数字资产由平台托管保护。</li>
+            <li data-localize="td.at02">请在规定时间内完成付款，并务必点击“我已付款”，卖家确认收款后，系统会将数字资产划转到您的账户。</li>
+            <li><span data-localize="td.at03">如果买家当日取消订单达</span><span class="cannel-num"></span><span data-localize="td.at04">次，将会被限制当日的买入功能。</span></li>
+        </ul>
+    </div>
+    <!-- 确认弹窗 -->
+    <div class="confirm-box">
+        <div class="confirm-content ft16">
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <!-- <div style="padding-bottom:15px;font-weight: 600;" class="ft16" data-localize="td.conPay">付款确认</div> -->
+                <div class="color1 " data-localize="td.sureImpay">请确认您已向卖家付款</div>
+                <div class="blue mt5" data-localize="td.badClick">恶意点击将直接冻结账户</div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 取消订单弹窗 -->
+    <div class="cancel-box">
+        <div class="cancel-content ft16">
+            <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <!-- <div style="padding-bottom:15px;font-weight: 600;" class=" ft16" data-localize="td.sureCeil">确认取消交易</div> -->
+                <div class="blue" data-localize="td.notCeil">如果您已向卖家付款，请千万不要取消交易</div>
+                <!--<div class=" mt5 color1">取消规则，买家当日累计3笔取消，</div>-->
+                <!--<div class="color1">会限制当日买入功能</div>-->
+                <div style="padding:20px 0 10px" class="ft16">
+                    <input type="checkbox" value=""
+                        style="-webkit-appearance: checkbox;vertical-align: middle;margin-right: 5px"><span
+                        data-localize="td.notpay">我还没有付款给对方</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="banks-box hide">
+        <div class="banks">
+            <div>平安银行（3277）</div>
+        </div>
+    </div>
+    <ul class="banks hide" id="bre">
+        <li>平安银行</li>
+    </ul>
+
+    <!-- 查看二维码弹窗 -->
+    <div class="code-modal">
+        <div class="flex jucenter alcenter mask">
+            <div class="code-content flex jucenter alcenter">
+                <p></p>
+                <img class="code-img" src="" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        // 上传图片
+        function uploads(type){
+            var formData = new FormData();
+
+            formData.append("file", $("#pay_orders")[0].files[0]);
+
+            var i = layer_loading()
+            $.ajax({
+                url: _API + 'upload',
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (msg) {
+                    if (msg.type == 'ok') {
+                        setTimeout(function () {
+                            layer_close(i);
+                        }, 3000)
+                        if (type == 1) {
+
+                            var html = `<img class="pay_orders_img w100" src="${msg.message}" alt="">`;
+                            $("#pay_orders_img").html(html);
+                        }
+                    } else {
+                        layer_msg(msg.message)
+                    }
+                }
+            });
+        }
+        $(function () {
+            var id = get_param('id');
+            var sellerId;
+            initDataToken({
+                url: 'legal_deal',
+                data: {
+                    id: id
+                }
+            }, function (res) {
+                $('.ft22').html('￥' + iTofixed(res.deal_money,3));
+                $('#price').html('￥' + iTofixed(res.price,3));
+                $('#number').html(iTofixed(res.number,3) + res.currency_name);
+                $('#hes_account').html(res.hes_account);
+                $('#hes_realname').html(res.hes_realname);
+                $('#seller_name').html(res.seller_name);
+                $('#data_id').html(res.id);
+                var times = res.cancel_time;
+                $('.names').text(res.seller_name);
+                $('.cannel-num').text(res.userLegalDealCancel_num)
+                if (res.cancel_time) {
+                    if ((times - 0) < 3600) {
+                        setInterval(function () {
+                            $('.time-order').show();
+                            times--;
+                            var time1 = parseInt(times / 60);
+                            var time2 = times % 60;
+                            if (time1 > 0 && time2 > 0) {
+                                $('.times').text(time1 + getlg('minute') + time2 + getlg('second'));
+                            } else if (time2 > 0) {
+                                $('.times').text(time2 + getlg('second'));
+                            } else if (time1 == 0 && time2 == 0) {
+                                initDataToken({
+                                    url: 'handle_one',
+                                    type: 'post',
+                                    data: {
+                                        id: id
+                                    }
+                                }, function (res) {
+                                    window.history.go(-1);
+                                });
+                            }
+                        }, 1000)
+                    } else {
+                        setInterval(function () {
+                            $('.time-order').show();
+                            times--;
+                            var time1 = parseInt(times / 60 / 60);
+                            var time3 = parseInt(times / 60) - (time1 * 60);
+                            var time2 = times % 60;
+                            if (time1 > 0 && time2 > 0 && time3 > 0) {
+                                $('.times').text(time1 + getlg('hour') + time3 + getlg('minute') + time2 + getlg('second'));
+                            } else if (time2 > 0 && time3 > 0) {
+                                $('.times').text(time3 + getlg('minute') + time2 + getlg('second'));
+                            } else if (time2 > 0) {
+                                $('.times').text(time2 + getlg('second'));
+                            } else if (time1 == 0 && time2 == 0 && time3 == 0) {
+                                initDataToken({
+                                    url: 'handle_one',
+                                    type: 'post',
+                                    data: {
+                                        id: id
+                                    }
+                                }, function (res) {
+                                    window.history.go(-1);
+                                });
+                            }
+                        }, 1000)
+                    }
+                }
+                if (res.way_name == 'we_chat') {
+                    $('#code').attr('src', res.to_pay_info.wechat_qr_code);
+                    $('.code-img').attr('src', res.to_pay_info.wechat_qr_code);
+                    $('.code-content p').text(getlg('weChatCode'));
+                    $('#way').html(getlg('weChat'));
+                } else if (res.way_name == 'ali_pay') {
+                    $('#code').attr('src', res.to_pay_info.alipay_qr_code);
+                    $('.code-img').attr('src', res.to_pay_info.alipay_qr_code);
+                    $('.code-content p').text(getlg('alipayCode'))
+                    $('#way').html(getlg('alipay'));
+                } else {
+                    $('#way').html(getlg('bank'));
+                    $('#code').hide();
+                }
+                if(res.pay_orders_img){
+                    var html = `<img class="pay_orders_img w100" src="${res.pay_orders_img}" alt="">`;
+                    $('#pay_orders_img').html(html);
+                }
+                $('#pay_orders').val(res.pay_orders_img);
+                sellerId = res.seller_id;
+                $('#code').click(function () {
+                    $('.code-modal').show();
+                })
+                $('.code-modal').click(function () {
+                    $('.code-modal').hide();
+                })
+
+            });
+
+            $('.goshop').click(function () {
+                location.href = 'fiatrad_shop.html?id=' + sellerId;
+            })
+            //切换支付方式
+            $('.switch-pay').click(function () {
+
+                layer.open({
+                    skin: 'footer',
+
+                    content: $('.banks-box').html(),
+                    btn: getlg('ceil')
+                })
+
+
+
+            })
+
+            // 取消订单
+            $('.btn-cancel').click(function () {
+
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title: false,
+                    shadeClose: true,
+                    area: ['90%', 'auto'],
+                    content: $('.cancel-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    skin: 'btn-text',
+                    btn2: function () {
+
+                        initDataToken({
+                            url: 'user_legal_pay_cancel',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.href = 'fiatrad_detail.html'
+                            }, 1500);
+                        });
+                    }
+
+                })
+            })
+
+
+            //确认付款
+            $('.btn-confirm').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title: false,
+                    shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin: 'btn-text',
+                    content: $('.confirm-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        var pay_orders_img = $(".pay_orders_img").attr('src');
+                        console.log(pay_orders_img);
+                        if(pay_orders_img == ''){
+                            layer_msg('请上传支付凭证');
+                            return;
+                        }
+                        initDataToken({
+                            url: 'user_legal_pay',
+                            type: 'post',
+                            data: {
+                                id: id,
+                                pay_orders_img:pay_orders_img
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.href =
+                                    'fiatrad_pay_true.html?id=' +
+                                    id
+                            }, 1500);
+                        });
+                    }
+
+                })
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

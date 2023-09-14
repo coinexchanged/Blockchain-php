@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>转出</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <!-- <script type="text/javascript" src="/javascripts/turnout.js?v=111dddd1ee223"></script> -->
+</head>
+<body style="background: #f2f2f2;">
+<header style="background: #fff;" class="borderB">
+    <i class="iconfont icon-zuo font24  fontc_6" onclick="javascript:history.go(-1)"></i>
+    <h1 class="fontc_3">提币</h1>
+</header>
+
+<script type="text/javascript">
+    function code(result){
+        $("#addr").val(result)
+    }
+</script>
+
+<style>
+    
+</style>
+<div id="user_info" data-address="<%= address %>" class="mgthead">
+    <ul class="out_details">
+        <li style="justify-content: space-between;">
+            <!--<span>余额</span>
+            <p>
+                <span id="all_balance">0</span>
+                <span>MATD</span>
+            </p>-->
+            <select class="select_money" name="" id="">
+                <option value="1">原生币种</option>
+                <option value="2">增值币种</option>
+                <option value="3">以太坊（ETH）</option>
+            </select>
+        </li>
+        <li>
+            <span>提币地址</span>
+            <div class="out_input">
+                <input type="text" id="addr" name="addr" placeholder="请输入对方地址">
+            </div>
+            <i onclick="BSL.Qcode('0','code')" class="iconfont icon-saomiaoerweima fontc_hdl font20 mgl10"></i>
+        </li>
+        <li >
+            <span>数量</span>
+            <div class="out_input">
+                <input type="text" onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" id="number" name="number" placeholder="请输入转出数量" >
+            </div>
+        </li>
+
+
+        <li style="border:0;">
+            <span>钱包密码</span>
+            <div class="out_input">
+                <input type="password"  id="password" name="password" placeholder="请输入钱包密码" >
+            </div>
+        </li>
+        <li class="out_textarea" >
+            <textarea name="remarks" id="remarks" rows="5" placeholder="请输入备注" ></textarea>
+        </li>
+        <li style="background:#f2f2f2;border:0;margin-top:1.6rem;"> <a href="javascript:;" style="background:#10172b;" class="login_btn">提币</a></li>
+    </ul>
+</div>
+
+<script>
+     $(".backPage").click(function(){
+        history.back(-1);
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领通证</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/usercenter.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .sub-menu{border-left:18px solid #b83826;box-sizing: border-box;background: #eee;}
+    #tradelist{padding: 0;}
+    .m_title h4{border-bottom:1px solid #d8d8d8;}
+</style>
+<body>
+<div class="header clearfix">
+
+</div>
+<!--左边内容区-->
+<div class="content">
+    <table class="leftbar" style="padding-top: 15px; height: 1663px;">
+        <tbody><tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr>
+                            <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                <div id="wrapper-250">
+                                    <ul class="accordion">
+                                        <li id="adn1" class="files">
+                                            <a href="javascript:;" class="menu-hide" style="border-top: none;">
+                                                <img src="img/funds/zijin.png" alt="我的资金">
+                                                我的资金
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myfunds"  href="myfunds.html">帐户资金</a></li>
+                                                <!--
+                                                <li><a data-id='interest' href="/myaccount/interest">每日利息</a></li>
+                                                <li><a data-id='dividend' href="/myaccount/dividend">我的分红</a></li>
+                                                -->
+                                                <li><a data-id="myreferrals" class="" href="myreferrals.html">推广佣金</a></li>
+                                                <li><a data-id="mypurselog" href="javascript:;">账单明细</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn2" class="cloud">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/jiaoyi.png" alt="交易挂单">
+                                                交易挂单<span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myorders" href="myorders.html">我的挂单</a></li>
+                                                <li><a data-id="myhistory" href="javascript:;">成交记录</a></li>
+                                                <li><a data-id="myc2chistory" href="javascript:;">C2C成交记录</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn3" class="mail">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/chongzhi.png" alt="充值提现">
+                                                充值提现
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">购买USDT(C2C)</a></li>
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">点对点充值提现(C2C)</a></li>
+                                                <li><a data-id="deposit_coin" href="javascript:;">数字货币充值</a></li>
+                                                <li><a data-id="withdraw_coin" href="javascript:;">数字货币提现</a></li>
+                                                <li><a data-id="deposit_code" href="deposit_code.html">充值码</a></li>
+                                                <li><a data-id="mydeposits" href="mydeposits.html">最近充值记录</a></li>
+                                                <li><a data-id="mywithdrawals" href="mywithdrawals.html">最近提现记录</a></li>
+                                                <li><a class="mactive" data-id="lockbook" href="lockbook.html">领“通证”（分叉币提前领）</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn4" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/anquan.png" alt="安全设置">
+                                                安全设置
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="id_setup" href="javascript:;">身份认证</a></li>
+                                                <li><a data-id="id_setup2" href="javascript:;">高级认证</a></li>
+                                                <!--<li><a data-id='id_setup3' href="/myaccount/id_setup3">视频认证</a></li>-->
+                                                <li><a data-id="totp" href="totp.html">谷歌验证器绑定</a></li>
+                                                <li><a data-id="sms_setup" href="sms_setup.html;">手机绑定</a></li>
+                                                <li><a data-id="login2_setup" href="login2_setup.html">两步登录保护</a></li>
+                                                <li><a data-id="apikeys" href="apikeys.html">API Keys</a></li>
+                                                <li><a data-id="resetpw" href="javascript:;">修改登录密码（自动登出）</a></li>
+                                                <li><a data-id="resetfpw" href="javascript:;">修改资金密码（自动登出）</a></li>
+                                                <li><a data-id="email_setup" href="javascript:;">邮箱绑定</a></li>
+                                                <li><a data-id="antiphishcode" href="javascript:;">防钓鱼码</a></li>
+                                                <li><a data-id="payment_setup" href="javascript:;">支付设置</a></li>
+                                                <li class="new-item"><a data-id="tradepassfrequency" href="javascript:;">交易密码输入频率</a></li>
+                                                <li><a data-id="mylogs" href="javascript:;">安全日志</a></li>
+                                                <li><a data-id="notify" href="javascript:;">通知设置</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="adn5" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/gongdan.png" alt="我的工单">
+                                                我的工单
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="ticket" href="javascript:;">提交工单</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $(".accordion").children("li").find("a").click(function () {
+                $(this).toggleClass("menu-hide").next("ul").toggle();
+                var lb = $(".leftbar"), mc = $(".main_content"), lh = lb.height(), mh = mc.height();
+                lb.css("height", mh)
+            });
+
+            var icoType='';
+            if(icoType==''){
+                $("#buyIco").parent("li").remove()
+            }
+
+            $("input").focus(function(){
+                $(".failed").html("")
+            });
+
+            $(".files,.cloud,.mail").find("li").click(function () {
+                $.cookie('nav_index', 3,{ path: '/' });
+            });
+            $(".sign").find("li").click(function () {
+                $.cookie('nav_index', 4,{ path: '/' });
+            });
+
+            //左菜单active标识
+            var url=window.location.href,
+                    pagename=url.split('nt/')[1];
+            $('a[data-id="'+pagename+'"]').addClass("mactive");
+            if(url.indexOf('?coin_withdraw') > -1 || url.indexOf('aw/') > -1){
+                $('a[data-id=withdraw_coin]').addClass("mactive");
+            } else if(url.indexOf('?coin_deposit') > -1 || url.indexOf('it/') > -1){
+                $('a[data-id=deposit_coin]').addClass("mactive");
+            }
+            if(url.indexOf('totp/') > -1){
+                $('a[data-id=totp]').addClass("mactive");
+            }
+
+            /*$(window).scroll(function () {
+             var scrH=$(window).scrollTop();var accHeight=$(".myacc-con").height();
+             if(accHeight>834) {
+             if (scrH > 100) {
+             if(scrH > accHeight-721) {
+             $("#marketlist_wrapper").css({"position": "absolute", "top": "", "bottom": "10px", "width": "100%"});
+             } else {
+             $("#marketlist_wrapper").css({"position": "fixed", "top": "10px", "bottom": "", "width": "22%"});
+             }
+             } else {
+             $("#marketlist_wrapper").attr("style", "");
+             }
+             }
+             });*/
+        });
+    </script>
+    <div class="main_content acc-m-con">
+        <div class="warn">
+            <i>!</i>您尚未实名认证！为保障您的资金安全，在完成实名认证之前，您将不能进行c2c交易、提币等操作。
+            <a class="r-btn" href="/myaccount/id_setup">立即去认证</a>
+        </div>
+
+
+        <div class="right_mcontent myacc-con">
+            <div class="pddlr-30">
+                <div class="m_title"><h4>“通证”（分叉币投放）提前领取</h4></div>
+                <div class="sectioncont  deposit-sec">
+                    <p>用户可以在分叉之前，在自愿的情况下，提前到这里领取“通证”（抵押原币种，一般是BTC），并开始交易，此后可以随时到这里赎回原币种。</p>
+                    <p>在此抵押的原币种（一般是BTC）在分叉发生时，仍然能够自动获得所有平台分发的其他“通证”。</p>
+
+
+                    <table class="sf-grid">
+                        <thead>
+                        <tr>
+                            <th align="left">“通证”（分叉币）</th>
+                            <th align="left">兑换比例</th>
+                            <th align="left">分叉区块</th>
+                            <th align="left">抵押币种（原币种）</th>
+                            <th align="left">抵押金额（原币种）</th>
+                            <th align="left"> 领取 </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td colspan="3" style="padding: 30px 0"></td></tr>
+                        </tbody>
+                    </table>
+
+
+                    <br><br>
+
+                </div>
+            </div>
+            <div class="pddlr-30" style="margin-top: 28px;">
+                <div class="m_title "><h4>我的未赎回“通证”领取订单</h4></div>
+                <div class="sectioncont  deposit-sec">
+                    <p>赎回抵押的原币种（一般是BTC）时，需要扣除之前预先领取的“通证”（分叉币种），用户“通证”余额不足时无法赎回。</p>
+                    <p>在此抵押的原币种（一般是BTC）在分叉发生时，仍然能够自动获得所有平台分发的其他“通证”。</p>
+                    <table class="sf-grid">
+                        <thead>
+                        <tr>
+                            <th align="left">领取时间</th>
+                            <th align="left">“通证”（分叉币）</th>
+                            <th align="left">兑换比例</th>
+                            <th align="left">“通证”数量</th>
+                            <th align="left">抵押币种（原币种）</th>
+                            <th align="left"> 赎回 </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td colspan="3" style="padding: 30px 0"></td></tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sectioncont  deposit-sec pddlr-30" style="margin-top: 28px;">
+                <div class="m_title"><h4>我的历史“通证”领取订单（已赎回）</h4></div>
+                <div class="sectioncont  deposit-sec">
+                    <table class="sf-grid">
+                        <thead>
+                        <tr>
+                            <th align="left">领取时间</th>
+                            <th align="left">“通证”（分叉币）</th>
+                            <th align="left">兑换比例</th>
+                            <th align="left">“通证”数量</th>
+                            <th align="left">抵押币种（原币种）</th>
+                            <th align="left">赎回时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td colspan="3" style="padding: 30px 0"></td></tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+                <script>
+                    function onSubmit(form) {
+
+                        var fundpass =form.fundpass.value;
+                        fundpass = fundpass.replace(/(^\s+)|(\s+$)/g,"");
+                        if (!fundpass || typeof fundpass == "undfined" || fundpass == '') {
+                            noty({text: "资金密码无效", type: "warning",layout: "center", theme: 'gateioNotyTheme', timeout: 1000});
+                            form.fundpass.focus();
+                            return false;
+                        }
+
+                        var amount =form.amount.value;
+                        if (!amount || typeof amount == "undfined" || amount == '' || amount <= 0) {
+                            noty({text: "请输入抵押金额", type: "warning",layout: "center", theme: 'gateioNotyTheme', timeout: 1000});
+                            form.amount.focus();
+                            return false;
+                        }
+                        return true;
+
+                    }
+                </script>
+                <!---->
+                <br>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<footer></footer>
+<script>
+    load_header();
+    load_footer();
+</script>
+
+</html>

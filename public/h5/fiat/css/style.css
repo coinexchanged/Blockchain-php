@@ -1,0 +1,136 @@
+/* 具体地址 */
+.part1 {width: 120px;margin: 80px auto;}
+.part1 span{display: block;width: 100%;height: 40px;line-height: 40px;background-color: #f0b90b;border-radius: 4px;margin-top: 10px;text-align: center;}
+.part1 img{width: 98px;}
+.part ul{width:100%; overflow: hidden;}
+.part ul li{margin: 10px 12px; padding: 10px 0;border-bottom: 1px solid #f1f1f1;}
+.part ul li img{width: 18px;}
+.address-detail-content{width: calc(100% - 28px);overflow: hidden;margin-left: 8px;}
+.address-detail-content p{width: 81%; overflow: hidden;text-overflow: ellipsis;height: 20px;line-height: 20px;white-space: nowrap;margin-top: 14px;}
+.address-detail-content>p:first-child{width:100%;margin-top: 2px;}
+.address-detail-content button{background-color: #f0b90b;border: none;outline: none;border-radius: 4px;padding: 6px 10px;margin-top: 10px;}
+.address-detail-content div{width: 100%;}
+.footer{width: 100%;position: fixed;bottom: 0;height: 60px;line-height: 60px;background-color: #fff;}
+.footer a{display: block;line-height: 40px;background-color: #f0b90b;margin: 10px 15px;width: calc(100% - 30px);border: none;outline: none;border-radius: 4px;text-align: center;}
+.add-address-sapce{height: 80px;}
+#mask1{display: none;}
+
+/* 添加地址 */
+.add-address{margin: 12px;}
+.add-address input{background-color: rgba(0, 0, 0, 0);border-bottom: 1px solid #f1f1f1;width: 100%;line-height: 40px;border-radius: 4px;padding: 0 10px;}
+.add-address-confirm{line-height: 40px;background-color: #f0b90b;margin: 60px 12px;width: calc(100% - 24px);border-radius: 4px;text-align: center;}
+.add-address-confirm a{width: 100%;border-radius: 4px;text-align: center;display: block;}
+
+/* 添加收款方式 */
+.receivables .title{line-height: 2.0;margin-top: 6px;}
+.receivables div{line-height: 40px;display: flex;justify-content: space-between;align-items: center;margin-top: 6px;margin-bottom: 10px;}
+.receivables img{width: 22px;height: 21px;}
+.receivables input{width: 100%;border-radius: 2px;background-color: #fff;padding-left: 11px;line-height: 40px;}
+.bgBalck .receivables input {background-color: #202833;color: #fff;}
+.save{padding-bottom: 23px;margin: 35px 10px;}
+.save button{display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 2px;
+  color: #fff;
+  background: #f0b90b;
+  /* background: linear-gradient(to right, #f0b90b, #f0b90b); */
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  border: none;
+}
+.uploads-list{width: 120px;margin-right: 10px;position: relative;}
+.uploads-list img{width: 120px;height: 120px;}
+.uploads-list p{
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.uploads-list input{position: absolute;bottom: 0;left: 0;width: 120px;height: 120px;opacity: 0;}
+
+/* 安全中心 */
+.safe-center{width: 100%;}
+.safe-center a{display: block;position: relative;top: 2px;}
+.safe-center li{display: block; padding: 15px;border-bottom: 1px solid #f1f1f1;}
+.bgBalck .safe-center li{border-bottom: 1px solid #202833;}
+.safe-center img{position: relative;top: 4px;margin-left: 10px;}
+.safe-center span{position: relative;top: -4px;}
+
+/* 绑定手机 */
+.bind-phone{width: 100%;}
+.bind-phone li{width: 100%; border-bottom: 1px solid #f1f1f1;padding-bottom: 5px;line-height: 20px;margin-top: 20px;}
+.bind-phone input{background-color: rgba(0, 0, 0, 0);padding-left: 10px;min-width: 70%;}
+.bind-phone .send{padding: 6px 10px;background-color: #f0b90b;border: none;outline: none;border-radius: 4px;min-width: auto;color: #fff;}
+.none{line-height: 40px;background-color: #f0b90b;margin: 10px 15px;width: calc(100% - 24px);border: none;outline: none;border-radius: 4px;margin-top: 20px;}
+.none a{display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 2px;
+  color: #fff;
+  background: #f0b90b;
+  /* background: linear-gradient(to right, #f0b90b, #f0b90b); */
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0;}
+
+/* 重新设置密码 */
+.tips{margin-top: 20px;}
+.tips img{width: 24px;}
+.tips span{color: #FD5C3F;}
+.theme{margin: 20px 12px;}
+.theme .form-group{width: 100%; border-bottom: 1px solid #f1f1f1;padding-bottom: 5px;line-height: 20px;margin-top: 20px;}
+.theme input{background-color: rgba(0, 0, 0, 0);padding-left: 10px;min-width: 100%;border: none;outline: none;font-size: 14px;}
+#resetp{line-height: 40px;background-color: #f0b90b;border-radius: 4px;margin-top: 120px;display: block;text-align: center;padding: 0;}
+
+/* 身份认证 */
+.auth input{width: 100%;background-color: rgba(0,0,0,0);margin-top: 10px;line-height: 20px;}
+.qwe{display: inline-block;width: 100px;}
+.haokan {width: 100px;height: 100px;position: relative;}
+.haokan img {width: 100%;height: 100%;position: absolute;z-index: 99;left: 0;top: 0;}
+#file,#file2 {position: absolute;z-index: 11110;opacity: 0;width: 100%;height: 100%;}
+#file1 {position: absolute;z-index: 11110;opacity: 0;width: 100%;height: 100%;}
+.bgLinearblue{line-height: 40px;background-color: #f0b90b;margin: 10px 15px;width: calc(100% - 24px);border: none;outline: none;border-radius: 4px;margin-top: 60px;}
+
+/* pb转账 */
+.bline{padding: 10px 0;}
+.bline input{background-color: rgba(0,0,0,0);}
+.mt30{margin-top: 30px}
+.color1b{color: #728daf}
+.mention{width: 100%;height: 40px;line-height: 40px;color: #fff;background-color: #f0b90b;border-radius: 4px;}
+.addbox img{width: 20px;}
+.addbox span{padding: 0 5px}
+
+/* 我的交易 */
+.title-select p{flex:1;height: 40px;line-height: 40px}
+.title-select p span{padding: 5px;}
+.active span{border-bottom: 1px solid #08CA93;color:#08CA93!important; }
+.title-item span{flex: 1;}
+.title-item .time{flex: 2}
+.trade-list-headers{border-bottom: 1px solid #3e536b;padding: 8px 7px 7px 11px;line-height: 25px;}
+.trade-list-headers button{border: 0;outline: none;padding: 0 11px;background-color: #4CBB7C;border-radius: 4px;}
+.trade-list{padding: 0 10px 15px;}
+.trade-list p{padding: 0;}
+.trade-list span{display: block;margin-top: 12px;line-height: 1.5}
+
+/* 订单记录 */
+.circle{width: 6px;height: 6px;border-radius: 50%;background-color: #FA693E; margin-right: 5px;}
+.select{display: flex;flex-wrap: wrap;align-items: center;}
+.select>div{width: 30%;padding: 5px 0;margin-bottom: 10px;text-align: center;margin: 0 5px 10px;}
+.sx_show{position: fixed;top: 48px;width: 100%;left: 0;right: 0;bottom: 0;background-color: rgba(102, 102, 102, .7);display: none;}
+.sx_box{border-top: 1px solid #F7F7FB;background-color: #fff;}
+.active{background-color: #f0b90b;color: #fff;}
+.goumai>a,.chushou>a{display: block;}
+
+/* 设置密码 */
+#setpass{padding:0 15px;}
+#setpass .theme .groups{margin-bottom:25px;}
+#setpass .theme .form-control{border:none!important;box-shadow:none;border-radius:4px;padding:6px 1px;font-size:16px;}
+#setpass .theme input::-webkit-input-placeholder{color:#666;font-size:16px;}
+#setpass .theme .checkbox{margin-top:25px;color:#808b8f;}
+#setpass .theme .checkbox a{color:#4684bd;}
+#setpass .theme .btn-default{background:#f0b90b;color:#fff;border-color:#f0b90b;width:100%;font-size:15px;margin-top:35px;border-radius:4px;padding: 10px 0;}
+#setpass .theme .agree{background:#f0b90b;border-color:#f0b90b;}
+.theme .form-group input{background: none;}
+#setpass .theme #agree{-webkit-appearance: checkbox;width: auto;min-width: auto;}
+

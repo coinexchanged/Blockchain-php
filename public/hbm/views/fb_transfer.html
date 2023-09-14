@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>划转</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</head>
+<style>
+    .coinbox{
+        display: flex;
+        margin:0 0 1rem 1rem;
+        text-align: center;
+        align-items: center;
+    }
+    .coinbox li{width: 30%;background: #eee;height: 45px ;line-height: 45px;margin-right:1rem;}
+    .coinbox .active{background: linear-gradient(to right, #6596e3, #5988cf);color: #fff;}
+    .imgbox{width: 50px;height: 50px;border: 1px solid #eee}
+    .textbox{width: 80%;}
+    .line{height: 10px;background:#f7f7fb; }
+    .bline{border-bottom: 1px solid #eee;padding: 10px 0;}
+    .transit{width: 100%;height: 40px;line-height: 40px; color: #fff;background: #cfd9de;margin-top: 80px}
+    .btnbox{position: fixed;bottom: 10px;padding: 0 15px;width: 100%}
+    .transit{width: 100%;height: 40px;line-height: 40px; color: #fff;background: #cfd9de;}
+</style>
+<body class="backF">
+    <header style="background: #fff;" class="borderB">
+        <i class="iconfont icon-zuo font24  fontc_6" onclick="javascript:history.go(-1)"></i>
+        <h1 class="fontc_3">划转</h1>
+    </header>
+
+    <div class="Transferred" style="margin-top:3.8rem">
+        <div class="transfer">
+            <ul class="coinbox ">
+
+            </ul>
+            <div class="  ">
+                <div class=" " data-index="2">
+                    <div class=" ">
+                        <p class="">从</p>
+                        <p class="account1">交易账户</p>
+                    </div>
+                    <div class=" ">
+                        <p class="">到</p>
+                        <p class="account2">法币账户</p>
+                    </div>
+                </div>
+                <div class="imgbox  alcenter  transferbtn">
+                    <img src="images/transfer1.png" alt="" style="width:25px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line mt30"></div>
+    <div class="">
+        <div class="bline mt30">
+            <p>划转数量</p>
+            <div class="flex between alcenter mt20">
+                <input type="text" placeholder="请输入划转数量" class="ft14">
+                <div>
+                    <span class="color1 coin">USDT</span>
+                    <span class="color3">|</span>
+                    <span>全部</span>
+                </div>
+            </div>
+        </div>
+        <p class="color1 ft12 mt5">可用0.000000000 <span class="coin">USDT</span></p>
+    </div>
+    <div class="btnbox">
+        <div class="transit ">划转</div>
+    </div>
+
+    <script>
+        $(function () {
+            var legalList = {}; //币种信息
+            var type = 2; //默认为法币-交易
+            var text = ['交易账户', '法币账户']; //顺序
+            getLegalList();
+            $(".coinbox>li").on('click', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $(".coin").text($(this).text())
+            })
+
+            $('.transferbtn').click(function () {
+                type = type == 1 ? 2 : 1;
+                text.reverse();
+                $('.account1').text(text[0]);
+                $('.account2').text(text[1]);
+            })
+            //获取币种信息
+            function getLegalList() {
+                var self = this;
+                var token = get_user_login();
+                $.ajax({
+                    url: _API + "wallet/list",
+                    type: "POST",
+                    dataType: "json",
+                    async: true,
+                    beforeSend: function beforeSend(request) {
+                        request.setRequestHeader("Authorization", token);
+                    },
+                    success: function success(data) {
+                        console.log(data)
+                        if (data.type == 'ok') {
+                            var l = data.message;
+                            self.legalList = l.legal_wallet;
+                            console.log(self.legalList.balance);
+                            self.legalList.balance.forEach(function (item, index) {
+                                var li = $('<li></li>');
+                                if (index == 0) {
+                                    li.attr('class', 'active')
+                                }
+                                li.text(item.currency_name);
+                                li.data('cid', item.currency);
+                                $('.coinbox').append(li);
+                            })
+
+                        } else if (data.type == '999') {
+                            window.location = _SERVER + 'login.html';
+                        }
+                    }
+                })
+
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>忘记密码</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+a:focus, a:hover{color:#fff;}
+    .login_btn{height:50px;line-height: 50px;}
+
+    #register .yecount {
+        color: #10172b;
+        font-size: 14px;
+        margin-top: 62%;
+    }
+
+    .modal {
+        top: auto;
+        font-family: "微软雅黑";
+    }
+    .modal-dialog {
+    margin: 0;
+}
+.modal-content {
+    border: none;
+    border-radius: 0;
+}
+.modal .modal-body .verification {
+    position: relative;
+}
+.modal .modal-body .form-group {
+    margin-bottom: 0;
+}
+.modal .modal-body label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #323b40;
+    font-size: 13px;
+    font-weight: 500;
+}
+.modal .modal-body input[placeholder], [placeholder], *[placeholder] {
+    color: #1d455f !important;
+}
+.modal .modal-body .form-control {
+    background-color: #fff;
+    border: solid 1px #fff;
+    box-shadow: none;
+    border-bottom: solid 1px #8db3d2;
+    border-radius: 0px;
+    padding: 6px 0;
+    font-size: 16px;
+}
+input[type=button], input[type=submit], input[type="text"], input[type=checkbox], input[type="password"], button {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#fbtain {
+    background: #fff;
+    font-size: 14px;
+    border: none;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    color: #2873fb;
+}#mbtain {
+    background: #fff;
+    font-size: 14px;
+    border: none;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    color: #2873fb;
+}
+.modal .modal-footer .btn-primary {
+    background: #2873fb;
+    width: 100%;
+    border-color: #2873fb;
+    font-size: 16px;
+}
+</style>
+<body style="background:#f6f6f6;">
+    <div id="register" class="mgthead" style="padding: 0 1rem;">
+        <!--手机注册-->
+        <div id="telregis">
+            <div style="margin-bottom:3rem">
+                <h5 class="font24 font_bold fontc_hdl">忘记密码</h5>
+            </div>
+            <div class="theme">
+                <form id="form_content">
+                    <div class="">
+                        <div class="login_tab" >
+                            <div class="input-con" >
+                                <input  type="text"  class="focu" id="name" placeholder="请输入手机或邮箱号" name="tel"/>
+                            </div>
+                            <a  class="login_btn"  style="background:#10172b;width:100%;outline: 0;"  data-toggle="modal" data-target="#next">下一步</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="yecount">已有账号？<a href="/mobile/login.html" class="fontc_blue">登录</a></div>
+        </div>
+
+    <!-- 手机注册 -->
+    <div class="modal fade in" tabindex="-1" role="dialog" id="next" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="font14" aria-hidden="true">取消</span></button>
+                    <h4 class="modal-title font14">安全验证</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group verification">
+                        <label id="phone">发送验证码</label>
+                        <input type="text" class="form-control focu" id="verificate" placeholder="请输入验证码" name="" value="">
+                            <input type="button" id="fbtain" value="发送">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bd0">
+                    <a class="btn btn-primary" onclick="forgetpa()">确认</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        // $(".focu").focus(function(){
+        //     $(this).css("border-bottom","1px solid #5d7ace")
+        // })
+        // $(".focu").blur(function(){
+        //     $(this).css("border-bottom","1px solid #ccc")
+        // })
+        //验证手机邮箱
+        $("#name").change(function () {
+            var reg = /^1[3456789]\d{9}$/;
+            var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (reg.test($("#name").val()) || emreg.test($("#name").val())) {
+            } else {
+                layer_msg("输入的邮箱或手机号码不符合规则");
+                return;
+            }
+
+        });
+        //获取手机邮箱验证码
+        $("#fbtain").click(function () {
+            var disabled = $("#fbtain").attr("disabled");
+            var name = $("#name").val();
+            var reg = /^1[3456789]\d{9}$/;
+            var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            var verifi = $("#verificate").val();
+            if (disabled) {
+                return false;
+            }
+            if (reg.test(name)) {
+                $.ajax({
+                    type: "post",
+                    url: _API+"sms_send",
+                    data: { user_string: name, mobile_code: verifi ,type:'forget' },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        settime();
+                        layer_msg(data.message);
+
+                    }
+                });
+            } if (emreg.test(name)) {
+                $.ajax({
+                    type: "post",
+                    url: _API+"sms_mail",
+                    data: { user_string: name, email_code: verifi , type: 'forget'},
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        settime();
+                        layer_msg(data.message);
+
+                    }
+                });
+            }
+
+        });
+        var countdown = 60;
+        var generate_code = $("#fbtain");
+        function settime() {
+            if (countdown == 0) {
+                generate_code.attr("disabled", false);
+                generate_code.val("发送");
+                $("#fbtain").css('color', '#5890bd');
+                countdown = 60;
+                return false;
+            } else {
+                $("#fbtain").attr("disabled", true);
+                $("#fbtain").css('color', '#b6bfc4');
+                generate_code.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function () {
+                settime();
+            }, 1000);
+        }
+        //
+        function forgetpa() {
+            var names = $("#name").val();
+            var verify = $('#verificate').val();
+            var reg = /^1[3456789]\d{9}$/;
+            var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (reg.test(names)) {
+                $.ajax({
+                    type: "post",
+                    url: _API+"user/check_mobile",
+                    data: { "mobile_code": verify },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.type == "ok") {
+                            layer_msg(data.message);
+                            window.location.href = "forget.html?user_string=" + names + "&" + "code=" + verify;
+                        } else {
+                            layer_msg(data.message);
+                        }
+                    }
+                });
+            } else if (emreg.test(names)) {
+                $.ajax({
+                    type: "post",
+                    url: _API+"user/check_email",
+                    data: { "email_code": verify },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.type == "ok") {
+                            layer_msg(data.message);
+                            window.location.href = "forget.html?user_string=" + names + "&" + "code=" + verify;
+                        } else {
+                            layer_msg(data.message);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

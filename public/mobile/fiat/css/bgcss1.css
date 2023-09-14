@@ -1,0 +1,133 @@
+
+.header{
+    background: #35363A;
+    color: #fff;
+}
+.container-my{
+    background: #35363A;
+    color: #fff;
+}
+.currency_title{
+    color: #fff !important;
+}
+
+.container .mu-tabs-inverse{
+    background: #35363A !important;
+    color: #fff;
+}
+#buts .mu-success-text-color{
+    color:#4caf50;
+}
+#buts .mu-error-text-color {
+    color:#f44336;
+}
+.mu-select-icon{
+    color: #fff;
+}
+
+#buts button{
+    color: #fff;
+}
+.mu-button-wrapper{
+    /* color: #fff !important; */
+    /* background: #fff; */
+}
+.mu-input-label{
+    color: #fff !important;
+}
+.mu-select-input{
+    color: #fff !important;
+}
+#id1 .mu-text-field-input{
+    color: #fff !important;
+}
+#id2 .mu-text-field-input{
+    color: #fff !important;
+}
+
+.mu-popover .mu-list .mu-option .mu-item-wrapper .mu-item .mu-item-content{
+    color: #fff !important;
+}
+
+#id3 .mu-text-field-input{
+    color: #fff !important;
+}
+
+
+.subtitle{
+    color: #fff !important;
+}
+.flex{
+
+}
+.mu-input-content{
+    border-bottom: 1px solid #fff;
+    /* color: #f44336 !important; */
+}
+.footer{
+    background: #35363A;
+    color: #fff;
+}
+.mu-item-title{
+    color: #fff;
+}
+#texts{
+    color: #fff;
+
+}
+#bgs{
+    background: #39393a !important;
+}
+.bgs{
+    background: #39393a !important;
+    border:1px solid #eee;
+}
+.mu-popover{
+    background: #3C4358 !important;
+    /* color: #fff; */
+}
+.mu-card-header{
+    background: #35363A;
+}
+.my-settings{
+    background: #35363A;
+}
+.mu-card{
+    background: #35363A !important;
+}
+.mu-card-title{
+    color: #fff !important;
+}
+.mu-card-sub-title{
+    color: #fff !important;
+}
+.titlesd .mu-switch-label{
+    color: #fff !important;
+}
+.subtitle{
+    color: #999 !important;
+}
+.mu-item-wrapper .mu-item-title {
+    color: #999 !important;
+
+}
+.filter-item{
+    color: #aaa !important;
+}
+.filter-item.active{
+    color: white !important;
+}
+.lockming .header{
+    color: #eeeeee;
+    border-bottom: 1px solid #565656;
+}
+.bg-black{
+    background-color: #4d4d4d;
+}
+.box-shadow{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+}
+.num-inp input{
+    border: 1px solid #666;
+    color: white;
+}

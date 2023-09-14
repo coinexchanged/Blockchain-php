@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+    .code{
+        height:26px;
+        width:80px;
+        text-align: center;
+        border-radius: 6px;
+        color:#ff5e43;
+        font-size:14px;
+        line-height: 26px;
+    }
+    .disabled{
+        background:#ddd;
+    }
+    .place_box{display:flex;margin-top:10px;}
+    .radio_box label{border:1px solid #fff !important;}
+    .login_btn{height:50px;line-height: 50px;}
+
+    #register .yecount {
+        color: #10172b;
+        font-size: 14px;
+        margin-top: 62%;
+    }
+
+    .modal {
+        top: auto;
+        font-family: "微软雅黑";
+    }
+    .modal-dialog {
+    margin: 0;
+}
+.modal-content {
+    border: none;
+    border-radius: 0;
+}
+.modal .modal-body .verification {
+    position: relative;
+}
+.modal .modal-body .form-group {
+    margin-bottom: 0;
+}
+.modal .modal-body label {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #323b40;
+    font-size: 13px;
+    font-weight: 500;
+}
+.modal .modal-body input[placeholder], [placeholder], *[placeholder] {
+    color: #1d455f !important;
+}
+.modal .modal-body .form-control {
+    background-color: #fff;
+    border: solid 1px #fff;
+    box-shadow: none;
+    border-bottom: solid 1px #8db3d2;
+    border-radius: 0px;
+    padding: 6px 0;
+    font-size: 16px;
+}
+input[type=button], input[type=submit], input[type="text"], input[type=checkbox], input[type="password"], button {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#fbtain {
+    background: #fff;
+    font-size: 14px;
+    border: none;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    color: #2873fb;
+}#mbtain {
+    background: #fff;
+    font-size: 14px;
+    border: none;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    color: #2873fb;
+}
+.modal .modal-footer .btn-primary {
+    background: #2873fb;
+    width: 100%;
+    border-color: #2873fb;
+    font-size: 16px;
+}
+</style>
+<body style="background:#f6f6f6;">
+    <div id="register" class="mgthead" style="padding: 0 1rem;">
+        <!--手机注册-->
+        <div id="telregis" style="display: none;">
+            <div style="margin-bottom:3rem">
+                <h5 class="font24 font_bold fontc_hdl">手机注册</h5>
+                <span  class="font14 red"> <i class="iconfont icon-anquan font18 red"></i>注册后不能修改</span>
+            </div>
+            <div class="theme">
+                <form id="form_content" action="/users/creataccounts" method="post">
+                    <div class="">
+                        <div class="login_tab" >
+                            <div class="input-con" >
+                                <input  type="text"  class="focu" id="tel" placeholder="请输入手机号" name="tel"/>
+                            </div>
+                            <a  class="login_btn"  style="background:#10172b;width:100%;outline: 0;"  data-toggle="modal" data-target="#telnext">下一步</a>
+                            
+                            <a  class="fontc_blue font14" href="javascript:;" id="regismail">邮箱注册</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="yecount">已有账号？<a href="/mobile/login.html" class="fontc_blue">登录</a></div>
+        </div>
+        <!--邮箱注册-->
+        <div id="emailregis" style="display: block;">
+            <div  style="margin-bottom:3rem">
+                <h5 class="font24 font_bold fontc_hdl">邮箱注册</h5>
+                <span class="font14 red"> <i class="iconfont icon-anquan font18 red "></i>注册后不能修改</span>
+            </div>
+            <div class="theme">
+                <form id="form_content" action="/users/creataccounts" method="post">
+                    <div class="">
+                        <div class="login_tab" >
+                            <div class="input-con" >
+                                <input  type="text" value="" id="emails"placeholder="请输入邮箱" name="emails"/>
+                            </div>
+                            <a  class="login_btn"  href="javascript:;" style="background:#10172b;width:100%;outline: 0;" data-toggle="modal" data-target="#emailnext">下一步</a>
+                            
+                            <a class="fontc_blue font14" href="javascript:;" id="registel">手机注册</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="yecount">已有账号？<a class="fontc_blue" href="/hbm/views/login.html">登录</a></div>
+        </div>
+    </div>
+    <!-- 手机注册 -->
+    <div class="modal fade in" tabindex="-1" role="dialog" id="telnext" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="font14" aria-hidden="true">取消</span></button>
+                    <h4 class="modal-title font14">短信验证</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group verification">
+                        <label id="phone">发送验证码</label>
+                        <input type="text" class="form-control focu" id="verificate" placeholder="请输入手机验证码" name="" value="">
+                            <input type="button" id="fbtain" value="发送">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bd0">
+                    <a class="btn btn-primary" onclick="registels()">确认</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 邮箱注册 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="emailnext">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="font14" aria-hidden="true">取消</span></button>
+            <h4 class="modal-title font14">邮箱验证</h4>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="form-group verification">
+                    <label id="email">发送验证码</label>
+                    <input type="text" class="form-control" id="emailverifi" placeholder="请输入邮箱验证码" name="" value="">
+                        <input type="button" id="mbtain" value="发送">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer bd0" >
+            <a class="btn btn-primary" onclick="regismail()">确认</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- <div class="modal-backdrop fade in"></div> -->
+
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $("#regismail").click(function () {
+            $("#telregis").hide();
+            $("#emailregis").show();
+        })
+        $("#registel").click(function () {
+            $("#telregis").show();
+            $("#emailregis").hide();
+        });
+        //注册验证手机
+        $("#tel").change(function () {
+            var reg = /^1[3456789]\d{9}$/;
+            if (!reg.test($("#tel").val())) {
+                layer_msg("输入的手机号码不符合规则");
+                return;
+            }
+            var phone = $("#tel").val();
+            if ( phone.length != 11) {
+                return;
+            }
+        });
+        //注册验证邮箱
+        $("#emails").change(function () {
+            var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (emreg.test($("#emails").val())) {
+                $("#mess1").html("");
+            } else {
+                $("#mess1").html("输入的邮箱不符合规则");
+                return;
+            }
+        });
+        //获取手机验证码
+        $("#fbtain").click(function () {
+            var disabled = $("#fbtain").attr("disabled");
+            
+            var verify = $('#telverifi').val();
+            console.log(verify)
+            if (disabled) {
+                return false;
+            }
+            var phone = $("#tel").val();
+            console.log(phone)
+            $.ajax({
+                type: "post",
+                url: _API+"sms_send",
+                data: { "user_string": phone, "mobile_code": verify },
+                dataType: "json",
+                success: function (data) {
+
+                    console.log(data);
+                    settime();
+                    layer_msg(data.message);
+                    
+                }
+            });
+        });
+        var countdown = 60;
+        var generate_code = $("#fbtain");
+        function settime() {
+            if (countdown == 0) {
+                generate_code.attr("disabled", false);
+                generate_code.val("发送");
+                $("#fbtain").css('color', '#5890bd');
+                countdown = 60;
+                return false;
+            } else {
+                $("#fbtain").attr("disabled", true);
+                $("#fbtain").css('color', '#b6bfc4');
+                generate_code.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function () {
+                settime();
+            }, 1000);
+        }
+        //获取邮箱验证码
+        $("#mbtain").click(function () {
+            var disabled = $("#mbtain").attr("disabled");
+            var email = $("#emails").val();
+            var emverify = $('#emailverifi').val();
+            if (disabled) {
+                return false;
+            }
+
+            $.ajax({
+                type: "post",
+                url: _API+"sms_mail",
+                data: { "user_string": email, "email_code": emverify },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    settimes();
+                    layer_msg(data.message);
+
+                }
+            });
+        });
+        var countdown = 60;
+        var generate_code = $("#mbtain");
+        function settimes() {
+            if (countdown == 0) {
+                generate_code.attr("disabled", false);
+                generate_code.val("发送");
+                $("#mbtain").css('color', '#5890bd');
+                countdown = 60;
+                return false;
+            } else {
+                $("#mbtain").attr("disabled", true);
+                $("#mbtain").css('color', '#b6bfc4');
+                generate_code.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function () {
+                settimes();
+            }, 1000);
+        }
+        //
+        function regismail() {
+            var email = $("#emails").val();
+            var emverify = $('#emailverifi').val();
+            
+            window.location.href = "register.html?user_string=" + email + "&" + "code=" + emverify;
+        }
+        
+        function registels() {
+            var phone = $("#tel").val();
+            var verify = $('#verificate').val();
+            window.location.href = "register.html?user_string=" + phone + "&" + "code=" + verify;
+        }
+    </script>
+</body>
+</html>

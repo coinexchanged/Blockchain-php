@@ -1,0 +1,623 @@
+@media screen and (max-width: 1410px){
+    .business-content{font-size: 15px !important}
+    .merchat-select-content{font-size: 15px !important}
+    .lead-content{font-size: 15px !important}
+    .sellers-content{font-size: 15px !important}
+    .lead-order{font-size:16px !important}
+    .lead-order{font-size:16px !important}
+    .joy-buy-next{margin-top: 30px !important}
+    .select-content{font-size: 15px !important}
+    .joyride-payment-content{font-size: 17px !important}
+    .sell-chat-confirm{margin-top:-26px !important}
+    .sell-chat-finish{margin-top:-35px !important}
+    .business-chat-nub{right:15px !important}
+    .business-nub{margin-left:7px !important}
+}
+@media screen and (max-width: 996px){
+    .joyride-finish-buy {margin-top: -106px !important}
+    .sell-chat-confirm{margin-top: -36px !important}
+    .sell-chat-finish{margin-top: -46px !important}
+    .business-chat-confirm{width:48% !important}
+}
+.toolbg{
+    background:#000;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-Index:1000;
+    opacity:0.3;
+}
+.tooljy{
+    background:#fff;
+    position:inherit;
+    z-index:1001;
+    height: 25px !important;
+    border-radius: 50%;
+    border:2px solid #de5959;
+}
+.lead-tip{
+    position: absolute;
+    background: #d45858;
+    color: #fff;
+    z-index: 1002;
+    border-radius: 4px;
+}
+.lead-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #d45858 !important;
+    top: -19px;
+}
+.lead-order {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #d45858;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.lead-content{
+    margin: 0 0 0 5px;
+    font-size: 17px;
+}
+.lead-next{
+    padding: 5px 15px;
+    font-size: 13px;
+    color: #fff;
+    float: right;
+    background-color: #ff8181;
+    /*border: solid 1px #d29090;*/
+    border-radius: 4px;
+}
+.lead-next:hover{
+    background-color: #dcadad;
+    /*border: solid 1px #da9090;*/
+    color: #fff;
+    cursor:pointer;
+}
+.lead-close {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: rgba(255,255,255,0.6);
+    font-size: 25px;
+}
+.lead-close:hover{
+    cursor:pointer;
+}
+.joyride-tip-guide {
+    padding:15px 15px 0 13px;
+    width: 300px;
+}
+.joyride-nub{
+    left: 22px;
+}
+.joyride-next-tip{
+    margin: 25px 0 9px 0;
+}
+.joyride-start-tip{
+    margin: 9px 0 9px 0;
+}
+.toolbuy{
+    background: #fff;
+    position: inherit;
+    z-index: 1001;
+    border-top: 2px solid #de5959 !important;
+    border-bottom: 2px solid #de5959 !important;
+    border-right: 2px solid #de5959 !important;
+    top: 2px;
+}
+.tooltitle{
+    background: #fff;
+    z-index: 1002;
+    border-top: 2px solid #de5959 !important;
+    border-bottom: 2px solid #de5959 !important;
+    border-left: 2px solid #de5959 !important;
+    padding-bottom: 9px !important;
+    margin-top: 1px;
+}
+.toolpay{
+    background: #fff;
+    position: inherit;
+    z-index: 1001;
+    border-top: 2px solid #de5959 !important;
+    border-bottom: 2px solid #de5959 !important;
+    border-right: 2px solid #de5959 !important;
+    display: inline-block;
+    height: 22px;
+}
+.toolcover{
+    background: #fff;
+    position: relative !important;
+    z-index: 1003;
+    border-top: 2px solid #de5959 !important;
+    border-bottom: 2px solid #de5959 !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+.toolpull{
+    background: #fff;
+    position: inherit;
+    z-index: 1001;
+    border-top: 2px solid #de5959 !important;
+    border-bottom: 2px solid #de5959 !important;
+    border-left: 2px solid #de5959 !important;
+    padding-top: 1px;
+    display: inline-block;
+    height: 21px;
+}
+.tool-buying{
+    position: inherit;
+    z-index: 1001;
+    border: 2px solid #FFF !important;
+}
+.joyride-tip-buy{
+    padding: 15px 15px 0 11px;
+    width: 58%;
+    right: 0;
+}
+.joyride-buy-content{
+    line-height: 2;
+}
+.joy-buy-next{
+    margin: 10px 0 9px 0;
+}
+.joyride-buy-confirm{
+    position:fixed;
+    width:480px;
+    height:auto;
+    margin:0px;
+    padding:0px;
+    z-index:1001;
+    left:736px;
+    top:335px;
+}
+.joyride-tip-confirm {
+    padding: 15px 15px 0 13px;
+    width: 320px;
+}
+.joyride-tip-capital{
+    padding: 15px 15px 0 13px;
+    min-width:77%;
+}
+.joyride-next-capital{
+    margin-right:5px;
+}
+.current-order{
+    padding: 7px 7px;
+    background:#FFF;
+    position:relative;
+    z-index:1001;
+    border:2px solid #de5959;
+}
+.current-chat{
+    padding: 4px 7px;
+    background:#FFF;
+    position:relative;
+    z-index:1001;
+    border:2px solid #de5959;
+}
+.joyride-order-buy{
+    position: absolute;
+    background: #d45858;
+    color: #fff;
+    z-index: 1002;
+    border-radius: 4px;
+    padding: 15px 0 10px 13px;
+    min-width: 30%;
+    left: 165px;
+    line-height: 18px !important;
+}
+.lead-order-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-bottom-color: transparent!important;
+    border-right-color: #d45858 !important;
+    left: -19px;
+    top: 24px;
+}
+.joyride-order-next{
+    padding: 5px 15px;
+    font-size: 13px;
+    color: #fff;
+    float: right !important;
+    background-color: #ff8181;
+    /*border: solid 1px #d29090;*/
+    border-radius: 4px;
+    margin: 23px 28px 0 0;
+}
+.joyride-order-next:hover{
+    background-color: #dcadad;
+    /*border: solid 1px #da9090;*/
+    color: #fff;
+    cursor:pointer;
+}
+.joyride-order-close{
+    position: absolute;
+    right: 7px;
+    top: 4px;
+    color: rgba(255,255,255,0.6);
+    font-size:25px;
+}
+.joyide-order-content{
+    margin-top:1px;
+}
+.joyride-select{
+    position: absolute;
+    z-index: 1001;
+}
+.joyride-tip-select{
+    padding:24px 15px 0 13px;
+    width: 342px;
+    height: 38px;
+}
+.select-content{
+    margin: 0 0 0 13px;
+    font-size: 17px;
+}
+.joyride-payment{
+    position: absolute;
+    background-color: rgb(212, 88, 88);
+    color: #fff;
+    z-index: 1001;
+    border-radius: 4px;
+    padding: 93px 204px 0 17px;
+    width: 250px;
+}
+.joyride-payment-nub{
+    z-index: 999;
+    display: inline-block;
+    font-size: 18px;
+    color: #FFF;
+    position: absolute;
+    top: 45px;
+    left: 87px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.joyride-payment-order{
+    display: block;
+    position: absolute;
+    border: solid 26px;
+    border-bottom-width: 36px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #000 !important;
+    top: 7px;
+    left: 65px;
+}
+.joyride-payment-content{
+    position: absolute;
+    top: 46px;
+    left: 127px;
+    font-size: 18px;
+}
+.joyride-buy-chat{
+    position: fixed;
+    z-index: 1001;
+    bottom: 0;
+}
+.joyride-chat-confirm{
+    padding: 15px 15px 0 13px;
+    width: 323px;
+}
+.joyride-chat-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: #d45858 !important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: transparent!important;
+    top: 75px;
+}
+.joyride-next-chat{
+    margin: 6px 0 9px 0;
+}
+.joyride-finish-chat{
+    margin:28px 0 9px 0;
+}
+.joyride-chat-content{
+    position: absolute;
+    background: #d45858;
+    color: #fff;
+    z-index: 1001;
+    border-radius: 4px;
+}
+.joyride-finish-buy{
+    position: absolute;
+    background: #d45858;
+    color: #fff;
+    z-index: 1002;
+    border-radius: 4px;
+    padding: 15px 30px 3px 13px;
+    min-width: 46%;
+    left: 30px;
+    margin-top: -103px;
+    line-height: 22px !important;
+}
+.lead-finish-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: #d45858 !important;
+    border-left-color: transparent!important;
+    border-bottom-color: transparent!important;
+    border-right-color: transparent!important;
+    left: 147px;
+    top: 87px;
+}
+.joyride-finish-close{
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: rgba(255,255,255,0.6);
+    font-size: 25px;
+}
+.joyride-finish-tab{
+    margin-right: 15px !important;
+    cursor: pointer !important;
+}
+.joyride-sell{
+    background:#fff;
+    position:relative;
+    z-index:1001;
+    border:2px solid #de5959;
+}
+.joyride-tip-sell{
+    padding: 15px 15px 0 10px;
+    min-width: 30%;
+    margin-top: 20px;
+}
+.sell-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #d45858 !important;
+}
+.lead-sell-nub{
+    right: 138px;
+    top: -20px;
+}
+.joyride-sell-next{
+    margin: 21px 14px 10px 0;
+}
+.joyride-sell-confirm{
+    padding: 15px 15px 0 13px;
+    min-width: 72%;
+}
+.sell-button-nub{
+    top: -19px;
+    left: 59px;
+}
+.joyride-sell-tip{
+    padding: 15px 15px 0 13px;
+    min-width: 26%;
+}
+.sell-capital-nub{
+    top: -20px;
+    left: 206px;
+}
+.sell-takers-nub{
+    top: -19px;
+    left: 36px;
+}
+.joyride-sell-chat{
+    position: absolute;
+    z-index: 1001;
+}
+.sell-next-chat{
+    margin: 24px 0 9px 0;
+}
+.sell-chat-confirm{
+    padding: 15px 15px 0 13px;
+    min-width: 53%;
+    margin-top:0;
+}
+.sell-chat-finish{
+    padding: 15px 15px 14px 13px;
+    width: 85px;
+    margin-top: 0;
+    float: right;
+    right: 32px;
+    top: 40px;
+}
+.sell-finish-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: #d45858 !important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: transparent!important;
+    top: 47px;
+    left: 63px;
+}
+.sellers,.tour:hover{
+    cursor:pointer;
+}
+
+.merchant-tip-buy{
+    padding: 15px 15px 0 10px;
+    min-width: 19%;
+    margin-top: 20px;
+    float: right;
+    right: 68px;
+    top: 61px;
+}
+.merchant_main_title{
+    top: 0;
+    line-height: 25px;
+    padding-bottom: 3px;
+}
+.merchant_main_title h1{
+    font-weight: normal;
+}
+.merchant-tip-confirm{
+    padding: 15px 15px 0 13px;
+    min-width: 113%;
+}
+.merchant-tip-order{
+    padding: 15px 15px 0 13px;
+    min-width: 33%;
+}
+.merchant-taking-buy{
+    position: absolute;
+    background: #d45858;
+    color: #fff;
+    z-index: 1002;
+    border-radius: 4px;
+    padding: 15px 22px 10px 13px;
+    margin-top: -106px;
+    min-width: 29%;
+    line-height: 18px !important;
+}
+.merchant-taking-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: #d45858 !important;
+    border-left-color: transparent!important;
+    border-bottom-color: transparent!important;
+    border-right-color: transparent!important;
+    left: 38px;
+    top: 86px;
+}
+.merchant-order{
+    position:relative;
+    z-index:1001;
+    border:2px solid #de5959;
+}
+.merchant-close-taking{
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    color: rgba(255,255,255,0.6);
+    font-size: 25px;
+}
+.merchant-next-taking{
+    margin: 24px 0 9px 14px;
+}
+.sell-transfer-confirm{
+    padding: 15px 15px 0 13px;
+    min-width: 29%;
+}
+.joyride-transfer-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #d45858 !important;
+    top: -20px;
+    left: 44px;
+}
+.merchat-chitchat-confirm{
+    padding: 15px 15px 0 13px;
+    width: 422px;
+    height: 84px;
+}
+.merchat-select-content{
+    margin: 0 0 0 13px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+.merchat-next-chitchat,.merchat-next-chat{
+    margin: 26px 0 9px 0;
+}
+.business-chat-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: #d45858 !important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: transparent!important;
+    float: right;
+    top: 88px;
+    right: 36px;
+    margin-left: 270px;
+}
+.business-payment-nub{
+    z-index: 999;
+    display: inline-block;
+    font-size: 18px;
+    color: #FFF;
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.business-payment-order{
+    display: block;
+    position: absolute;
+    border: solid 17px;
+    border-bottom-width: 26px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #000 !important;
+    top: -1px;
+    left: 14px;
+}
+.business-content{
+    margin: 0 0 0 37px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+.business-chat-confirm{
+    padding: 15px 15px 0 13px;
+    width:29%;
+}
+.business-next-chat{
+    margin: 6px 0 9px 0;
+}
+.business-select{
+    position: absolute;
+    z-index: 1002;
+    right:12px;
+    top:48px;
+}
+#divPushOrder{
+    position: relative !important;
+}
+.sellers-sell-chat{
+    padding: 15px 15px 14px 13px;
+    width: 31%;
+    right: 32px;
+    margin-top: 202px;
+}
+.sellers-finish-nub{
+    display: block;
+    position: absolute;
+    border: solid 10px;
+    border-top-color: transparent!important;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    border-bottom-color: #d45858 !important;
+    top: -20px;
+    right: 42px;
+}
+.sellers-content{
+    margin: 0 0 0 13px;
+    font-size: 17px;
+    line-height: 1.8;
+}

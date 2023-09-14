@@ -1,0 +1,134 @@
+<title>订单管理</title>
+
+<div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+        <a lay-href="">主页</a>
+        <a><cite>用户管理</cite></a>
+        <a><cite>散户管理</cite></a>
+        <a><cite>下单列表</cite></a>
+    </div>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="layadmin-userfront-formlist">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <select name="status">
+                            <option value="-1">全部</option>
+                            <option value="0">挂单中</option>
+                            <option value="1">交易中</option>
+                            <option value="2">平仓中</option>
+                            <option value="3">已平仓</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-input-block">
+                        <select name="type">
+                            <option value="-1">全部</option>
+                            <option value="1">买入</option>
+                            <option value="2">卖出</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="order-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <!--<button class="layui-btn layuiadmin-btn-useradmin" data-type="batchdel">删除</button>-->
+                <!--<button class="layui-btn layuiadmin-btn-useradmin" data-type="add">用户</button>-->
+            </div>
+
+            <table id="order-list" lay-filter="order-list"></table>
+            <!--<script type="text/html" id="imgTpl"> -->
+            <!--<img style="display: inline-block; width: 50%; height: 100%;" src= {{ d.avatar }}>-->
+            <!--</script> -->
+
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use('useradmin', layui.factory('useradmin')).use(['admin', 'useradmin', 'table', 'layer'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , view = layui.view
+            , table = layui.table
+            , form = layui.form;
+
+        var router = layui.router();
+
+        form.render();
+
+        //用户管理
+        table.render({
+            elem: '#order-list'
+            , url: '/agent/lever_transaction/lists?user_id=' + router.search.user_id //模拟接口
+            , cols: [[
+                {field: 'id', width: 60, title: 'ID', sort: true}
+                , {field: 'price', title: '价格', minWidth: 150,}
+                , {field: 'status_name', title: '状态', minWidth: 150,}
+                , {field: 'type_name', title: '交易类型', minWidth: 150,}
+                , {field: 'symbol', title: '交易对', minWidth: 150,}
+                , {field: 'share', title: '手数', minWidth: 150}
+                , {field: 'multiple', title: '倍数', minWidth: 150}
+                , {field: 'number', title: '数量', minWidth: 150}
+                , {field: 'trade_fee', title: '手续费', minWidth: 150}
+                , {field: 'time', title: '创建时间', sort: true, width: 170}
+            ]]
+            , page: true
+            , limit: 30
+            , height: 'full-320'
+            , text: '对不起，加载出现异常！'
+            , headers: { //通过 request 头传递
+                access_token: layui.data('layuiAdmin').access_token
+            }
+            , where: { //通过参数传递
+                access_token: layui.data('layuiAdmin').access_token
+            }
+            , done: function (res) { //这里要说明一下：done 是只有 response 的 code 正常才会执行。而 succese 则是只要 http 为 200 就会执行
+                if (res !== 0) {
+                    if (res.code === 1001) {
+                        //清空本地记录的 token，并跳转到登入页
+                        admin.exit();
+                    }
+                }
+            }
+        });
+
+        //监听搜索
+        form.on('submit(order-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('order-list', {
+                where: field
+                , page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                , done: function (res) { //这里要说明一下：done 是只有 response 的 code 正常才会执行。而 succese 则是只要 http 为 200 就会执行
+
+                    if (res.code === 1001) {
+                        //清空本地记录的 token，并跳转到登入页
+                        admin.exit();
+                    }
+                    if (res.code === 1) {
+                        layer.msg(res.msg, {icon: 5});
+                    }
+                }
+            });
+        });
+
+    });
+</script>

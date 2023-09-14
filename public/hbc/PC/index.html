@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/marketlist.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <!--<script src="js/marketlist.js"></script>-->
+</head>
+<style>
+
+    .jiaoyi-nav-right{margin-top: 33px;display: flex;}
+    .jiaoyi-nav-right li{padding: 0 10px;}
+    .tjgd a{display: flex;align-items: center;}
+    .tjgd a .text{padding-left: 5px;}
+    .left_con{margin-top: -52px;}
+    .footer h1{font-weight: bold;font-size: 24px;text-align: center;margin-top: 60px;}
+    .scroll {width: 38px; padding: 12px 0 5px;position: fixed;z-index: 50;bottom: 70px;right: 15px;cursor: pointer;display: none;
+        background-color: #000;color: #fff;font-size: 26px;text-align: center;opacity: .4; filter: Alpha(opacity=40)}
+    .scroll:hover{opacity:0.9}
+    /*.backToTop{display: none; width: 38px; padding: 12px 0 5px; background-color: #000; color: #fff; font-size: 26px; text-align: center; position: fixed; z-index: 888; right: 10px; bottom: 65px; cursor: pointer; opacity: .4; filter: Alpha(opacity=40)}
+    .backToTop:hover{ opacity:0.9}*/
+    .fnavcon ul{overflow: hidden;}
+    .fnavcon ul li{float: left;width: 20%;text-align: center;}
+    .fkicon ul li{width:20%;/*height:68px;*/margin-top:60px;float:left;display: inline-block;text-align: center;}
+    .fkicon ul li a{display: inline-block;text-align: center;}
+    .swiper-slide img{width: 100%;}
+
+</style>
+<body>
+
+
+
+<div id="siteNoty" class="notification-box" style="display: none;">
+    <div class="noty_message">
+        【重要通知】：
+        <a id="siteNotyCon" href="javascript:;">gate.io 已经升级Smartmesh(SMT)到主网公告</a>
+        <a class="close pull-right" href="javascript:;"></a>
+    </div>
+</div>
+<div class="header clearfix">
+    <div class="top-up">
+        <div class="top-con">
+            <ul class="topprice">
+                <li> BTC/CNY : ￥ <span class="topnum">50158.30</span><i class="icon-arrow-up">↑</i> </li>
+                <li> ETH/CNY : ￥ <span class="topnum">1933.92</span><i class="icon-arrow-down">↓</i> </li>
+                <li> LTC/CNY : ￥ <span class="topnum">462.74</span><i class="icon-arrow-up">↑</i> </li>
+                <li> QTUM/CNY : ￥ <span class="topnum">32.10</span><i class="icon-arrow-down">↓</i> </li>
+            </ul>
+            <div class="qqtel" style="display: none;">
+                <div id="callService" class="ask_ans">
+                    <p> <i class="serv-icon tico"><!--<img src="./Gate.io - The Gate of Blockchain Assets Exchange_files/serv-icon.svg" alt="客服" />--></i> <span>客服咨询</span> </p>
+                    <ul>
+                        <li id="callNow" onclick="unLoginTip(1);">在线客服</li>
+                        <li onclick="ticketsRoute()">提交工单</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="login_lan" style="padding-left: 20px;">
+                <li class="toplogin" style="padding-right: 0;"><a style="border:1px solid #b83826;background:#333;color: #b83826;padding: 2px 10px" href="register.html">注册&nbsp;</a> </li>
+                <li class="toplogin" style="" id="toplogin"><a style="background:#b83826;border:1px solid #b83826;padding: 2px 10px"  href="login.html">登录</a></li>
+                <li class="lang-option" style="display: none;"> <span>中文版</span><i class="caret"></i>
+                    <div class="more-lan">
+                        <a href="">English</a>
+                        <a href="">한국어</a>
+                    </div> </li>
+            </ul>
+            <ul id="theme" class="clearfix" style="display: none;">
+                <li id="dark" title="深色主题">☽</li>
+                <li id="light" title="浅色主题" class="cur-theme">☼</li>
+            </ul>
+            <ul id="topLinks">
+                <li class="top-links"> <a href="" target="_blank"> <img style="float: left;margin-top: 18px;padding-right: 5px;" src="img/index/phone.png" alt=""> <span>手机APP<i class="caret"></i></span>
+                    <div class="add-dn-qr">
+                        <h3>扫码下载 APP</h3>
+                        <!--<img src="./Gate.io - The Gate of Blockchain Assets Exchange_files/app-code.png" alt="gate.io APP" />-->
+                    </div> </a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="top-dn">
+        <div class="logo">
+            <a href="javascript:;" target="_top">
+                <!--[if !IE]--><img src="img/index/logo.png" alt="gate.io LOGO" />
+                <!--[endif]-->
+                <!--[if IE]><img src="img/index/logo.png" alt="LOGO"/><![endif]--> </a>
+        </div>
+        <ul class="gateio-nav">
+            <li class="nav-active"> <a href="index.html">网站首页</a> </li>
+            <li class=""> <a href="c2c.html" class="tooltip joyride-lead" title="">C2C交易</a> </li>
+            <li class="nav-trade-item "> <a href="transaction.html">币币交易<i class="caret"></i></a>
+                <ul class="second-nav clearfix">
+                    <li> <a href="javascript:;">对BTC交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href=""><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+                            <li><a href=""><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+                            <li><a href=""><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+                            <li><a href=""><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+                            <li><a href=""><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+                            <li><a href=""><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+                            <li><a href=""><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+                            <li><a href=""><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href=""><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+                            <li><a href=""><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                            <li><a href=""><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+                            <li><a href=""><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+                            <li><a href=""><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+                            <li><a href=""><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+                            <li><a href=""><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+                            <li><a href=""><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+                            <li><a href=""><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+                            <li><a href=""><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+                            <li><a href=""><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+                            <li><a href=""><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+                            <li><a href=""><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+                            <li><a href=""><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+                            <li><a href=""><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href=""><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+                            <li><a href=""><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-ledu icon-16"></span><strong>Education LEDU</strong></a></li>
+                            <li><a href=""><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+                            <li><a href=""><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+                            <li><a href=""><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+                            <li><a href=""><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+                            <li><a href=""><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+                            <li><a href=""><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+                            <li><a href=""><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+                            <li><a href=""><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+                            <li><a href=""><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+                            <li><a href=""><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+                            <li><a href=""><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+                            <li><a href=""><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+                            <li><a href=""><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+                            <li><a href=""><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+                            <li><a href=""><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+                            <li><a href=""><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+                            <li><a href=""><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+                            <li><a href=""><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+                            <li><a href=""><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+                            <li><a href=""><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+                            <li><a href=""><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+                            <li><a href=""><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+                            <li><a href=""><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+                            <li><a href=""><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+                            <li><a href=""><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+                            <li><a href=""><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+                            <li><a href=""><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+                            <li><a href=""><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+                            <li><a href=""><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">对ETH交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href=""><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+                            <li><a href=""><span class="icon-16-ae icon-16"></span><strong>Aeternity AE</strong></a></li>
+                            <li><a href=""><span class="icon-16-arn icon-16"></span><strong>Aeron ARN</strong></a></li>
+                            <li><a href=""><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+                            <li><a href=""><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+                            <li><a href=""><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+                            <li><a href=""><span class="icon-16-bnt icon-16"></span><strong>Bancor BNT</strong></a></li>
+                            <li><a href=""><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+                            <li><a href=""><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+                            <li><a href=""><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href=""><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href=""><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+                            <li><a href=""><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:;">对USDT交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="javascipt:;"><span class="icon-16-abt icon-16"></span><strong>ArcBlock ABT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ada icon-16"></span><strong>艾达币 ADA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bat icon-16"></span><strong>注意力币 BAT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcd icon-16"></span><strong>比特币钻石 BCD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcdn icon-16"></span><strong>BlockCDN BCDN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bch icon-16"></span><strong>BCH(原BCC) BCH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bcx icon-16"></span><strong>比特无限 BCX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bft icon-16"></span><strong>BFToken BFT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bifi icon-16"></span><strong>BitcoinFile BIFI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-blz icon-16"></span><strong>Bluzelle BLZ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bnty icon-16"></span><strong>Bounty0x BNTY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-boe icon-16"></span><strong>菩提以太 BOE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btc icon-16"></span><strong>比特币 BTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btf icon-16"></span><strong>比特信仰 BTF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btg icon-16"></span><strong>BTG BTG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-btm icon-16"></span><strong>比原链 BTM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bto icon-16"></span><strong>铂链 BTO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bts icon-16"></span><strong>比特股 BTS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-bu icon-16"></span><strong>布币 BU</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cdt icon-16"></span><strong>CoinDash CDT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cofi icon-16"></span><strong>CoinFi COFI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cs icon-16"></span><strong>Credits CS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-cvc icon-16"></span><strong>Civic CVC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dadi icon-16"></span><strong>DADI DADI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dai icon-16"></span><strong>Dai DAI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dash icon-16"></span><strong>达世币 DASH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-data icon-16"></span><strong>Streamr DATA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dbc icon-16"></span><strong>深脑链 DBC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ddd icon-16"></span><strong>Scry無域 DDD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dgd icon-16"></span><strong>DigixDAO DGD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dock icon-16"></span><strong>Dock DOCK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-doge icon-16"></span><strong>狗狗币 DOGE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dpy icon-16"></span><strong>Delphy DPY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-drgn icon-16"></span><strong>DragonChain DRGN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-dx icon-16"></span><strong>DxChain DX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-elec icon-16"></span><strong>ElectrifyAsia ELEC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-elf icon-16"></span><strong>aelf ELF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eos icon-16"></span><strong>EOS EOS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eosdac icon-16"></span><strong>eosDAC EOSDAC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-etc icon-16"></span><strong>以太经典 ETC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-eth icon-16"></span><strong>以太币 ETH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fil icon-16"></span><strong>IPFS六月 FIL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fti icon-16"></span><strong>FansTime FTI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fuel icon-16"></span><strong>Etherparty FUEL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-fun icon-16"></span><strong>FunFair FUN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gard icon-16"></span><strong>临界 GARD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gas icon-16"></span><strong>小蚁Gas GAS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gem icon-16"></span><strong>Gems GEM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gnt icon-16"></span><strong>Golem GNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gnx icon-16"></span><strong>Genaro GNX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-god icon-16"></span><strong>比特币上帝 GOD</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gse icon-16"></span><strong>GSENetwork GSE</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gtc icon-16"></span><strong>G币 GTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-gxs icon-16"></span><strong>公信宝 GXS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hav icon-16"></span><strong>Havven HAV</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hc icon-16"></span><strong>HCash HC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hit icon-16"></span><strong>Hitchain HIT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hsc icon-16"></span><strong>哈希币 HSC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-hsr icon-16"></span><strong>HShare HSR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-icx icon-16"></span><strong>ICON ICX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-iht icon-16"></span><strong>云产币 IHT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href="javascipt:;T"><span class="icon-16-iota icon-16"></span><strong>IOTA IOTA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-iotx icon-16"></span><strong>IoTeX IOTX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-jnt icon-16"></span><strong>JibrelNetwork JNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-kick icon-16"></span><strong>KickCoin KICK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-knc icon-16"></span><strong>Kyber KNC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lba icon-16"></span><strong>LibraCredit LBA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lemo icon-16"></span><strong>Lemo LEMO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lend icon-16"></span><strong>ETHLend LEND</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-link icon-16"></span><strong>ChainLink LINK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lrc icon-16"></span><strong>Loopring LRC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lrn icon-16"></span><strong>路印NEO LRN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lsk icon-16"></span><strong>Lisk LSK</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ltc icon-16"></span><strong>莱特币 LTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lun icon-16"></span><strong>Lunyr LUN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-lym icon-16"></span><strong>Lympo LYM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-man icon-16"></span><strong>MatrixAI MAN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mana icon-16"></span><strong>Decentraland MANA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mco icon-16"></span><strong>Monaco MCO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mda icon-16"></span><strong>Moeda MDA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mds icon-16"></span><strong>MediShares MDS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mdt icon-16"></span><strong>量数币 MDT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-medx icon-16"></span><strong>MediBlocX MEDX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-met icon-16"></span><strong>Metronome MET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mith icon-16"></span><strong>秘银币 MITH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mkr icon-16"></span><strong>MakerDAO MKR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mobi icon-16"></span><strong>Mobius MOBI</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-mtn icon-16"></span><strong>Medicalchain MTN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nano icon-16"></span><strong>Nano NANO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nas icon-16"></span><strong>星云链 NAS</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-neo icon-16"></span><strong>小蚁Neo NEO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-nkn icon-16"></span><strong>NKN NKN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ocn icon-16"></span><strong>OCOIN OCN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-omg icon-16"></span><strong>OmiseGo OMG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ont icon-16"></span><strong>本体 ONT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-open icon-16"></span><strong>OpenPlatform OPEN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ost icon-16"></span><strong>SimpleToken OST</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-pay icon-16"></span><strong>TenX PAY</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-powr icon-16"></span><strong>PowerLedger POWR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-pst icon-16"></span><strong>Primas PST</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qash icon-16"></span><strong>LIQUID QASH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qkc icon-16"></span><strong>夸克链 QKC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qlc icon-16"></span><strong>QLINK QLC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qsp icon-16"></span><strong>Quantstamp QSP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-qtum icon-16"></span><strong>量子链 QTUM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rating icon-16"></span><strong>大炮评级 RATING</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rcn icon-16"></span><strong>Ripio RCN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rdn icon-16"></span><strong>雷电网络 RDN</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-red icon-16"></span><strong>RedLang RED</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rem icon-16"></span><strong>Remme REM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-req icon-16"></span><strong>Request REQ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rfr icon-16"></span><strong>Refereum RFR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-rlc icon-16"></span><strong>iExec RLC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-ruff icon-16"></span><strong>RuffChain RUFF</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-salt icon-16"></span><strong>SALT SALT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-sbtc icon-16"></span><strong>超级比特币 SBTC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-senc icon-16"></span><strong>Sentinel SENC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-skm icon-16"></span><strong>Skrumble SKM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-smt icon-16"></span><strong>SmartMesh SMT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-snet icon-16"></span><strong>Snetwork SNET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-snt icon-16"></span><strong>Status SNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-sop icon-16"></span><strong>SoPay SOP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-soul icon-16"></span><strong>Phantasma SOUL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-storj icon-16"></span><strong>Storj STORJ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-stx icon-16"></span><strong>Stox STX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-swth icon-16"></span><strong>Switcheo SWTH</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tct icon-16"></span><strong>TokenClub TCT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-theta icon-16"></span><strong>Theta THETA</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tio icon-16"></span><strong>trade.io TIO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tnc icon-16"></span><strong>Trinity TNC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tnt icon-16"></span><strong>Tierion TNT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tomo icon-16"></span><strong>TomoChain TOMO</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-trx icon-16"></span><strong>波场 TRX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-vet icon-16"></span><strong>唯链 VET</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-waves icon-16"></span><strong>波币 WAVES</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xlm icon-16"></span><strong>恒星币 XLM</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xmc icon-16"></span><strong>门罗原链 XMC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xmr icon-16"></span><strong>门罗币 XMR</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xrp icon-16"></span><strong>瑞波币 XRP</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xtz icon-16"></span><strong>Tezos XTZ</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-xvg icon-16"></span><strong>Verge XVG</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zec icon-16"></span><strong>ZCash ZEC</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zil icon-16"></span><strong>Zilliqa ZIL</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zpt icon-16"></span><strong>Zeepin ZPT</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zrx icon-16"></span><strong>0x项目 ZRX</strong></a></li>
+                            <li><a href="javascipt:;"><span class="icon-16-zsc icon-16"></span><strong>宙斯盾 ZSC</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">对QTUM交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="https://gateio.io/trade/BOT_QTUM"><span class="icon-16-bot icon-16"></span><strong>菩提 BOT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/INK_QTUM"><span class="icon-16-ink icon-16"></span><strong>Ink INK</strong></a></li>
+                            <li><a href="https://gateio.io/trade/LLT_SNET"><span class="icon-16-llt icon-16"></span><strong>流量币 LLT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/MED_QTUM"><span class="icon-16-med icon-16"></span><strong>MediBloc MED</strong></a></li>
+                            <li><a href="https://gateio.io/trade/QBT_QTUM"><span class="icon-16-qbt icon-16"></span><strong>Qbao QBT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/TSL_QTUM"><span class="icon-16-tsl icon-16"></span><strong>Energo TSL</strong></a></li>
+                        </ul> </li>
+                    <li> <a href="javascript:;">限时交易区<i class="caret"></i></a>
+                        <ul class="third-nav clearfix">
+                            <li><a href="https://gateio.io/trade/ADD_ETH"><span class="icon-16-add icon-16"></span><strong>EOSADD ADD</strong></a></li>
+                            <li><a href="https://gateio.io/trade/ATMI_ETH"><span class="icon-16-atmi icon-16"></span><strong>Atonomi ATMI</strong></a></li>
+                            <li><a href="https://gateio.io/trade/BBK_ETH"><span class="icon-16-bbk icon-16"></span><strong>Brickblock BBK</strong></a></li>
+                            <li><a href="https://gateio.io/trade/BNB_USDT"><span class="icon-16-bnb icon-16"></span><strong>BinanceCoin BNB</strong></a></li>
+                            <li><a href="https://gateio.io/trade/EDR_ETH"><span class="icon-16-edr icon-16"></span><strong>Endor EDR</strong></a></li>
+                            <li><a href="https://gateio.io/trade/EON_ETH"><span class="icon-16-eon icon-16"></span><strong>EON EON</strong></a></li>
+                            <li><a href="https://gateio.io/trade/HT_USDT"><span class="icon-16-ht icon-16"></span><strong>HuobiToken HT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/IQ_ETH"><span class="icon-16-iq icon-16"></span><strong>Everipedia IQ</strong></a></li>
+                            <li><a href="https://gateio.io/trade/MEETONE_ETH"><span class="icon-16-meetone icon-16"></span><strong>MEET.ONE MEETONE</strong></a></li>
+                            <li><a href="https://gateio.io/trade/NBAI_ETH"><span class="icon-16-nbai icon-16"></span><strong>智云链 NBAI</strong></a></li>
+                            <li><a href="https://gateio.io/trade/NPXS_ETH"><span class="icon-16-npxs icon-16"></span><strong>PundiX NPXS</strong></a></li>
+                            <li><a href="https://gateio.io/trade/PLY_ETH"><span class="icon-16-ply icon-16"></span><strong>PlayCoin PLY</strong></a></li>
+                            <li><a href="https://gateio.io/trade/PPS_USDT"><span class="icon-16-pps icon-16"></span><strong>Prophet PPS</strong></a></li>
+                            <li><a href="https://gateio.io/trade/TMT_ETH"><span class="icon-16-tmt icon-16"></span><strong>TRAXIA TMT</strong></a></li>
+                            <li><a href="https://gateio.io/trade/UPP_ETH"><span class="icon-16-upp icon-16"></span><strong>SentinelProtocol UPP</strong></a></li>
+                        </ul> </li>
+                </ul> </li>
+            <li class=""> <a href="my_funds.html">我的财务</a> </li>
+            <li class=""> <a href="anquan.html">安全设置</a> </li>
+            <li class=""> <a href="ann.html">公告</a> </li>
+            <li class=""> <a href="javascript:;">上币申请</a> </li>
+            <li class=""> <a href="javascript:;">帮助<i class="caret"></i></a>
+                <ul class="second-nav clearfix">
+                    <li> <a href="javascript:;">问题中心</a> </li>
+                    <li> <a href="javascript:ticketsRoute();">提交工单</a> </li>
+                    <li> <a href="javascript:;">资料下载<i class="caret"></i></a>
+                        <ul class="third-nav nav-help clearfix">
+                            <li><a href="javascript:;">手机APP</a></li>
+                            <li><a href="javascript:;" target="_blank">Windows APP</a></li>
+                            <li><a href="javascript:;" target="_blank">Mac APP</a></li>
+                            <li><a href="javascript:;">币种资料</a></li>
+                        </ul> </li>
+                </ul> </li>
+
+        </ul>
+        <ul class="jiaoyi-nav-right fr">
+            <li class="">
+                <a href=""><img src="img/index/telegram.png" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="img/index/twitter.png" alt=""></a>
+
+            </li>
+            <li class="tjgd">
+                <a href="">
+                    <div><img src="img/index/help.png" alt=""></div>
+                    <div class="text"><span>提交工单</span></div>
+
+                </a>
+
+            </li>
+        </ul>
+        <div id="top_last_rate" style="display: none"></div>
+    </div>
+</div>
+<div class="content">
+    <style>
+        .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label { color: #a94442 }
+        .has-error .form-control { border-color: #a94442 !important; }
+        .has-error .form-control:focus { border-color: #843534; }
+        .has-error .input-group-addon { color: #a94442; border-color: #a94442; background-color: #f2dede }
+        .has-error .form-control-feedback { color: #a94442 }
+    </style>
+    <div id="">
+        <div class="swiper-container">
+            <div class="swiper-wrapper aui-banner-content">
+
+                <div class="swiper-slide"><img src="img/index/banner01.png" alt=""></div>
+                <div class="swiper-slide"><img src="img/index/banner01.png" alt=""></div>
+
+                <!--<script type="text/html" id="swipe">
+                    <% for(i in list){%>
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="<%=list[i]%>">
+                        </a>
+                    </div>
+                    <%}%>
+                </script>-->
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="area-btn-bg"></div>
+    </div>
+
+    <div class="left_con">
+        <div class="tline_btns clearfix" id="marketlist_controller">
+            <button id="usdt" class="tline_btn button btn_selected"><span>对USDT交易区</span></button>
+            <button id="btc" class="tline_btn button "><span>对BTC交易区</span></button>
+            <button id="eth" class="tline_btn button "><span>对ETH交易区</span></button>
+            <button id="qtum" class="tline_btn button "><span>对QTUM交易区</span></button>
+            <button id="limited" class="tline_btn button "><span>限时交易区</span></button>
+            <button id="custom" class="tline_btn button "><span>我的自选区</span></button>
+        </div>
+        <div id="mkCon">
+            <div id="sBar">
+                <div class="bottom-notice">
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewbox="0 -2.914 13 18">
+                                <path fill="#666" d="M9.126 5.273l-.88.782v.057c.73.795 1.178 1.884 1.178 3.083 0 1.2-.45 2.29-1.178 3.085v.06l.88.78c.915-1.02 1.476-2.4 1.476-3.925 0-1.523-.56-2.904-1.476-3.922zM0 6.84v4.712h2.356l3.534 3.534V3.306L2.356 6.84"></path>
+                                <path fill="#666" d="M10.98 3.625l-.883.782C11.15 5.725 11.78 7.387 11.78 9.2c0 1.814-.63 3.476-1.683 4.784l.882.782c1.234-1.52 1.977-3.457 1.977-5.57 0-2.112-.742-4.054-1.98-5.573v.002z"></path>
+                            </svg>
+                            <a class="n-box" href="https://gateio.io/article/16618" target="_blank">公告：gate.io 已经升级Smartmesh(SMT)到主网公告</a><a href="javascript:;" style="margin-left: 20px;color: #de5959">更多...</a> </li>
+                    </ul>
+                </div>
+                <div class="dataTables_wrapper" style="display: none;">
+                    <div class="dataTables_filter search-p">
+                        <label><input type="search" id="fsBar" placeholder="搜索USDT交易区" /></label>
+                    </div>
+                </div>
+            </div>
+            <div id="marketMain">
+                <div id="mianBox" class="USDT-box">
+                    <table id="listTable" class="marketlist dataTable show-all">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody id="list_tbody">
+
+                        <tr id="eth_usdt">
+                            <td>
+                                <a class="coin-name " href="javascript:;" title="以太币">
+                                <span class="icon-32 icon-32-eth">
+                                    <img src="img/index/tubiao.png" alt="">
+                                </span>
+                                <span class="name-con"><b><span class="curr_a">ETH</span></b> <span class="cname">以太币</span> </span>
+                                </a>
+                            </td>
+                            <td class="rate_down">$284.21<span style="color:#999">/￥1932.63</span></td>
+                            <td>$5,577,862</td>
+                            <td>$26,967,692,165</td>
+                            <td class="day-updn"><span class="green">-0.85 %</span></td>
+                            <td>
+                                <div class="price-chart" id="eth_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eth_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="lym_usdt">
+                            <td>
+                                <a class="coin-name" href="javascript:;" title="Lympo">
+                                <span class="icon-32 icon-32-lym">
+                                    <img src="img/index/tubiao.png" alt="">
+                                </span>
+                                <span class="name-con">
+                                    <b><span class="curr_a">LYM</span></b> <span class="cname">Lympo</span>
+                                </span>
+                                </a>
+                            </td>
+                            <td class="rate_down">$0.0201<span style="color:#999">/￥0.14</span></td>
+                            <td>$4,741,639</td>
+                            <td>$20,100,000</td>
+                            <td class="day-updn"><span class="green">-16.60 %</span></td>
+                            <td>
+                                <div class="price-chart" id="lym_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="lym_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="btc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BTC_USDT" title="比特币"><span class="icon-32 icon-32-btc"></span><span class="name-con"><b><span class="curr_a">BTC</span></b> <span class="cname">比特币</span> </span></a></td>
+                            <td class="rate_up">$7376.66<span style="color:#999">/￥50161.29</span></td>
+                            <td>$4,442,183</td>
+                            <td>$122,423,049,360</td>
+                            <td class="day-updn"><span class="red">+1.10 %</span></td>
+                            <td>
+                                <div class="price-chart" id="btc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="btc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bcd_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BCD_USDT" title="比特币钻石"><span class="icon-32 icon-32-bcd"></span><span class="name-con"><b><span class="curr_a">BCD</span></b> <span class="cname">比特币钻石</span> </span></a></td>
+                            <td class="rate_up">$2.92<span style="color:#999">/￥19.86</span></td>
+                            <td>$4,385,322</td>
+                            <td>$613,200,000</td>
+                            <td class="day-updn"><span class="red">+120.54 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bcd_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bcd_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="eos_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" id="eos_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ocn_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/OCN_USDT" title="OCOIN"><span class="icon-32 icon-32-ocn"></span><span class="name-con"><b><span class="curr_a">OCN</span></b> <span class="cname">OCOIN</span> </span></a></td>
+                            <td class="rate_down">$0.004300<span style="color:#999">/￥0.029</span></td>
+                            <td>$1,938,690</td>
+                            <td>$43,000,000</td>
+                            <td class="day-updn"><span class="green">-2.27 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ocn_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ocn_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="gtc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/GTC_USDT" title="G币"><span class="icon-32 icon-32-gtc"></span><span class="name-con"><b><span class="curr_a">GTC</span></b> <span class="cname">G币</span> </span></a></td>
+                            <td class="rate_down">$0.0298<span style="color:#999">/￥0.20</span></td>
+                            <td>$1,833,970</td>
+                            <td>$59,600,000</td>
+                            <td class="day-updn"><span class="green">-6.88 %</span></td>
+                            <td>
+                                <div class="price-chart" id="gtc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="gtc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="btm_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BTM_USDT" title="比原链"><span class="icon-32 icon-32-btm"></span><span class="name-con"><b><span class="curr_a">BTM</span></b> <span class="cname">比原链</span> </span></a></td>
+                            <td class="rate_up">$0.2200<span style="color:#999">/￥1.50</span></td>
+                            <td>$1,483,583</td>
+                            <td>$462,000,000</td>
+                            <td class="day-updn"><span class="red">+2.90 %</span></td>
+                            <td>
+                                <div class="price-chart" id="btm_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="btm_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ont_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ONT_USDT" title="本体"><span class="icon-32 icon-32-ont"></span><span class="name-con"><b><span class="curr_a">ONT</span></b> <span class="cname">本体</span> </span></a></td>
+                            <td class="rate_down">$2.42<span style="color:#999">/￥16.46</span></td>
+                            <td>$1,365,005</td>
+                            <td>$2,417,000,000</td>
+                            <td class="day-updn"><span class="green">-1.23 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ont_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ont_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bu_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BU_USDT" title="布币"><span class="icon-32 icon-32-bu"></span><span class="name-con"><b><span class="curr_a">BU</span></b> <span class="cname">布币</span> </span></a></td>
+                            <td class="rate_down">$0.3022<span style="color:#999">/￥2.05</span></td>
+                            <td>$1,339,006</td>
+                            <td>$453,300,000</td>
+                            <td class="day-updn"><span class="green">-1.27 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bu_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bu_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="smt_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/SMT_USDT" title="SmartMesh"><span class="icon-32 icon-32-smt"></span><span class="name-con"><b><span class="curr_a">SMT</span></b> <span class="cname">SmartMesh</span> </span></a></td>
+                            <td class="rate_up">$0.0210<span style="color:#999">/￥0.14</span></td>
+                            <td>$1,310,741</td>
+                            <td>$65,973,390</td>
+                            <td class="day-updn"><span class="red">+7.14 %</span></td>
+                            <td>
+                                <div class="price-chart" id="smt_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="smt_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ae_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/AE_USDT" title="Aeternity"><span class="icon-32 icon-32-ae"></span><span class="name-con"><b><span class="curr_a">AE</span></b> <span class="cname">Aeternity</span> </span></a></td>
+                            <td class="rate_down">$1.17<span style="color:#999">/￥7.96</span></td>
+                            <td>$931,074</td>
+                            <td>$320,431,569</td>
+                            <td class="day-updn"><span class="green">-1.21 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ae_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ae_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ada_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ADA_USDT" title="艾达币"><span class="icon-32 icon-32-ada"></span><span class="name-con"><b><span class="curr_a">ADA</span></b> <span class="cname">艾达币</span> </span></a></td>
+                            <td class="rate_up">$0.1057<span style="color:#999">/￥0.72</span></td>
+                            <td>$820,205</td>
+                            <td>$3,288,591,250</td>
+                            <td class="day-updn"><span class="red">+1.15 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ada_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ada_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bto_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BTO_USDT" title="铂链"><span class="icon-32 icon-32-bto"></span><span class="name-con"><b><span class="curr_a">BTO</span></b> <span class="cname">铂链</span> </span></a></td>
+                            <td class="rate_down">$0.0449<span style="color:#999">/￥0.31</span></td>
+                            <td>$817,717</td>
+                            <td>$44,900,000</td>
+                            <td class="day-updn"><span class="green">-11.79 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bto_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bto_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="skm_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/SKM_USDT" title="Skrumble"><span class="icon-32 icon-32-skm"></span><span class="name-con"><b><span class="curr_a">SKM</span></b> <span class="cname">Skrumble</span> </span></a></td>
+                            <td class="rate_up">$0.007300<span style="color:#999">/￥0.050</span></td>
+                            <td>$565,803</td>
+                            <td>$10,950,000</td>
+                            <td class="day-updn"><span class="red">+1.39 %</span></td>
+                            <td>
+                                <div class="price-chart" id="skm_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="skm_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="xrp_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/XRP_USDT" title="瑞波币"><span class="icon-32 icon-32-xrp"></span><span class="name-con"><b><span class="curr_a">XRP</span></b> <span class="cname">瑞波币</span> </span></a></td>
+                            <td class="rate_down">$0.3290<span style="color:#999">/￥2.24</span></td>
+                            <td>$515,954</td>
+                            <td>$32,900,000,000</td>
+                            <td class="day-updn"><span class="green">-1.50 %</span></td>
+                            <td>
+                                <div class="price-chart" id="xrp_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="xrp_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bch_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BCH_USDT" title="BCH(原BCC)"><span class="icon-32 icon-32-bch"></span><span class="name-con"><b><span class="curr_a">BCH</span></b> <span class="cname">BCH(原BCC)</span> </span></a></td>
+                            <td class="rate_down">$629.40<span style="color:#999">/￥4279.92</span></td>
+                            <td>$470,532</td>
+                            <td>$13,217,400,000</td>
+                            <td class="day-updn"><span class="green">-0.22 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bch_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bch_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="kick_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/KICK_USDT" title="KickCoin"><span class="icon-32 icon-32-kick"></span><span class="name-con"><b><span class="curr_a">KICK</span></b> <span class="cname">KickCoin</span> </span></a></td>
+                            <td class="rate_up">$0.0331<span style="color:#999">/￥0.23</span></td>
+                            <td>$456,111</td>
+                            <td>$10,629,668</td>
+                            <td class="day-updn"><span class="red">+1.22 %</span></td>
+                            <td>
+                                <div class="price-chart" id="kick_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="kick_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="gse_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/GSE_USDT" title="GSENetwork"><span class="icon-32 icon-32-gse"></span><span class="name-con"><b><span class="curr_a">GSE</span></b> <span class="cname">GSENetwork</span> </span></a></td>
+                            <td class="rate_down">$0.006500<span style="color:#999">/￥0.044</span></td>
+                            <td>$416,761</td>
+                            <td>$650,000,000</td>
+                            <td class="day-updn"><span class="green">-2.83 %</span></td>
+                            <td>
+                                <div class="price-chart" id="gse_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="gse_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="vet_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/VET_USDT" title="唯链"><span class="icon-32 icon-32-vet"></span><span class="name-con"><b><span class="curr_a">VET</span></b> <span class="cname">唯链</span> </span></a></td>
+                            <td class="rate_flat">$0.0193<span style="color:#999">/￥0.13</span></td>
+                            <td>$411,062</td>
+                            <td>$1,930,000,000</td>
+                            <td class="day-updn"><span class="red">0.00 %</span></td>
+                            <td>
+                                <div class="price-chart" id="vet_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="vet_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="sbtc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/SBTC_USDT" title="超级比特币"><span class="icon-32 icon-32-sbtc"></span><span class="name-con"><b><span class="curr_a">SBTC</span></b> <span class="cname">超级比特币</span> </span></a></td>
+                            <td class="rate_up">$11.62<span style="color:#999">/￥79.02</span></td>
+                            <td>$402,420</td>
+                            <td>$246,417,780</td>
+                            <td class="day-updn"><span class="red">+8.22 %</span></td>
+                            <td>
+                                <div class="price-chart" id="sbtc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="sbtc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="etc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ETC_USDT" title="以太经典"><span class="icon-32 icon-32-etc"></span><span class="name-con"><b><span class="curr_a">ETC</span></b> <span class="cname">以太经典</span> </span></a></td>
+                            <td class="rate_up">$13.92<span style="color:#999">/￥94.66</span></td>
+                            <td>$379,805</td>
+                            <td>$1,336,431,360</td>
+                            <td class="day-updn"><span class="red">+0.29 %</span></td>
+                            <td>
+                                <div class="price-chart" id="etc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="etc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bcdn_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BCDN_USDT" title="BlockCDN"><span class="icon-32 icon-32-bcdn"></span><span class="name-con"><b><span class="curr_a">BCDN</span></b> <span class="cname">BlockCDN</span> </span></a></td>
+                            <td class="rate_up">$0.003770<span style="color:#999">/￥0.026</span></td>
+                            <td>$375,319</td>
+                            <td>$3,770,000</td>
+                            <td class="day-updn"><span class="red">+4.72 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bcdn_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bcdn_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="hsc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/HSC_USDT" title="哈希币"><span class="icon-32 icon-32-hsc"></span><span class="name-con"><b><span class="curr_a">HSC</span></b> <span class="cname">哈希币</span> </span></a></td>
+                            <td class="rate_up">$0.000536<span style="color:#999">/￥0.0036</span></td>
+                            <td>$352,415</td>
+                            <td>$26,800,000</td>
+                            <td class="day-updn"><span class="red">+5.72 %</span></td>
+                            <td>
+                                <div class="price-chart" id="hsc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="hsc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="qtum_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/QTUM_USDT" title="量子链"><span class="icon-32 icon-32-qtum"></span><span class="name-con"><b><span class="curr_a">QTUM</span></b> <span class="cname">量子链</span> </span></a></td>
+                            <td class="rate_down">$4.71<span style="color:#999">/￥32.03</span></td>
+                            <td>$273,329</td>
+                            <td>$471,000,000</td>
+                            <td class="day-updn"><span class="green">-0.84 %</span></td>
+                            <td>
+                                <div class="price-chart" id="qtum_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="qtum_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ltc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/LTC_USDT" title="莱特币"><span class="icon-32 icon-32-ltc"></span><span class="name-con"><b><span class="curr_a">LTC</span></b> <span class="cname">莱特币</span> </span></a></td>
+                            <td class="rate_up">$68.05<span style="color:#999">/￥462.74</span></td>
+                            <td>$271,824</td>
+                            <td>$3,617,891,860</td>
+                            <td class="day-updn"><span class="red">+2.64 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ltc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ltc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ruff_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/RUFF_USDT" title="RuffChain"><span class="icon-32 icon-32-ruff"></span><span class="name-con"><b><span class="curr_a">RUFF</span></b> <span class="cname">RuffChain</span> </span></a></td>
+                            <td class="rate_up">$0.0295<span style="color:#999">/￥0.20</span></td>
+                            <td>$264,530</td>
+                            <td>$52,813,850</td>
+                            <td class="day-updn"><span class="red">+4.24 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ruff_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ruff_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="xtz_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/XTZ_USDT" title="Tezos"><span class="icon-32 icon-32-xtz"></span><span class="name-con"><b><span class="curr_a">XTZ</span></b> <span class="cname">Tezos</span> </span></a></td>
+                            <td class="rate_up">$1.44<span style="color:#999">/￥9.79</span></td>
+                            <td>$260,590</td>
+                            <td>$1,437,700,000</td>
+                            <td class="day-updn"><span class="red">+1.18 %</span></td>
+                            <td>
+                                <div class="price-chart" id="xtz_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="xtz_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="zil_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ZIL_USDT" title="Zilliqa"><span class="icon-32 icon-32-zil"></span><span class="name-con"><b><span class="curr_a">ZIL</span></b> <span class="cname">Zilliqa</span> </span></a></td>
+                            <td class="rate_down">$0.0453<span style="color:#999">/￥0.31</span></td>
+                            <td>$237,952</td>
+                            <td>$570,780,000</td>
+                            <td class="day-updn"><span class="green">-1.95 %</span></td>
+                            <td>
+                                <div class="price-chart" id="zil_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="zil_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="trx_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/TRX_USDT" title="波场"><span class="icon-32 icon-32-trx"></span><span class="name-con"><b><span class="curr_a">TRX</span></b> <span class="cname">波场</span> </span></a></td>
+                            <td class="rate_down">$0.0249<span style="color:#999">/￥0.17</span></td>
+                            <td>$230,049</td>
+                            <td>$1,633,768,680</td>
+                            <td class="day-updn"><span class="green">-2.47 %</span></td>
+                            <td>
+                                <div class="price-chart" id="trx_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="trx_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="nas_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/NAS_USDT" title="星云链"><span class="icon-32 icon-32-nas"></span><span class="name-con"><b><span class="curr_a">NAS</span></b> <span class="cname">星云链</span> </span></a></td>
+                            <td class="rate_up">$2.05<span style="color:#999">/￥13.94</span></td>
+                            <td>$221,604</td>
+                            <td>$204,600,000</td>
+                            <td class="day-updn"><span class="red">+4.14 %</span></td>
+                            <td>
+                                <div class="price-chart" id="nas_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="nas_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="hit_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/HIT_USDT" title="Hitchain"><span class="icon-32 icon-32-hit"></span><span class="name-con"><b><span class="curr_a">HIT</span></b> <span class="cname">Hitchain</span> </span></a></td>
+                            <td class="rate_down">$0.000497<span style="color:#999">/￥0.0034</span></td>
+                            <td>$221,381</td>
+                            <td>$50,883,584</td>
+                            <td class="day-updn"><span class="green">-0.39 %</span></td>
+                            <td>
+                                <div class="price-chart" id="hit_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="hit_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="neo_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/NEO_USDT" title="小蚁Neo"><span class="icon-32 icon-32-neo"></span><span class="name-con"><b><span class="curr_a">NEO</span></b> <span class="cname">小蚁Neo</span> </span></a></td>
+                            <td class="rate_up">$24.21<span style="color:#999">/￥164.63</span></td>
+                            <td>$195,154</td>
+                            <td>$2,421,000,000</td>
+                            <td class="day-updn"><span class="red">+4.31 %</span></td>
+                            <td>
+                                <div class="price-chart" id="neo_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="neo_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="rating_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/RATING_USDT" title="大炮评级"><span class="icon-32 icon-32-rating"></span><span class="name-con"><b><span class="curr_a">RATING</span></b> <span class="cname">大炮评级</span> </span></a></td>
+                            <td class="rate_up">$0.000846<span style="color:#999">/￥0.0058</span></td>
+                            <td>$183,283</td>
+                            <td>$8,460,000</td>
+                            <td class="day-updn"><span class="red">+2.17 %</span></td>
+                            <td>
+                                <div class="price-chart" id="rating_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="rating_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="xmr_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/XMR_USDT" title="门罗币"><span class="icon-32 icon-32-xmr"></span><span class="name-con"><b><span class="curr_a">XMR</span></b> <span class="cname">门罗币</span> </span></a></td>
+                            <td class="rate_up">$137.94<span style="color:#999">/￥937.99</span></td>
+                            <td>$182,585</td>
+                            <td>$2,105,019,576</td>
+                            <td class="day-updn"><span class="red">+1.73 %</span></td>
+                            <td>
+                                <div class="price-chart" id="xmr_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="xmr_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="elf_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ELF_USDT" title="aelf"><span class="icon-32 icon-32-elf"></span><span class="name-con"><b><span class="curr_a">ELF</span></b> <span class="cname">aelf</span> </span></a></td>
+                            <td class="rate_up">$0.4818<span style="color:#999">/￥3.28</span></td>
+                            <td>$172,808</td>
+                            <td>$125,268,000</td>
+                            <td class="day-updn"><span class="red">+4.02 %</span></td>
+                            <td>
+                                <div class="price-chart" id="elf_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="elf_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="rfr_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/RFR_USDT" title="Refereum"><span class="icon-32 icon-32-rfr"></span><span class="name-con"><b><span class="curr_a">RFR</span></b> <span class="cname">Refereum</span> </span></a></td>
+                            <td class="rate_down">$0.004800<span style="color:#999">/￥0.033</span></td>
+                            <td>$169,190</td>
+                            <td>$24,000,000</td>
+                            <td class="day-updn"><span class="green">-4.00 %</span></td>
+                            <td>
+                                <div class="price-chart" id="rfr_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="rfr_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="tsl_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/TSL_USDT" title="Energo"><span class="icon-32 icon-32-tsl"></span><span class="name-con"><b><span class="curr_a">TSL</span></b> <span class="cname">Energo</span> </span></a></td>
+                            <td class="rate_down">$0.004900<span style="color:#999">/￥0.033</span></td>
+                            <td>$163,631</td>
+                            <td>$4,900,000</td>
+                            <td class="day-updn"><span class="green">-7.55 %</span></td>
+                            <td>
+                                <div class="price-chart" id="tsl_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="tsl_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="pst_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/PST_USDT" title="Primas"><span class="icon-32 icon-32-pst"></span><span class="name-con"><b><span class="curr_a">PST</span></b> <span class="cname">Primas</span> </span></a></td>
+                            <td class="rate_up">$0.2009<span style="color:#999">/￥1.37</span></td>
+                            <td>$157,771</td>
+                            <td>$20,090,000</td>
+                            <td class="day-updn"><span class="red">+2.66 %</span></td>
+                            <td>
+                                <div class="price-chart" id="pst_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="pst_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="iht_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/IHT_USDT" title="云产币"><span class="icon-32 icon-32-iht"></span><span class="name-con"><b><span class="curr_a">IHT</span></b> <span class="cname">云产币</span> </span></a></td>
+                            <td class="rate_down">$0.0200<span style="color:#999">/￥0.14</span></td>
+                            <td>$146,991</td>
+                            <td>$20,000,000</td>
+                            <td class="day-updn"><span class="green">-4.76 %</span></td>
+                            <td>
+                                <div class="price-chart" id="iht_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="iht_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="lrc_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/LRC_USDT" title="Loopring"><span class="icon-32 icon-32-lrc"></span><span class="name-con"><b><span class="curr_a">LRC</span></b> <span class="cname">Loopring</span> </span></a></td>
+                            <td class="rate_up">$0.1223<span style="color:#999">/￥0.83</span></td>
+                            <td>$135,454</td>
+                            <td>$170,608,500</td>
+                            <td class="day-updn"><span class="red">+0.25 %</span></td>
+                            <td>
+                                <div class="price-chart" id="lrc_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="lrc_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="gard_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/GARD_USDT" title="临界"><span class="icon-32 icon-32-gard"></span><span class="name-con"><b><span class="curr_a">GARD</span></b> <span class="cname">临界</span> </span></a></td>
+                            <td class="rate_down">$0.000203<span style="color:#999">/￥0.0014</span></td>
+                            <td>$129,046</td>
+                            <td>$20,300,000</td>
+                            <td class="day-updn"><span class="green">-6.88 %</span></td>
+                            <td>
+                                <div class="price-chart" id="gard_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="gard_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="zec_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/ZEC_USDT" title="ZCash"><span class="icon-32 icon-32-zec"></span><span class="name-con"><b><span class="curr_a">ZEC</span></b> <span class="cname">ZCash</span> </span></a></td>
+                            <td class="rate_up">$157.00<span style="color:#999">/￥1067.60</span></td>
+                            <td>$128,523</td>
+                            <td>$3,297,000,000</td>
+                            <td class="day-updn"><span class="red">+1.38 %</span></td>
+                            <td>
+                                <div class="price-chart" id="zec_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="zec_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="ink_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/INK_USDT" title="Ink"><span class="icon-32 icon-32-ink"></span><span class="name-con"><b><span class="curr_a">INK</span></b> <span class="cname">Ink</span> </span></a></td>
+                            <td class="rate_up">$0.0305<span style="color:#999">/￥0.21</span></td>
+                            <td>$121,388</td>
+                            <td>$30,500,000</td>
+                            <td class="day-updn"><span class="red">+18.68 %</span></td>
+                            <td>
+                                <div class="price-chart" id="ink_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="ink_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="sop_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/SOP_USDT" title="SoPay"><span class="icon-32 icon-32-sop"></span><span class="name-con"><b><span class="curr_a">SOP</span></b> <span class="cname">SoPay</span> </span></a></td>
+                            <td class="rate_down">$0.007607<span style="color:#999">/￥0.052</span></td>
+                            <td>$117,511</td>
+                            <td>$34,231,500</td>
+                            <td class="day-updn"><span class="green">-9.15 %</span></td>
+                            <td>
+                                <div class="price-chart" id="sop_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="sop_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="lrn_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/LRN_USDT" title="路印NEO"><span class="icon-32 icon-32-lrn"></span><span class="name-con"><b><span class="curr_a">LRN</span></b> <span class="cname">路印NEO</span> </span></a></td>
+                            <td class="rate_down">$0.0783<span style="color:#999">/￥0.53</span></td>
+                            <td>$113,636</td>
+                            <td>$10,923,476</td>
+                            <td class="day-updn"><span class="green">-0.63 %</span></td>
+                            <td>
+                                <div class="price-chart" id="lrn_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="lrn_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="omg_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/OMG_USDT" title="OmiseGo"><span class="icon-32 icon-32-omg"></span><span class="name-con"><b><span class="curr_a">OMG</span></b> <span class="cname">OmiseGo</span> </span></a></td>
+                            <td class="rate_up">$4.89<span style="color:#999">/￥33.25</span></td>
+                            <td>$96,089</td>
+                            <td>$685,798,050</td>
+                            <td class="day-updn"><span class="red">+4.94 %</span></td>
+                            <td>
+                                <div class="price-chart" id="omg_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="omg_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bifi_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BIFI_USDT" title="BitcoinFile"><span class="icon-32 icon-32-bifi"></span><span class="name-con"><b><span class="curr_a">BIFI</span></b> <span class="cname">BitcoinFile</span> </span></a></td>
+                            <td class="rate_up">$0.003600<span style="color:#999">/￥0.024</span></td>
+                            <td>$86,603</td>
+                            <td>$75,600,000</td>
+                            <td class="day-updn"><span class="red">+31.72 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bifi_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bifi_usdt" title="加自选"></i></td>
+                        </tr>
+                        <tr id="bts_usdt">
+                            <td><a class="coin-name " href="https://gateio.io/trade/BTS_USDT" title="比特股"><span class="icon-32 icon-32-bts"></span><span class="name-con"><b><span class="curr_a">BTS</span></b> <span class="cname">比特股</span> </span></a></td>
+                            <td class="rate_up">$0.1226<span style="color:#999">/￥0.83</span></td>
+                            <td>$86,514</td>
+                            <td>$441,429,882</td>
+                            <td class="day-updn"><span class="red">+0.91 %</span></td>
+                            <td>
+                                <div class="price-chart" id="bts_usdt_plot" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="bts_usdt" title="加自选"></i></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="marketlist dataTable">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="marketlist dataTable">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="marketlist dataTable">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="marketlist dataTable">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="marketlist dataTable">
+                        <thead>
+                        <tr>
+                            <th class="sortable"><b>币种对<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>价格<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>交易量<span class="curr-base">USDT</span></b></th>
+                            <th class="sortable"><b>总市值</b></th>
+                            <th class="sortable day-updn"><b>日涨跌</b></th>
+                            <th class="sorting_disabled price-flot"><b>价格趋势(3日)</b></th>
+                            <th class="sorting_disabled"></th>
+                            <th class="sorting_disabled"><i class="fav-icon" title="自选"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a class="coin-name " href="https://gateio.io/trade/EOS_USDT" title="EOS"><span class="icon-32 icon-32-eos"></span><span class="name-con"><b><span class="curr_a">EOS</span></b> <span class="cname">EOS</span> </span></a></td>
+                            <td class="rate_up">$6.52<span style="color:#999">/￥44.34</span></td>
+                            <td>$4,161,959</td>
+                            <td>$6,519,200,000</td>
+                            <td class="day-updn"><span class="red">+1.40 %</span></td>
+                            <td>
+                                <div class="price-chart" style="padding: 0px;">
+                                    <canvas class="flot-base" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                    <canvas class="flot-overlay" width="220" height="50" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 220px; height: 50px;"></canvas>
+                                </div></td>
+                            <td><a class="go-trade-btn r-btn" href="javascript:;">去交易</a></td>
+                            <td class="custom-option"><i class="add-fav" data-id="eos_usdt" title="加自选"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer>
+    <div class="footer">
+
+        <div class="fkicon">
+            <h1 class="title">连锁资产交易平台</h1>
+            <ul class="clearfix">
+                <li><a href="javascript:;" title="Ticket">
+                    <img src="img/index/Bhelp.png" alt="">
+                </a>
+                </li>
+                <li><a href="javascript:;" target="_blank" title="Twitter">
+                    <img src="img/index/BTwitter.png" alt="">
+                </a> </li>
+                <li><a href="javascript:;" target="_blank" title="Telegram">
+                    <img src="img/index/Bfly.png" alt=""></a></li>
+
+                <li><a href="javascript:;" target="_blank" title="Email">
+                    <img src="img/index/Bemail.png" alt="">
+                </a> </li>
+                <li><a href="javascript:;" target="_blank" title="Github">
+                    <img src="img/index/Bcamera.png" alt="">
+                </a>
+                </li>
+            </ul>
+            <div class="fxts">
+                <p style="text-align: center"><i>!</i>比特币等密码币的交易存在风险，在全球范围内一周7天，一天24小时无休止交易，没有每日涨停跌停限制，价格受到新闻事件，各国政策，市场需求等多种因素影响，浮动很大。我们强烈建议您事先调查了解，在自身所能承受的风险范围内参与交易。</p>
+            </div>
+        </div>
+        <div class="fnav">
+            <div class="fnavcon">
+
+                <ul>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">费率标准</a></li>
+                    <li><a href="">API文档</a></li>
+                    <li><a href="">用户协议</a></li>
+                    <li><a href="">本站公告</a></li>
+                </ul>
+
+            </div>
+            <div class="tail">
+                <span>huadunlian.cn &nbsp;&nbsp;版权所有 &copy; 2018</span>
+                <div class="vol-all">
+                    <div class="vol-all">
+                        <span>交易量:</span>
+                        <span> USDT:$34,456.542 </span>
+                        <span> BTC:B987  </span>
+                        <span> LTC:t5,201  </span>
+                        <span>  ETH:E32,785 </span>
+                    </div>
+                </div>
+                <!--<span id="runTime">
+                 &lt;!&ndash;<a href="#">gate.io</a> is powered by <a href="#">gate.io Dev Team</a>&ndash;&gt; <span class="admin-view"> Elapsed:55.107ms - cnst:0.1;c1:48.4;vol:0.3;sl:0.2;14:0.6; .36 &nbsp; a/e/r </span> </span>-->
+            </div>
+        </div>
+        <!--<div class="backToTop" id="scroll">^</div>-->
+        <div class="scroll" id="scroll" style="">
+            ^
+        </div>
+    </div>
+</footer>
+
+
+</body>
+<script src="js/swiper.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+    //load_footer();
+    showScroll();
+    function showScroll(){
+        $(window).scroll( function() {
+            var scrollValue=$(window).scrollTop();
+            scrollValue > 100 ? $('div[class=scroll]').fadeIn():$('div[class=scroll]').fadeOut();
+        } );
+        $('#scroll').click(function(){
+            $("html,body").animate({scrollTop:0},500);
+        });
+    }
+    var mySwiper = new Swiper ('.swiper-container', {
+        // 如果需要分页器
+        autoplay:true,
+        pagination: {
+            el: '.swiper-pagination'
+        }
+    });
+    $("#marketlist_controller .tline_btn").on("click",function(){
+        var i = $(this).index();
+        $(this).addClass('btn_selected').siblings().removeClass('btn_selected');
+        console.log(i)
+        //marketlist
+        $('#mianBox .marketlist').eq(i).css('display','block').siblings().css('display','none');
+    })
+</script>
+</html>

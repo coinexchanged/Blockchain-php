@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+    .login_btn{height:50px;line-height: 50px;width:100%;}
+</style>
+<body style="background:#f6f6f6;">
+    <img src="../img/logo.png" alt="" style="margin:80px auto;width:90px;">
+    <form id="form_content" action="/users/do_login" method="post" autocomplete="off">
+        <div class="loginPage" >
+            <div class="login_box">
+                <div class="login_tab" >
+                    <div class="input-con">
+                        <img src="../img/icon/icon_user.png" alt="" width="24">
+                        <input  type="text" id="account_number" name="account_number" class="login_input mgl10" placeholder="请输入账号" autocomplete="off"/>
+                    </div>
+                    <div class="input-con" >
+                        <img src="../img/icon/icon_pass.png" width="24" alt="">
+                        <input  class="login_input mgl10" type="password" id="password" name="password" placeholder="请输入密码" onblur="passblur()"  autocomplete="off"/>
+                        <input  class="login_input mgl10" type="text" id="text" name="password" placeholder="请输入密码" onblur="txtblur()" style="display: none" autocomplete="off"/>
+                        <i class="iconfont icon-yanjing1 font24  fontc_9" id="yanjing" onclick="shpass()"  ></i>
+                        <p id="mes2" style="color:red;font-size:12px;margin:5px 0 0 10px;"></p>
+                    </div>
+                </div>
+                <a class="login_btn fontc_fff" href="javascript:;" style="background:#10172b;" onclick="login()">登录</a>
+                <div style="display: flex;justify-content: space-between;">
+                    <a href="forget1.html" class="font14 ">忘记密码?</a>
+                    <a href="register1.html" class="font14 red">注册</a>
+                </div>
+            </div>
+        </div>
+        <input name="user_id" type="hidden" id="user_id" value="">
+    </form>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+</body>
+</html>

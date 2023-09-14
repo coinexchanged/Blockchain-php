@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>安全中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+    .user_head_box .cop{
+        padding: 0rem .8rem;
+        border: 1px solid #ffffff;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 3px;
+        display: inline-block;
+        background:none;
+    }
+</style>
+<body style="background:#f5f5f5;">
+    <header class="borderB backF " >
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">安全中心</h1>
+    </header>
+    <div class="mgbfoot mgthead">
+        <section class="">
+            <div class="userinfo_box" >
+                <div class="userinfo_item">
+                    <a  href="pass_revise.html" >
+                        <span class="fontc_hdl font14">登录密码修改</span>
+                        
+                    </a>
+                </div>
+                <div class="userinfo_item">
+                    <a  href="">
+                        <span class="fontc_hdl font14">资金密码修改</span>
+                    </a>
+                </div>
+            </div>
+            <ul class="userinfo_box nav" style="margin-top:1rem;">
+                <!-- <li class="userinfo_item">
+                    <a  href="bindPhone.html" class="layer_flex1">
+                        <span class="fontc_hdl font14">手机认证</span>
+                        <span class="fontc_9 font12" style="padding-right: 1.8rem;">已开启</span>
+                    </a>
+                </li>
+                <li class="userinfo_item">
+                    <a  href="" class="layer_flex1">
+                        <span class="fontc_hdl font14">邮箱验证</span>
+                        <span class="fontc_9 font12" style="padding-right: 1.8rem;">未绑定</span>
+                    </a>
+                </li>
+                <li class="userinfo_item">
+                    <a  href="real_name.html" class="layer_flex1">
+                        <span class="fontc_hdl font14">实名认证</span>
+                        <span class="fontc_9 font12" style="padding-right: 1.8rem;">未认证</span>
+                    </a>
+                </li>
+                <li class="userinfo_item">
+                    <a  href="">
+                        <span class="fontc_hdl font14">手势认证</span>
+                    </a>
+                </li> -->
+            </ul>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var token = get_user_login();
+            $.ajax({
+                url: _API + "safe/safe_center",
+                type: "post",
+                dataType: "json",
+                async: true,
+                beforeSend: function beforeSend(request) {
+                    request.setRequestHeader("Authorization", token);
+                },
+                success: function success(data) {
+                    console.log(data);
+                    var html = "<li class='userinfo_item'><a  href='bindPhone.html' class='layer_flex1'><span class='fontc_hdl font14'>手机认证</span><span class='fontc_9 font12' style='padding-right: 1.8rem;'>"+[(data.message.mobile==null|| data.message.mobile=='')?'未绑定':'已绑定' ]+"</span></a></li>"+
+                                "<li class='userinfo_item'><a  href='bindEmail.html' class='layer_flex1'><span class='fontc_hdl font14'>邮箱验证</span> <span class='fontc_9 font12' style='padding-right: 1.8rem;'>"+[(data.message.email==null|| data.message.email=='')?'未绑定':'已绑定' ]+"</span></a></li>" +
+                                "<li class='userinfo_item'><a  href='real_name.html' class='layer_flex1'><span class='fontc_hdl font14'>实名认证</span><span class='fontc_9 font12' style='padding-right: 1.8rem;'></span></a></li>"+
+                                "<li class='userinfo_item' id='word'><a  href='bindGesture.html' class='layer_flex1'><span class='fontc_hdl font14'>手势认证</span><span class='fontc_9 font12' style='padding-right: 1.8rem;' id='pass' >"+[(data.message.gesture_password==null || data.message.gesture_password=='')?'未开启':'已开启' ]+"</span></a></li>"
+                        
+                    $(".nav").html(html);
+                    var pass=$("#pass").text();
+    
+                    if(pass=='已开启'){
+                        $("#word").on('click',function(){
+                            delgesture();
+                            return false;
+                        });
+                    }
+                    console.log(pass);
+                    if(data.type=='ok'){
+                    }else if(data.type=='999'){
+                        layer_msg("请先登录");
+                        window.location="login.html" ;
+                    }
+                }	
+            });
+
+            //删除手势密码
+            function delgesture(){
+                layer.open({		
+                    content: '确定删除吗？'
+                    ,btn: ['确定', '取消']
+                    ,yes: function(index){
+                        var token = get_user_login();
+                        $.ajax({
+                            url: _API + "safe/gesture_del",
+                            type: "POST",
+                            dataType: "json",
+                            async: true,
+                            beforeSend: function beforeSend(request) {
+                                request.setRequestHeader("Authorization", token);
+                            },
+                            success: function success(data) { 
+                                console.log(data);
+                                if (data.type == 'ok') {
+                                    layer_msg(data.message);
+                                    // $("#pass").text('未开启');
+                                    setTimeout(function () {
+                                    window.location.href = "Security.html";
+                                    }, 2000);
+                                    layer.close(index);
+                                } else if(data.type == '999'){
+                                     window.location ='login.html';
+                                }else{
+                                    layer_msg(data.message);
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        })
+    </script>
+
+</body>
+</html>

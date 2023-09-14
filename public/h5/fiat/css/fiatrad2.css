@@ -1,0 +1,37 @@
+/*公共样式*/
+ul li{list-style:none;}
+a{text-decoration:none;color:#333;}
+/*资产交易*/
+.toptit{padding:15px 20px;overflow:hidden;position:fixed;top:0;left:0;right:0;}
+.toptit a{color:#adbac0;}
+header .toptit .return-img{background: url(../images/arrows.png)no-repeat;
+background-size: 2.25rem;
+width: 2.5rem;
+height: 2.5rem;
+margin: 0px auto;
+display: block;
+float: left;margin-left: -10px;}
+header .toptit .re img{width:17px;height:18px;float:left;}
+header .toptit .nav-tabs{border-bottom:none;width:160px;margin: 0 auto;}
+header .toptit .nav-tabs>li{margin-bottom:0;}
+header .toptit .nav-tabs>li>a{border-radius:0;color:#8399a7;margin-right: -1px;padding: 5px 25px;}
+header .toptit .nav-tabs>li.active>a, header .toptit .nav-tabs>li.active>a:focus, header .toptit .nav-tabs>li.active>a:hover{background-color:#5785d2;color:#fff;}
+header .toptit .fiat{float:right;}
+header .toptit .fiat img{width:20px;margin-top: 4px;}
+header .toptit .fiat .fiat1{margin-right:10px;}
+
+#fiatrad .fitab{border-bottom: none;position:fixed;top:55px;left:0;right:0;}
+#fiatrad .nav-tabs{border-bottom:none;margin-bottom:10px;width: 306px;margin: 0 auto;}
+#fiatrad .nav-tabs>li{margin-bottom:0px;}
+#fiatrad .nav-tabs>li>a{color:#8399a7;}
+#fiatrad .nav-tabs>li.active>a, #fiatrad .nav-tabs>li.active>a:focus, #fiatrad .nav-tabs>li.active>a:hover{border:none;color:#4a7fdd;font-weight:bold;background-color: rgba(0,0,0,0);}
+#fiatrad .mainlist{margin-top: 107px;}
+#fiatrad .mainlist ul li{overflow:hidden;padding:17px 15px;margin-bottom:10px;}
+#fiatrad .mainlist ul li em{font-style:normal;border-radius:50%;background:#5c97f3;color:#fff;padding:2px 4px;margin-right:7px;}
+#fiatrad .mainlist ul li b{color:#1c3f52;}
+#fiatrad .mainlist ul li .fr{float:right;}
+#fiatrad .mainlist ul li small{color:#9cabb2;}
+#fiatrad .mainlist ul li span{float:right;font-size:18px;color:#528ed4;}
+#fiatrad .mainlist ul li .btn-default{float:right;background-color:#5889d5;color:#fff;padding: 5px 30px;}
+#fiatrad .mainlist ul li .des{background-color:#506b89;}
+#fiatrad .mainlist ul li img{width:20px;height:18px;margin-top: 14px;}

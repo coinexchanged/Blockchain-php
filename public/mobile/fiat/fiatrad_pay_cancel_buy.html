@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>订单取消</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        #header{
+            background: #fff;
+        }
+      img{
+          width: 10px;
+          vertical-align: middle;
+      }
+      .bgGray3{
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+      }
+      .brb{
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+      }
+      .active{
+          background-color: #f0b90b;
+          color: #fff;
+      }
+      .pay_box{
+          padding-bottom: 10px;
+          border-radius: 2px;
+          background: #fff;
+      }
+      .what{width: 15px}
+      .tip p{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #e8edf1;
+          position: relative;
+          top: -5px;
+          left: -5px;
+      }
+      .tip p:nth-child(2){
+        left: 5px;
+      }
+      .celcolor{color: #94a8c7}
+      .cancel_pay,.pay_money{
+          display: inline-block;
+          border-radius: 2px;
+      }
+      .mt40{
+          margin-top: 62px;
+      }
+      .confirm-box,.cancel-box{
+        display: none;
+      }
+    </style>
+</head>
+
+<body class="baseBg">
+    <header class="header">
+        <a class="back" href="javascript:;" onclick="javascript:history.go(-1);"></a>
+        <!-- <div class="tc title blue4" data-localize="td.ppay">请付款</div>    -->
+    </header>
+    <div class="plr15">
+        <div class="mt40 ptb10 ft10">
+            <div class="flex between alcenter">
+                <div>
+                    <p class="ft20 bold tt_statu"></p>
+                    <p class="blue mt5 celcolor tt_statu2"></p>
+                </div>
+                <a class="contact">
+                    <img src="images/msg.png" alt="" style="width:25px;">
+                    <p class="blue mt5" style="color:#728DAF;" data-localize="td.call">联系对方</p>
+                </a>
+            </div>
+            <div class="bgWhite pay_box mt20">
+                <div class="bgGray3 plr10 ptb15" style="background: #fff;">
+                    <p class="color1" style="color:#728DAF;" data-localize="td.tdtotal">交易总额</p>
+                    <p class="blue ft18 mt10" id="deal_money" style="color:#06365a;"></p>
+                </div>
+                <div class="tip flex between">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="brb plr10 ft14" style="color:#728DAF;">
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1 " data-localize="td.buyer">买家</span>
+                        <div><span class="color1" id="seller_name"></span> </div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.Sprice" data-localize="td.Sprice">单价</span>
+                        <div><span class="color1" id="price"></span></div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="assets.num">数量</span>
+                        <div><span class="color1" id="number"></span></div>
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.ptime">下单时间</span>
+                        <div><span class="color1" id="format_create_time"></span></div>
+                    </div>
+                    <!--<div class="flex ptb10 between alcenter">-->
+                    <!--<span class="color1" data-localize="contract.orderNumber">订单号</span>-->
+                    <!--<div><span class="color1">11565585885654866</span></div>-->
+                    <!--</div>-->
+                    <div class="flex ptb10 between alcenter">
+                        <div class="flex alcenter"><span class="color1" data-localize="td.cnum">参考号</span></div>
+                        <div><span class="color1" id="data_id"></span> </div>
+                    </div>
+
+                    <div class="flex ptb10 between alcenter" style="display: block">
+                        <div class="block"><span class="color1" data-localize="td.pay_orders_img">支付凭证</span></div>
+                        <div style="padding: 10px;">
+                            <img class="pay_orders_img w100" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="tr mt10 canceldeal">
+                        <a href="javascript:;" class="ptb10 plr10 bgLinearblue hide cancel_pay white " data-localize="td.tdceil">取消交易</a>
+                    </div>
+                    <div class="tr mt10">
+                        <a href="javascript:;" class="ptb10 plr10 bgLinearblue hide pay_money white " data-localize="td.sureReceive">确认已收款</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="confirm-box">
+        <div class="confirm-content">
+                <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <div class="color1" data-localize="td.sureDpay">请确认买家已向您付款</div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- 取消订单弹窗 -->
+    <div class="cancel-box">
+        <div class="cancel-content">
+                <!-- <img class="modal-logo" src="images/modal-logo.png" alt=""> -->
+            <div class="confirm-t" style="padding:30px 15px 25px">
+                <div class="blue" data-localize="td.notCeil">如果您已向卖家付款，请千万不要取消交易</div>
+                <!--<div class=" mt5 color1">取消规则，买家当日累计3笔取消，</div>-->
+                <!--<div class="color1">会限制当日买入功能</div>-->
+                <div style="padding:20px 0 10px" class="ft16">
+                    <input type="checkbox" value="" style="-webkit-appearance: checkbox;vertical-align: middle;margin-right: 5px"><span data-localize="td.notpay">我还没有付款给对方</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        $(function () {
+            var id = get_param('id');
+            var legal_deal_send_id;
+            initDataToken({
+                url: 'legal_deal',
+                data: {
+                    id: id
+                }
+            }, function (res) {
+                $('.contact').attr('href', "tel:" + res.seller_phone)
+                var text1 = '',
+                    text2;
+                switch (res.is_sure) {
+                    case 0:
+                        text1 = getlg('waitpay');
+                        text2 = getlg('pwaitPay');
+                        break;
+                    case 1:
+                        text1 = getlg('finished');
+                        text2 = getlg('odFinish');
+                        break;
+                    case 2:
+                        text1 = getlg('ceiled');
+                        text2 = getlg('odCeil');
+                        break;
+                    case 3:
+                        text1 = getlg('payed');
+                        text2 = getlg('hasPay');
+                        break;
+                }
+                if (res.is_sure == 0 && res.type == 'buy') {
+                    $('.cancel_pay').removeClass('hide')
+                    $('.canceldeal').addClass('hide')
+                } else {
+                    $('.cancel_pay').addClass('hide')
+                }
+                if (res.is_sure == 3 && res.type == 'buy') {
+                    $('.pay_money').removeClass('hide')
+                } else {
+                    $('.pay_money').addClass('hide')
+                }
+
+                $('.tt_statu').html(text1);
+                $('.tt_statu2').html(text2)
+                $('#deal_money').html('￥' + iTofixed(res.deal_money,3));
+                $('#price').html('￥' + iTofixed(res.price,3));
+                $('#seller_name').html(res.seller_name);
+                $('#number').html(iTofixed(res.number,3) + res.currency_name);
+                $('#format_create_time').html(res.format_create_time);
+                $('#data_id').html(res.id);
+                $('.pay_orders_img').attr('src', res.pay_orders_img)
+                legal_deal_send_id = res.legal_deal_send_id;
+
+            });
+
+            // 卖家确认付款
+            $('.pay_money').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title:false,
+					shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin:'btn-text',
+                    content: $('.confirm-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'legal_deal_user_sure',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        });
+                    }
+
+                })
+            })
+            // $('.contact').click(function(){
+            //     location.href='fiatrad_pay.html?id='+id;
+            // })
+            $('.cancel_pay').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title:false,
+					shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin:'btn-text',
+                    content: $('.cancel-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'user_legal_pay_cancel',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        });
+                    }
+
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>

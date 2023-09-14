@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>付款</title>
+    <!-- <link href="lib/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <script src="lib/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        img{
+          width: 10px;
+          vertical-align: baseline;
+      }
+      
+      .active{
+          background-color: #f0b90b;
+          color: #fff;
+      }
+      .pay_box{
+          border-radius: 2px;
+      }
+      .btns>div{
+          padding: 10px 15px;
+          border-radius: 2px;
+          text-align: center;
+      }
+      .name,.tip{
+          margin: 15px;
+          padding: 10px 15px;
+          border-radius: 2px;
+          border:1px solid rgb(32, 58, 88);
+          font-size: 12px;
+      }
+      .tip .title{
+          color: #f0b90b;
+      }
+      
+      .circle{
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background-color: #101C31;
+          border-radius: 50%;
+      }
+      .cir_left{
+          left: -4px;
+          bottom: -4px;
+      }
+      .cir_right{
+          right: -4px;
+          bottom: -4px;
+      }
+      .mt40 {
+          margin-top: 62px;
+      }
+    </style>
+</head>
+
+<body class="baseBg">
+    <header class="header baseBg mainbg">
+        <a class="back" href="javascript:;" onclick="javascript:history.go(-1);"></a>
+        <div class="tc title blue4" data-localize="td.ppay">请付款</div>
+    </header>
+    <div class="plr15">
+        <div class="mt40  bgWhite ft10 pay_box">
+            <div class="bgGray3 plr10 ptb10 color1 reltive">
+                <p class="" data-localize="td.paynext">请向以下账户付款</p>
+                <div class="flex between alcenter">
+                    <div class="ft22 blue2"></div>
+                    <div class="">
+                        <div class="flex between alcenter">
+                            <span data-localize="td.tdPrice">交易单价</span>
+                            <span id="price"></span>
+                        </div>
+                        <div class="flex between alcenter">
+                            <span data-localize="td.tdNum">交易数量</span>
+                            <span class="ml10" id="number">1.00000000ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="circle cir_left abstrot"></span>
+                <span class="circle cir_right abstrot"></span>
+            </div>
+            <div class="plr10">
+                <div class="bdb">
+                    <div class="flex alcenter between ptb10">
+                        <!--<div>-->
+                        <!--<img src="images/card.png" alt="">-->
+                        <!--<span>银行卡支付</span>-->
+                        <!--</div>-->
+                        <!--<div class="color1 switch-pay">切换方式 <img src="images/mores.png" alt=""></div>-->
+                    </div>
+                    <div class="card-info flex between mb10">
+                        <div data-localize="td.payInfo">付款信息</div>
+                        <div id="way"></div>
+                    </div>
+                    <div class="bgGray3 ptb10 pl10 " id="hes_account">
+
+                    </div>
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.receiver">收款人</span>
+                        <div><span id="hes_realname"></span></div>
+                    </div>
+                    <!--<div class="flex ptb10 between alcenter">-->
+                    <!--<span class="color1">银行卡卡号</span>-->
+                    <!--<div><span>6222020234349384</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="flex ptb10 between alcenter">-->
+                    <!--<span class="color1">参考号<img src="images/query.png" alt=""></span>-->
+                    <!--<div><span>6222</span></div>-->
+                    <!--</div>-->
+                    <div class="flex ptb10 between alcenter">
+                        <span class="color1" data-localize="td.cnum">参考号</span>
+                        <div><span id="data_id"></span></div>
+                    </div>
+                </div>
+                <p class="blue ptb10" data-localize="td.payClick">
+                    如您已向卖家转账付款，请务必点击右下角“我已付款”按钮，否则有可能造成资金损失。
+                </p>
+                <div class="ptb10 flex alcenter between  btns">
+                    <div class="flex1 bgLinear mr10 btn-cancel" data-localize="td.odCeil">取消订单</div>
+                    <!-- <div class="flex2 bgLinearblue btn-confirm"><span class="mr10">我已付款</span>  <img src="images/time.png" alt=""><span>剩余14分41秒</span></div> -->
+                    <div class="flex2 bgLinearblue btn-confirm"><span class="mr10" data-localize="contract.comfirmBtn">我已付款，请点击确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="name flex between  goshop hide">
+        <div id="seller_name"><img src="images/vip.png" alt=""></div>
+        <div><img src="images/mores.png" alt=""></div>
+    </div>
+
+    <div class="tip">
+        <div class="title mt10 mb10 ft14"><i>!</i> <span data-localize="td.tdAttion">交易提醒</span></div>
+        <ul class="color1 ml10">
+            <li data-localize="td.at01">您的汇款将直接进入卖家账户,交易过程中卖家出售的数字资产由平台托管保护。</li>
+            <li data-localize="td.at02">请在规定时间内完成付款，并务必点击“我已付款”，卖家确认收款后，系统会将数字资产划转到您的账户。</li>
+            <li><span data-localize="td.at03">如果买家当日取消订单达</span><span class="cannel-num"></span><span data-localize="td.at04">次，将会被限制当日的买入功能。</span></li>
+        </ul>
+    </div>
+    <!-- 确认弹窗 -->
+    <div class="confirm-box tc hide">
+        <div class="confirm-content tc">
+
+            <div class="confirm-t" style="padding:15px 0 10px">
+                <div style="padding-bottom:15px;font-weight: 600;" class="ft16" data-localize="td.conPay">付款确认</div>
+                <div class="color1 " data-localize="td.sureImpay">请确认您已向卖家付款</div>
+                <div class="blue mt5" data-localize="td.badClick">恶意点击将直接冻结账户</div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 取消订单弹窗 -->
+    <div class="cancel-box tc hide">
+        <div class="cancel-content tc">
+
+            <div class="confirm-t" style="padding:15px 0 10px">
+                <div style="padding-bottom:15px;font-weight: 600;" class=" ft16" data-localize="td.sureCeil">确认取消交易</div>
+                <div class="blue" data-localize="td.notCeil">如果您已向卖家付款，请千万不要取消交易</div>
+                <!--<div class=" mt5 color1">取消规则，买家当日累计3笔取消，</div>-->
+                <!--<div class="color1">会限制当日买入功能</div>-->
+                <div style="padding:20px 0 10px" class="ft16">
+                    <input type="checkbox" value="" style="-webkit-appearance: checkbox;vertical-align: middle;margin-right: 5px"><span data-localize="td.notpay">我还没有付款给对方</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="banks-box hide">
+        <div class="banks">
+            <div>平安银行（3277）</div>
+        </div>
+    </div>
+    <ul class="banks hide" id="bre">
+        <li>平安银行</li>
+    </ul>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        $(function () {
+            // FastClick.attach(document.body);
+            var id = get_param('id');
+            var sellerId;
+            initDataToken({
+                url: 'legal_deal',
+                data: {
+                    id: id
+                }
+            }, function (res) {
+                $('.ft22').html('￥' + res.deal_money);
+                $('#price').html('￥' + res.price);
+                $('#number').html(res.number + res.currency_name);
+                $('#way').html(res.way_name);
+                $('#hes_account').html(res.hes_account);
+                $('#hes_realname').html(res.hes_realname);
+                $('#seller_name').html(res.seller_name);
+                $('#data_id').html(res.id);
+                sellerId = res.seller_id;
+                $('.cannel-num').text(res.userLegalDealCancel_num)
+
+            });
+
+            $('.goshop').click(function () {
+                location.href = 'fiatrad_shop.html?id=' + sellerId;
+            })
+            //切换支付方式
+            $('.switch-pay').click(function () {
+
+                layer.open({
+                    skin: 'footer',
+
+                    content: $('.banks-box').html(),
+                    btn: getlg('ceil')
+                })
+
+
+
+            })
+
+            // 取消订单
+            $('.btn-cancel').click(function () {
+
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title:false,
+					shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin:'btn-text',
+                    content: $('.cancel-box'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'user_legal_pay_cancel',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                        });
+                    }
+
+                })
+            })
+            //确认付款
+            $('.btn-confirm').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title:false,
+					shadeClose: true,
+                    area: ['90%', 'auto'],
+                    content: $('.confirm-box'),
+                    skin:'btn-text',
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        initDataToken({
+                            url: 'user_legal_pay',
+                            type: 'post',
+                            data: {
+                                id: id
+                            }
+                        }, function (res) {
+                            layer_msg(res);
+                        });
+                    }
+
+                })
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

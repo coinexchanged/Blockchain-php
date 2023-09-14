@@ -1,0 +1,63 @@
+
+<div class="layui-card-header">我的邀请二维码</div>
+<div class="layui-card-body layui-text layadmin-about">
+    <div class="layui-card-body">
+        <div id="code" class="flex alcenter jscenter"></div>
+    </div>
+    <p id="url"></p>
+</div>
+
+
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.qrcode.min.js"></script>
+<script src="/js/qrcode.js"></script>
+
+<script>
+
+
+    layui.use(['admin', 'table', 'layer' , 'laydate'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , view = layui.view
+            , table = layui.table
+            , layer = layui.layer
+           
+            , form = layui.form;
+
+        admin.req({
+            type: "POST",
+            url: '/agent/get_my_invite_code',
+            dataType: "json",
+            data: {all: 1},
+            done: function (result) { //返回数据根据结果进行相应的处理
+
+                var invite_code = result.data.invite_code;
+                // var invite_code="test123"
+                // $('#code').qrcode({
+                //     render:'table',
+                //     width: 200, //宽度
+                //     height:200, //高度
+                //     text: _PROTOCOL + '//' + _HOST + '/mobile/user/register.html?invite_code=' + invite_code
+                // });
+                var qr = new QRCode('code',{
+                    width: 240, //宽度
+                    height:240, //高度
+                    colorDark:'#000',
+                    colorLight:'#fff',
+                    correctLevel:QRCode.CorrectLevel.H
+                });
+                qr.clear();
+
+                if (result.data.is_admin == 1){
+                    qr.makeCode(  location.protocol + '//' + document.domain +'/mobile/register.html');
+                    $("#url").html( location.protocol + '//' + document.domain +'/mobile/register.html');
+                }else{
+                    qr.makeCode(  location.protocol + '//' + document.domain +'/mobile/register.html?code=' + invite_code);
+                    $("#url").html( location.protocol + '//' + document.domain +'/mobile/register.html?code=' + invite_code);
+                }
+
+            }
+        });
+    });
+
+</script>

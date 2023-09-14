@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SelectTree.js</title>
+  <link rel="stylesheet" href="../plugins/layui/css/layui.css" media="all" />
+  <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" media="all" />
+  <link rel="stylesheet" href="../src/css/ztree/metro/ztree.css" media="all" />
+  <link rel="stylesheet" href="../src/css/treeselect.css" media="all" />
+</head>
+
+<body>
+  <div style="width:80%; margin:0 auto;">
+    <h1 style="text-align: center;padding: 15px 0;font-size: 40px;">LayUI treeselect.js</h1>
+    <blockquote class="layui-elem-quote" style="border-left:5px solid #FF5722;">
+      <h1>摘要:</h1>
+      <p>//LayUI扩展组件之treeselect.js by:<a href="http://kit.zhengjinfan.cn">Van</a></p>
+      <p>这是一个基于ztree.js和layui扩展的树形下拉多选组件</p>
+      <br>
+      <p>作者 ：Van</p>
+      <p>社区主页：
+        <a href="http://fly.layui.com/u/784224/" target="_blank">http://fly.layui.com/u/784224/</a>
+      </p>
+      <p>E-mail：zheng_jinfan@126.com</p>
+      <p>QQ交流群：248049395 <span style="color:#009688;font-size:12px;">加时请注明来意.</span></p>
+      <p>KITADMIN:
+        <a href="http://kit.zhengjinfan.cn/" target="_blank">http://kit.zhengjinfan.cn/</a>
+        <span style="color:#009688;font-size:12px;">基于LayUI 2.x 扩展的一个后台管理模板.</span>
+      </p>
+      <p>下载地址：<a href="http://kit.zhengjinfan.cn/res/layui-treeselect.zip" target="_blank">http://kit.zhengjinfan.cn/res/layui-treeselect.zip</a></p>
+    </blockquote>
+    <fieldset class="layui-elem-field">
+      <legend>Demo 演示</legend>
+      <div class="layui-field-box" style="padding-top:45px;">
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <label class="layui-form-label">输入框</label>
+            <div class="layui-input-block">
+              <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">密码框</label>
+            <div class="layui-input-inline">
+              <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">辅助文字</div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" style="color:red;">多选下拉1</label>
+            <div class="layui-input-block layui-input-treeselect">
+              <input type="text" name="t1" id="treeselect" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" style="color:red;">多选下拉2</label>
+            <div class="layui-input-block layui-input-treeselect">
+              <input type="text" name="t2" value="5,6,7,8" id="treeselect1" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" style="color:red;">多选下拉3</label>
+            <div class="layui-input-block layui-input-treeselect">
+              <input type="text" name="t3" value="1,4" id="treeselect2" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">选择框</label>
+            <div class="layui-input-block">
+              <select name="city" lay-verify="required">
+                    <option value=""></option>
+                    <option value="0">北京</option>
+                    <option value="1">上海</option>
+                    <option value="2">广州</option>
+                    <option value="3">深圳</option>
+                    <option value="4">杭州</option>
+                  </select>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">复选框</label>
+            <div class="layui-input-block">
+              <input type="checkbox" name="like[write]" title="写作">
+              <input type="checkbox" name="like[read]" title="阅读" checked>
+              <input type="checkbox" name="like[dai]" title="发呆">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">开关</label>
+            <div class="layui-input-block">
+              <input type="checkbox" name="switch" lay-skin="switch">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">单选框</label>
+            <div class="layui-input-block">
+              <input type="radio" name="sex" value="男" title="男">
+              <input type="radio" name="sex" value="女" title="女" checked>
+            </div>
+          </div>
+          <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">文本域</label>
+            <div class="layui-input-block">
+              <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+              <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </fieldset>
+    <fieldset class="layui-elem-field">
+      <legend>使用文档</legend>
+      <div class="layui-field-box">
+        <blockquote class="layui-elem-quote">
+          <h1>依赖项：</h1>
+          <p>1、ztree.js 插件,官方文档地址：<a href="http://www.treejs.cn/v3/api.php" target="_blank">http://www.treejs.cn/v3/api.php</a></p>
+        </blockquote>
+        <h1>使用方法及步骤 #</h1>
+        <pre class="layui-code"><span style="color:#009688;">步骤一：引入css</span> <span style="color:red;">注：标红的都是很重要的~！~</span>
+//:除开layui.css额外样式 
+// ztree.css  是ztree.js 提供的metro皮肤
+&lt;link rel="stylesheet" href="../src/css/ztree/metro/ztree.css" media="all" />
+// treeselect.css 是我自定的样式
+&lt;link rel="stylesheet" href="../src/css/treeselect.css" media="all" />
+<br>
+<span style="color:#009688;">步骤二：添加html代码(和form表单代码一样简单，只不过需要设置额外的class)</span>
+<br>
+&lt;form class="layui-form" action="">
+    &lt;div class="layui-form-item">
+        &lt;label class="layui-form-label">多选下拉1</label>
+        &lt;div class="layui-input-block <span style="color:red;">layui-input-treeselect</span>"> //<span style="color:red;">layui-input-treeselect 一定要设置</span>
+            //<span style="color:red;">treeselect1 Id也一定要设置且唯一</span>
+            &lt;input type="text" name="t1" id="<span style="color:red;">treeselect1</span>" required lay-verify="required" autocomplete="off" class="layui-input">
+        &lt;/div>
+    &lt;/div>
+&lt;/form>
+<br>
+<span style="color:#009688;">步骤二：添加js代码(和使用layui自带模块一样简单)</span>
+<br>
+&lt;script src="../plugins/layui/layui.js"></script>
+&lt;script>
+    layui.config({
+        base: <span style="color:red;">'../src/js/'</span> //自定义组件的目录--相对路径
+    }).use(['form', 'treeselect'], function() {
+        var form = layui.form,
+        <span style="color:red;">treeselect = layui.treeselect;</span>
+        <span style="color:red;">//通过调用render方法进行渲染 [render支持链式调用]</span>
+        treeselect.render({ //渲染第一个
+            elem:'#treeselect1', //这个设置必要为id属性且必须加上#号
+            data:[{
+                id:1,
+                name:'父节点一'
+            },{
+                id:2,
+                name:'父节点二',
+                open:true, //是否默认打开
+                isParent:true, //是否为父节点
+                children:[{
+                    id:3,
+                    name:'子节点一'
+                },{
+                    id:4,
+                    name:'子节点二',
+                    isParent:true,
+                    children:[{
+                        id:5,
+                        name:'子节点2.1'
+                    }]
+                }]
+            }]
+        }).render({ //渲染第二个treeselect
+            //参数设置如上..
+        });
+
+        // 监听表单提交
+        form.on('submit(formDemo)', function(data) {
+            console.log(data);
+            return false; //返回false阻止提交
+        });
+    });
+&lt;/script>
+<br>
+<br>
+<br>
+//写在最后：ztree.js 是一个很强大的树菜单jq插件，如果当前的设置不能满足你们的需求的话，你们可以直接改源码，以实现你们的个性化需求
+          </pre>
+      </div>
+    </fieldset>
+  </div>
+
+  <script src="../plugins/layui/layui.js"></script>
+  <script>
+    layui.config({
+      base: '../src/js/'
+    }).use(['form', 'treeselect', 'code'], function() {
+      var form = layui.form,
+        treeselect = layui.treeselect,
+        layer = layui.layer;
+      layui.code();
+      treeselect.render({
+        elem: '#treeselect',
+        data: [{
+          id: 1,
+          pId: 0,
+          name: "北京"
+        }, {
+          id: 2,
+          pId: 0,
+          name: "天津"
+        }, {
+          id: 3,
+          pId: 0,
+          name: "上海"
+        }, {
+          id: 6,
+          pId: 0,
+          name: "重庆"
+        }, {
+          id: 4,
+          pId: 0,
+          name: "河北省",
+          open: true
+        }, {
+          id: 41,
+          pId: 4,
+          name: "石家庄"
+        }, {
+          id: 42,
+          pId: 4,
+          name: "保定"
+        }, {
+          id: 43,
+          pId: 4,
+          name: "邯郸"
+        }, {
+          id: 44,
+          pId: 4,
+          name: "承德"
+        }, {
+          id: 5,
+          pId: 0,
+          name: "广东省",
+          open: true
+        }, {
+          id: 51,
+          pId: 5,
+          name: "广州"
+        }, {
+          id: 52,
+          pId: 5,
+          name: "深圳"
+        }, {
+          id: 53,
+          pId: 5,
+          name: "东莞"
+        }, {
+          id: 54,
+          pId: 5,
+          name: "佛山"
+        }, {
+          id: 6,
+          pId: 0,
+          name: "福建省",
+          open: true
+        }, {
+          id: 61,
+          pId: 6,
+          name: "福州"
+        }, {
+          id: 62,
+          pId: 6,
+          name: "厦门"
+        }, {
+          id: 63,
+          pId: 6,
+          name: "泉州"
+        }, {
+          id: 64,
+          pId: 6,
+          name: "三明"
+        }]
+      }).render({
+        elem: '#treeselect1',
+        data: [{
+          id: 984,
+          name: '父节点一'
+        }, {
+          "id": 1,
+          "name": "总经办",
+          "children": [{
+            "id": 5,
+            "name": "财务部",
+            "children": null,
+            "isParent": false,
+            "open": true
+          }, {
+            "id": 6,
+            "name": "子公司一",
+            "children": [{
+              "id": 7,
+              "name": "运营部",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }, {
+              "id": 8,
+              "name": "客服部",
+              "children": [{
+                "id": 12,
+                "name": "客服一部",
+                "children": null,
+                "isParent": false,
+                "open": true
+              }, {
+                "id": 13,
+                "name": "客服二部",
+                "children": null,
+                "isParent": false,
+                "open": true
+              }],
+              "isParent": true,
+              "open": true
+            }, {
+              "id": 14,
+              "name": "技术部",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }],
+            "isParent": true,
+            "open": true
+          }, {
+            "id": 9,
+            "name": "子公司二",
+            "children": [{
+              "id": 10,
+              "name": "技术部一",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }, {
+              "id": 11,
+              "name": "技术部二",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }, {
+              "id": 15,
+              "name": "技术部三",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }],
+            "isParent": true,
+            "open": true
+          }],
+          "isParent": true,
+          "open": true
+        }, {
+          "id": 16,
+          "name": "公司二",
+          "children": [{
+            "id": 17,
+            "name": "部门1",
+            "children": [{
+              "id": 18,
+              "name": "部门1-1",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }, {
+              "id": 20,
+              "name": "部门1-2",
+              "children": null,
+              "isParent": false,
+              "open": true
+            }],
+            "isParent": true,
+            "open": true
+          }],
+          "isParent": true,
+          "open": true
+        }]
+      }).render({
+        elem: '#treeselect2',
+        data: [{
+          id: 1,
+          name: '父节点一'
+        }, {
+          id: 2,
+          name: '父节点二',
+          open: true,
+          isParent: true,
+          children: [{
+            id: 3,
+            name: '子节点一'
+          }, {
+            id: 4,
+            name: '子节点二',
+            isParent: true,
+            children: [{
+              id: 5,
+              name: '子节点2.1'
+            }]
+          }]
+        }]
+      });
+      form.on('submit(formDemo)', function(data) {
+        console.log(data);
+        layer.msg(JSON.stringify(data.field));
+        return false;
+      });
+    });
+  </script>
+</body>
+
+</html>

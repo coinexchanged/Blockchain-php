@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+div#debitCredit{
+	padding: 10px 3% 0;
+}
+div#header{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+div#header img{
+	width: 20px;
+}
+
+
+
+div#debitcredit h1{
+	font-weight: bold;
+	font-size: 20px;
+}
+div#debitcredit>ul{
+	list-style: none;
+	padding-bottom: 30px;
+}
+div#debitcredit>ul li{
+	overflow: hidden;
+	font-size: 14px;
+}
+div#debitcredit>ul li p{	
+	display: inline-block;
+	color: #ccc;
+	width: 49%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #eee
+}
+div#debitcredit>ul li .back{
+	background: linear-gradient(to right, #6596e3, #5988cf);
+	color: #fff!important;
+}
+div#debitcredit>ul li span{
+	padding: 5px 0;
+}
+div#debitcredit>ul li span:nth-child(1){
+	color: #CCCCCC;
+}
+div#debitcredit>ul li span:nth-child(2){
+	color: #000;
+}
+div#debitcredit div.num{
+	font-size: 14px;
+	height: 45px;
+	border-bottom: 1px solid #ccc;
+}
+div#debitcredit div.num input{
+	height: 100%;
+	line-height: 45px;
+	border: none;
+	outline: none;
+	width: 60%;
+}
+div#debitcredit div.num input:focus{
+	border: none;
+	outline: none;
+}
+div#debitcredit div.num ul{
+	overflow: hidden;
+	list-style: none;
+}
+div#debitcredit div.num ul li{
+	float: left;
+	padding: 12px 5px;
+	color: #ccc;
+}
+div#debitcredit div.num ul li:nth-child(3){
+	color: #000;
+}
+div#debitcredit div.num p{
+	margin-top: 10px;
+	color: #b2bbbe;
+}
+
+
+
+div#bottom{
+	position: fixed;
+	bottom: 10px;
+	width: 96%;
+	margin: 0 auto;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background: #cfdade;
+	font-size: 18px;
+	color: #fff;
+	background: -webkit-linear-gradient(left, #cfdade , #cfdadd,#cfdade); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #cfdade , #cfdadd,#cfdade); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #cfdade , #cfdadd,#cfdade); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #cfdade , #cfdadd,#cfdade); /* 标准的语法 */
+}
+
+

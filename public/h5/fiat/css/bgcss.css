@@ -1,0 +1,17 @@
+.bgs{
+    background: #fff !important;
+    border:1px solid #eee;
+}
+.lockming .header{
+    border-bottom: 1px solid rgb(251, 251, 251);
+}
+.bg-black{
+    background-color: #fff;
+}
+.box-shadow{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.num-inp input{
+    border: 1px solid #dcdcdc;
+    color: #333;
+}

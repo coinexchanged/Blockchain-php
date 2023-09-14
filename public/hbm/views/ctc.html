@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>华盾链交易</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+</style>
+<body class="backf5">
+    <header class="borderB" style="background: #10172b;">
+        <i class="iconfont icon-xiangqing font24  fontc_f icon_aside"></i>
+        <h1 class="fontc_f">USDT</h1>
+        <div class="header_nav">
+            <a href="ctc_pt.html" >普通</a>
+            <a href="ctc.html"  class="act">商家</a>
+        </div>
+	</header>
+    <aside class="hide">
+		<!-- <div>
+			<img src="../img/default.jpg" alt="">
+			<h5>您还没有登录，点击登录</h5>
+		</div> -->
+		<div class="aside_mask"></div>
+		<section class="aside_box">
+			<div class="user_head_box" id="user_info" data-address="<%= address %>" >
+				<div class="user_head_info" style="text-align:center;">
+					<!--/users/user_photo-->
+					<a href="javascript:;" class="user_photo"><img id="user_info_photo" src="../img/default.jpg" alt=""></a> 
+					<div class="user_name" >
+						<p  style="line-height:1.2rem;" id="user_info_nickname"> mine </p>
+						<!--  -->
+					</div>
+					<!-- <button class="cop" data-clipboard-action="copy" data-clipboard-target="#user_address">复制</button> -->
+				</div>
+			</div>
+			<div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-qianbao font20 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">我的钱包</span>
+						</a>
+					</div>
+				</div>
+				<div class="userinfo_box" >
+					<div class="userinfo_item">
+						<i class="iconfont icon-zhanghu font22 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">账户管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-qia01 font20 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">支付管理</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-anquan font24 fontc_b"></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">安全中心</span>
+						</a>
+					</div>
+					<div class="userinfo_item">
+						<i class="iconfont icon-wode-jiaoyisuoguanli-18 font20 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">费率标准</span>
+						</a>  
+					</div>
+				</div>
+				<div class="userinfo_box" style="border:0;">
+					<div class="userinfo_item">
+						<i class="iconfont icon-portal-icon-bangzhu font20 fontc_b "></i>
+						<a  href="javascript:;" >
+							<span class="fontc_73 font14">我的工单</span>
+						</a>  
+					</div>    
+					<div class="userinfo_item">
+						<i class="iconfont icon-hongqi-chengse font24 fontc_b "></i>
+						<a  href="javascript:;">
+							<span class="fontc_73 font14">关于我们</span>
+						</a>
+					</div>     
+					<div class="userinfo_item">
+						<i class="iconfont icon-banbengengxin font24 fontc_b "></i>
+						<a  href="javascript:;" id="my_subTeam">
+							<span class="fontc_73 font14">版本更新</span>
+						</a>
+					</div>
+				</div>
+            </div>
+            <a class="login_btn quit_btn" href="login.html">退出登录</a>
+        </section>
+	</aside>
+    <!--上部分的买入卖出-->
+    <section class=" mgthead mgbfoot">
+        <div>
+            <div class="trade_nav_indextab backF" style="position:fixed;width:100%;top:2.8rem;left:0;padding:0;">
+                <div class="trade_nav_inout">
+                    <span class="act">商家买入</span>
+                    <span>商家卖出</span>
+                    <span>商家接单</span>
+                    <span>当前订单</span>
+                    <span >历史订单</span>
+                </div>
+            </div>
+            <div class="ctc_body_tab" style="margin-top:6.4rem;">
+                <div class="" style="width:100%;">
+                    <div class="business_in ">
+                        <p class="pd10">USTD余额：$0.00</p>
+                        <ul class="out_details backF pd10" style="margin-top:0;">
+                            <li>
+                                <span>买入价格</span>
+                                <div class="out_input">
+                                    <input type="text"  placeholder="请输入价格">
+                                </div>
+                                <!--<i onclick="BSL.Qcode('0','code')" class="iconfont icon-saomiaoerweima fontc_hdl font20 mgl10"></i>-->
+                            </li>
+                            <li >
+                                <span>买入数量</span>
+                                <div class="out_input">
+                                    <input type="text"  onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"  placeholder="请输入数量" >
+                                </div>
+                                <span>USDT</span>
+                            </li>
+                            <li >
+                                <span>兑换金额</span>
+                                <div class="out_input">
+                                    <input type="text" placeholder="请输入金额" >
+                                </div>
+                                <span>CNY</span>
+                            </li>
+                             <li >
+                                <span>交易限额</span>
+                                <div class="out_input">
+                                    <input type="text"   placeholder="最小"  style="width:36%;border:1px solid #eee;">
+                                    --
+                                    <input type="text"   placeholder="最大"  style="width:36%;border:1px solid #eee;">
+                                </div>
+                                <span>CNY</span>
+                            </li>
+                        </ul>
+                        <p class="pd10 backF font12 red">手续费0.20%</p>
+                        <div class="trade_inout_btn pd10 backF"  style="margin-top:0;margin-bottom:0;">
+                            <button>立即买入</button>
+                        </div>
+                    </div>
+
+                    <div class="business_in hide">
+                        <p class="pd10">USTD余额：$0.00</p>
+                        <ul class="out_details backF pd10" style="margin-top:0;">
+                            <li>
+                                <span>卖出价格</span>
+                                <div class="out_input">
+                                    <input type="text"  placeholder="请输入价格">
+                                </div>
+                                <!--<i onclick="BSL.Qcode('0','code')" class="iconfont icon-saomiaoerweima fontc_hdl font20 mgl10"></i>-->
+                            </li>
+                            <li >
+                                <span>卖出数量</span>
+                                <div class="out_input">
+                                    <input type="text"  onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"  placeholder="请输入数量" >
+                                </div>
+                                <span>USDT</span>
+                            </li>
+                            <li >
+                                <span>兑换金额</span>
+                                <div class="out_input">
+                                    <input type="text" placeholder="请输入金额" >
+                                </div>
+                                <span>CNY</span>
+                            </li>    
+                             <li>
+                                <span>交易限额</span>
+                                <div class="out_input">
+                                    <input type="text"   placeholder="最小"  style="width:36%;border:1px solid #eee;">
+                                    --
+                                    <input type="text"   placeholder="最大"  style="width:36%;border:1px solid #eee;">
+                                </div>
+                                <span>CNY</span>
+                            </li>
+                        </ul>
+                        <p class="pd10 backF font12 red">手续费0.20%</p>
+                        <div class="trade_inout_btn pd10 backF" style="margin-top:0;margin-bottom:0;">
+                            <button style="background:#29a555;">立即卖出</button>
+                        </div>
+                    </div>
+
+                    <div class="ctc_table_box">
+                        <p style="font-size:13px;" class="">交易金额（只显示在线商家）</p>
+                       <table class="ctc_table">
+                            <tbody>
+                                <tr>
+                                    <th >类型</th>
+                                    <th >价格</th>
+                                    <th >数量</th>
+                                    <th >限额（USDT）</th>
+                                </tr>
+                                <tr>
+                                    <td class="green">卖出</td>
+                                    <td >100000000</td>
+                                    <td>
+                                        <span>30856.0000</span>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <span>200.00</span>--
+                                            <span>2096.03</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="green">卖出</td>
+                                    <td >6.17</td>
+                                    <td>
+                                        <span>30856.0000</span>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <span>200.00</span>--
+                                            <span>2096.03</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="red">买入</td>
+                                    <td >6.17</td>
+                                    <td>
+                                        <span>30856.0000</span>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <span>200.00</span>--
+                                            <span>2096.03</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                   </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <footer  style="padding-top:0;">
+        <a href="index.html"  >
+            <img src="../img/icon/icon_hangqing.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">行情</span>
+        </a>
+        <a href="trade_index.html" id="trade_nav" >
+            <img src="../img/icon/icon_jiaoyi.png" width="24" style="margin:0 auto;" alt="">
+            <span class="fontc_9">交易</span>
+        </a>
+        <a href="ctc.html" style="position:relative;" >
+            <img src="../img/icon/icon_ctc1.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_hdl">C2C</span>
+        </a>
+        <a href="chatRoom.html" >
+            <img src="../img/icon/icon_liaotian.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">聊天室</span>
+        </a>
+        <a href="money_adm.html" >
+            <img src="../img/icon/icon_qianbao.png" width="22" style="margin:0 auto;" alt="">
+            <span class="fontc_9">钱包</span>
+        </a>
+    </footer>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script>
+        $(function(){
+            $(".deal_record_nav ").on("click","li",function(){
+                var index = $(this).index();
+                $(this).addClass("act").siblings().removeClass("act");
+                $(".deal_record_body>section").eq(index).removeClass("hide").siblings().addClass("hide");
+            })
+
+            $(".trade_nav_inout").on("click","span",function(){
+                var index = $(this).index();
+                $(this).addClass("act").siblings().removeClass("act");
+                $(".trade_body_inout>div").eq(index).removeClass("hide").siblings().addClass("hide");
+            })
+        })
+    </script>
+</body>
+</html>

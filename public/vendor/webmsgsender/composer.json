@@ -1,0 +1,11 @@
+{
+    "name"  : "workerman/web-msg-sender",
+    "type"  : "project",
+    "keywords": ["socket.io"],
+    "homepage": "http://www.workerman.net",
+    "license" : "MIT",
+    "require": {
+        "workerman/phpsocket.io" : ">1.0.0",
+        "vlucas/phpdotenv": "^2.5"
+    }
+}

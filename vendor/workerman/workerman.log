@@ -1,0 +1,246 @@
+2023-04-14 15:16:38 pid:54093 Workerman[artisan] restart 
+2023-04-14 15:16:38 pid:54093 Workerman[artisan] is stopping ...
+2023-04-14 15:16:38 pid:38873 Workerman[artisan] stopping ...
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38925] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38920] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38919] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38921] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38918] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38922] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38923] exit with status 9
+2023-04-14 15:16:40 pid:38873 worker[Huobi Websocket:38924] exit with status 9
+2023-04-14 15:16:40 pid:38873 Workerman[artisan] has been stopped
+2023-04-14 15:16:40 pid:54093 Workerman[artisan] stop success
+2023-04-14 15:16:45 pid:54123 Worker[54123] process terminated
+2023-04-14 15:16:45 pid:54093 worker[Huobi Websocket:54123] exit with status 256
+2023-04-14 15:16:49 pid:54132 Worker[54132] process terminated
+2023-04-14 15:16:49 pid:54093 worker[Huobi Websocket:54132] exit with status 256
+2023-04-14 15:16:52 pid:54133 Worker[54133] process terminated
+2023-04-14 15:16:52 pid:54093 worker[Huobi Websocket:54133] exit with status 256
+2023-04-14 15:16:56 pid:54134 Worker[54134] process terminated
+2023-04-14 15:16:56 pid:54093 worker[Huobi Websocket:54134] exit with status 256
+2023-04-14 15:16:59 pid:54135 Worker[54135] process terminated
+2023-04-14 15:16:59 pid:54093 worker[Huobi Websocket:54135] exit with status 256
+2023-04-14 15:17:02 pid:54136 Worker[54136] process terminated
+2023-04-14 15:17:02 pid:54093 worker[Huobi Websocket:54136] exit with status 256
+2023-04-14 15:17:07 pid:54137 Worker[54137] process terminated
+2023-04-14 15:17:07 pid:54093 worker[Huobi Websocket:54137] exit with status 256
+2023-04-14 15:17:11 pid:54159 Worker[54159] process terminated
+2023-04-14 15:17:11 pid:54093 worker[Huobi Websocket:54159] exit with status 256
+2023-04-14 15:17:12 pid:54172 Workerman[artisan] restart 
+2023-04-14 15:17:12 pid:54172 Workerman[artisan] is stopping ...
+2023-04-14 15:17:12 pid:54093 Workerman[artisan] stopping ...
+2023-04-14 15:17:14 pid:54168 Worker[54168] process terminated
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54168] exit with status 256
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54129] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54124] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54127] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54130] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54126] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54125] exit with status 9
+2023-04-14 15:17:14 pid:54093 worker[Huobi Websocket:54128] exit with status 9
+2023-04-14 15:17:14 pid:54093 Workerman[artisan] has been stopped
+2023-04-14 15:17:14 pid:54172 Workerman[artisan] stop success
+2023-04-14 15:17:18 pid:54180 Worker[54180] process terminated
+2023-04-14 15:17:18 pid:54172 worker[Huobi Websocket:54180] exit with status 256
+2023-04-14 15:17:21 pid:54189 Worker[54189] process terminated
+2023-04-14 15:17:21 pid:54172 worker[Huobi Websocket:54189] exit with status 256
+2023-04-14 15:17:25 pid:54190 Worker[54190] process terminated
+2023-04-14 15:17:25 pid:54172 worker[Huobi Websocket:54190] exit with status 256
+2023-04-14 15:17:29 pid:54191 Worker[54191] process terminated
+2023-04-14 15:17:29 pid:54172 worker[Huobi Websocket:54191] exit with status 256
+2023-04-14 15:17:33 pid:54192 Worker[54192] process terminated
+2023-04-14 15:17:33 pid:54172 worker[Huobi Websocket:54192] exit with status 256
+2023-04-14 15:17:37 pid:54202 Worker[54202] process terminated
+2023-04-14 15:17:37 pid:54172 worker[Huobi Websocket:54202] exit with status 256
+2023-04-14 15:17:40 pid:54215 Worker[54215] process terminated
+2023-04-14 15:17:40 pid:54172 worker[Huobi Websocket:54215] exit with status 256
+2023-04-14 15:17:44 pid:54218 Worker[54218] process terminated
+2023-04-14 15:17:44 pid:54172 worker[Huobi Websocket:54218] exit with status 256
+2023-04-14 15:17:47 pid:54219 Worker[54219] process terminated
+2023-04-14 15:17:47 pid:54172 worker[Huobi Websocket:54219] exit with status 256
+2023-04-14 15:17:50 pid:54220 Worker[54220] process terminated
+2023-04-14 15:17:50 pid:54172 worker[Huobi Websocket:54220] exit with status 256
+2023-04-14 15:17:54 pid:54223 Worker[54223] process terminated
+2023-04-14 15:17:54 pid:54172 worker[Huobi Websocket:54223] exit with status 256
+2023-04-14 15:17:57 pid:54224 Worker[54224] process terminated
+2023-04-14 15:17:57 pid:54172 worker[Huobi Websocket:54224] exit with status 256
+2023-04-14 15:18:01 pid:54225 Worker[54225] process terminated
+2023-04-14 15:18:01 pid:54172 worker[Huobi Websocket:54225] exit with status 256
+2023-04-14 15:18:04 pid:54226 Worker[54226] process terminated
+2023-04-14 15:18:04 pid:54172 worker[Huobi Websocket:54226] exit with status 256
+2023-04-14 15:18:08 pid:54227 Worker[54227] process terminated
+2023-04-14 15:18:08 pid:54172 worker[Huobi Websocket:54227] exit with status 256
+2023-04-14 15:18:11 pid:54228 Worker[54228] process terminated
+2023-04-14 15:18:11 pid:54172 worker[Huobi Websocket:54228] exit with status 256
+2023-04-14 15:18:15 pid:54229 Worker[54229] process terminated
+2023-04-14 15:18:15 pid:54172 worker[Huobi Websocket:54229] exit with status 256
+2023-04-14 15:18:18 pid:54230 Worker[54230] process terminated
+2023-04-14 15:18:18 pid:54172 worker[Huobi Websocket:54230] exit with status 256
+2023-04-14 15:18:22 pid:54231 Worker[54231] process terminated
+2023-04-14 15:18:22 pid:54172 worker[Huobi Websocket:54231] exit with status 256
+2023-04-14 15:18:23 pid:54243 Workerman[artisan] restart 
+2023-04-14 15:18:23 pid:54243 Workerman[artisan] is stopping ...
+2023-04-14 15:18:23 pid:54172 Workerman[artisan] stopping ...
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54244] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54184] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54181] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54187] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54185] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54186] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54183] exit with status 9
+2023-04-14 15:18:25 pid:54172 worker[Huobi Websocket:54182] exit with status 9
+2023-04-14 15:18:25 pid:54172 Workerman[artisan] has been stopped
+2023-04-14 15:18:25 pid:54243 Workerman[artisan] stop success
+2023-04-14 15:22:20 pid:54313 Worker[54313] process terminated
+2023-04-14 15:22:20 pid:54243 worker[Huobi Websocket:54313] exit with status 256
+2023-04-14 15:22:23 pid:54391 Worker[54391] process terminated
+2023-04-14 15:22:23 pid:54243 worker[Huobi Websocket:54391] exit with status 256
+2023-04-14 15:22:27 pid:54392 Worker[54392] process terminated
+2023-04-14 15:22:27 pid:54243 worker[Huobi Websocket:54392] exit with status 256
+2023-04-14 15:22:31 pid:54393 Worker[54393] process terminated
+2023-04-14 15:22:31 pid:54243 worker[Huobi Websocket:54393] exit with status 256
+2023-04-14 15:22:34 pid:54394 Worker[54394] process terminated
+2023-04-14 15:22:34 pid:54243 worker[Huobi Websocket:54394] exit with status 256
+2023-04-14 15:22:38 pid:54395 Worker[54395] process terminated
+2023-04-14 15:22:38 pid:54243 worker[Huobi Websocket:54395] exit with status 256
+2023-04-14 15:22:41 pid:54396 Worker[54396] process terminated
+2023-04-14 15:22:41 pid:54243 worker[Huobi Websocket:54396] exit with status 256
+2023-04-14 15:22:45 pid:54399 Worker[54399] process terminated
+2023-04-14 15:22:45 pid:54243 worker[Huobi Websocket:54399] exit with status 256
+2023-04-14 15:22:49 pid:54400 Worker[54400] process terminated
+2023-04-14 15:22:49 pid:54243 worker[Huobi Websocket:54400] exit with status 256
+2023-04-14 15:22:52 pid:54401 Worker[54401] process terminated
+2023-04-14 15:22:52 pid:54243 worker[Huobi Websocket:54401] exit with status 256
+2023-04-14 15:22:56 pid:54402 Worker[54402] process terminated
+2023-04-14 15:22:56 pid:54243 worker[Huobi Websocket:54402] exit with status 256
+2023-04-14 15:22:59 pid:54405 Worker[54405] process terminated
+2023-04-14 15:22:59 pid:54243 worker[Huobi Websocket:54405] exit with status 256
+2023-04-14 15:23:03 pid:54406 Worker[54406] process terminated
+2023-04-14 15:23:03 pid:54243 worker[Huobi Websocket:54406] exit with status 256
+2023-04-14 15:23:07 pid:54427 Worker[54427] process terminated
+2023-04-14 15:23:07 pid:54243 worker[Huobi Websocket:54427] exit with status 256
+2023-04-14 15:23:10 pid:54428 Worker[54428] process terminated
+2023-04-14 15:23:10 pid:54243 worker[Huobi Websocket:54428] exit with status 256
+2023-04-14 15:23:13 pid:54429 Worker[54429] process terminated
+2023-04-14 15:23:13 pid:54243 worker[Huobi Websocket:54429] exit with status 256
+2023-04-14 15:23:17 pid:54430 Worker[54430] process terminated
+2023-04-14 15:23:17 pid:54243 worker[Huobi Websocket:54430] exit with status 256
+2023-04-14 15:23:20 pid:54431 Worker[54431] process terminated
+2023-04-14 15:23:20 pid:54243 worker[Huobi Websocket:54431] exit with status 256
+2023-04-14 15:23:24 pid:54432 Worker[54432] process terminated
+2023-04-14 15:23:24 pid:54243 worker[Huobi Websocket:54432] exit with status 256
+2023-04-14 15:23:27 pid:54433 Worker[54433] process terminated
+2023-04-14 15:23:27 pid:54243 worker[Huobi Websocket:54433] exit with status 256
+2023-04-14 15:23:31 pid:54434 Worker[54434] process terminated
+2023-04-14 15:23:31 pid:54243 worker[Huobi Websocket:54434] exit with status 256
+2023-04-14 15:23:33 pid:54447 Workerman[artisan] restart 
+2023-04-14 15:23:33 pid:54447 Workerman[artisan] is stopping ...
+2023-04-14 15:23:33 pid:54243 Workerman[artisan] stopping ...
+2023-04-14 15:23:35 pid:54443 Worker[54443] process terminated
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54443] exit with status 256
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54318] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54316] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54317] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54315] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54319] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54314] exit with status 9
+2023-04-14 15:23:35 pid:54243 worker[Huobi Websocket:54320] exit with status 9
+2023-04-14 15:23:35 pid:54243 Workerman[artisan] has been stopped
+2023-04-14 15:23:35 pid:54447 Workerman[artisan] stop success
+2023-04-14 15:23:39 pid:54455 Worker[54455] process terminated
+2023-04-14 15:23:39 pid:54447 worker[Huobi Websocket:54455] exit with status 256
+2023-04-14 15:23:43 pid:54467 Worker[54467] process terminated
+2023-04-14 15:23:43 pid:54447 worker[Huobi Websocket:54467] exit with status 256
+2023-04-14 15:23:46 pid:54468 Worker[54468] process terminated
+2023-04-14 15:23:47 pid:54447 worker[Huobi Websocket:54468] exit with status 256
+2023-04-14 15:23:50 pid:54477 Worker[54477] process terminated
+2023-04-14 15:23:50 pid:54447 worker[Huobi Websocket:54477] exit with status 256
+2023-04-14 15:23:54 pid:54492 Worker[54492] process terminated
+2023-04-14 15:23:54 pid:54447 worker[Huobi Websocket:54492] exit with status 256
+2023-04-14 15:23:58 pid:54493 Worker[54493] process terminated
+2023-04-14 15:23:58 pid:54447 worker[Huobi Websocket:54493] exit with status 256
+2023-04-14 15:24:02 pid:54494 Worker[54494] process terminated
+2023-04-14 15:24:02 pid:54447 worker[Huobi Websocket:54494] exit with status 256
+2023-04-14 15:24:05 pid:54495 Worker[54495] process terminated
+2023-04-14 15:24:05 pid:54447 worker[Huobi Websocket:54495] exit with status 256
+2023-04-14 15:24:09 pid:54496 Worker[54496] process terminated
+2023-04-14 15:24:09 pid:54447 worker[Huobi Websocket:54496] exit with status 256
+2023-04-14 15:24:13 pid:54497 Worker[54497] process terminated
+2023-04-14 15:24:13 pid:54447 worker[Huobi Websocket:54497] exit with status 256
+2023-04-14 15:24:16 pid:54510 Workerman[artisan] restart 
+2023-04-14 15:24:16 pid:54510 Workerman[artisan] is stopping ...
+2023-04-14 15:24:16 pid:54447 Workerman[artisan] stopping ...
+2023-04-14 15:24:17 pid:54506 Worker[54506] process terminated
+2023-04-14 15:24:17 pid:54447 worker[Huobi Websocket:54506] exit with status 256
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54456] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54458] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54461] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54457] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54460] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54459] exit with status 9
+2023-04-14 15:24:18 pid:54447 worker[Huobi Websocket:54462] exit with status 9
+2023-04-14 15:24:18 pid:54447 Workerman[artisan] has been stopped
+2023-04-14 15:24:18 pid:54510 Workerman[artisan] stop success
+2023-04-14 15:24:21 pid:54520 Worker[54520] process terminated
+2023-04-14 15:24:21 pid:54510 worker[Huobi Websocket:54520] exit with status 256
+2023-04-14 15:24:25 pid:54529 Worker[54529] process terminated
+2023-04-14 15:24:25 pid:54510 worker[Huobi Websocket:54529] exit with status 256
+2023-04-14 15:24:29 pid:54530 Worker[54530] process terminated
+2023-04-14 15:24:29 pid:54510 worker[Huobi Websocket:54530] exit with status 256
+2023-04-14 15:24:33 pid:54551 Worker[54551] process terminated
+2023-04-14 15:24:33 pid:54510 worker[Huobi Websocket:54551] exit with status 256
+2023-04-14 15:24:36 pid:54552 Worker[54552] process terminated
+2023-04-14 15:24:37 pid:54510 worker[Huobi Websocket:54552] exit with status 256
+2023-04-14 15:24:40 pid:54553 Worker[54553] process terminated
+2023-04-14 15:24:40 pid:54510 worker[Huobi Websocket:54553] exit with status 256
+2023-04-14 15:24:45 pid:54556 Worker[54556] process terminated
+2023-04-14 15:24:45 pid:54510 worker[Huobi Websocket:54556] exit with status 256
+2023-04-14 15:24:48 pid:54557 Worker[54557] process terminated
+2023-04-14 15:24:48 pid:54510 worker[Huobi Websocket:54557] exit with status 256
+2023-04-14 15:24:52 pid:54558 Worker[54558] process terminated
+2023-04-14 15:24:52 pid:54510 worker[Huobi Websocket:54558] exit with status 256
+2023-04-14 15:24:55 pid:54559 Worker[54559] process terminated
+2023-04-14 15:24:55 pid:54510 worker[Huobi Websocket:54559] exit with status 256
+2023-04-14 15:24:59 pid:54560 Worker[54560] process terminated
+2023-04-14 15:24:59 pid:54510 worker[Huobi Websocket:54560] exit with status 256
+2023-04-14 15:25:02 pid:54561 Worker[54561] process terminated
+2023-04-14 15:25:02 pid:54510 worker[Huobi Websocket:54561] exit with status 256
+2023-04-14 15:25:06 pid:54597 Worker[54597] process terminated
+2023-04-14 15:25:06 pid:54510 worker[Huobi Websocket:54597] exit with status 256
+2023-04-14 15:25:10 pid:54606 Worker[54606] process terminated
+2023-04-14 15:25:10 pid:54510 worker[Huobi Websocket:54606] exit with status 256
+2023-04-14 15:25:10 pid:54610 Workerman[artisan] restart 
+2023-04-14 15:25:10 pid:54610 Workerman[artisan] is stopping ...
+2023-04-14 15:25:10 pid:54510 Workerman[artisan] stopping ...
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54521] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54522] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54523] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54524] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54525] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54526] exit with status 9
+2023-04-14 15:25:12 pid:54510 worker[Huobi Websocket:54527] exit with status 9
+2023-04-14 15:25:12 pid:54510 Workerman[artisan] has been stopped
+2023-04-14 15:25:12 pid:54610 Workerman[artisan] stop success
+2023-04-17 01:30:17 pid:39373 Workerman[artisan] restart 
+2023-04-17 01:30:17 pid:39373 Workerman[artisan] is stopping ...
+2023-04-17 01:30:17 pid:54610 Workerman[artisan] stopping ...
+2023-04-17 01:30:19 pid:54610 Workerman[artisan] has been stopped
+2023-04-17 01:30:19 pid:39373 Workerman[artisan] stop success
+2023-04-19 10:20:41 pid:26430 Workerman[artisan] restart 
+2023-04-19 10:20:42 pid:26430 Workerman[artisan] is stopping ...
+2023-04-19 10:20:44 pid:39373 Workerman[artisan] stopping ...
+2023-04-19 10:20:47 pid:26430 Workerman[artisan] stop fail
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39443] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39438] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39439] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39440] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39441] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39442] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39444] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39445] exit with status 9
+2023-04-19 10:20:47 pid:39373 worker[Huobi Websocket:39446] exit with status 9
+2023-04-19 10:20:48 pid:39373 Workerman[artisan] has been stopped
+2023-04-19 10:21:19 pid:26449 Workerman[artisan] restart 
+2023-04-19 10:21:19 pid:26449 Workerman[artisan] is stopping ...
+2023-04-19 10:21:19 pid:26449 Workerman[artisan] stop success

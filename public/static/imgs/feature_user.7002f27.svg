@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220px" height="170px" viewBox="0 0 220 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#DDEAF7" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+<path d="M164.667694,56.5320329 C182.299924,45.8586002 197.270686,45.8586002 209.579979,56.5320329 C228.043918,72.5421819 164.667694,96.5574055 187.123836,120.572629 C209.579979,144.587853 169.657948,180.610688 134.227145,150.591658 C98.7963424,120.572629 117.759307,109.565652 69.3538445,130.078655 C20.9483818,150.591658 -12.9853447,123.074215 12.9639755,97.0577226 C38.9132958,71.0412305 52.3869813,100.559943 69.3538445,78.5459878 C86.3207077,56.5320329 44.9016004,6 85.8216823,6 C126.741764,6 103.786596,46.5256897 134.227145,41.022201 C154.520844,37.3532085 164.667694,42.5231525 164.667694,56.5320329 Z" id="Path-41" fill="#F2F6FA" fill-rule="nonzero"></path>
+<polygon fill="#CBD6E7" fill-rule="nonzero" points="101 135.358974 134.5 149 161 137.794872 138.5 130"></polygon>
+<polygon fill="#CBD6E7" fill-rule="nonzero" points="127 120.641026 160.5 135 187 123.205128 164.5 115"></polygon>
+<polygon fill="#CBD6E7" fill-rule="nonzero" points="154 105.641026 187.5 120 214 108.205128 191.5 100"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="97 66 119 74 142 66 119 58"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="97 66 97 86 119 95 119 74"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="119 95 142 86 142 66 119 74"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="67 80 89 88 112 80 89 72"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="67 80 67 100 89 109 89 88"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="89 109 112 100 112 80 89 88"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="41 95 63 103 86 95 63 87"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="41 95 41 115 63 124 63 103"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="63 124 86 115 86 95 63 103"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="127 76 149 84 172 76 149 68"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="127 76 127 96 149 105 149 84"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="149 105 172 96 172 76 149 84"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="76 72.5405405 88.2222222 77.0810811 101 72.5405405 88.2222222 68"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="76 72.5405405 76 79.6995842 88.2222222 84 88.2222222 77.0810811"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="88.2222222 84 101 78.6995842 101 72.5405405 88.2222222 77.0810811"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="137 67.5405405 149.222222 72.0810811 162 67.5405405 149.222222 63"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="137 67.5405405 137 74.6995842 149.222222 79 149.222222 72.0810811"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="149.222222 79 162 73.6995842 162 67.5405405 149.222222 72.0810811"></polygon>
+<polygon fill="#F7FAFE" fill-rule="nonzero" points="99 61 121 69 144 61 121 53"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="99 61 99 121 121 130 121 69"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="121 130 144 121 144 61 121 69"></polygon>
+<polygon fill="#FCFDFE" fill-rule="nonzero" points="144 73 144 74 121.007031 82.5269369 99 75 99 74 120.992969 81.4730631"></polygon>
+<polygon fill="#FCFDFE" fill-rule="nonzero" points="144 86 144 87 121.007031 95.5269369 99 88 99 87 120.992969 94.4730631"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="71 105 93 113 116 105 93 97"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="71 105 71 125 93 134 93 113"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="93 134 116 125 116 105 93 113"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="157 86 179 94 202 86 179 78"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="157 86 157 106 179 115 179 94"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="179 115 202 106 202 86 179 94"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="127 100 149 108 172 100 149 92"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="127 100 127 120 149 129 149 108"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="149 129 172 120 172 100 149 108"></polygon>
+<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="101 115 123 123 146 115 123 107"></polygon>
+<polygon fill="#DBE6F7" fill-rule="nonzero" points="101 115 101 135 123 144 123 123"></polygon>
+<polygon fill="#85A9D4" fill-rule="nonzero" points="123 144 146 135 146 115 123 123"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="167 79.5405405 179.222222 84.0810811 192 79.5405405 179.222222 75"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="167 79.5405405 167 86.6995842 179.222222 91 179.222222 84.0810811"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="179.222222 91 192 85.6995842 192 79.5405405 179.222222 84.0810811"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="137 93.5405405 149.222222 98.0810811 162 93.5405405 149.222222 89"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="137 93.5405405 137 100.699584 149.222222 105 149.222222 98.0810811"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="149.222222 105 162 99.6995842 162 93.5405405 149.222222 98.0810811"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="81 97.5405405 93.2222222 102.081081 106 97.5405405 93.2222222 93"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="81 97.5405405 81 104.699584 93.2222222 109 93.2222222 102.081081"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="93.2222222 109 106 103.699584 106 97.5405405 93.2222222 102.081081"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="112 108.540541 124.222222 113.081081 137 108.540541 124.222222 104"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="112 108.540541 112 115.699584 124.222222 120 124.222222 113.081081"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="124.222222 120 137 114.699584 137 108.540541 124.222222 113.081081"></polygon>
+<polygon fill="#1D4C85" fill-rule="nonzero" points="51 88.5405405 63.2222222 93.0810811 76 88.5405405 63.2222222 84"></polygon>
+<polygon fill="#173D6C" fill-rule="nonzero" points="51 88.5405405 51 95.6995842 63.2222222 100 63.2222222 93.0810811"></polygon>
+<polygon fill="#112F54" fill-rule="nonzero" points="63.2222222 100 76 94.6995842 76 88.5405405 63.2222222 93.0810811"></polygon>
+<path d="M111,56 L133,65 L136,64 C136,62.6666667 136,61.3333333 136,60 C136,58 132,51 125,47 C118,43 111.024098,44.9759024 109,47 C107,49 106.72256,51.4263388 107,53 C107.037037,53.2100767 108.37037,54.2100767 111,56 Z" fill="#6152C4" fill-rule="nonzero"></path>
+<path d="M106,55 L133,65 C133,64.3333333 133,63.3333333 133,62 C133,60 128,53 121,49 C114,45 110,46 108,48 C106.666667,49.3333333 106,51.6666667 106,55 Z" id="Path-18" fill="#9073E6" fill-rule="nonzero"></path>
+<path d="M122.12187,45.5580195 C125.100644,45.2027855 128.583287,41.2780293 128.583287,36.4338704 C128.583287,31.5897116 125.739424,27.4098728 122.752414,27.4098728 C121.910313,27.4098728 118.779756,27.6641228 118.06914,28.2209097 C116.259138,29.6390969 117.343955,32.70251 117.343955,36.1809983 C117.343955,39.2919554 116.684023,43.02231 118.074021,44.7738543 C118.852797,45.7551945 120.585018,45.741297 122.12187,45.5580195 Z" fill="#6152C4" fill-rule="nonzero" transform="translate(122.802403, 36.532454) rotate(-25.000000) translate(-122.802403, -36.532454) "></path>
+<ellipse fill="#9073E6" fill-rule="nonzero" transform="translate(119.608567, 38.235053) rotate(-25.000000) translate(-119.608567, -38.235053) " cx="119.608567" cy="38.2350532" rx="5.40845946" ry="8.77112551"></ellipse>
+</svg>

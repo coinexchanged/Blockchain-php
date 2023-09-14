@@ -1,0 +1,81 @@
+*{ padding:0px; margin:0px; font-family:"微软雅黑";}
+html{height:100%;}
+.download_box{ background:url(../imgs/top.png) center -30px no-repeat;padding-top:140px; width:100%;}
+.app_png{ display:block; margin:0px auto;width:160px; height:160px; border-radius:50%; box-shadow:0px -10px 10px #ccc; text-align:center; overflow:hidden;}
+.app_png img{ width:60%; margin:20% auto;}
+.app_title{ font-size:18px; color:#000; text-align:center; line-height:30px; text-align:center;}
+.app_info,.app_sm{ font-size:14px; color:#999; text-align:center; line-height:40px;}
+.app_sm{ margin-top:30px;}
+.ewm_box { height:200px;margin:20px auto; width:200px; text-align:center;}
+.ewm_box img{ width:140px; height:140px; border:1px solid #C2C2C2; border-radius:2px; overflow:hidden;}
+.ewm_box img:hover{width:160px; height:160px; transition:0.4s;-moz-transition:0.4s;-webkit-transition:0.4s;box-shadow:0px 0px 10px #ccc;}
+.app_down_box{ width:750px; margin:30px auto; border-top:1px solid #eee;}
+.app_down_box li{ width:49%; height:200px; display:block; float:left; margin-top:20px; margin-bottom:20px;}
+.border_right{ border-right:1px solid #eee;}
+.app_down_box li i{ margin:10px auto;}
+.ios{ display:block; width:34px; height:34px; background:url(../imgs/ios.png) center no-repeat;}
+.android{ display:block; width:34px; height:34px; background:url(../imgs/android.png) center no-repeat;}
+.down_btn{ display:block; width:200px; height:40px; font-size:16px; color:#fff; background:#232325; text-align:center; line-height:40px; border-radius:10px; margin:20px auto; text-decoration:none;}
+.down_btn:hover{ background:#2B64B5;}
+.app_down_box ul{ height:240px; border-bottom:1px solid #eee;}
+.jt_title{ width:100%; height:100px; line-height:100px; font-size:18px; color:#333;}
+.app_jt{ height:480px; width:750px;overflow:hidden; overflow-x:auto;}
+.app_jt img{ height:480px; margin-right:10px;}
+.app_down_one .app_down_box>ul{ width:50%; margin:0px auto;}
+.app_down_one .app_down_box>ul .border_right{ border-right:0px;}
+.app_down_one .app_down_box>ul>li{width:100%;}
+.footer{ height:60px; width:100%;color:#999;}
+.footer a{ color:#999; float:left; margin-left:10px; text-decoration:none; font-size:14px;}
+.footer span{ display:block; float:left; margin-left:10px;font-size:14px;}
+.footer a:first-child{ margin-left:46%;}
+@media only screen and (max-width: 1080px){
+    html{ font-size:100px;}
+    .download_box{ background:url(top.png) no-repeat;padding-top:4.4rem;height:100%; background-size:100%;}
+    .download_box.app_down_one{ padding-top:4.4rem;}
+    .app_png{width:3.2rem;height:3.2rem;border-radius:0.4rem;box-shadow:0rem 0rem 0rem #ccc;}
+    .app_png img{ width:100%; margin:0rem auto;}
+    .app_title{font-size:0.88rem; color:#242424; line-height:2.2rem; font-weight:bold;}
+    .app_info,.app_jt,.jt_title{ display:none;}
+    .app_down_box{ width:6.6rem; margin:0rem auto; border-top:0px solid #eee;}
+    .app_down_one .app_down_box{ margin-top:1.2rem;}
+    .app_down_box li{ width:100%; height:1.5rem; display:block; float:left; margin-top:0.4rem; margin-bottom:0.2rem;}
+    .border_right{ border-right:0px solid #eee;}
+    .app_down_box ul{ height:auto;}
+    .app_down_box li>i{ margin:0px auto; display:none;}
+    .down_btn{ display:block; width:100%; height:100%; font-size:0.48rem; color:#fff;text-align:center; line-height:1.5rem; border-radius:.4rem;text-decoration:none; margin:0px auto;}
+    .down_btn>i{width:1rem; height:1rem; display:block; float:left; margin-top: 0.25rem;margin-left: 0.6rem;}
+    .down_btn>span{ display:block; float:left; width:180px; text-align: center; margin-left:0.25rem; font-size:0.48rem;}
+    .down_btn>i.ios_png{width:0.77rem;height:0.9rem;background:url(../imgs/ios_w.png) center no-repeat; margin-left:20px;background-size:100% 100%;}
+    .down_btn>i.android_png{width:0.82rem;height:0.97rem;margin-left: 20px; background:url(../imgs/android_w.png) center no-repeat;background-size:100% 100%;}
+    .app_down_box ul{border-bottom:0px solid #eee;}
+    .footer{ height:1rem;font-size:0.36rem; margin-top:0.5rem;}
+    .app_down_one .footer{ margin-top:1.1rem;}
+    .footer a{margin-left:0.1rem; font-size:0.36rem;}
+    .footer span{margin-left:0.1rem;}
+    .footer a:first-child{ margin-left:35%;}
+    .app_down_one .app_down_box>ul{ width:100%;}
+    .app_down_one .app_down_box>ul .border_right{ border-right:0px;}
+    .app_down_one .app_down_box>ul>li{width:100%;}
+    .app_info,.app_sm{ font-size:0.3rem;line-height:0.5rem;}
+    .ewm_box { height:3rem;margin:0.2rem auto; width:3rem;}
+    .ewm_box img{ width:3rem; height:3rem;}
+    .introduce {display: none}
+}
+@media only screen and (max-width: 1024px){
+    html{ font-size:94.8px;}
+}
+@media only screen and (max-width: 768px){
+    html{ font-size:71.1px;}
+}
+@media only screen and (max-width:600px){
+    html{ font-size:55.6px;}
+}
+@media only screen and (max-width: 480px){
+    html{ font-size:44.4px;}
+}
+@media only screen and (max-width: 440px){
+    html{ font-size:40.7px;}
+}
+@media only screen and (max-width: 320px){
+    html{ font-size:29.6px;}
+}

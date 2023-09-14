@@ -1,0 +1,156 @@
+html,body{ height: 100%}
+body{overflow-y: scroll}
+.top-con,.top-dn,.left_con,.right_con,.fkicon,.fnavcon > ul,.flinks{ width: 1280px; margin: 0 auto;/*padding-left: 20px!important;*/}
+.fl{float: left;}
+.fr{float: right;}
+.left_con{ margin-bottom: 20px}
+.left_con .marketlist tbody tr:last-child td{ border: none}
+.fkicon{ margin-bottom: 20px}
+.top-up,.top-dn{ padding: 0}
+.top-dn{ height: 100px}
+.logo img, .logo svg{ margin-top:16px}
+.gateio-nav {margin-top: 29px}
+.ask_ans p{margin: 3px;color: #fff;background: #b83826;}
+.footer{ /*border-top:none*/}
+.right-box:first-child,.left_con,.right_con{ padding-left: 0 !important;padding-right: 0 !important;}
+body,.content,.header, .footer, #full-screen-slider, .left_con_login, .topspace {min-width: 1080px !important;}
+#nickName span{display: inline-block;max-width: 190px;line-height: 30px;float: left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.lead-to-add{ text-align: center}
+.lead-to-add .r-btn{ border: none;padding: 8px 16px; margin-bottom: 10px; cursor: pointer}
+.ask_ans i{background: #b83826; color: #eee}
+.dark-body .ask_ans i{background: #b83826}
+.dark-body .ask_ans:hover i{background: #ff5d42}
+.ask_ans span{ bottom: -30px}
+div.header{/*background: none;*/}
+.dark-body .header{background: #252e3e;}
+.marketlist .curr-base:before{ content: '('}
+.marketlist .curr-base:after{ content: ')'}
+.marketlist th:first-child .curr-base:before, .marketlist th:first-child .curr-base:after{ display: none}
+.left-d{ padding-left: 5px; font-size: 12px}
+.m-err-tip td{ text-align: center !important; border: none !important; padding-top: 30px}
+.chart-err{ background:#eee;height:40px;border-top:5px solid #fff;text-align:center;line-height:40px;}
+.qqtel{top: 90px;margin-right: 20px;}
+#sBar{ height: 42px}
+/*.USDT-box{ min-height: 6070px}*/
+.BTC-box{ min-height: 2800px}
+.ETH-box{ min-height: 5150px}
+#list_tbody .highlight{ color: #f90}
+.dataTables_wrapper .search-p{ top:-43px}
+#listTable .coin-name { margin: 0}
+.limi-row:before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23de5959' d='M11.25 7.25h-2.5V3.5c0-.414-.336-.75-.75-.75s-.75.336-.75.75V8c0 .414.336.75.75.75h3.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75zM8 0C3.582 0 0 3.582 0 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 14.5c-3.59 0-6.5-2.91-6.5-6.5S4.41 1.5 8 1.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z'/%3E%3C/svg%3E");position:absolute;left:0;top:-2px;background-color:#fff;width: 16px; height:16px; border-radius:50%; display:inline-block}
+.limi-row .icon-32{ margin-left:5px}
+.dataTables_empty b{ color: #333}
+.left_con .mload{ width: 78px; height: 72px;position: relative; right: 0; text-align: center}
+.mload .loader{ width: 38px; height: 38px}
+.mload span{margin: 8px 0 0 12px;display: inline-block;font-size: 16px; color: #666}
+#acc_tooltip{position: absolute;display: none;border: 1px solid #9fc4c7;padding: 10px;border-radius: 4px;background-color: rgba(255,255,255,0.9)}
+#acc_tooltip .caret{position: absolute;bottom: -6px;left: 45%;color: #9fc4c7;}
+#acc_tooltip span{color: #426063;}
+#acc_tooltip.dn-tip{border-color:#91d0c5;background-color: rgba(240, 255, 253, 0.9);}
+#acc_tooltip.up-tip{border-color:#fba9a9;background-color: rgba(255, 243, 243, 0.9);}
+#acc_tooltip.dn-tip .caret{color:#91d0c5;}
+#acc_tooltip.up-tip .caret{color:#fba9a9;}
+#acc_tooltip.dn-tip .caret:before{color:rgba(240, 255, 253, 0.9);}
+#acc_tooltip.up-tip .caret:before{color:rgba(255, 243, 243, 0.9);}
+
+@media screen and (max-width: 1310px) {
+    .top-con, .top-dn, .left_con, .right_con, .fkicon, .fnavcon > ul, .flinks,.l-box-con{  width: 1024px;  }
+    .left_con .marketlist td,.left_con .marketlist th,.left_con .marketlist th b,.bul ul li,.latnewslist h3{ font-size: 14px}
+    .left_con .marketlist td:nth-child(4),.left_con .marketlist th:nth-child(4){ width: 15%}
+    .left_con .marketlist td:nth-child(5),.left_con .marketlist th:nth-child(5){ width: 10%; padding-right:10px }
+    .left_con .marketlist td:nth-child(7),.left_con .marketlist th:nth-child(7){ width: 7%; }
+    .dataTables_wrapper .coin-name{ margin-left:0;}
+    #nickName span{max-width: 128px;}
+    .txt-banner{ font-size: 48px;}
+    .banner-l-font,.txt-logo .banner-thin {font-size: 56px;}
+    .txt-red .banner-m-font{ font-size: 46px}
+    .price-flot{ padding-right: 10px}
+    /*slider*/
+    #full-screen-slider,#slides,#slides li > a img{ height: 260px}
+    #slides li > img{ padding-left: 40px}
+    #sCon{top:235px;left:47px;}
+    .login_box{ height: 230px; width: 260px}
+    .dataTables_wrapper .dataTables_filter input{ width:260px;}
+    .step{ width: 240px; margin-top: 10px}
+    .step b{ font-size: 16px; margin-bottom: 10px}
+    .step .username .intxt, .step .password .intxt, .step .cap-code .intxt{ width: 193px; height: 32px; line-height: 32px; font-size: 14px}
+    .login_box #captcha{ width: 97px}
+    .step .btn{width: 240px; height: 40px}
+    .step .btn a { height: 34px; line-height: 34px; font-size: 16px}
+    #loginform #loginCaptcha{ margin-top: -5px}
+    .txt-banner{ padding-top: 55px}
+    .txt-top-60{ padding-top: 28px}
+    .txt-top {padding-top: 35px;}
+    .txt-middle {padding-top: 100px;}
+    .banner-font-42 {font-size: 38px;line-height: 38px;}
+    .banner-s-font{ font-size: 18px; line-height: 20px; margin-top: 5px}
+    .banner-m-font{ font-size: 40px; line-height: 40px}
+    .add-coin-banner .banner-btn em { margin-top: 6px;}
+    .banner-btn .r-btn {font-size: 15px;}
+    .user-info-box ul{ width: 227px}
+    .user-info-box p{ margin-bottom: 5px}
+    .user-info-box h2{ font-size: 16px; margin-bottom: 10px}
+    .your-total{ padding-bottom: 5px}
+}
+
+.icon-flag,.dark-body .icon-flag{ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAACABAMAAACYSHYpAAAAGFBMVEX4+fnzN0UWTK33maFqY3v2bHfnztSLmrOJckwhAAACK0lEQVR4XuWTQY+bMBCFJ6WYa63UuXcUlStRFM6bVSSuIARnsyzOdbVCy9+vPXawqaUe9lBV6lOkMB+2582Mgb8m9QDMgUq6eLYPX2+LBUv1RGCebwBK6Qf7hlX6xcR5C9kr7WHzLBOuVUBVvYHWvYLBgD3MH0CS0HAjydb8JrzqPQ9lV86f8RqAH/w74tEDhrdnRFyBBBPikQ61aV8MyCmtNZYZ8OaMsWp5glfECrL7LLfFLUtUftSgqIX/q5jcgonzPgTuOnidDNh7wDjJH5NaUK9gZ8G3FQwWHCIQb4kPjdPGxmLrvrio/H9R7NKINrCW0Dcnik1pYXnNAwhXqQ1MT3q/QEgDhG9owda2ntzu5tFGO4GksMN55KzTYucyp1xM+l/B0F7okIELKKe6hJ5WH+BEuQo5glI62BsXcpSKtUp1eokwoBhkWp4LUKAaATT1krVdpxOIhgO5SuS0V+fSeCODPYzdRZF54RyPfSrJq7Cl1MBGKVMqxmIYGZQJ3TODBWu1McFoLWHWQwMqsW013QLNC3pnG1TK0VSwsw1KuVOtYR1OoaV0NIZVfTSoaJR+2BTH18GDBcMQMsQteM4zhFD4k2Gn5Y7JFswXDL46JHGSPfEd9c9/hy85wzwjYMtHC7wnJHkfXxwIXeq0d1RWEuA9J2PcCRQe73qFB2j1B6B+E3xCA99oD7stOPhZrw3ZggJg6gK18EmdVzmQehNOk5+B09hoUFLwC2o4lgle6CiTAAAAAElFTkSuQmCC")}
+.icon-32-japan{ background-position: 0 -32px}
+.icon-32-hongkong{ background-position: 0 -64px}
+.icon-32-usa{ background-position: 0 -96px}
+/*首页轮播图视频功能 yangfengyun*/
+/*.videoli{
+    background-image:url(../images/video_banner.png);
+}
+@media screen and (max-width: 1310px){
+    .video_iframe{background-size:83%;background-repeat: no-repeat;margin-left: 292px!important;}
+    iframe{height:83%!important;width:83%!important;}
+    .videoli{background-position: -273px -50px!important;;}
+    .video_button{margin-top: -48px;margin-left: -67px;width: 30px!important;height: 30px!important;}
+}
+.video-bg{background-image: url(../images/video_bg.jpg);}*/
+.video_iframe{
+    width:552px;
+    height:310px;
+    margin: 0 auto;
+    cursor:pointer;
+    z-index:10099;
+    border-top: 1px solid;
+    opacity: 0.8;
+    position:  relative;
+}
+.video_iframe:after{
+    content:'\25B6';
+    width:  80px;
+    height:  80px;
+    text-align:  center;
+    text-indent: 10px;
+    line-height: 80px;
+    font-size: 56px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    color: #fff;
+    transform: translate(-50%,-50%);
+    position:  absolute;
+    left: 50%;
+    top: 50%;
+    border: 2px solid;
+    display: none;
+}
+.video_iframe:hover,.playing .video_iframe{opacity:.95;}
+.video_iframe:hover:after{display:  inline-block;}
+.playing .video_iframe:hover:after{ display:none}
+.video_iframe iframe{ width: 100%;height: 100%;border: none}
+.video_button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    opacity: 0;
+    top: 267px;
+    left: 370px;
+    position: absolute;
+    cursor:pointer;
+    /*background-color:red;*/
+    z-index:-1;
+}

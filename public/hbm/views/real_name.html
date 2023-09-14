@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>实名认证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../css/real-name.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+     html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: transparent
+}
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff
+}
+	.box-flex {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-box-flex: 1;
+	box-flex: 1;
+	display: block;
+	width: 100%
+}
+.btn-submit{background: #ff9001;font-size: 1.2rem;padding: 1rem 0;}
+.text-all label{
+	color: #666;
+	font-size: 1.25rem;
+	display: block;
+	height: 3.2rem;
+	line-height: 3.2rem;
+	margin-right: .8rem;
+	vertical-align: middle;
+}
+.city_select{display: flex;justify-content: space-around;align-items: center;width: 75%;}
+select{outline: none;border: 1px solid #ccc!important;}
+.city_select select:nth-child(2){margin-left: 15px;}
+.city_select select:nth-child(3){margin-left: 15px;}
+.city_select select{height: 2.1rem!important;margin-top: .5rem!important;line-height: 2.1rem!important;padding-left: 5px;}
+.con{
+	overflow-x: hidden;
+	max-width: 100%;
+	min-width: 320px;
+	min-height: 100vh
+}
+.text-all {
+	border-bottom: 1px solid #f6f6f9;
+	padding: .6rem 0;
+	width: 100%;
+	overflow: hidden;
+}
+.input-text {
+	position: relative
+}
+.input-text input, .input-text select{
+	border: 0;
+	height: 3.1rem;
+	line-height: 3.1rem;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+	color: #666;
+	font-size: 1.2rem;
+	padding-right: 1rem;
+	background:#fff;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:    #999;
+}
+.address-box {
+	height: 1.9rem;
+	line-height: 1.9rem
+}
+.close-common {
+	font-size: 2.1rem;
+	color: #ddd;
+	top: 50%;
+	transition: all .2s;
+	margin-top: -1.2rem;
+	z-index: 10;
+	position: absolute;
+	right: .2rem;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all .1s;
+	-moz-transition: all .1s;
+	-o-transition: all .1s;
+	transition: all .1s
+}
+
+.close-common.active {
+	visibility: visible;
+	opacity: 1
+}
+.realnameok-img-btn {
+	border: 1px solid #f0231e;
+	border-radius: 4px;
+	font-size: 1rem;
+	padding: .2rem .6rem;
+	color: #f0231e;
+	position: absolute;
+	right: 0;
+	top: 1.2rem;
+	display: inline-block
+}
+
+.realnameok-input input {
+	position: absolute;
+	right: 0;
+	top: 1.2rem;
+	opacity: 0;
+	width: 20%
+}
+.realnameok-img {
+	margin: 1rem auto 0;
+	width: 60%;
+	border: 1px solid #f6f6f9
+}
+
+.realnameok-img img {
+	width: 100%
+}
+.p-r {
+	position: relative
+}.filter-btn {
+	width: 100%;
+	box-sizing: border-box;
+	background: #fafafc;
+	box-shadow: 1px 0 5px rgba(100,100,100,.2);
+	margin-top:10px;
+}
+</style>
+<body>
+    <header style="height:44px;">
+        <i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_f">实名认证</h1>
+    </header>
+
+    <section class="mgthead" style="background:#fff;">
+        <div class="con " id="checkPage" style="display: block;">
+            <div>
+                <section class="" style="margin:0 1.1rem">
+                    <div class="text-all  bank_card" id="div_status" style="display:none;display: -webkit-box;">
+                        <label>审核状态</label>
+                        <div class="box-flex input-text">
+                            <input  type="text" readonly="readonly" name="real_status" placeholder="审核状态" value="待审核" style="color:#EA2000">
+                            <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
+                        </div>
+                    </div>
+
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>真实姓名</label>
+                        <div class="box-flex input-text">
+                            <input  type="text" name="real_name" placeholder="真实姓名" value="">
+                            <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
+                        </div>
+                    </div>
+                    <div class="text-all bank_card" style="display: -webkit-box;">
+                        <label>身份证号</label>
+                        <div class="box-flex input-text">
+                            <input type="text" name="self_num" placeholder="身份证号" value="">
+                            <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
+                        </div>
+                    </div>
+                    <!--address-start-->
+                    <div class="text-all" id="editAddressForm">
+                        <div class="address-box" id="selectAddressBtn" region-data="">
+                            <label class="fl">所在地区</label>
+                            <p class="city_select box-flex input-text">
+                                <select name="province" id="province">
+                                    <option value="-1">请选择</option>
+                                </select>
+                                <select name="city" id="city">
+                                    <option value="-1">请选择</option>
+                                </select>
+                                <select name="area" id="area">
+                                    <option value="-1">请选择</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <!--address-end-->
+                    <div class="text-all">
+                        <div class="box-flex input-text">
+                            <input class="" name="addrs" type="text" placeholder="详细地址">
+                            <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
+                        </div>
+                    </div>
+                    <div class="text-all  p-r">
+                        <label>身份证正面</label>
+                        <div class="realnameok-img-btn">上传图片</div>
+                        <div class="realnameok-input">
+                            <input type="file" name="front_of_id_card" id="front_of_id_card" class="doc1">
+                        </div>
+                        <div id="id_card_1"> <div class="realnameok-img"><img id="preview1" src="../img/idimg_one.jpg"></div></div>
+                    </div>
+                    <div class="text-all bank_user_name p-r">
+                        <label>身份证反面</label>
+                        <div class="realnameok-img-btn">上传图片</div>
+                        <div class="realnameok-input">
+                            <input type="file" name="reverse_of_id_card" id="reverse_of_id_card" class="doc1" >
+                        </div>
+                        <div id="id_card_2"> <div class="realnameok-img"><img id="preview2" src="../img/idimg_two.jpg"></div></div>
+                    </div>
+                    
+                    <div class="ect-button-more dis-box filter-btn">
+                        <input type="hidden" name="step" value="first">
+                        <input type="hidden" name="real_id" value="">
+                        <input type="button" id="submit_button" value="提交认证" class="btn-submit box-flex fontc_f">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+    </section>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+
+<script>
+    $(function () {
+        var province = $("#province");
+        var city = $("#city");
+        var area = $("#area");
+        var address_info;
+
+        var is_new = true;
+        var province = $("#province");
+        var city = $("#city");
+        var area = $("#area");
+        var address_info;
+
+        province.change(function () {
+            var sel_prov = $(this).val();
+            Sel_prov(sel_prov);
+            area.html("<option value = '-1'>请选择</option>");
+        });
+
+        city.change(function () {
+            var sel_city = $(this).val();
+            Sel_city(sel_city);
+        });
+
+        function render_select(list, element) {
+            var html = "<option value='-1'>请选择</option>";
+            for (var i = 0; i < list.length; i++) {
+                if (address_info && $.inArray(list[i].region_id, address_info) > -1) {
+                    html += "\n               <option value=" + list[i].region_id + " selected>" + list[i].region_name + "</option>\n                     ";
+                } else {
+                    html += "\n               <option value=" + list[i].region_id + ">" + list[i].region_name + "</option>\n                     ";
+                }
+            }
+            $(element).html(html);
+        }
+        function Sel_prov(id) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: _SERVER + "get_region",
+                data: { id: id },
+                success: function success(data) {
+                    if (data.type == "ok") {
+                        var list = data.data;
+                        render_select(list, city);
+                    }
+                }
+            });
+        }
+        function Sel_city(id) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: _SERVER + "get_region",
+                data: { id: id },
+                success: function success(data) {
+                    if (data.type == "ok") {
+                        var list = data.data;
+                        render_select(list, area);
+                    }
+                }
+            });
+        }
+         $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: _SERVER + "get_region",
+            data: { id: 1 },
+            success: function success(data) {
+                if (data.type == "ok") {
+                    console.log("----")
+                    var list = data.data;
+                    render_select(list, province);
+                }
+            }
+        });
+
+
+
+        $.ajax({
+            url : _SERVER + "user/realname",
+            type:"get",
+            dataType:"json",
+            data:{},
+            success:function(dataall){
+                if (dataall.message.id != undefined){
+                    is_new = false;
+                    address_info = [dataall.message.province, dataall.message.city, dataall.message.district];
+
+                    $('[name=real_name]').val(dataall.message.real_name)
+                    $('[name=self_num]').val(dataall.message.self_num)
+                    $('[name=addrs]').val(dataall.message.addrs)
+                    $("#preview1").attr("src",dataall.message.front_of_id_card)
+                    $("#preview2").attr("src",dataall.message.reverse_of_id_card)
+                    $('[name=bank_name]').val(dataall.message.bank_name)
+                    $('[name=bank_card]').val(dataall.message.bank_card)
+                    $('[name=wechat]').val(dataall.message.wechat)
+                    $('[name=alipay]').val(dataall.message.alipay)
+                    $('[name=mobile_phone]').val(dataall.message.bank_mobile)
+
+                    $('[name=real_status]').val(dataall.message.status)
+
+                    $("#div_status").show()
+
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: _SERVER + "get_region",
+                        data: { id: 1 },
+                        success: function success(data) {
+                            if (data.type == "ok") {
+                                console.log("----")
+                                var list = data.data;
+                                render_select(list, province);
+                                Sel_prov(dataall.message.province);
+                                Sel_city(dataall.message.city);
+                            }
+                        }
+                    });
+                }else{
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: _SERVER + "get_region",
+                        data: { id: 1 },
+                        success: function success(data) {
+                            if (data.type == "ok") {
+                                var list = data.data;
+                                render_select(list, province);
+                            }
+                        }
+                    });
+                }
+            }
+        })
+
+        $('#front_of_id_card').change(function() {
+            layer_loading()
+
+            var formData = new FormData();
+            var img_file = document.getElementById("front_of_id_card")
+            var fileobj = img_file.files[0]
+            formData.append("file",fileobj)
+
+            $.ajax({
+                url: '/api/upload',
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    layer_close()
+                    if (returndata.type=="ok"){
+                        $("#preview1").attr("src",returndata.message)
+                    } else{
+                        layer_msg(returndata.message)
+                    }
+                },
+                error: function (returndata) {
+                    layer_close()
+                    layer_msg(returndata)
+                }
+            });
+        });
+        $('#reverse_of_id_card').change(function() {
+            layer_loading()
+
+            var formData = new FormData();
+            var img_file = document.getElementById("reverse_of_id_card")
+            var fileobj = img_file.files[0]
+            formData.append("file",fileobj)
+
+            $.ajax({
+                url: '/api/upload',
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    layer_close()
+                    if (returndata.type=="ok"){
+                        $("#preview2").attr("src",returndata.message)
+                    } else{
+                        layer_msg(returndata.message)
+                    }
+                },
+                error: function (returndata) {
+                    layer_close()
+                    layer_msg(returndata)
+                }
+            });
+        });
+
+        function submit_tijiao(){
+            $.ajax({
+                url : _SERVER + "user/realname",
+                type:"POST",
+                dataType:"json",
+                data:{
+                    real_name:get_value_by_name("real_name"),
+                    bank_mobile:get_value_by_name('mobile_phone'),
+                    bank_name:get_value_by_name('bank_name'),
+                    bank_card:get_value_by_name('bank_card'),
+                    wechat:get_value_by_name('wechat'),
+                    alipay:get_value_by_name('alipay'),
+                    province:$("#province").val(),
+                    city:$('#city').val(),
+                    district:$('#area').val(),
+                    addrs:get_value_by_name("addrs"),
+                    self_num:get_value_by_name('self_num'),
+                    front_of_id_card:$("#id_card_1 img").attr("src"),
+                    reverse_of_id_card:$("#id_card_2 img").attr("src"),
+                },
+                success:function(data){
+                    if(data.type == "ok"){
+                        layer.open({
+                            content: '恭喜您提交成功，请等待审核。'
+                            ,btn: [ '确定']
+                            ,yes: function(){
+                                window.location.href="home.html";
+                            }
+                        });
+                    }else{
+                        layer_msg(data.message);
+                    }
+                }
+            })
+        }
+        $("#submit_button").click(function(){
+
+            if($("#id_card_1 img").attr("src") == "img/idimg_one.jpg"){
+                layer_msg("请上传身份证正面")
+                return false;
+            }
+            if($("#id_card_2 img").attr("src") == "img/idimg_two.jpg"){
+                layer_msg("请上传身份证反面")
+                return false;
+            }
+            if (is_new){
+                submit_tijiao()
+            } else{
+                layer.open({
+                    content: '确定提交吗，提交后，状态会修改为待审核状态？'
+                    , btn: ['确定', '取消']
+                    , yes: function (index) {
+                        submit_tijiao()
+                    }
+                })
+            }
+
+        })
+    });
+
+</script>
+</body>
+</html>

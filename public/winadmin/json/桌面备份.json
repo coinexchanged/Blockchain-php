@@ -1,0 +1,328 @@
+{
+  "code": 1,
+  "message": "成功",
+  "data": [
+    {
+      "title": "主题",
+      "pageURL": "theme",
+      "name": "主题",
+      "icon": "fa-television",
+      "openType": 1,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 1
+    },
+    {
+      "title": "基础设置",
+      "pageURL": "/admin/setting/index",
+      "name": "基础设置",
+      "icon": "fa-wrench",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 2
+    },
+    {
+      "title": "角色管理",
+      "pageURL": "/admin/manager/manager_roles",
+      "name": "角色管理",
+      "icon": "fa-graduation-cap",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 3
+    },
+    {
+      "title": "后台管理员",
+      "pageURL": "/admin/manager/manager_index",
+      "name": "后台管理员",
+      "icon": "fa-user-circle-o",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 4
+    },
+    {
+      "title": "用户管理",
+      "pageURL": "/admin/user/user_index",
+      "name": "用户管理",
+      "icon": "fa-users",
+      "openType": 2,
+      "maxOpen": 1,
+      "extend": false,
+      "childs": null,
+      "id": 5
+    },
+    {
+      "title": "实名认证管理",
+      "pageURL": "/admin/user/real_index",
+      "name": "实名认证",
+      "icon": " fa-check-square",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 6
+    },
+
+    {
+      "title": "新闻管理",
+      "pageURL": "/admin/news_index",
+      "name": "新闻管理",
+      "icon": "fa-newspaper-o",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 8
+    },
+    {
+      "title": "日志信息",
+      "pageURL": "/admin/account/account_index",
+      "name": "日志信息",
+      "icon": "fa-list",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 9
+    },
+
+    {
+      "title": "商家",
+      "pageURL": "/admin/seller",
+      "name": "商家管理",
+      "icon": "fa-university",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 11
+    },
+
+    {
+      "title": "币种管理",
+      "pageURL": "/admin/currency",
+      "name": "币种管理",
+      "icon": "fa-btc",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 16
+    },
+    {
+      "title": "提币列表",
+      "pageURL": "/admin/cashb",
+      "name": "提币列表",
+      "icon": "fa-credit-card",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 17
+    },
+    {
+      "title": "法币交易需求",
+      "pageURL": "/admin/legal",
+      "name": "法币交易需求",
+      "icon": "fa-gg-circle ",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 18
+    },
+    {
+      "title": "法币交易信息",
+      "pageURL": "/admin/legal_deal",
+      "name": "法币交易信息",
+      "icon": "fa-dollar ",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 19
+    },
+    {
+      "title": "投诉建议",
+      "pageURL": "/admin/feedback/index",
+      "name": "投诉建议",
+      "icon": "fa-volume-control-phone",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 20
+    },
+    {
+      "title": "用户风险率汇总",
+      "pageURL": "/admin/hazard/total",
+      "name": "用户风险率",
+      "icon": "fa-dollar",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 28
+    },
+    {
+      "title": "杠杆交易",
+      "pageURL": "/admin/Leverdeals/Leverdeals_show",
+      "name": "杠杆交易",
+      "icon": "fa-list",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 32
+    },
+    {
+      "title": "会员关系图",
+      "pageURL": "/admin/invite/childs",
+      "name": "会员关系图",
+      "icon": "fa-user-plus",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 35
+    },
+    {
+      "title": "秒合约交易",
+      "pageURL": "/admin/micro_order",
+      "name": "秒合约交易",
+      "icon": "fa-user-plus",
+      "openType": 2,
+      "maxOpen": 1,
+      "extend": false,
+      "childs": null,
+      "id": 36
+    },
+    {
+      "title": "币币交易",
+      "pageURL": "/admin/exchange/index",
+      "name": "币币交易",
+      "icon": "fa-user-plus",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 37
+    },
+    {
+      "title": "钱包管理",
+      "pageURL": "/admin/wallet/index",
+      "name": "钱包管理",
+      "icon": "fa-gg-circle ",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 38
+    },
+    {
+      "title": "新法币商家管理",
+      "pageURL": "/admin/legal/store",
+      "name": "新法币商家管理",
+      "icon": "fa-gg-circle ",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 42
+    },
+    {
+      "title": "新法币订单管理",
+      "pageURL": "/admin/legal/order",
+      "name": "新法币订单管理",
+      "icon": "fa-list ",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 43
+    },
+    {
+      "title": "充币记录",
+      "pageURL": "/admin/user/charge_req",
+      "name": "充币记录",
+      "icon": "fa-list",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 44
+    },
+    {
+      "title": "行情走势",
+      "pageURL": "/admin/user/quotation",
+      "name": "行情走势",
+      "icon": "fa-line-chart",
+      "openType": 2,
+      "maxOpen": 1,
+      "extend": false,
+      "childs": null,
+      "id": 45
+    },
+    {
+      "title": "已添加行情",
+      "pageURL": "/admin/myquotation/all",
+      "name": "已添加行情",
+      "icon": "fa-list",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 46
+    },
+    {
+      "title": "机器人列表",
+      "pageURL": "/admin/robot/list",
+      "name": "Robot",
+      "icon": "fa-hand-scissors-o",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 47
+    },
+    {
+      "title": "发卡管理",
+      "pageURL": "/admin/faka/index",
+      "name": "发卡管理",
+      "icon": "fa-credit-card",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 48
+    },
+    {
+      "title": "期权管理",
+      "pageURL": "/admin/ltc/index",
+      "name": "期权管理",
+      "icon": "fa-credit-card",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 49
+    },
+    {
+      "title": "分析师管理",
+      "pageURL": "/admin/analysis/index",
+      "name": "分析师管理",
+      "icon": "fa-pie-chart",
+      "openType": 2,
+      "maxOpen": -1,
+      "extend": false,
+      "childs": null,
+      "id": 50
+    }
+  ]
+}

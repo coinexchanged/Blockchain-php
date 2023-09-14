@@ -1,0 +1,265 @@
+.space-single .button:hover {
+    /*border: none !important;*/
+    /*color: #ffc90c !important;*/
+    /*border-color: #ffc90c;*/
+}
+
+.button.mydate:hover {
+
+}
+
+.button:hover:before {
+
+}
+
+.chart-page .chart-container {
+    border: none;
+    background: transparent;
+    /*border-right: 1px solid rgb(199, 204, 230);*/
+}
+
+.chart-page .chart-container:after {
+    content: "";
+    width: 0px;
+    background: rgb(199, 204, 230);
+    height: 100%;
+    height: calc(100% - 16px);
+    float: right;
+}
+
+.header-group-bars-style {
+    display: none !important;
+}
+
+.header-group-symbol-search {
+    display: none !important;
+}
+
+.header-group-properties {
+    float: right;
+}
+
+.header-group-indicators {
+    float: right;
+}
+
+.header-group-fullscreen {
+    float: right;
+}
+
+.header-chart-panel .group.header-group-properties {
+    display: block;
+}
+
+.pane-legend .pane-legend-icon, .pane-legend .pane-legend-minbtn {
+    display: none;
+}
+
+.pane-legend-minbtn, .pane-controls, .control-bar-wrapper {
+    display: none;
+}
+
+.pane-legend-item-value-wrap .pane-legend-item-value:first-child {
+    display: none;
+}
+
+.bottom-widgetbar-content.backtesting .button,
+.header-chart-panel .button {
+    padding: 7px 12px;
+    border: none;
+    color: #c7cce6;
+    background: none;
+    font-weight: normal;
+}
+
+.mydate {
+
+}
+
+.js-rootresizer__contents {
+    background: #1e2b34
+}
+
+.button.indicators svg {
+    fill: #4e5b85;
+}
+
+.button.fullscreen svg {
+    fill: #4e5b85;
+}
+
+.button.properties svg {
+    fill: #4e5b85;
+}
+
+._tv-dialog {
+    background-color: #181d25;
+    border: 1px solid #363c4e;
+}
+
+/* .tv-tabs:before {
+	background-color: #363c4e!important;
+} */
+
+.properties-tabs a.properties-tabs-label {
+    color: #f7f8fa;
+}
+
+.property-page,
+._tv-dialog-content label {
+    color: #c5cbce;
+}
+
+.sbSelector {
+    background-color: #131722;
+    border-color: #363c4e;
+    color: #c5cbce;
+}
+
+.tv-select-container {
+    border-color: #363c4e;
+}
+
+.tv-select-container .sbOptions,
+.tv-unstyled-select-container .sbOptions {
+    background-color: #1c2030;
+    border-color: #1c2030;
+    color: #c5cbce;
+}
+
+.tv-select-container .sbOptions a.active,
+.tv-unstyled-select-container .sbOptions a.active {
+    background-color: #262b3e;
+    color: #c5cbce;
+}
+
+.tv-select-container .sbOptions a:hover,
+.tv-unstyled-select-container .sbOptions a:hover {
+    background-color: #262b3e;
+    color: #fff;
+}
+
+._tv-button,
+button._tv-button {
+    background-color: #2f3241;
+    border-color: #363c4e;
+    color: #c5cbce;
+}
+
+.bottom-widgetbar-content.backtesting .button.active,
+.ch-controls .button.active,
+.feature-no-touch .bottom-widgetbar-content.backtesting .button:active,
+.feature-no-touch .ch-controls .button:active,
+.feature-no-touch .header-chart-panel .button.active:hover,
+.feature-no-touch .header-chart-panel .button:active,
+.feature-no-touch .hotlist-controls .button:active,
+.feature-no-touch .save-load-buttons .active:hover,
+.feature-no-touch .save-load-buttons a:not(.link):active,
+.feature-no-touch .symbol-edit-widget .button:active,
+.feature-touch .bottom-widgetbar-content.backtesting .button:active,
+.feature-touch .ch-controls .button:active,
+.feature-touch .header-chart-panel .button:active,
+.feature-touch .hotlist-controls .button:active,
+.feature-touch .save-load-buttons a:not(.link):active,
+.feature-touch .symbol-edit-widget .button:active,
+.header-chart-panel .button.active,
+.header-chart-panel .button.i-active,
+.hotlist-controls .button.active,
+.save-load-buttons .active,
+.symbol-edit-widget .button.active {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.tv-dialog {
+    background-color: #1c2030;
+    color: #c5cbce;
+}
+
+.tv-insert-indicator-dialog__search-control input {
+    background-color: #1c2030;
+}
+
+.tv-search-row {
+    border-bottom-color: #363c4e;
+}
+
+.tv-dialog__close svg {
+    fill: #c5cbce;
+}
+
+.tv-dialog__section {
+    border-bottom-color: #363c4e;
+}
+
+.tv-insert-study-item:hover {
+    background-color: #262b3e;
+    color: #c5cbce;
+}
+
+.tv-dialog__title {
+    color: #c5cbce;
+}
+
+#loading-indicator,
+body.chart-page {
+    background: #1e2b34;
+}
+
+.header-chart-panel-content .button {
+    padding: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+
+}
+
+.header-chart-panel-content .button.mydate {
+    color: #2196f3;
+    border-bottom: 1px solid #2196f3;
+}
+
+.header-chart-panel-content .left {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-chart-panel-content .left > div {
+    flex: 1;
+}
+.header-chart-panel .space-single{
+    padding:0;
+}
+
+
+:root:not(.theme-dark) {
+    --tv-color-platform-background: #d1c4e9;
+    --tv-color-pane-background: rgb(251, 223, 244);
+    --tv-color-pane-background-secondary: rgb(249, 185, 233);
+    --tv-color-toolbar-button-background-hover: rgb(244, 143, 177);
+    --tv-color-toolbar-button-background-secondary-hover: red;
+    --tv-color-toolbar-button-background-expanded: rgb(244, 143, 177);
+    --tv-color-toolbar-button-text: rgb(136, 24, 79);
+    --tv-color-toolbar-button-text-hover: rgb(74, 20, 140);
+    --tv-color-toolbar-button-text-active: red;
+    --tv-color-toolbar-button-text-active-hover: red;
+    --tv-color-item-active-text: rgb(6, 6, 255);
+    --tv-color-toolbar-toggle-button-background-active: red;
+    --tv-color-toolbar-toggle-button-background-active-hover: magenta;
+}
+
+.theme-dark:root {
+    --tv-color-platform-background: #d1c4e9;
+    --tv-color-pane-background: rgb(251, 223, 244);
+    --tv-color-pane-background-secondary: rgb(249, 185, 233);
+    --tv-color-toolbar-button-background-hover: rgb(244, 143, 177);
+    --tv-color-toolbar-button-background-secondary-hover: red;
+    --tv-color-toolbar-button-background-expanded: rgb(244, 143, 177);
+    --tv-color-toolbar-button-text: rgb(136, 24, 79);
+    --tv-color-toolbar-button-text-hover: rgb(74, 20, 140);
+    --tv-color-toolbar-button-text-active: red;
+    --tv-color-toolbar-button-text-active-hover: red;
+    --tv-color-item-active-text: rgb(6, 255, 6);
+    --tv-color-toolbar-toggle-button-background-active: red;
+    --tv-color-toolbar-toggle-button-background-active-hover: magenta;
+}

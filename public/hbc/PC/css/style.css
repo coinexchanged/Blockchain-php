@@ -1,0 +1,1380 @@
+*{margin:0;padding:0}
+body{font:14px/18px Microsoft YaHei,Arial,Tahoma,sans-serif;color:#333; overflow-y: auto;background: #f5f5f5;}
+.kr-body{ font-size: 13px}
+::-moz-selection{background:#008cb6;color:#fff}
+::selection{background:#4cb8d8;color:#fff}
+::-ms-clear,::-ms-reveal{display: none;}
+/*优化滚动条*/
+::-webkit-scrollbar {width:6px;height:6px;background: #f0f6ff;}
+::-webkit-scrollbar-track {background: #f0f6ff;}
+::-webkit-scrollbar-thumb {background:#73abb1;right:10px;border-radius:6px}
+::-webkit-scrollbar-thumb:hover {background:#6acad4}
+
+a{color:#666;text-decoration:none}
+a:hover{color:#d45858}
+p{margin:0 0 25px}
+img{border:0;padding:0;display: block;}
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {display: block}
+input{vertical-align:middle;font-family: Microsoft YaHei,sans-serif; font-size: 14px}
+.pddlr-30{padding: 0 30px;border-radius: 4px;background: #fff;overflow: hidden;}
+/*input:focus,.txt-memo:focus{ border-color: #29a555 !important}*//*yangfengyun*/
+table{ border-spacing:0}
+th{border-bottom:1px solid #e4ebf0; outline: none}
+ul,li{list-style:none}
+button{outline:none;font-family: Microsoft YaHei,sans-serif;font-size: 14px}
+.transparent{opacity: 0}
+.icon-arrow-up,.icon-arrow-down{font-family:Arial;}
+.header{width:100%; position: relative}
+.pull-left{ float: left !important}
+.pull-right{ float: right !important}
+.algin-top{ vertical-align: top; padding-top: 15px}
+.btn-block{ display: block; width: 100%; clear: both}
+.left_con .marketlist .icon-48 img{ margin:0 !important}
+.icon-16{width: 16px; height: 16px; display: inline-block;float: left;background-size: 16px;border-radius: 50%;}
+.icon-32{ width:32px; height:32px; display: inline-block;float: left;background-repeat: no-repeat;background-size: 32px;border-radius: 50%}
+.icon-48{ width:48px; height:48px; margin-top:5px;float:left;border-radius: 50%}
+.icon-16-default{width: 16px; height: 16px; display: inline-block;float: left;border-radius: 50%; background:#e4ebf0;margin-right: 5px;text-align:center}
+.icon-16-default:after{content:'?'}
+.coin-name{ float:left;margin: 20px 0;position: relative}
+.icon-48 img{ width:100%}
+.dark-body .icon-16-zrx,.dark-body .icon-32-zrx,.dark-body .icon-48-zrx{-webkit-filter: invert(100%);filter: invert(100%);}
+.top-up{width:100%;height:60px;background: #333;padding: 0 20px 0 30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.top-up a{ color: #ddd}
+.top-up a:hover,.uc-active #nickName,.uc-active #nickName i{ color: #e6adad;}
+.top-dn{width:100%;height: 80px; clear:both;padding: 0 20px 0 30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.slogan{ color: #b6bbc1;line-height: 32px;  margin-left: 20px}
+.moblie-hide{ float: left}
+.topprice{float:left;max-width:78%}
+.topprice li{float:left;padding-right:20px;height:60px;line-height:60px;color:#ddd;font-size: 18px;}
+.topnum{color:#f60;margin-right: 5px;font-weight: bold}
+.login_lan{float:right}
+.login_lan li{float:left;padding-right: 12px}
+.login_lan .toplogin{/*padding:0 5px;*/color: #8b8d92;position:relative;font-size: 18px;margin-top: 21px;}
+#toplogin{ padding-left: 0}
+.login_lan .lang-option{color: #ddd;position:relative;cursor: default;font-size: 18px;height: 60px;line-height: 60px;}
+.login_lan .more-lan{position: absolute;top: 60px;right: 0;z-index: 99980;}
+.login_lan .more-lan a{background: #333a44;color:#eee;padding: 12px 30px;right: 0;text-align:center;display:none;min-width: 45px;line-height: 12px;}
+.login_lan .more-lan a:hover{color: #ff9191;background: #444c58;}
+.lang-option span{ margin-right:3px}
+.login_lan .lang-option:hover .more-lan a{display:block}
+ul.more-lan li{ width: 100%; padding-right: 0}
+.login_lan .top-links{line-height: 36px;}
+.top-links span{float: left;/*padding-bottom: 13px;*/font-size: 18px;height: 60px;line-height: 60px;}
+.top-links a{ position: relative}
+.lang-option:hover span{ color:#d45858}
+.toplogin a{/*margin-right: 5px*/}
+.add-dn-qr {position:absolute;top: 60px;left:-120px;z-index:9999;padding: 8px 15px 10px;background: #333a44;color:#d45858;display:none;}
+.add-dn-qr img{ width: 160px; height: 160px}
+.top-links a:hover .add-dn-qr{ display: block}
+.add-dn-qr h3{font-size: 14px;text-align: center;color: #fff;margin-bottom: 5px;font-weight: normal;}
+.logo img,.logo svg{width:180px;margin:12px 15px 0 0;float:left}
+.logo span{ margin-top: 16px;color: #93a4ac; float: left;font-weight: 100}
+.qqtel{float: right;}
+.qqtel img{ width:100%}
+#tierMenu ul,.login_lan .more-lan,.add-dn-qr{border-top: 1px solid #b83826;}
+.tier-info,.login_lan .more-lan,.add-dn-qr{box-shadow: 0 5px 8px rgba(0,0,0,0.2);}
+.ask_ans{color: #fff;float: left;/*border: 1px solid #f7d8d8;*/border-radius: 3px;background: #b83826;}
+.dark-body .ask_ans{background: #282e36;border-color: #2d3946;}
+.ask_ans:hover{ color: #fff;border-color:#f7d8d8}
+.ask_ans p{margin: 3px;font-size: 14px;position: relative;line-height: 26px;padding: 2px 6px;cursor:  default;border-radius: 4px;}
+.ask_ans i{display: block;width: 24px;height: 24px;line-height: 24px;text-align: center;font-style: normal;background: #d45858;color: #fff;border-radius: 24px;margin:-2px 2px 0 -2px;}
+#callService ul{border-top: 1px solid;margin-top: 7px;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;color: #715050;border-color: #d45858;display: none;}
+.dark-body #callService ul,.dark-body #callService li a{color:#787f84}
+#callService:hover ul{ display: block}
+#callService ul li{padding: 12px;text-align:  center;cursor: pointer;color: #fff;}
+#callService ul li:hover{color: #fff;background: #d45858;}
+#callService li:hover a{color:#fff}
+.en-body  #callService ul li{ font-size: 12px;padding: 12px 0}
+.en-body .ask_ans span{bottom: -33px;}
+.l-box-con{width: 1280px;margin: 0 auto;position: relative}
+#logout_noty.gateioNotyTheme{background: linear-gradient(to bottom, rgba(0,0,0,0.95),rgb(0, 19, 23) 50%,rgba(1, 18, 21, 0.7) 100%);border-bottom: 1px solid #738c86;box-shadow: 0 10px 50px rgba(0, 28, 39, 0.6);}
+#logout_err_noty.gateioNotyTheme{background: linear-gradient(to bottom, rgba(0,0,0,0.95),rgb(23, 0, 0) 50%,rgba(53, 0, 0, 0.7) 100%);border-bottom: 1px solid #bd6e5c;box-shadow: 0 10px 50px rgba(47, 0, 0, 0.6);}
+#logout_err_noty{ text-align: center}
+#logout_err_noty #button-0{float:none;margin: 0 auto;}
+#logout_err_noty #button-0[disabled]{color: #aaa !important;background: #555 !important;}
+.login_box{width:300px;height:280px;background: rgba(255, 255, 255, 0.7);filter:alpha(opacity=90);position:absolute;top:15px;right:0;z-index:9998;transition: all 0.5s;}
+.login_box:hover,.login-box-solid{background: rgba(255, 255, 255, 0.9);}
+.logout-box{min-height: 240px;height: 100%;}
+#noty_center_layout_container li .logout-box .load8{position: static;margin: 0;width: 76px;height: 96px;text-align:  center;}
+#noty_center_layout_container li .logout-box .load8 .loader,.logout-box .load8 .loader:after{ width: 48px;height: 48px}
+.logout-box .load8 span, .logout-box p{margin-top: 15px;display:  block;font-weight: 100;font-size: 20px;color: #49e0d1;}
+.logout-box p{color: #ff5757;}
+.login_box .help-block{display:block;height: 16px;margin: 3px 0 5px;}
+.login_box .step .btn{height: 36px;line-height: 36px;padding: 0;margin-bottom: 10px;}
+.step{width:260px;margin: 22px auto auto;}
+.step .username .intxt,.step .password .intxt,.step .cap-code .intxt {height:36px;color:#333;font-size:16px;line-height:36px;padding:0 35px 0 10px;border:1px solid transparent;background:rgba(253,255,255,0.5);width:211px;font-family:Microsoft YaHei,Tahoma,Arial,sans-serif;}
+.login-box-solid .step .username .intxt,.login-box-solid .step .password .intxt,.login-box-solid .step .cap-code .intxt{background:rgba(253,255,255,0.6);border-color: #cad1da}
+.step .username .intxt:focus,.step .password .intxt:focus,.step .cap-code .intxt:focus{border-color:#0C9;background:#fff;outline:none}
+.step b{font-size:18px;font-weight: normal;margin-bottom:15px;display:block}
+::-webkit-input-placeholder{color:#333}
+:-moz-placeholder{color:#333}
+::-moz-placeholder{color:#333}
+:-ms-input-placeholder{color:#333}
+input:focus{outline:none}
+.step .btn{height:50px;width:260px;padding-top:5px;clear:both}
+.step .btn a{height:40px;width:100%;display:block;text-align:center;line-height:38px;font-size:18px;color:#fff;border: none}
+.step .wj{padding:2px 0 0 2px}
+.step .wj a{color:#000}
+.step .wj a:hover{color:#d45858}
+.im-new{ float: right}
+.user-info-box{ padding: 20px}
+.user-info-box h2{ font-size: 18px; font-weight: normal; margin-bottom: 16px; line-height: 22px}
+.user-info-box p{ margin-bottom: 10px}
+.user-info-box p span,.user-info-box em{ font-style: normal; color: #d45858}
+.user-info-box em{ margin-top: 2px; display: block; float: left}
+.user-info-box i{ font-style: normal; font-size: 12px; color: #888; display: block;float: left;  margin: 1px 5px}
+.user-info-box ul{ position: absolute;  bottom:20px; left: 20px; width: 267px}
+.user-info-box li{ width: 33.33%;  float: left}
+.user-info-box .r-btn {padding:6px 0;width:92%;display:block;text-align:center}
+.your-total {border-bottom:1px solid #ddd;padding-bottom:10px}
+#showHideBtn {display:block;width:24px;height:24px;float:right;cursor:pointer;background-size:cover}
+.view-show {background-image:url(../images/view_show.svg);}
+.view-hide {background-image:url(../images/view_hide.svg);}
+.hide-num {display:none}
+.left_con {width:100%; min-height:534px;padding:0 20px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.left_con h1 {height:42px;line-height:42px;font-size:24px;font-weight:normal}
+.right_con{  width:100%;-webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  padding-right:20px;padding-bottom: 30px;padding-top: 80px; margin-top: 20px  }
+.right-box{ width: 33.33%; float: left;-webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box; padding-left:40px}
+.right-box:first-child{ padding-left: 20px}
+.tline_btn{width:16.66%;height:52px;font-size:20px;border-left:1px solid #aaa;border-right:1px solid #fff;border-bottom:1px solid #aaa;border-top:0;cursor:pointer;float:left}
+.tline_btns .btn_selected,.tline_btns .btn_selected:hover{background:#Fff;color:#d45858;border: 1px solid #ced6de;  border-bottom: 0}
+.left_con .marketlist{width:100%;overflow:hidden}
+.left_con .marketlist td{ font-size: 16px; text-align: right; position: relative}
+.left_con .marketlist .legendLabel{ text-transform: uppercase; font-weight: 100; font-size: 14px;position: relative;  z-index: 1; padding-left: 6px; padding-right:0;text-indent: 6px}
+.left_con .marketlist .legendLabel:before{ content: ''; display: block; width: 100%;height: 1px;  position: absolute;  top: 9px;z-index: -1; background:#fff}
+.left_con .marketlist .even .legendLabel:before{ background: #f5f5f5}
+.left_con .marketlist .odd:hover .legendLabel:before,.left_con .marketlist .even:hover .legendLabel:before{ background: #f0f0f0}
+.left_con .marketlist .legendColorBox{ display: none}
+.normal-trade-area{ clear: both}
+.coin-to-cny td:first-child:after{ content: "/CNY";position: absolute;top: 35px;margin-left: 5px;font-size: 13px}
+.coin-to-btc td:first-child:after{ content: "/BTC";position: absolute;top: 35px;margin-left: 5px;font-size: 13px}
+.coin-to-eth td:first-child:after{ content: "/ETH";position: absolute;top: 35px;margin-left: 5px;font-size: 13px}
+.legend table{ margin-top: -10px}
+.highlight{ color: #f90}
+.r-empty .highlight{ color: #000}
+.left_con .marketlist th{ border-bottom:1px solid #e4ebf0; font-size: 16px; font-weight: normal; text-align: right; cursor: pointer}
+.left_con .marketlist th:first-child,.left_con .marketlist th:nth-child(2),.left_con .marketlist td:nth-child(2){ text-align: left}
+.left_con .marketlist th b{ font-weight: normal; user-select: none}
+.name-con em{ font-style: normal}
+.usdt_type .name-con em{ color:#11aa77}
+.qtum_type .name-con em{ color:#2e9ad0}
+.limited_type .name-con em{ color:#d03970}
+.btc_type .name-con em{ color:#ea820e}
+.eth_type .name-con em{ color:#4d7195}
+.dataTables_wrapper .coin-name { margin: 20px 0}
+.has-select{ position: relative}
+.has-select:after{content:'';width:8px;height:8px;display:block;position:absolute;right:10px;top:6px;border-radius:8px;background:#d45858}
+.fail-tip{padding: 30px 0; display: block; clear: both; color: #d45858;text-align: center; font-size: 16px}
+.err-tip{color: #d45858}
+.err-item input{ border-color:#d45858 !important}
+.nodata-tip{ display: none; font-size: 16px; font-weight: bold;  text-align: center;  margin: 25px 0}
+.coin-num{ padding:0 10px 0 20px}
+.price-chart{width:220px;height:50px; position: relative}
+.even{background:#f8f8f8}
+.sorting_id{padding-left:60px}
+thead,thead tr{height:40px}
+.alignRight{text-align:right}
+.sortable,.sorting_asc,.sorting_desc{cursor:pointer}
+.sortable:hover,.sorting_asc:hover,.sorting_desc:hover{color:#d45858}
+.bizhong_en{display:inline-block;color:#2b343c;font-weight:bold;padding:0 4px}
+.bizhong_en:hover{color:#d45858}
+.rate_up,.red,font[color="red"],.main_title h1 .red {color:#d45858}
+.rate_down,.green,font[color="green"],.main_title h1 .green{color:#29a555}
+.left_con .rate_up:after,.left_con .rate_down:after{margin-left: 3px}
+.left_con .rate_up:after{ content: "\2191"}
+.left_con .rate_down:after{ content: "\2193"}
+.even:hover,.odd:hover,div #marketlistTabCon tbody tr:hover{background:#e1e1e1;cursor:pointer}
+.list-box .even:hover,.list-box .odd:hover{cursor:default}
+.left_con .even:hover,.left_con .odd:hover{ background: #f8f8f8 !important}
+.no-wrap a{font-weight:bold;color:#333}
+#marketlist_controller{background:#eee}
+.right_title{ padding-bottom: 15px;border-bottom: 1px solid #ced6de; text-align: center}
+.right_title em{font-style: normal;display: block;width: 120px;margin: 0 auto;padding-top: 15px}
+.right_content{ min-height:100px;background:#fff}
+.right_con .adv{height:350px; margin-bottom: 20px}
+.right_title a{font-size:20px;padding-top:20px;color:#000}
+.right_title a:hover{color:#d45858}
+.right_title a:hover path{fill:#d45858}
+.right_title .moreright{float:right;font-size:16px;color:#999;font-weight:normal}
+.right_title .moreright:hover{color:#d45858}
+.right_title b{ font-weight:normal;margin-left:8px;color:#ccc;text-transform:uppercase}
+.newstail .ln-right{ float: right; margin-right: 0; color: #999}
+.adv ul li{height:350px;border-right:1px solid #f3f3f3;float:left;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box}
+.lene{width:50%}
+.rine{width:50%;border:0!important}
+.rine .twc{padding:0}
+.rine .twc h5{font-size:16px;line-height:25px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rine .twc .newsinfo img{margin:0 10px 5px 0}
+.rine .newsinfo{padding:12px}
+.twc .newsinla{border-bottom:0}
+.right_content dl dt{width:90%;margin:20px auto;min-height:150px;max-height:190px;overflow:hidden}
+.chwords{width:90%;height:26px;line-height:24px;margin:0 auto 5px auto;padding-bottom:5px;border-bottom:1px dotted #ddd;font-size:18px;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.right_content dl dt img{width:99%}
+.right_content dl dd{width:90%;height:90px;overflow:hidden;margin:0 auto;font-size:12px;color:#888}
+.bul,.mainlatest{margin-bottom:20px}
+.mainlatest{padding: 20px 0 0;max-height: 440px;overflow: hidden}
+.bul ul{min-height:73px;max-height: 260px;overflow:hidden;margin:30px 0}
+.bul ul li{border-bottom:1px dashed #ddd;height:36px;line-height:28px;width:100%;margin-bottom:8px;font-size: 15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bul ul li:last-child{ border:none}
+.bul a{ color: #111}
+.bul a:hover{ color: #d45858}
+.aboutus{height:433px}
+.aboutus p{width:92%;margin:27px auto 5px auto;line-height:22px;color:#888}
+.aboutus ul{width:92%;margin:0 auto}
+.aboutus ul li{text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aboutus ul li:hover{background:#f3f3f3}
+.aboutus ul li a{width:100%;height:100%;display:block}
+.aboutus ul li img{margin:5px 0}
+.abtw,.ml{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.code{text-align:center;border-bottom:1px solid #eee;width:92%;margin:0 auto;background:#f9f9f9}
+.footer{clear:both;/*margin-bottom:-19px;*//*border-top: 1px solid #ddd;*/background:#fff;z-index:2;position:relative;margin-top: 60px;}
+.fkicon{width:75%;margin:0 auto}
+.fkicon ul li{width:20%;/*height:68px;*/margin-top:60px;float:left;display: inline-block;text-align: center;}
+.fkicon ul li a{display: inline-block;text-align: center;}
+.fkicon .fico{float:left;/* width:62px; height:62px; border-radius:50%;margin-left: 15%;border: 1px solid #d45858; background: url(../img/index/Bhelp.png) no-repeat 0 6px;*/}
+.fkicon .fc2{ background-position:0 -52px}
+.fkicon .fc3{ background-position:0 -116px}
+.fkicon .fc4{ background-position:0 -175px}
+.fkicon .fc5{ background-position:0 -233px}
+.fkicon .fc6{ background-position:0 4px}
+.fkicon .fc7{ background-position:0 -299px}
+.fkicon .fkcont{padding:12px 0 12px 15px;float:left}
+.fkicon .fc-twi{background-size: 72px; background-position: -5px -66px}
+.fkcont{width:60%}
+.fnav{border-top: 1px solid #ddd;clear: both; background: #333333;}
+.ftel{font-size:1.6em;color:#000}
+.ftel:hover{color:#d45858}
+.ftelnum{font-size:1.03em;margin-top:10px;color:#29a555;float:left}
+.fkcont .fmor{margin:10px 0 0 20px;float:left}
+.fnavcon{width:100%;padding:50px 0}
+.fnavcon > ul{ width:91%;margin:0 auto; color: #aaa}
+.fnavcon a{ color: #fefefe;font-size: 18px;}
+.fnavcon a:hover{ color: #d45858}
+.fnav_list{width:23%;float:left}
+.fxtishi{width:30%; float: right}
+.fxts{width:80%;margin:48px auto;line-height: 24px}
+.fxts p{ margin: 0}
+.fxtishi img,.fxtishi svg { float: right; opacity: 0.8}
+.fxts i{display: inline-block;width: 18px; height: 18px; line-height:17px;text-align: center;  border-radius: 50%;  margin-right: 5px;font-style: normal;color: #fff; background: #d45858}
+.fnavcon ul li ul li{margin:10px 0 0 0}
+.fnav_title{width:48%;height:30px;font-size:1.25em; position:relative; color: #eee}
+.tail{margin:0 auto;text-align:center;color:#aaa; border-top: 1px solid #424c50; padding:32px 0; clear: both}
+.en-body .tail{ padding-bottom: 25px}
+.tail > span{line-height:26px;display:block;max-width: 1240px;margin: 0 auto;color: #fefefe;}
+#runTime{ height:26px}
+.vol-all > span{ margin: 0 3px;color: #fefefe;}
+.tail span a{color:#aabdbc}
+.tail span a:hover{color:#d45858}
+.tail > span#runTime{line-height:14px}
+.admin-view{ display: none;color: #79868c}
+#runTime:hover .admin-view{ display: inline}
+.backToTop{display: none; width: 38px; padding: 12px 0 5px; background-color: #000; color: #fff; font-size: 26px; text-align: center; position: fixed; z-index: 888; right: 10px; bottom: 65px; cursor: pointer; opacity: .4; filter: Alpha(opacity=40)}
+.backToTop:hover{ opacity:0.9}
+.sorting_disabled{ cursor: default !important}
+.sorting_disabled:hover{color: #333}
+.left_con_login{background:#FFF;border-top: 1px solid #ddd;padding: 30px 30px 0 30px;min-height: calc(100vh - 482px);}
+.leftregi form,.rightlogin form{text-align:center;margin:30px auto 55px;width:51%}
+.leftregi form input,.rightlogin form input{margin:5px 0 0 0;width:100%;border: 1px solid #d8d8d8;text-indent:5px;box-sizing: border-box}
+.leftregi form input.sub-btn,.rightlogin form input.sub-btn{ border: none}
+.leftregi form dt,.rightlogin form dt{text-align:left}
+#feelist .coin-name{ padding-left: 15px;font-weight: bold}
+#feelist .coin-name a{ line-height: 26px}
+.sectioncont,.sectioncont table{width:100%}
+#withdrawtable td{ border:none}
+#withdrawtable td input,#withdrawtable select{ font-family:'microsoft yahei'}
+.sectioncont form{ margin: 40px 0}
+.sectioncont input,.sectioncont textarea,.sectioncont select,.txt-memo{  margin:5px 5px 5px 0;  width: 50%;  border: 1px solid #ccc;  border-radius: 3px;  padding: 10px;  font-size: 14px;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box; outline: none}
+.sectioncont select{ height: 38px; padding: 0 10px}
+.sectioncont select:focus{ border-color: #29a555}
+.sectioncont input[type="checkbox"],input[type="radio"]{ box-shadow:none}
+input[type="checkbox"]{ padding: 0 !important; border: none !important}
+#smsbtn,#voicebtn,.c-btn{height: 38px;border:none;background: #fff; margin-left:5px;font-family: Microsoft YaHei;padding:5px 12px 8px;font-size: 14px; cursor:pointer;color: #b83826;border: 1px solid #b83826;border-radius: 4px;}
+#smsbtn:hover,#voicebtn:hover,.c-btn:hover{ background:#fff}
+#smsbtn[disabled],#voicebtn[disabled],.c-btn[disabled],.sub-btn[disabled]{background: #9a9a9a; color: #eee; cursor: not-allowed}
+.myacc-con .logs-con tr td:first-child{ width: 5%; text-align: left}
+.myacc-con .logs-con tr td:nth-child(2){ text-align: left}
+.myacc-con .logs-con.sectioncont p{ margin: 2px 0; padding: 0; color: #888;font-size: 12px}
+#EgoPaySeal_content A img{position:relative;z-index:9}
+.twitter-timeline{padding:15px;display:block}
+.no-wrap,.sorting_1{text-align:right}
+#refresh{ margin: 0 3px; cursor: pointer}
+#refresh:hover{ color: red}
+.left_con .marketlist td:first-child,.left_con .marketlist th:first-child{ width: 18%}
+.left_con .marketlist td:nth-child(2),.left_con .marketlist th:nth-child(2){ width: 13%}
+.left_con .marketlist td:nth-child(3),.left_con .marketlist th:nth-child(3){ width: 12%}
+.left_con .marketlist td:nth-child(4),.left_con .marketlist th:nth-child(4){ width: 17%}
+.left_con .marketlist td:nth-child(5),.left_con .marketlist th:nth-child(5){ width: 13%;background-position: 85% center; padding-right: 30px}
+.kr-body .left_con .marketlist tr td:nth-child(5){ padding-right: 0}
+.left_con .marketlist td:nth-child(6),.left_con .marketlist th:nth-child(6){ width: 18%}
+.left_con .marketlist td:nth-child(7),.left_con .marketlist th:nth-child(7){ width: 6%}
+.left_con .marketlist th.day-updn{ padding-right: 30px}
+#mainnelist .entry{max-height:174px;overflow:hidden}
+#mainnelist .entry .newstext{max-height:80px;overflow:hidden;display:block}
+.rine .toppicbox{width:88px;height:55px;margin:0 10px 5px 0}
+.bgnews{position:absolute;right:5%;top:5%;color:rgba(255,255,255,0.15);text-shadow:none;font-size:36px;z-index:2}
+.header,.footer,#full-screen-slider,.left_con_login,.topspace{min-width:1257px !important;}
+.content{min-width:1258px !important;}
+.rev_content{color:#888;font-size:12px}
+#noty_center_layout_container li,.gateioNotyTheme{overflow:hidden;position:relative;width: 100%;height: 100%;padding: 15px;margin-bottom:1px;background:rgba(10,10,10,0.95);box-sizing: border-box;}
+#noty_center_layout_container li .noty_bar,#noty_center_layout_container li .noty_message{ height: 100%;}
+.gateioNotyTheme.noty_container_type_alert{background-color:#f5f5f5}
+.gateioNotyTheme.noty_container_type_information{background-color:rgba(22, 72, 53, 0.95)}
+.gateioNotyTheme.noty_container_type_error{color:#000;font-weight:bold;font-family:Microsoft YaHei;background:rgba(179,0,36,0.95)}
+.gateioNotyTheme.noty_container_type_warning{background:rgba(202,105,0,0.95);color:#000;font-weight:bold;font-family:Microsoft YaHei}
+.gateioNotyTheme.noty_container_type_success{background-color: rgba(22, 72, 53, 0.95);color:#fff; position: relative}
+.gateioNotyTheme .noty_message{color:#fff}
+.gateioNotyTheme .noty_close{position:absolute;top:4px;right:4px;width:16px;height:16px;opacity:0.5;cursor:pointer}
+.gateioNotyTheme .noty_close:after{content:"\00D7";font-size: 28px;color: #b3c1c3;margin-left:-5px;font-weight: 100;font-family: Microsoft YaHei;}
+.noty_container_type_success .noty_close{top:15px;right:15px;}
+.noty_container_type_success .noty_close:after{margin-left:0}
+.noty-table{ width: 100%; padding: 20px 0 10px 0}
+.noty-table tbody{ font-weight: normal}
+.noty-table th{ border: none}
+.yellow{ color: #fa0;}
+.close{ font-weight: 100; cursor: pointer; padding: 0 5px}
+.close:after{content:"\00D7"; font-size:30px;color:#313642}
+.close:hover:after{ color: #d45858}
+.noty-table .yellow{ font-weight: bold}
+.gateioNotyTheme:hover>.noty_bar>.noty_message>.noty_close{ opacity:1}
+.noty_modal.gateioNotyTheme{position:fixed;width:100%;height:100%;margin:0;border-radius:0;background-color: rgba(0,0,0,0.3);z-index:100000;display:none;border:none;left:0;top:0;}
+.noty_modal{filter:alpha(opacity=50)!important}
+.noty_text td{padding:5px 0;border:0}
+.gateioNotyTheme .noty_text{font-size: 16px;font-weight:bold}
+.noty_message hr{height: 1px;border: none;background: #313642;margin-top: 10px}
+.noty_container_type_information hr,.noty_container_type_success hr{background: #619286}
+#button-0{background:#29a555; color:#fff; font-weight:600;float:left}
+#button-1{float:right;background:#964b4b;color:#fff; font-weight:600}
+#button-0,#button-1{width:150px;display:block;padding:10px 0;outline:none;font-size:16px;line-height:18px;font-family:'Microsoft YaHei';text-align:center;vertical-align:middle;border:0;cursor:pointer;min-width:102px;opacity:0.9;}
+#button-0:hover,#button-1:hover{opacity:1}
+#tableTradeNoty li{ display: inline-block; font-weight: normal; font-size: 13px; margin: 10px 8px 0 0}
+#tableTradeNoty li span{ color: #fc0}
+#tableTradeNoty li i{ color: #aaa; font-style: normal}
+.noty_type_warning #button-0{ color:#fff; background:#d45858}
+.noty_type_warning #button-0.noty-close-btn{ margin-top: 15px; float: right}
+.noty_text a{ color:#fc0}
+.noty_text a:hover{ color:#ff0}
+#siteNoty .noty_message{ height: 24px;padding: 7px;background: rgb(152, 35, 45); color: #ffe8d3; text-align: center; font-size: 16px}
+#siteNotyCon{font-size: 16px;line-height: 24px; color: #ffe8d3}
+.en-body #siteNotyCon{ font-size: 18px}
+#siteNotyCon:hover{ text-decoration: underline;color: #fff}
+#siteNoty .close{ margin-top: 3px}
+#siteNoty .close:after{ color: #aaa;}
+body.top-cover{padding-right: 6px;overflow:  hidden;}
+.addr-section{width: 50%; box-sizing: border-box}
+.addr-section.pull-left{ padding-right: 30px;}
+.addr-section.pull-right{padding-left: 30px;border-left: 1px solid #eee;margin-top: -12px;position: relative;}
+.addr-section.pull-right p{position: absolute;bottom: -22px;left: 50px;}
+.addr-section.pull-right:after{content: 'or';position: absolute;left: -7px;top: 45%;background: #fff;}
+.addr-box{position:relative;}
+.dp-tip-box{ margin: 15px 0}
+.dp-box{ margin-top:10px}
+.deposit-con ol{ margin-top: 10px}
+.deposit-con ol li{ margin: 5px 0; list-style: decimal; margin-left: 20px}
+.dp-page-title .icon-32{margin: 6px 6px 0 0;}
+.dp-page-title .go-trade-btn,.dp-page-title .fund-to-trade{font-size: 16px;line-height: 24px;margin: 5px;padding: 3px 8px;width: 80px;text-align:  center;}
+.dp-qr-img{width: 150px;height: 150px;display: inline-block;text-align:  center;line-height: 150px;color: #aaa;}
+.sectioncont .addr-box .sub-btn{position:absolute;top: 10px;right: 0;height: 100px;padding: 0 10px;width: 80px;text-align:  center;line-height: 100px;border-bottom-right-radius: 3px;border-top-right-radius: 3px;}
+.sectioncont .addr-copied .sub-btn,.sectioncont .addr-copied .sub-btn:hover{background:#29a555 !important;cursor:default}
+.n-con{padding: 20px 0 30px;line-height: 22px;font-weight: normal;}
+.btn-long{ width: 100% !important;}
+.sectioncont .coin_add{height: 100px;border:0;box-shadow:none;background:#f1f1f1;width:100%;padding: 10px 110px 10px 10px;font-size: 16px;color: #005e7d;font-family: Microsoft YaHei,sans-serif;margin-top: 10px;}
+.addr-wait .coin_add{color: #b83826;user-select: none;cursor: default}
+.sectioncont .addr-wait .sub-btn,.sectioncont .addr-wait .sub-btn:hover{background: #aaa !important; color: #ddd; cursor: default}
+.coin_search{height:36px;clear:both}
+#marketSearch{height:38px;width:100%;margin:15px 0 5px;display:block;padding:5px 0 5px 10px;border:1px solid #ccc;font:14px/18px Microsoft YaHei,Tahoma,Arial,sans-serif;border-top-color:#bbb;background:#f0f0f0 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNyIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMTUuNSAxNS41IDE3IDE3Ij48cGF0aCBmaWxsPSIjRjQwIiBkPSJNMzEuOTU0IDI5LjcwN2wtMy43MjMtMy43MjRjLjY1LTEuMDUgMS4wNC0yLjI3NCAxLjA0LTMuNTk4IDAtMy44MDMtMy4wOC02Ljg4NS02Ljg4Mi02Ljg4NVMxNS41IDE4LjU4MyAxNS41IDIyLjM4NWMwIDMuODAyIDMuMDgzIDYuODg1IDYuODg1IDYuODg1IDEuMzI0IDAgMi41NS0uMzkyIDMuNTk3LTEuMDRsMy43MjYgMy43MjRjLjYyLjYyIDEuNjI1LjYyIDIuMjQ2IDAgLjYyLS42Mi42Mi0xLjYyNiAwLTIuMjQ3em0tOS41NjgtMi41NTZjLTIuNjMyIDAtNC43NjctMi4xMy00Ljc2Ny00Ljc2MnMyLjEzLTQuNzY3IDQuNzYzLTQuNzY3YzIuNjMyIDAgNC43NjcgMi4xMzUgNC43NjcgNC43NjcgMCAyLjYzMy0yLjEzNCA0Ljc2Ni00Ljc2NiA0Ljc2NnoiLz48L3N2Zz4=') no-repeat 96% center;-webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box}
+#marketSearch:focus{ border-color: #29a555}
+#sectioncont #graphbox_depth #highcharts-2{margin-top:10px;padding-top:10px}
+#tableAskList .mairu,#tableAskList .maichu{ width:100%;float: none}
+.introduction{margin:5px 35px}
+.download-list .btn .text{font-size:14px}
+#coin_about .btn .text{font-size:16px}
+.coin_about .btn .icon{margin-top: 8px}
+.coin_about .cionintro li{ width:33.33%}
+@-moz-document url-prefix() { .left_con .marketlist{float:left} #graphbox_depth{clear:both}}
+.dataTables_wrapper .dataTables_info{position:absolute;color: #888}
+.dataTables_wrapper{position:relative;clear:both;zoom:1}
+.dataTables_wrapper .dataTables_paginate{float:right;text-align:right;padding:25px 0 0}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{cursor:default;color:#666!important;border:1px solid transparent;background:transparent;box-shadow:none}
+.dataTables_wrapper .dataTables_paginate .paginate_button{box-sizing:border-box;display:inline-block;min-width:1.5em;padding:3px 10px;margin-left:2px;text-align:center;text-decoration:none!important;cursor:pointer;color:#333333!important;border:1px solid transparent}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{color:#333333!important;border:1px solid #cacaca;background: #F5F5F5}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{color:white!important;border:1px solid #111111;background-color:#585858;background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#585858),color-stop(100%,#111111));background:-webkit-linear-gradient(top,#585858 0%,#111111 100%);background:-moz-linear-gradient(top,#585858 0%,#111111 100%);background:-ms-linear-gradient(top,#585858 0%,#111111 100%);background:-o-linear-gradient(top,#585858 0%,#111111 100%);background:linear-gradient(to bottom,#585858 0%,#111111 100%)}
+.dataTables_wrapper .dataTables_filter input{ width:300px;margin-left:2px; font-size: 14px;padding:8px 5px 9px 30px;font-family:Microsoft YaHei,Tahoma,Arial,sans-serif;background:#f0f0f0 url(/images/marketsearch-icon.svg) no-repeat 8px center;border:1px solid #ddd}
+#marketlist_filter label{display:block}
+.dataTables_wrapper .dataTables_filter{ position:absolute;top: -40px; right:0;margin:15px 0 5px;text-align:right}
+.dataTables_wrapper .dataTables_length{position: absolute;padding:15px 20px 0 0}
+.left_con .marketlist{ padding-top:15px}
+.dataTables_length select{ padding:8px; outline:none;font-size: 14px;border:1px solid #ddd}
+.dataTables_empty,.left_con .marketlist .dataTables_empty{line-height:38px;text-indent:20px; text-align:center;color:#d45858;font-weight:bold}
+.button{background-color:#fff;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;border:1px solid #d4d4d4;margin:0;text-decoration:none;text-align:center; font-family:Microsoft YaHei,Tahoma,Arial,sans-serif}
+.button:focus{outline:none}
+#marketlist_controller .button{line-height: 50px; position: relative}
+.en-body #marketlist_controller .button.btn_selected:hover{ background: none}
+.en-body .dealbox .jiaoyi_btn { background: #d45858}
+.en-body .m_con_buy .jiaoyi_btn{ background: #29a555}
+.dealbox .button:hover{background:#11C09C}
+.button.disabled{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-appearance:none}
+.step .button{background:#d45858}
+li[class^="icon-"],.nav li[class^="icon-"],li[class*=" icon-"],.nav li[class*=" icon-"]{height:16px;overflow:hidden;line-height:20px}
+.icon-lock,.icon-user,.icon-code{position:absolute;top:58px;right:30px}
+i.icon-lock{top:101px;right:30px}
+i.icon-code{top:150px;left:140px}
+.icon-circle{font-style:normal;font-weight:bold;color:#47FFDB;margin-right:3px;font-size:18px}
+/*trade*/
+.leftbar {width: 23%;/*min-height: 1168px;*/padding: 20px 0 26px;float: left;border-right: 1px solid #ddd;border-top: 1px solid #ddd;background: #f1f1f1;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.leftbar #marketSearch{ margin-bottom: 15px}
+.leftbar .icon-16,.deposit-sec .icon-16{ margin-left: 8px;}
+#marketlistTabCon .icon-16{ margin-top: 8px}
+.deposit-sec b{ margin: 0 5px}
+.main_content { width: 77%; min-width:918px;background: #f5f5f5;padding:0 30px; float:left;border-top: 1px solid #ddd; position: relative;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box}
+#tradelist { width: 100%;padding: 0 30px; border-bottom:0 }
+#tradelist table{ width: 100%}
+#tradelist table tr td:first-child{ text-align: left;white-space: nowrap}
+#tradelist table tr th:first-child{ text-align: left; text-indent: 8px}
+#marketlistTabCon > td,#marketlistTabCon th:last-child:after{ display: none}
+#marketlistTabCon tbody,#marketlistTabCon thead{ display: block; width: 100%;padding-right: 6px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box}
+#marketlistTabCon tbody{height: 1248px;padding-right: 6px;overflow: hidden;}
+#marketlistTabCon tbody:hover{ padding-right:0;overflow-x: hidden; overflow-y: scroll}
+#marketlistTabCon #marketlist_container_qtum tbody,#marketlistTabCon #marketlist_container_custom tbody,#marketlistTabCon #marketlist_container_limited tbody{padding-right: 6px; overflow: visible}
+#marketlistTabCon tr{ display: block; width: 100%; height: 32px}
+#marketlistTabCon table td,#marketlistTabCon th{ display: block; float: left; height: 32px}
+#marketlistTabCon th{ height: 40px; line-height:40px; font-weight: normal; user-select: none }
+#marketlistTabCon th:after{ margin-top: 11px}
+#marketlistTabCon table td{line-height:32px }
+#marketlistTabCon table td:first-child,#marketlistTabCon th:first-child{ width: 37%}
+#marketlistTabCon table td:nth-child(2),#marketlistTabCon th:nth-child(2){ width: 26%}
+#marketlistTabCon table td:nth-child(3),#marketlistTabCon th:nth-child(3){ width: 25%}
+#marketlistTabCon table td:last-child,#marketlistTabCon th:last-child{ width: 12%}
+#marketlistTabCon .market_wrapper{ margin-right: -6px}
+#marketlistTabCon .l_r td:first-child{ position:relative}
+#marketlistTabCon .l_r td:first-child:before{top: 2px;content:'\25D4';width: 10px;height: 10px;color: #d40000;position:  absolute;left: 4px;font-size: 10px;display: inline-block;line-height: 1;}
+.left-short #marketlistTabCon tbody{height: 928px;}
+div .leftbar.left-short{min-height: 1122px;}
+div .trade-warn-mark.leftbar{min-height: 1150px;}
+.trade-warn-mark.left-short #marketlistTabCon tbody{height: 960px;}
+.trade-warn-mark #marketlistTabCon tbody{height: 1282px;}
+.tr-focus{ background: red !important; color: red}
+.rev_body .main_content { width: 100%; background: #D3F2F9 }
+.odd, .even { clear:both; height:38px}
+.left_con .marketlist tbody tr { height: 51px;background: none}
+.left_con .marketlist tbody td{border-bottom: 1px solid #eee}
+#feelist .odd > td,#feelist .even > td{border:none}
+.leftbar .marketlist .odd > td,.leftbar .marketlist .even > td{border:none}
+#marketlistTabCon tbody .coin-selected,#marketlistTabCon tbody .coin-selected:hover,.coin-selected{background:#dfe8f3}
+.index-content .marketlist .coin-selected td:last-child{ position: relative; border-right: 1px solid #c0d0e0}
+.index-content .coin-selected td:last-child:after {content:'';position:absolute;top:10px;right:-10px;display:inline-block;width:0;height:0;border-left:10px dashed;border-top:8px solid transparent;border-bottom:8px solid transparent;color:#c0d0e0}
+.new-in { -webkit-animation: addcolor 2s 2;  animation: addcolor 2s 2}
+@keyframes addcolor{0%{background-color:transparent} 50%{background-color:rgba(192, 233, 247, 0.5)} 100%{background-color:transparent}}
+.trtitle b { padding-right: 10px }
+.left_ti li { width: 33.3%; height: 100%; text-align: center; font-family: Microsoft YaHei, Tahoma, Arial, sans-serif; font-weight: bold; color: #666; float: left }
+.left_btn { width: 16.66%; height: 40px;line-height: 38px;border: none; border-bottom:1px solid #a3acb5; font-size:15px; font-weight:bold;background: #f1f1f1; float: left; font-family: Microsoft YaHei, Tahoma, Arial, sans-serif;color: #2b343c}
+.en-body .left_btn {white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+.left_btn:hover{ color: #d45858}
+.tn_selected{ border:1px solid #a3acb5; border-bottom: 0}
+.leftcionpic { margin-left: 8px }
+#updn font { margin-right: 15px }
+.even { border-top: 0 }
+.no-wrap a { color: #666}
+.main_title {position: absolute;z-index: 66;top: 0;text-align: center;line-height: 25px;padding-bottom: 3px}
+.main_title h1,.main_title h1 strong{ font-weight: normal; font-size: 20px}
+.main_title h1 a,.main_title .coin-title strong{ color: #111}
+.main_title h1 a:hover{ color: #d45858}
+.main_content .main_title table { margin: 15px auto 0 auto}
+.right_mcontent {position: relative}
+.myacc-con{margin: 10px auto 30px;}
+.myacc-con thead td{ border-bottom: 1px solid #e4ebf0}
+.sf-grid tr td:first-child,.sf-grid tr th:first-child{text-align: left}
+.top_botton { height: 30px}
+.k-line-container .top_botton{position: absolute;right: 20px;top: 13px;z-index: 888}
+.k-line-container .button{ border: none; margin-left: 5px; cursor: pointer; background: none}
+.k-line-container .button path,.gm-on-off path{ fill:#787f84}
+.k-line-container .button:hover path,.k-line-container .tool-active path,.gm-on-off:hover path{ fill:#d45858}
+.fullscreen-con{width: 100%;padding-right: 0}
+#lineOption{ height:30px;display: inline-block; float: right}
+.top_botton li { height: 100%; margin-right: 5px; text-align: center; float: left }
+.timeline_btn {width: 100%;height: 100%;background: none;padding: 0 2px;border: 0;cursor: pointer;font-size: 13px;font-family: Microsoft YaHei, Tahoma, Arial, sans-serif;user-select: none;}
+.bo_selected,.timeline_btn:hover { color: #d45858}
+#choosen {  border: 0;  float: right; margin-right: 15px}
+.choosen li { height: 30px}
+.mainmap { height: 300px; margin: 0 auto}
+.login-con .mairu {width: 1080px;margin: 0 auto;}
+.login-con .maichu {width: 1080px;margin: 0 auto;}
+.trade-main > .mairu{ float: right}
+.trade-main > .maichu{ float: left}
+.m_con { width: 100%}
+.m_con_buy { width: 100%}
+.m_con input,.leftregi input{ padding: 10px}
+.reset-psw-con .mairu{ float:none; margin:0 auto}
+.reset-psw-con .mairu h4{ text-align:center}
+.reset-psw-con .m_con_buy{margin-top:10px; height:auto !important; min-height:290px}
+.reset-psw-con .mairu input{ font-size:14px; padding:10px}
+.jiaoyi_btn { width: 295px; height: 42px; font-size: 1.2em; font-weight: bold; font-family: Microsoft YaHei, Tahoma, Arial, sans-serif; color: #777; margin-top: 16px; margin-bottom: 19px; border: 1px solid #CAD3D8; background: url(/images/jiaoyi_btn.jpg) repeat-x; cursor: pointer }
+.dealbox .jiaoyi_btn { width: 100%; height: 42px; font-size: 1.2em; font-weight: bold; font-family: Microsoft YaHei, Tahoma, Arial, sans-serif; color: #fff; margin-top: 10px; margin-bottom: 19px; border: 0; background: #29a555; cursor: pointer }
+.m_con_buy .jiaoyi_btn{ background:#d45858}
+.maichu .dealbox .jiaoyi_btn:hover { background:#f80 }
+.maidan { height: 181px; background: #fff }
+.ulorderlist { overflow-y: scroll; overflow-x: hidden }
+.sorting,.sorting_asc, .sorting_desc{ padding-right: 0; font-weight: normal}
+.title-line.sorting{ cursor: default}
+.mairight { padding-right: 25px }
+.chengjiao { width: 100%; clear: both }
+.bottom_maidan { width: 100%; margin-bottom: 50px; float: left }
+.right-align { width: 33.33%; float: left; text-align: right; line-height: 38px;position: relative;z-index: 1}
+.right-align.price{width: 45%;text-align: left; text-indent: 3px}
+#ul-ask-list .right-align.price,.en-body #ul-bid-list .right-align.price{color: #29a555; font-weight: bold}
+#ul-bid-list .right-align.price,.en-body #ul-ask-list .right-align.price{color: #d45858;; font-weight: bold}
+.total.right-align{ width: 27%; padding-right: 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.volume.right-align{ width: 28%; padding-right:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.en-body .volume.right-align{ padding-right: 0}
+.cjbox .right-align {width: 24%}
+.title-line b { min-width: 86px; display: block; font-family: 'Microsoft YaHei' }
+.title-line .price b { min-width: 75px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+.rect .down, .orange { height: 16px; width: 60px; margin: 11px 0 0 20px; background: #29a555!important }
+.rect .up, .fenlv { height: 16px; margin: 11px 0 0 20px; background: #d45858!important }
+.trade-list_re li {margin: 0;line-height: 28px;text-align: right;position: relative;overflow: hidden;cursor: default!important;}
+#trade-list li{ height: 30px; line-height: 30px}
+#trade-list li:nth-child(even),.trade-main .trade-list_re li:nth-child(even),#ulGlobalMarkets li:nth-child(even),#ulRace li:nth-child(even),#marketlistTabCon tbody tr:nth-child(even){background: #f8f8f8}
+.trade-main .trade-list_re li:hover{ background: #e1e1e1}
+.trade-main .trade-list_re li.dealtop:hover{ background: none !important}
+.trade-list_re li .time {text-align: left; text-indent: 6px;height: 38px; width: 18%; float: left }
+.fund-deposit,.fund-withdraw,.fund-to-trade{ background: #d45858; color: #fff;width: 55px;text-align: center;line-height: 24px;display: inline-block;border-radius: 4px;}
+.fund-withdraw{ background: #29a555; margin-left: 6px}
+.sf-grid .fund-withdraw{ margin-left: 0}
+.fund-to-trade{ background: #1582bb;}
+.fund-to-trade:hover{ background: #199fcc; color: #fff}
+.fund-deposit:hover{ background: #f80; color: #fff}
+.fund-withdraw:hover{ background: #11C09C; color: #fff}
+.err-depo,.err-depo:hover{ color: #ddd; background: #888}
+.warn-depo,.warn-depo:hover{ background: #ce9900}
+.trade-list_re li .price { height: 38px; width: 28%; float: left }
+.trade-list_re li .amount { height: 38px; width: 28%; float: left; padding-right: 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.trade-list_re li .total { height: 38px; width: 24%; float: right;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; padding-right: 8px}
+.trade-list_re li .rect { height: 38px; float: left }
+.trade-list_re .down .rect { background: #29a555!important; margin: 11px 0 0 20px }
+.trade-list_re .up .rect { background: #d45858!important; margin: 11px 0 0 20px }
+.trade-list_re .up { border-top: 0 }
+#cjjlcjl { margin-left: 52px }
+.dealtop {height: 32px;border-bottom: 1px solid #e4ebf0;font-weight: bold;}
+.up .price { color: #d45858!important; font-weight: bold }
+.down .price { color:#29a555 !important }
+.dealbox font[color="green"] { padding: 10px 30px; font-size: 12px; line-height: 16px; display: block }
+.dealbox {width: 100%;margin: 5px auto}
+.dealbox td { height: 26px;padding: 3px 8px 3px 0;text-align: left}
+.dealbox i{ font-style: normal; font-size: 13px}
+.coin-unit{ margin-left:10px;color: #888}
+.b-unit{ color:#888}
+#ul-trade-list font[color="#339900"]{ color:#d45858}
+#ul-trade-list font[color="#cc3333"]{ color:#29a555}
+.en-body .rect .down,.en-body .orange,.en-body .trade-list_re .down .rect{background: #d45858!important}
+.en-body .rect .up,.en-body .fenlv,.en-body .trade-list_re .up .rect{background: #29a555!important}
+.en-body .down .price,.en-body #ul-trade-list font[color="#cc3333"],.en-body .rate_down,.en-body .red,.en-body font[color="red"],.en-body .main_title h1 .red,.en-body .icon-arrow-down{color: #d45858!important}
+.en-body .up .price,.en-body #ul-trade-list font[color="#339900"],.en-body .rate_up,.en-body .green,.en-body font[color="green"],.en-body .main_title h1 .green,.en-body .icon-arrow-up{color: #29a555!important}
+.inputRate { width: 100%;/*border: 1px solid #ccc!important; border-top-color: #bbb;*/ -moz-box-shadow: inset 1px 1px 2px rgba(100,100,100,.1); -webkit-box-shadow: inset 0 1px 2px rgba(100,100,100,.1); box-shadow: inset 1px 1px 2px rgba(100,100,100,.1); border-radius: 3px; font-size: 14px; padding: 10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.trade-main .inputRate{ text-align: right}
+.left-kline{width: 100%; float: left}
+#graphbox { width:100%; float:left; padding: 10px 0 0 !important; background: #fff!important }
+#chartContainer{ height:320px}
+.operate_price{ height: 100%;padding: 0 15px 0 8px;display: inline-block;line-height: 30px;background: #ddd;-moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none;user-select: none; cursor:pointer}
+#opBtn{font-size: 13px; color:#000; margin-left:3px}
+.operate_price.bo_selected,.bo_selected #opBtn{background: #4572A7;color: #fff}
+#hideprice,.hide-show-mark,#hidezero{ display:none;}
+#hideprice + .vr-btn,.hide-show-mark  + .vr-btn,#hidezero  + .vr-btn{ background-color: #bbb; padding:5px; border-radius: 50px; display: inline-block; position: relative; margin: 8px 2px 0 0;float: left; -webkit-transition: all 0.1s ease-in; transition: all 0.1s ease-in; width: 20px; height: 5px;cursor:pointer; }
+#hideprice + .vr-btn:after ,.hide-show-mark + .vr-btn:after,#hidezero + .vr-btn:after{ content: ' '; position: absolute; top: 0; -webkit-transition: box-shadow 0.1s ease-in; transition: box-shadow 0.1s ease-in; left: 0; width: 100%; height: 100%; border-radius: 100px}
+#hideprice + .vr-btn:before,.hide-show-mark + .vr-btn:before,#hidezero + .vr-btn:before { content: ' '; position: absolute; background: white; top: 1px; left: 1px; z-index: 998; width: 13px; -webkit-transition: all 0.1s ease-in; transition: all 0.1s ease-in; height: 13px; border-radius: 100px;}
+#hideprice:active + .vr-btn:before,.hide-show-mark:active + .vr-btn:before,#hidezero:active + .vr-btn:before { width: 15px}
+#hideprice:checked:active + .vr-btn:before,.hide-show-mark:checked:active + .vr-btn:before,#hidezero:checked:active + .vr-btn:before { width: 15px; left: 16px}
+#hideprice:checked + .vr-btn:before,.hide-show-mark:checked + .vr-btn:before,#hidezero:checked + .vr-btn:before { content: ' '; position: absolute; left: 16px; border-radius: 100px}
+#hideprice:checked + .vr-btn:after,.hide-show-mark:checked + .vr-btn:after,#hidezero:checked + .vr-btn:after { content: ' '; font-size: 1.5em; position: absolute; background: #1cb69b }
+.hide-depth{margin: 6px 2px 0 5px; float: left; cursor:pointer;}
+.right-kline{width:29%; height:300px;margin-top:10px;text-align: center;font-size: 18px;font-weight: 100;float:right}
+
+#deal-info-box .list-wrapper li.new { background-color: #FFDFE9!important }
+.dataTable .sortable:after,.dataTable .sorting_asc:after,.dataTable .sorting_desc:after{ content: '';width: 10px; height: 18px; margin-left: 2px; background: #eee; display: inline-block; float: right}
+.dataTable .sortable:after { background:#f5f5f5  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath fill='%23B0AFB1' d='M5.466 9.003L9.5 2.016l4.035 6.987M13.535 10.01L9.5 16.998 5.466 10.01'/%3E%3C/svg%3E") no-repeat center;}
+.marketlist th:first-child:after,.marketlist th:first-child b,.left_con .marketlist th:nth-child(2):after,.left_con .marketlist th:nth-child(2) b{float: left; font-weight: normal}
+.dataTable .sorting_asc:after,.dataTable .sortable.asc:after { background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath fill='%23FF9358' d='M5.466 9.003L9.5 2.016l4.035 6.987'/%3E%3C/svg%3E") no-repeat center;}
+.dataTable .sorting_desc:after,.dataTable .sortable.desc:after { background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath fill='%23FF9358' d='M13.535 10.01L9.5 16.998 5.466 10.01'/%3E%3C/svg%3E") no-repeat center;  }
+.dataTable .sorting_disabled:after{ display: none}
+.m_con .sorting{ background: none; padding-right: 5px}
+.custom-option i,th .fav-icon{ width: 21px; height: 21px; display: inline-block;padding: 8px 5px 8px 0; cursor: pointer}
+th .fav-icon{ cursor: default}
+.custom-option i:after,th .fav-icon:after{ content: ''; display: block; width: 100%;height: 100%;background: url("../img/index/star_w.png")}
+.custom-option .custom-on:after,th .fav-icon:after{/* background-position:0 -16px */background: url("../img/index/star_gray.png")}
+th .fav-icon{-webkit-filter: saturate(0);filter: saturate(0)}
+.custom-option i:hover{-webkit-filter:contrast(10%); filter:contrast(10%)}
+.custom-option .custom-on:hover{-webkit-filter: contrast(90%); filter: contrast(90%)}
+.dark-body .custom-option i:hover,.dark-body .custom-option .custom-on:hover{-webkit-filter: contrast(150%); filter: contrast(150%)}
+#marketlistTabCon .dataTables_empty{ text-indent: 8px}
+#marketlistTabCon .dataTables_empty:before{ content:'i';display:inline-block;width:18px;height:18px;line-height:18px; text-indent:0;text-align:center;background:#d45858;color:#fff;margin-right:5px;border-radius:50%}
+#marketlistTabCon .dataTables_empty b{ color: #000}
+template li .right-align { width: 0; height: 0; overflow: hidden }
+.sf-grid td { padding: 8px 0;border-bottom:1px solid #f3f3f3}
+.main_title h1 span { margin-top:0;color:#666; display:block}
+.main_title h1 .icon-32{ margin-top: -4px}
+.main_title h1 .icon-48 { height: 48px;padding:0;margin: -8px 0 5px}
+#ticker_vol_b{ display: inline-block}
+#top_last_rate_change{float: left; padding-left: 0}
+.main_title h1 em { font-size: 20px; font-style: normal; margin: 0 5px; color: #29a555; float: left }
+.main_title h1 b { font-weight: normal; font-family: "宋体"; color: #ddd }
+#currVol{ float: left; font-style: normal; color: #666;font-size: 14px}
+#currVol small{ font-size: 12px; line-height: 32px}
+.top_last_li{ height:30px}
+#top_last_rate_change > span{ height: 26px;float:left}
+#top_last_rate_change > span:first-child,#currUSD{ border-right:1px solid #e0dad1;padding-right:10px}
+#top_last_rate_change i{ letter-spacing:-1px;font-style: normal; font-weight:normal; float: left}
+#top_last_rate_change .price-dl em{ margin:0 3px;font-weight:normal; color:#666}
+#top_last_rate_change dt{ font-size:14px; height:18px; line-height:20px;border-top: 1px solid #ddd;color: #666}
+#top_last_rate_change small{ font-size:12px;line-height: 32px; font-weight:normal;float: left;  margin: 0 5px}
+#mianTlist { margin:17px 0 0}
+#mianTlist > span{ float: left; line-height: 26px}
+#mianTlist > span a{ float:left;margin: 0 10px 0 0}
+.m_title span {/* float: left*/ }
+.login2-con span{float:none}
+.login2-con .l2-title:before{content:"-"; margin:0 5px}
+.m_title img { margin: 14px 0 0 10px }
+#my-tlist-title li span, #my-trade-list li span, #ulMyOrderList li span { width: 25%; font-family: Microsoft YaHei }
+#my-trade-list, #ulMyOrderList { height: 209px; overflow-y: auto!important; text-align: center; position: relative }
+.my-type { width: 10%!important }
+#my-tlist-title .sorting { padding-right: 0 }
+#my-tlist-title .dealtop span:last-child { min-width: 99px }
+.m_title { /*height: 42px;*/ width: 100%; font-size: 1.5em; color: #111;/*border-bottom: 1px solid #C8DAE2;*/ margin: 10px 0 20px;line-height: 46px}
+.login-con .m_title,.login_incontent .m_title{border: none;margin-bottom: 0;}
+.mairu .m_title, .maichu .m_title, .bottom_maidan .m_title {/* height: 45px;*/background: none; text-indent: 0}
+.main_title table { margin: 0 auto }
+.main_title td { border: 0 }
+.main_title img { width:32px;margin-top: -2px;padding-right: 5px }
+.orderline_mine { background: #C8EDFF!important }
+.orderline_mine:hover { background: #6de1c9!important }
+thead tr[role="row"] { height: 40px }
+.content .contentdetail p { line-height: 35px; font-size: 16px; color: #222 }
+.contentdetail img { margin: 0 auto; display: block; max-width: 100%; border: 5px solid #fff; box-shadow: 1px 2px 8px #ccc }
+.dark-body .contentdetail img{ border-color:#131a21 }
+.contentdetail h2 { font-weight: lighter; font-size: 26px }
+.hot{ position: relative}
+.hot:after,.new:after{ content: 'HOT'; display: block; position: absolute; top:-22px; left: -18px; width: 35px; height: 16px; line-height: 16px; font-size: 12px; font-weight: normal; text-align: center; background: #d45858; color: #fff}
+.hot:after{top: 2px;left: 82px}
+.new:after{content:'NEW'}
+#withdrawtable td { padding: 0 0 3px ; position: relative}
+#withdrawtable tr td:first-child{ font-weight: bold;vertical-align: top;  padding-top: 17px}
+#ask-list, #bid-list { width:100%;overflow: hidden;overflow-y: scroll; height: 150px}
+#ul-ask-list, #ul-bid-list { width: 100% }
+#divMyTradeHistoryList, #divMyReferralsList, #divMyReferralFundsList { overflow-y: auto!important }
+.myacc-con .sectioncont p {margin-bottom:10px;margin-top: 10px; }
+.sectioncont p { padding-top: 10px}
+.deposit-sec p{ padding:0}
+.dailishang td{ padding-top: 5px;line-height: 25px}
+img[alt="Captcha"]{ height: 38px; margin-top: 10px; float:left}
+.dark-body img[alt="Captcha"]{ opacity: 0.8}
+#loginform #loginCaptcha{ width:120px; margin-top: 0;-webkit-filter: contrast(88%); filter: contrast(88%)}
+#captcha,#login_captcha{ width:200px; margin-right:10px; margin-top: 10px; float:left}
+.login_box #captcha{ width: 115px; padding-right: 0; margin-top: 0}
+.sms-setup td{ border:0}
+.sectioncont .sms-setup #submit,.sectioncont #submit.sub-btn,.sectioncont .sub-btn,.sub-btn{ width: 50%; background: #d45858; box-shadow: none; border: none; color: #fff; font-family: 'Microsoft YaHei'; font-size: 16px; text-indent: 0; padding: 10px; height: auto; cursor:pointer}
+.sectioncont .sms-setup #submit:hover,.sectioncont #submit.sub-btn:hover,.sectioncont .sub-btn:hover,.sub-btn:hover{ background:#f80; color: #fff}
+button[disabled],button[disabled]:hover,.sub-btn[disabled],.sub-btn[disabled]:hover{cursor: not-allowed;  color: #eee !important; background: #aaa !important}
+#captcha.login2-captcha{ width:20%}
+.login2-table td{ border-bottom:0}
+.login-con .m_con_buy,.login-con  .m_con{ height:auto; min-height: 355px}
+.login-tip{ width:100%}
+.login-tip p{ margin:20px 0 0; padding:0; font-size:18px}
+#iprestriction,#agreeCheck{ width:24px; height:16px;box-shadow:none;margin-top: 0}
+#myuserid b {color: #d45858}
+#myuserid ,.fund-right .m_title{background: #f1f3f5; height: auto; text-indent: 0; padding: 0 20px; margin:15px 0 0 0;border: 1px solid #e7e9ec;display: inline-block;    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box}
+.newstitle { height: 40px;width: 100%; font-size: 1.35em; line-height: 40px; border-bottom: 1px solid #ddd}
+.newstitle i { font-style: normal; font-size: 14px; text-shadow: none; font-weight: normal; float: right }
+.latnewslist { padding:9px 0 0 }
+.pidiv .latnewslist { min-height: 140px }
+.latnewslist h3 { font-weight: normal; margin-bottom: 8px }
+.latnewslist a,.tese a { color: #333 }
+.latnewslist a:hover,.tese a:hover { color: #d45858 }
+.mainlatest .latnewslist .entry { line-height: 18px }
+.latnewslist .entry { line-height: 23px; font-size: 13px; color: #777 }
+.latnewslist .entry a{ height: 18px;display: block;white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+.entry img { width: 100%; min-height: 70px }
+.picbox { width: 130px; height: 70px; margin: 0 10px 10px 0; float: left; overflow: hidden; display: block }
+.newstail span{ margin-right:15px;color: #444}
+.newstail { margin-top: 5px; color: #999; font-size: 12px; border-bottom:1px dashed #ddd; padding: 0 0 5px; clear: both }
+.newstail a { color: #169283}
+.newstail .updated { margin-right: 0; color: #999}
+.newstail .updated b{ font-weight: normal; color: #444}
+.newscon ul { margin: 15px 0; height: 280px; overflow: hidden }
+.newscon li { list-style: disc inside; padding: 9px 0; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+#paginationtech {  line-height: 40px; color: #b83826;font-family: Microsoft YaHei }
+.newsplink { margin-top: 10px; clear: both }
+.newsplink label { color: #333; background: #f5f5f5; text-decoration: none; padding: 5px 10px; border: 1px solid #d7d7d7; margin: 3px; border-radius: 2px}
+.newsplink .px { border: 1px solid #ccc; -moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,.1); -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,.1); box-shadow: inset 1px 1px 2px rgba(0,0,0,.1); border-radius: 3px; width: 30px; padding: 3px }
+.newsplink a { color: #333; background: #f5f5f5; text-decoration: none; padding: 5px 10px; border: 1px solid #d7d7d7; margin: 3px; border-radius: 2px }
+.newsplink a:hover { color: #b83826; background: #fcfcfc }
+.activeee { color: #b83826; background: #fff; padding: 5px 10px; border: 1px solid #b83826; margin: 3px; border-radius: 2px }
+#lcontentnews { width: 100%; border: 0 }
+.prenext { margin: 20px 0; border-bottom: 1px dotted #ddd; border-top: 1px dotted#ddd; padding: 10px 0 }
+.prenext li { margin: 8px 0 }
+.jiathis_style_32x32 { margin-top: 10px}
+.picbox, .toppicbox { display:none;/*background: url(/images/defaultpic.png) no-repeat;*/ background-size: 100% }
+#coin_about img { height:64px;box-shadow: none; margin-top: 5px }
+#coin_about table { border-top: 1px dotted #ddd; border-left: 1px dotted #ddd; width: 69%; height: 130px; margin-bottom: 20px }
+#coin_about td { border-bottom: 1px dotted #ddd; border-right: 1px dotted #ddd; padding: 0 10px; font-weight: bold; color: #387775 }
+.coininfo-icon,.cion-dtl-ul{ text-align: center}
+.coininfo-icon span{ float: none; margin-top: 20px; display: inline-block}
+.cion-dtl-ul li{  display: inline-block;font-weight: bold; margin-right: 20px}
+.cion-dtl-ul .icon-32{ margin-top: 2px}
+.cion-dtl-ul b{ color: #d45858}
+.introduction2 tr td:first-child{ text-align: right}
+.cionintil { height: 40px; border-bottom: 2px dotted #eee; padding: 0 10px; line-height: 40px; font-weight: bold; font-size: 18px; background: #f8f8f8; clear: both }
+.cionintro p { margin-top: 10px }
+.cionintro ul { margin: 20px 0 }
+.infolist span{color: #3e4957; font-weight: 600}
+.cionintro li { width: 20%;  min-width: 170px;margin-bottom: 10px; float: left }
+.cionintro i { font-style: normal; color: #387775 }
+.sectioncont .dataTable td:first-child { width: 18% }
+#feelist{ width: 100%}
+#feelist .icon-48{ margin-top:2px;-moz-transform:scale(0.6);-webkit-transform:scale(0.6);-o-transform:scale(0.6); transform: scale(0.6)}
+#feelist .coin-name {margin: 17px 0}
+.fee-th1{ width:15%; text-align: left; padding-left: 15px}
+.fee-th2{ width:12%}
+.fee-th3,.fee-th4,.fee-th5,.fee-th6,.fee-th7,.fee-th8{ width:8%}
+.top_botton #gateioNav { width: auto; height: auto; font-size: 14px; margin: 0; float: none }
+.top_botton #gateioNav a { width: auto; font-size: 12px; font-weight: normal; color: #000 }
+.top_botton #gateioNav #subNews { width: auto }
+.top_botton #gateioNav #subNews li { width: 100%; margin: 0; border-bottom: 1px solid #ddd; border-top: 0 }
+.top_botton #subNews li a { width: 100%; height: 100%; display: block }
+.failed{ color:#d45858; font-size:18px;margin: 10px 0}
+.right_mcontent.myacc-con > p{color:#d45858; font-size:18px; margin-top: 30px}
+#coinStatus ,#coinStatus li{ display:inline-block}
+#coinStatus li{ background:#333; color:#fff;border-radius:50%;padding: 2px;font-size: 12px;width: 14px;height: 14px;line-height: 12px; text-align:center}
+#coinStatus .normal-st-bg{ background:#29a555}
+#coinStatus .warn-st-bg{ background:#FF9800}
+#coinStatus .err-st-bg{ background:#ff3516}
+#statusList{ margin-top:20px;font-size: 16px; text-align:center}
+#statusList li{ width:33.33%}
+.cionintro{border-top: 1px solid #94acad}
+.status-dtl{ text-align:center}
+.cionintro .status-dtl li{ float:none; display:inline-block; width:auto; min-width:20%;color: #fff}
+.cionintro .status-dtl li a{ display:block;padding: 5px;color: #fff}
+.cionintro .status-dtl li:hover{ opacity:.8}
+.status-dtl .normal-st-bg{ background:#29a555}
+.status-dtl .warn-st-bg{ background:#FF9800}
+.status-dtl .err-st-bg{ background:#ff3516}
+/*new nav*/
+.gateio-nav {float:left;margin:22px 0 0 15px}
+.gateio-nav li {position:relative;list-style:none !important}
+.gateio-nav > li {float:left}
+.gateio-nav > li > a {display:block;height:38px;line-height:38px;/*padding:0 15px 10px;*/font-size:18px; color: #333}
+.caret {position:relative;display:inline-block;width:0;height:0;margin: -3px -6px 0 3px;vertical-align:middle;border-top:4px dashed;border-right:4px solid transparent;border-left:4px solid transparent;border-width:5px;color:#d8dfe4;/*transition:all 0.3s*/}
+.gateio-nav > li:last-child > a { cursor: default}
+.caret:before {content:'';position:absolute;top:-7px;left:-5px;display:inline-block;width:0;height:0;border-top:4px dashed;border-right:4px solid transparent;border-left:4px solid transparent;border-width:5px;color:#fff}
+.lang-option .caret:before, #nickName .caret:before {color: #09162e}
+.main_title h1 .arr-con{ width:14px; height: 26px; padding:0;margin: 0 8px 0 0; float: left;position: relative}
+#upArrow:before,#dnArrow:before,#upArrow,#dnArrow{opacity: 0;-webkit-transition: opacity 0.5s; -moz-transition: opacity 0.5s; transition: opacity 0.5s}
+#dnArrow.caret{color: #29a555; border-width: 7px;border-top-width: 13px;margin: 0;top: 5px; left: 0}
+#upArrow.caret{color: #d45858; border-width: 7px;border-top-width: 0;border-bottom: 13px dashed;margin: 0; bottom: 5px; left:0}
+.en-body #dnArrow.caret{color: #d45858}
+.en-body #upArrow.caret{color: #29a555}
+.gateio-nav > li:hover > a .caret,.lang-option:hover .caret,.top-up a:hover .caret,.uc-active #nickName i {transform:rotate(180deg);color:#d45858}
+.gateio-nav > li:hover > a,.gateio-nav > .nav-active > a {color:#d45858}
+.gateio-nav > li ul {background:#333a44;font-size:13px}
+.second-nav {position:absolute;top:48px;left:-10px;z-index:9999;display:none}
+.gateio-nav > li:hover .second-nav {display:block}
+.second-nav li a {width:100%;height:16px;line-height:16px;padding:10px 0;display:inline-block;color:#eee}
+.second-nav > li:hover > a,.third-nav a:hover {background:#9a5629;color:#fafcfe}
+.second-nav > li {width:120px;text-align:center;border-bottom: 1px solid #252b33;}
+.second-nav > li:last-child {border:none}
+.second-nav .caret,.second-nav .caret:before {position:absolute;top:12px;right:10px;border-left:6px dashed;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.second-nav .caret:before {top:-6px;left:-7px;color:#333a44}
+.second-nav > li:hover > a .caret:before {color:#9a5629}
+.third-nav {position:absolute;top:0;left:120px;width:750px;border-left:1px solid #0f1319;display:none}
+.third-nav a img,.third-nav a .icon-16{margin: -2px 5px;  background-color: #fff;border: 2px solid #fff;  border-radius: 3px}
+.third-nav a strong{float: left;  width: 75%;  display: block; font-weight: normal;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;  text-align: left}
+.second-nav > li:hover .third-nav{ display: block}
+.font-thin{ font-weight: normal}
+.nav-trade-item .second-nav > li:first-child .third-nav{  background-color: #003e56 }
+.nav-trade-item .second-nav > li:nth-child(2) .third-nav{  background-color: #004841 }
+.nav-trade-item .second-nav > li:nth-child(3) .third-nav{  background-color: #300b48 }
+.nav-trade-item .second-nav > li:nth-child(4) .third-nav{  background-color: #714300 }
+.nav-trade-item .second-nav > li:nth-child(5) .third-nav{  background-color: #67001e }
+.second-nav > li:hover .third-nav li:first-child {border-left:1px solid #ff6e00;margin-left:-1px}
+.third-nav li {width:16.66%;height:36px;border-bottom: 1px solid transparent;float:left}
+.nav-finance {width:20vw;min-width:320px}
+.nav-finance li {width:50%}
+.nav-finance .nav-big {width:100%}
+.nav-finance li:nth-child(2),.nav-finance li:nth-child(4),.nav-finance li:nth-child(6) {border-right:1px solid #0f1319;margin-right:-1px}
+.nav-help {width:120px;min-width:120px}
+.nav-help li {width:100%}
+.en-body .third-nav{ left: 165px}
+.en-body .nav-trade-item .third-nav{ min-width: 600px; width: 600px}
+.en-body .nav-trade-item .third-nav strong{ width: 50%}
+.en-body .second-nav{ left: -30px}
+.en-body .second-nav > li,.en-body .nav-help{ width: 165px}
+ul#slides .imgli,ul#slides .imgli a, .chat-flex,.gm-details, .big-pic-div, .big-pic-div span,.login-prev,.chat-loading,.flex{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-ms-flex-align:center;-ms-flex-pack:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;}
+/*jquery.jslides*/
+#full-screen-slider { width:100%; height:311px; position:relative; background:#384e77;margin-bottom: 25px}
+#slides { display:block; width:100%; height:311px; list-style:none; padding:0; margin:0; position:relative;z-index: 0}
+#slides li {width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute;opacity:0; background-position:center top; background-repeat:no-repeat}
+ul#slides li.hide{display:none}
+#slides .opa-solid{opacity:1}
+#slides li a { display:block; width:100%; height:100%; cursor: default}
+ul#slides .imgli,ul#slides .imgli a{overflow: hidden}
+ul#slides .imgli a{ cursor: pointer}
+#slides .gate-logo{ width: 140px; height: 140px;float: left; margin: 0 15px 0 0; border-radius: 10px; cursor: pointer}
+#slides .icon-48{border: 3px solid #eee; margin: 9px 5px 0 0}
+#slides .icon-48-mtn{ background-color: #eee}
+.txt-logo .banner-thin{ line-height: 70px; font-size: 60px}
+#sCon{width: 360px;position:absolute;left:0;top:285px;z-index:9900;}
+#pagination { display: inline-block; list-style:none;padding: 0; margin:0 !important}
+#pagination li {display:block;list-style:none;width: 10px;height: 10px;float:left;margin: 0 6px;border-radius:5px;background:#FFF;}
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px}
+#pagination li.current { background:#d45858}
+#pagination li.current a{ cursor:default}
+.txt-banner{ width:100%;float: left;font-size: 60px;line-height: 60px;padding-top: 90px;color: #eee}
+.kr-body .banner-l-font{line-height: 135px;}
+.banner-l-font{ font-size: 78px}
+.banner-m-font{ font-size: 50px;line-height: 50px}
+.banner-s-font{font-size: 24px;line-height: 28px; margin-top: 15px}
+.banner-font-42{ font-size: 42px; line-height: 42px}
+.banner-space{ text-indent: 200px}
+.banner-thin{ font-weight: 100}
+.txt-middle{ padding-top: 125px}
+.txt-top{ padding-top: 75px}
+.txt-top-60{ padding-top: 60px}
+.bg-txt{position: absolute;bottom: -118px;left: 0;font-size: 200px;height: 93px;overflow: hidden;line-height: 35px;opacity: 0.05}
+.slogan-effect{font-size: 14px;opacity: 0.1;margin-top: 10px;font-weight: 100;font-family: 'Microsoft YaHei'}
+.txt-banner small{ position: absolute;top: 168px;left: 400px;opacity: 0.05}
+.txt-banner small:after{content: '111000011011010011111101011100001011100000111011110110000'}
+.banner-btn{ clear: both; padding-top: 15px}
+.banner-btn .r-btn{ font-size: 18px; padding: 8px 12px; margin-right: 15px;background: rgba(255, 255, 255, 0.15); display: inline-block; cursor: pointer}
+.banner-btn .r-btn:hover{background: rgba(255, 255, 255, 0.25)}
+.banner-btn em{ float: left; margin: 7px 0 0 5px; font-style: normal}
+.add-coin-banner .bg-txt {bottom: -95px; left:60px;font-size: 140px}
+.add-coin-banner .slogan-effect{ margin-top: 0;line-height: 18px}
+.add-coin-banner .banner-btn em{ margin-top: 2px}
+.banner-coininfo{ width: calc(100% - 350px);overflow: hidden;display: inline-block;max-height: 58px}
+#bannerProgress{ width: 100%; height: 3px; background: rgba(255,255,255,0.1); position: absolute; z-index: 1; bottom: 0;left: 0;overflow: hidden}
+#bannerProgress div{height: 3px;width:100%;background: rgba(255,255,255,0.2);
+    transform: translateX(-100%);-ms-transform: translateX(-100%);-webkit-transform: translateX(-100%);-o-transform: translateX(-100%);-moz-transform: translateX(-100%);
+    transition:transform 5s linear;-moz-transition:transform 5s linear;-webkit-transition:transform 5s linear;-o-transition:transform 5s linear;
+}
+#bannerProgress .pro-run{transform: translate(0,0);-ms-transform: translate(0,0);-webkit-transform: translate(0,0);-o-transform: translate(0,0);-moz-transform: translate(0,0);}
+#bannerProgress .pro-reset{
+    transform: translateX(-100%);-ms-transform: translateX(-100%);-webkit-transform: translateX(-100%);-o-transform: translateX(-100%);-moz-transform: translateX(-100%);
+    transition:transform 0s;-moz-transition:transform 0s;-webkit-transition:transform 0s;-o-transition:transform 0s;
+}
+/*mobile app ads*/
+.app-tip{ width:100%; background:rgba(255, 255, 255, 0.8); border-top:1px solid #ddd;box-shadow: 0 0 2rem rgba(0,0,0,0.1); position:fixed; bottom:0; z-index:99996; display:none}
+.app-tip i{ width:7%;margin-top: 1.5rem;padding:2rem 0;font-style:normal;float:right; text-align:center}
+.app-tip i:after{content:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEX///+AgICAgICAgICAgICAgICAgICAgICD75AyAAAAB3RSTlMAEGCAkKDQ9x7/eAAAAHpJREFUeF7FziEOgkEUA+Ei1qPQCI7ACeACi1qNwpM8zk+abDLJ6wH+qhGfqA7fXUzPHWsCRrUAUEAS2Hp8paDrKnUKhAKhQGhCU8OgQLYS6vSphJdaM+EcldAHAkpQIBQoKBAKFBS46atD09+5Q9P3DkPojpuYHjp6fwF1Hb8sZIbdAAAAAElFTkSuQmCC')}
+#appLink{ width:93%;padding:2rem 0;display:block; float:left;-webkit-tap-highlight-color:rgba(255,0,0,0)}
+.app-tip img{ width:5.5rem; height:5.5rem; margin:0 1.5rem; float:left}
+.dn-btn{line-height: 5rem;float:right; background:#d45858;font-size: 2.5rem; color:#fff; padding:.2rem 2rem}
+.ads{ line-height:2.5rem;font-size: 1.7rem;float:left}
+.ads p{margin-bottom: 5px; font-weight: bold;color: #000;font-size: 2.2rem}
+#appLink:hover .ads,#appLink:hover .ads p{ color:#d45858}
+#appLink:hover .dn-btn{ background:#d45858}
+/*deposit cny*/
+.deposit-table,.dp-cny{ width:99.5%; margin:0}
+.deposit-table td,.deposit-table th{ border:0;background: none}
+.deposit-table input,.deposit-table select{ font-family:'Microsoft YaHei'}
+.deposit-table td{ vertical-align:top}
+.deposit-table td label{padding-top: 18px;display: inline-block}
+.deposit-table .realname{ border: none; background: none}
+.dp-addr{ position:relative}
+.dp-addr p{ margin-bottom: 5px !important}
+#selectaddr.hide{ display:none}
+#selectaddr{ position:absolute; top:44px;background:#f9fffe; width: 60%;border: 1px solid #57cfd2; z-index:1;-webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box}
+#selectaddr ul li{font-weight: 300;font-size: 16px}
+#selectaddr ul li.active,#addrUl #addNew:hover{background: #d4efee}
+#selectaddr ul li:hover{ background: #e9f3f1}
+#addrUl > div a{ padding: 8px; display: block;}
+#addrUl > div em{ font-style: normal}
+#addrUl > div i{ font-style: normal; font-size: 16px}
+#addrUl li span{ display: block;float: left; width: 90%;padding: 10px 0 10px 10px;cursor:pointer}
+#addrUl li i,#addNew i{ float: right;  display: block;  width: 18px;  height: 18px;  line-height: 14px;  font-size: 28px;  font-style: normal;  background: #d45858;  color: #fff;  text-align: center;  border-radius: 50%;margin: 11px 4px 0 0;cursor:pointer}
+#addrUl li i:hover{ background: #f80}
+.wd-tip{ font-size: 13px; color: #888;display: block;  margin-bottom: 5px}
+.addr-ico{ display:block; width:60%; padding:5px; position:absolute;top:0}
+.addr-ico:after{content:""; position:absolute; top:23px;right:23px; border-top:6px solid #000; border-bottom: 0 ; border-right: 3px solid transparent; border-left: 3px solid transparent}
+.dp-tab{ text-align: left}
+.dp-tip{ clear:both; color: #b15c00; text-align:left}
+.deposit-table thead{ width:100%;border-bottom: 1px solid #ddd;display: table; background:none}
+.deposit-table tbody{  padding: 30px 0;border: 1px solid #ddd; border-top: 0;background: #f1f3f5; display: table;width: 100%}
+.off-tr{ display:none}
+.dp-tip .bind-card-btn{ width: 200px; text-align: center; padding: 8px 0; margin-top: 15px; cursor: pointer}
+#depo_bank option{ font-weight:300; font-size:15px}
+#depo_bank option:first-child{ font-weight:600}
+.dp-tdname{ text-align:right; font-weight:600}
+#cashamount{width:25%;min-width:212px;font-weight: 600; float:left}
+.dp-decimal{float: left;margin: 19px 0 8px 2px}
+#depositdecimal{ font-weight:bold; color:red}
+.decimal-tip{ padding: 10px; margin-bottom: 5px; clear: both; width: 50%;background:#d8e4f1;-webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box}
+::-webkit-input-placeholder {color: #999; font-weight:400}
+:-moz-placeholder { color: #999; font-weight:400}
+::-moz-placeholder { color: #999; font-weight:400}
+:-ms-input-placeholder { color: #999; font-weight:400}
+.dp-content #amount{ font-weight: 600;width:220px}
+#dpIcon,.warn-iocn{background: #FF9800;border-radius: 50%;display: inline-block;width: 20px;height: 20px;text-align: center;line-height: 20px;font-style: normal;margin-right: 5px;color: #fff}
+#actualamount{ color:red}
+#tablePending{ padding: 15px 0}
+#tablePending td{ padding:6px 0;}
+#tablePending td:nth-child(2){ font-weight: bold;color: #fa0}
+#tablePending .noty-td{ text-align:right; font-weight:normal;color: #fff}
+.dp-noty-btn#button-0,.dp-noty-btn#button-1{ font-size:16px;padding: 10px 26px}
+
+/*用户等级*/
+.toplogin .tier-level,.new-item a:after,.sub-menu .hot-item a:after{
+    padding: 0 3px;
+    color:#000;
+    margin-right:0;
+    font-size: 16px;
+    font-family: Impact;
+    border-radius: 3px;
+    background: #fceabb;
+    background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);
+    background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+    background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.lv-con{background:#000;border-radius: 3px;padding: 3px;}
+.toplogin .tier-icon0,li.toplogin strong.tier-icon0,.toplogin .tier-icon,li.toplogin strong.tier-icon{color: #ccc; background: #ccc; -webkit-background-clip: text; -webkit-text-fill-color: transparent; -moz-background-clip: text; -moz-text-fill-color: transparent; background-clip: text; text-fill-color: transparent}
+@media all and (-ms-high-contrast:none) {
+    *::-ms-backdrop, .toplogin .tier-icon0 {background: #000}
+}
+.tier-icon:after{content:'VIP-'}
+.tier-icon0:after{content:'VIP-0'}
+.tier-icon1:after{content:'VIP-1'}
+.tier-icon2:after{content:'VIP-2'}
+.tier-icon3:after{content:'VIP-3'}
+.tier-icon4:after{content:'VIP-4'}
+.tier-icon5:after{content:'VIP-5'}
+.tier-icon6:after{content:'VIP-6'}
+.tier-icon7:after{content:'VIP-7'}
+.tier-icon8:after{content:'VIP-8'}
+.tier-icon9:after{content:'VIP-9'}
+.tier-icon10:after{content:'VIP-10'}
+.tier-info{position: absolute;top: 28px;left:5px;z-index: 99993;min-width: 200px;display:none;padding-top: 8px;/* border-top: 2px solid #b83826; */}
+.uccaret{display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px solid; border-right: 4px solid transparent; border-left: 4px solid transparent}
+.umc{margin: 2px 0 0 40%; border-bottom: 8px solid  #333a44; border-right-width: 6px; border-left-width: 6px; border-top: 0; display: block}
+.tier-info li{width:100%;background: #333a44;float: none;color:#ccc;font-size: 12px;margin:0;padding:7px 10px;line-height: normal;border: 1px solid #252b33;border-top: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.tier-info li:nth-child(2){ padding-top:10px}
+.tier-info li:last-child{ padding-bottom:10px}
+.tier-info li a{ width:100%; padding:8px 0; text-indent:10px;display: block; color:#fff}
+.tier-info li a:hover{background: #e0f0ff}
+.tier-info p{ margin:0}
+.tier-info b{color: #d1e2e1;font-size: 14px}
+.tier-info strong{color: #fff;font-size: 14px}
+.tier-info small{color: #fff;font-size: 12px}
+.tier-info .tier-icon0:after{color:#a0abb9}
+.tier-info strong.tier-level:after{ color:#000}
+#ProgressBar{ height: 3px; width: 100%; margin-top:-1px; border: 1px solid #1cb69b;border-bottom:0}
+#nickName{ margin-right:0;display: inline-block; padding-right: 5px}
+#topLoginBar{ line-height: 32px; padding-top: 2px}
+.login_lan .user-info-con{margin-right:5px;border-left:1px solid #1e2025;padding-left: 5px;}
+.user-log-out{border-right: 1px solid #1e2025}
+#pbCon{ height:100%; max-width: 100%;background:#1cb69b; position:relative; overflow:visible !important}
+#pbCon i{position: absolute; top: 0; right: 0; font-size: 12px; font-style: normal; line-height: 45px; color: #00775f; cursor:default}
+#pbCon i:after{content:""; position:absolute; top:7px;right:-4px; border-bottom:8px solid #3e4957; border-right-width: 6px; border-left-width: 6px; border-top: 0 ; border-right: 4px solid transparent; border-left: 4px solid transparent}
+.toplogin strong.tier-level{ background-color:transparent;padding: 2px}
+#progrLi,#fprogrLi{ padding: 0; margin: 5px auto 0; position:relative; background: #eee}
+#proBar,#fproBar{ height:2px;max-width: 100%; background: #1cb69b; width:0}
+#fproBar{ background: #1cb69b; text-align: right}
+#progrLi:before,#fprogrLi:before{content: "\2022"; position: absolute; top: 1px; left: -5px; font-size: 25px; line-height: 0; color: #b83826}
+/*#progrLi:after,#fprogrLi:after{content: "\2022"; position: absolute; top: 1px; right: -5px; font-size: 25px; line-height: 0; color: #b83826}*/
+.ui-label .value{position: absolute;top: 0; left: 8px;line-height: 22px}
+.tier-info #progrLi{ background: #333a44; margin: -1px 0}
+/*资金页面等级*/
+.fund-left,.fund-right{width: 50%; float:left;padding-right: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
+.fund-right{ padding:0 0 0 10px}
+.funds-dtl{ clear:both; width:100%;padding-top: 1px}
+.funds-p-tier{ display:block; position:relative;top:0; left:0; z-index:6}
+.funds-p-tier ul{ border:1px solid #e7e9ec;border-top: 0}
+.funds-p-tier li{ background:#fff; color:#888;font-size:13px;border-color:#e7e9ec;border-left:none; border-right:none; padding:10px 20px}
+.funds-p-tier li:nth-child(4),.funds-p-tier li:last-child{ border:none}
+.funds-p-tier b {color: #3e4957;width: 22%;display: inline-block}
+.funds-p-tier strong {color: #d45858}
+.funds-p-tier small{color: #3e4957}
+.funds-dtl tr td,#feelist .even:hover,#feelist .odd:hover{ cursor: default}
+#feelist .bizhong_en:hover{color: #2b343c}
+.funds-dtl .odd,.funds-dtl .even {height: 32px}
+.funds-p-tier #fprogrLi{ width:100%;background: #eeeff1; margin:0; border: none}
+.funds-p-tier #fproBar{ height:3px}
+.funds-p-tier #fprogrLi:before{ content:''; width: 1px; background: #00d67f; display: block; top: 0; left: 0; height: 3px}
+.funds-p-tier #fprogrLi:after{content:''}
+.funds-p-tier .tier-level{ margin-right:5px}
+.f-d-info{ min-height: 204px;border:1px solid #e7e9ec;padding:15px;border-top: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box}
+.f-d-info ul{ border:none}
+.funds-p-tier #crFund{ color:#333; font-size:16px;padding: 10px}
+#crFund span{ color:#d45858; font-size:18px}
+#crFund div{ margin-top:5px}
+.funds-p-tier .fund-tips{ font-size:13px; color:#5e847c;padding:5px 10px}
+#hidezero  + .vr-btn{ margin:2px 5px 10px 0}
+.HideZeroDiv label{ cursor:pointer}
+/*2017-02-10 fixed start*/
+.price-flot{ padding-right: 25px; background: none;text-align: right !important}
+.price-chart{ text-align: center;opacity: 0.6;-webkit-filter: saturate(300%);filter: saturate(300%)}
+.dark-body .price-chart{-webkit-filter:hue-rotate(165deg) contrast(30%); filter: hue-rotate(165deg) contrast(30%);opacity:0.9}
+.legend tr{ display: table-row !important}
+.hide,#tradeCoinNews,#tradeCoinComment,#tradeCoinFunds{ display:none}
+/*2017-02-10 fixed end*/
+.qpp-qr-con{ float: right;margin: 5px 15px 0 0}
+.qpp-qr-con img{ float: left}
+.qpp-qr-con span{ float: left;font-size: 20px;  margin: 13px 5px 0 0;  line-height: 24px;  font-weight: 100}
+.withdraw-record td{ padding: 8px 0;border-bottom: 1px solid #eee}
+.clearfix:after,.clearfix:before,.dataTables_wrapper:after,.dataTables_wrapper:before {content:" ";display:table;clear:both}
+.r-btn {padding:3px 8px;background:#d45858;color:#fff;border-radius: 4px;}
+.r-btn:hover {background:#d45858;color:#fff}
+.kr-body .go-trade-btn{ word-break: keep-all; display: inline-block}
+.no-wrap .go-trade-btn {padding:3px 6px;font-weight:normal; color: #fff;display: inline-block;min-width: 42px}
+.no-wrap .go-trade-btn:hover {color:#fff}
+.no-wrap .disabled-trade-btn,.no-wrap .disabled-trade-btn:hover{ color: #ccc; background: #666; cursor: not-allowed;font-size: 13px;font-weight: normal;padding: 4px;display: inline-block}
+.advantage {clear:both;border-top:1px solid #eee; text-align: center}
+.advantage h1 {padding:50px 0 0;font-weight:normal}
+.advantage h2 {font-weight:200;color:#888;padding:20px 0 0;font-size:15px;opacity: 0}
+.advantage ul {width:80%;margin:20px auto 0}
+.advantage li {float:left;width:33.33%;text-align:center}
+.advantage li span {font-size:50px;font-weight:100;color:#ffffff;padding:5px;display:block;width:150px;height:150px;line-height:150px;text-align:center;margin:0 auto 15px;background:#384e77;border-radius:50%; position: relative}
+.advantage li i {font-size:14px;font-style:normal}
+.advantage li div {font-size:18px}
+.advantage img{ width: 200px;border-left: 10px solid #b83826;border-right: 10px solid #b83826;border-radius: 5px; cursor: pointer}
+.en-body .advantage img{border: none}
+.img-modal{ position: fixed;top:20%; padding: 5px 0;max-width: 100%;min-width: 360px;text-align: center; background: rgba(0,0,0,0.5);z-index: 998}
+.img-modal img{ max-width: 100%;max-height: 100%; padding: 0 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.img-modal .img-box{ position: relative;background: #b83826;margin-bottom: 5px;}
+.img-modal .img-box:nth-child(2){ margin: 0}
+.en-body .img-modal .img-box{ background: #fff}
+.img-close{ position: absolute; right: 5px;top:5px; font-size: 24px; color: #fff;background: rgba(0,0,0,0.7);width: 38px;height: 38px;line-height: 38px;text-align: center; cursor: pointer}
+.img-close:hover{background: rgba(183, 25, 25, 0.7)}
+.logo-img{ padding: 5px}
+.logo-img img{ width: 380px; padding: 0; border: 46px solid #b83826;}
+.save-btn{ position: absolute; bottom: 0; left: 0; width: 100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.save-btn li{ float: left; width: 50%; padding: 15px 0; text-align: center;background: rgba(0,0,0,0.3);color: #fff;;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor: pointer}
+.save-btn li:hover{background: rgba(0,0,0,0.8)}
+.save-btn li:first-child{border-right: 1px solid #b83826;}
+.en-body .logo-img img{ border-color: #fff; background: #fff}
+.en-body .save-btn li:first-child{border-color: #666}
+/*loading*/
+.load8{height: 30px;width: 30px;margin: 12px auto 0;position: absolute;top: 5px;right: 18%;overflow: hidden;}
+.load8 .loader {margin:0 auto;font-size:10px;position:relative;text-indent:-9999em;border-top:3px solid rgba(30,117,101,0.2);border-right:3px solid rgba(30,117,101,0.2);border-bottom:3px solid rgba(30,117,101,0.2);border-left:3px solid #02ab9a;-webkit-animation:load8 1.1s infinite linear;animation:load8 1.1s infinite linear}
+.load8 .loader,.load8 .loader:after {border-radius:50%;width:15px;height:15px}
+@-webkit-keyframes load8 {0% {-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+    100% {-webkit-transform:rotate(360deg);transform:rotate(360deg)}
+}
+@keyframes load8 {0% {-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+    100% {-webkit-transform:rotate(360deg);transform:rotate(360deg)}
+}
+/* io fixed*/
+#topLinks{float: right;/*margin: 10px 20px 0 0;*/}
+#topLinks .caret:before{color:#09162e}
+#theme{float: right;margin: 7px 10px 0 0;color: #aaa;}
+#theme li{display: inline-block;height: 20px;cursor: pointer;width: 20px;line-height: 20px;text-align: center;font-size: 16px;border: 1px solid #313b44;float:  left;}
+#theme .cur-theme{background: #313b44;color: #fc0;}
+.top-up{ background: #09162e}
+.dealbox .jiaoyi_btn,#coinStatus .normal-st-bg,.push-con .sub-sell,div .alert-sub {background:#25796a; font-weight: normal}
+#coinStatus li{ line-height: 14px}
+.m_con_buy .jiaoyi_btn,.r-btn,.step .butto,.fund-deposit, .fund-withdraw,.fxts i,.ask_ans i ,.hot:after, .new:after,.sectioncont .sms-setup #submit, .sectioncont #submit.sub-btn, .sectioncont .sub-btn, .sub-btn,.en-body .dealbox .jiaoyi_btn{background:#b83826;}
+div .room-tag{background: rgba(212, 88, 88,0.9)}
+.fund-withdraw,.en-body .m_con_buy .jiaoyi_btn {background:#25796a;}
+.btn-success{background:#29a555 !important; color: #fff !important}
+.btn-warn{background:#da7f0b !important; color: #fff !important}
+.btn-error{background:#ef2e0d !important; color: #fff !important;border-radius: 4px;}
+.btn-normal{background: #067da4 !important;color: #fff !important;}
+.btn-success:hover{background:#0db37f !important; color: #fff !important}
+.btn-warn:hover{background:#e4ad2c !important; color: #fff !important}
+.btn-error:hover{background:#ca4141 !important; color: #fff !important}
+.btn-normal:hover{background:#199fcc !important; color: #fff !important}
+.topnum{ font-weight: normal}
+.rate_up, .red, font[color="red"], .main_title h1 .red,.icon-arrow-up,#ul-bid-list .right-align.price,.en-body #ul-ask-list .right-align.price,ul#ul-bid-list .price:before,button.btnOn, .line-type button.btnOn,.topnum,.add-dn-qr,.user-info-box p span, .user-info-box em,#crFund span,.funds-p-tier strong,.cion-dtl-ul b,.fail-tip,.navlist .btn-active i,.dataTables_empty, .left_con .marketlist .dataTables_empty,.gateio-nav > li:hover > a, .gateio-nav > .nav-active > a,.tline_btns .btn_selected,.en-body #ul-ask-list .right-align.price,.en-body ul#ul-ask-list .price:before,.up .my-type{ color: #b83826;}
+.en-body .down .price, .en-body #ul-trade-list font[color="#cc3333"], .en-body .rate_down, .en-body .red, .en-body font[color="red"], .en-body .main_title h1 .red, .en-body .icon-arrow-down ,.en-body .down .my-type{color: #b83826; !important}
+.no-wrap .go-trade-btn:hover,.r-btn:hover,.step .button:hover{ background:#ff5d42 }
+#buyYuE,#buyYuE .coin-unit,.up .price,.en-body #sellYuE,.en-body #sellYuE .coin-unit,.en-body .down .price,.kr-body.en-body #buyYuE{color: #b83826; !important}
+.rate_down,.green,font[color="green"],.main_title h1 .green,.icon-arrow-down,#ul-ask-list .right-align.price, ul#ul-ask-list .price:before,.en-body #ul-bid-list .right-align.price,.en-body ul#ul-bid-list .price:before,.down .my-type{color:#29a555}
+.light-green{color: #00b393}
+.en-body .up .price, .en-body #ul-trade-list font[color="#339900"], .en-body .rate_up, .en-body .green, .en-body font[color="green"], .en-body .main_title h1 .green, .en-body .icon-arrow-up, #sellYuE,#sellYuE .coin-unit,.down .price,.en-body #buyYuE,.en-body #buyYuE .coin-unit,.en-body .up .price,.en-body .up .my-type,.kr-body.en-body #sellYuE{color:#29a555 !important}
+span.order-t-active,.fkicon .fico{ border-color:#b83826;}
+.dealbox .button:hover,.fund-withdraw:hover ,.en-body div.m_con_buy .jiaoyi_btn:hover{background: #0db37f}
+.sectioncont .sms-setup #submit:hover, .sectioncont #submit.sub-btn:hover, .sectioncont .sub-btn:hover, .sub-btn:hover,.maichu .dealbox .jiaoyi_btn:hover,.room-tag:hover,.fund-deposit:hover {background: #ca4141 !important}
+.sub-btn[disabled],.sub-btn[disabled]:hover{cursor: not-allowed;  color: #eee !important; background: #aaa !important}
+.warn-depo, .warn-depo:hover {background: #ce9900 !important}
+.err-depo, .err-depo:hover {background: #888 !important}
+.inputRate{ border-radius:0; box-shadow: none}
+#logoColor1,#logoColor2{ fill: #b83826;}
+.dark-body #logoWhite{fill:#eee}
+#full-screen-slider {margin-bottom:0}
+.dark-body .content{ border-color: #313b44}
+.fxts p{ text-align: center}
+.top-nav .navlist {top: -32px;z-index: 2}
+.button {background-color:transparent;border:none; color: #ddd}
+.dark-body .caret:before {color: #252e3e}
+#marketlist_controller .button{ position: relative;border-bottom: 3px solid transparent;}
+#marketlist_controller .button:after {content:'';position:absolute;bottom:0;left:48%;border-top:none;border-right: 4px solid transparent;border-left: 4px solid transparent;border-bottom:4px dashed;border-width:8px;color:#b83826;}
+.arr-con i{ position: absolute}
+#upArrow.caret:before,#dnArrow.caret:before{ color: transparent !important}
+#dayRate{ margin-left: 3px}
+#currPrice,#currCNY{ margin-right: 3px}
+.second-nav > li:hover > a, .third-nav a:hover {background: #964b4b}
+.list-box .coin-name,#custom_box .coin-name {margin:0;text-align: left}
+.name-con{max-width: calc(100% - 32px);margin-top: 7px;float:left;text-align: left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.limi-row .name-con{margin: 0;line-height: 16px;text-align: left;width: calc(100% - 37px);}
+.en-body .list-box .coin-name,.en-body #custom_box .coin-name{ text-indent: 5px; color: #333}
+.en-body .list-box .coin-name:hover,.en-body #custom_box .coin-name:hover{color: #b83826;}
+.dark-body .list-box .coin-name,.dark-body #custom_box .coin-name{color: #8f9fa5;}
+.b-page-title{ margin-top: 10px}
+.coin-name b{ margin-left:5px;color: #2b343c;}
+.en-body .coin-name b{ font-weight: normal}
+.coin-name b:hover{color: #d45858}
+.area-btn-bg {background:#252e3e;;height:52px}
+.tline_btns .btn_selected {background:transparent;cursor: default;border:none;border-bottom: 3px solid #b83826!important;}
+.tline_btns .btn_selected:hover,.tline_btns .button:hover {background:#303e4c;color:#b83826;border:none}
+.tline_btn:after{ display: none}
+.tline_btn.btn_selected:after{ display: inline-block}
+.logo img,.logo svg {width:68px;height:68px;margin:7px 15px 0 0}
+.leftbar,.left_btn{background: #fff}
+.fkcont,.top-nav .nav-bottom-bg{ display: none}
+.fnav {background:#09162e}
+.tail {border:none}
+.flin,.top-nav{ border: none}
+.fnavcon {height:auto; padding: 20px 0;margin-top: 20px;}
+.fkicon ul li{ margin-top: 42px}
+.kr-body .fkicon{ height: 234px}
+.fkicon .fico{ margin-left: 40%}
+.bottom-notice{ padding: 23px 0 0;}
+.bottom-notice ul{ height: 22px;overflow: hidden;}
+.bottom-notice a,.bottom-notice svg{ float: left}
+.bottom-notice a{ margin: 3px 0 0 5px}
+.bottom-notice ul .n-box{max-width: 65%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; display: inline-block}
+.fnav_list,.fxtishi {width:100%; text-align: center}
+.fxtishi{ margin-top: 30px}
+.fnavcon ul li ul li {width:14%; display: inline-block; text-align: center}
+.linktitle h3{ padding-top: 15px}
+.linkcontent{ line-height: 20px}
+.login_lan .user-info-con {border-color:#3e404a}
+.lv-con {background:none;border-radius:0}
+.trade-main .m_title{ margin-bottom: 20px}
+.side-sev {top:145px}
+.side-sev ul li{ border: none}
+.top-dn{ height: 80px}
+.gateio-nav {margin-top:18px}
+.gateio-nav > li > a {height: 32px;line-height: 36px;margin-bottom:0;padding:0 26px 10px;font-size: 18px}
+.qqtel a{ color: #333}
+.top-dn .caret,.top-up .caret{color: #8f9fa5}
+.top-up .ask_ans:hover{color: #fff;}
+.ask_ans i{margin-right: 5px;font-size: 16px;}
+.ask_ans .tico{line-height: 21px;display: inline-block;}
+.ask_ans i img{width: 14px;opacity: 0.8;vertical-align: middle;}
+.ask_ans .serv-icon img{width: 24px;margin-top: 6px;}
+.dark-body .ask_ans:hover i{background: #47535f}
+.left_btn{ height: 36px;  line-height: 36px; font-weight: normal;text-align: center;}
+div.header {border:none;background: #fff;}
+.market-choose-ul { margin-top: 10px}
+.market-choose-ul li {float:left;padding:10px;font-size:16px;margin-bottom:10px; border-bottom: 2px solid transparent; cursor: default}
+.market-choose-ul .mc-active {border-bottom-color:#b83826;}
+div.co-intro{ width: 100%}
+.item.coin_about{ margin-bottom: 50px}
+.index-content .coin-selected td:last-child:after{ display: none}
+.index-content .marketlist .coin-selected td:last-child{ border: none}
+div.box-padding{ margin-bottom: 15px}
+.load8{right: 27%;}
+.left_con .load8{ right: 5%; display: block}
+.top-nav .expand{ border-top: 1px solid transparent;border-bottom: 1px solid transparent; background: none; box-shadow: none}
+.top-nav .navlist a.btn-active,.top-nav .navlist a.btn-active:hover{ border-bottom: 1px solid #b83826; background: none}
+.navlist .btn-active i.caret:before{ color: #fff}
+.second-nav{ left: -14px; top:42px}
+.second-nav .caret:before{color:#333a44 !important}
+.second-nav > li:hover > a .caret,.gateio-nav > li:hover > a .caret {color:#ff8686 }
+.second-nav > li:hover > a .caret:before {color: #964b4b !important }
+.second-nav > li:hover .third-nav li:first-child {border-left-color:#0f1319}
+.second-nav > li {width: 150px}
+.second-nav > li > a { padding: 10px 0 !important}
+.third-nav{ left: 150px}
+.introduction{ margin: 5px 0}
+.cionintro{ border: none}
+#expandZone .introduction h3{ padding-bottom: 15px}
+#ask-list, #bid-list{height:120px;overflow-y: hidden}
+#ask-list:hover, #bid-list:hover{ overflow-y: scroll}
+#ask-list li, #bid-list li{ padding-right: 6px; cursor: pointer; clear: both}
+#ask-list li:nth-child(even), #bid-list li:nth-child(even){ background: #f8f8f8}
+#ask-list li:hover, #bid-list li:hover{ background:#e1e1e1}
+#ask-list:hover li, #bid-list:hover li{ padding-right: 0}
+#ask-list:hover li .rect, #bid-list:hover li .rect{ right: -6px}
+.main_content,#tradelist{ padding:0 20px}
+#marketSearch,.dataTables_wrapper .dataTables_filter input{ background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNyIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE3IDE3Ij48cGF0aCBmaWxsPSIjREU1OTU5IiBkPSJNMTYuNDk1IDE0LjI0OGwtMy43MjQtMy43MjVjLjY1LTEuMDUgMS4wNDItMi4yNzMgMS4wNDItMy41OTggMC0zLjgwMy0zLjA4LTYuODg1LTYuODgzLTYuODg1Uy4wNCAzLjEyMy4wNCA2LjkyNWMwIDMuODAzIDMuMDgzIDYuODg1IDYuODg1IDYuODg1IDEuMzI0IDAgMi41NS0uMzkyIDMuNTk4LTEuMDRsMy43MjYgMy43MjVjLjYyLjYyIDEuNjI0LjYyIDIuMjQ1IDAgLjYyLS42Mi42Mi0xLjYyNiAwLTIuMjQ3ek02LjkyOCAxMS42OWMtMi42MzMgMC00Ljc2OC0yLjEyOC00Ljc2OC00Ljc2IDAtMi42MzMgMi4xMy00Ljc2OCA0Ljc2My00Ljc2OCAyLjYzMiAwIDQuNzY3IDIuMTM1IDQuNzY3IDQuNzY3IDAgMi42MzItMi4xMzMgNC43NjUtNC43NjYgNC43NjVsLjAwNC0uMDA0eiIvPjwvc3ZnPg==')}
+.view-show {background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cGF0aCBmaWxsPSIjREU1OTU5IiBkPSJNMzIgMjZjLTMuMzE0IDAtNiAyLjY4Ni02IDZzMi42ODYgNiA2IDYgNi0yLjY4NiA2LTYtMi42ODYtNi02LTZ6bTMxLjk5NyA2LjM4YzAtLjAzLS4wMDQtLjA1NS0uMDA2LS4wODJ2LS4wNGMwLS4wMiAwLS4wNC0uMDEtLjA2IDAtLjAyIDAtLjA0NS0uMDEtLjA2Ny0uMDctLjUtLjMxLS45OC0uNjctMS4zNC0yLjA0LTIuNDc3LTQuNDctNC42OC02Ljk0LTYuNjkzLTUuMzItNC4zMzYtMTEuNC03Ljk2My0xOC4xMS05LjQyNC0zLjg4LS44NDQtNy43ODItLjg4LTExLjY5LS4xNjUtMy41NS42NS02Ljk3IDItMTAuMTcgMy42NzUtNS4wMSAyLjYyLTkuNTgyIDYuMjMtMTMuNTcgMTAuMjgtLjczNC43NS0xLjQ3IDEuNTEzLTIuMTQgMi4zMy0uODkyIDEuMDgtLjg5MiAyLjM2MyAwIDMuNDUgMi4wNCAyLjQ3NiA0LjQ3IDQuNjggNi45NCA2LjY5IDUuMzIgNC4zMzQgMTEuNDA0IDcuOTYgMTguMTIgOS40MjIgMy44OC44NDIgNy43OS44OCAxMS42OS4xNjQgMy41NDctLjY1IDYuOTY3LTIgMTAuMTctMy42NzcgNS4wMS0yLjYyIDkuNTg2LTYuMjMgMTMuNTczLTEwLjI4LjczNy0uNzUgMS40Ny0xLjUxNSAyLjE0NC0yLjMzLjM1Ni0uMzY2LjU5LS44NC42Ny0xLjM1di0uMDFsLjAxLS4wNy4wMDctLjA1Ni4wMDItLjA0LjAwNy0uMDguMDA0LS4xMjMtLjAwNy0uMTItLjAxMy0uMDA0ek0zMiA0NGMtNi42MjcgMC0xMi01LjM3Mi0xMi0xMnM1LjM3Mi0xMiAxMi0xMiAxMiA1LjM3MyAxMiAxMmMwIDYuNjI4LTUuMzczIDEyLTEyIDEyeiIvPjwvc3ZnPg==')}
+#divMyOrderSection{ position: relative; z-index: 2}
+.leftbar .dark-tradelist .even{background:rgba(0,0,0,0.1)}
+.index-content .dark-tradelist #marketlistTabCon .coin-selected, .index-content .dark-tradelist #marketlistTabCon .coin-selected:hover,.dark-body .coin-selected,.dark-body .coin-selected:hover {background: #233548}
+.dark-body .coin-selected:hover{background: #2d4358 !important}
+.index-content .coin-selected td:last-child:after {content:'';position:absolute;top:10px;right:-6px;display:inline-block;width:0;height:0;border-left:6px dashed;border-top:6px solid transparent;border-bottom:6px solid transparent;color:#c0d0e0}
+.index-content .dark-tradelist .coin-selected td:last-child:after{ color: #2c435a}
+div .free-icon {background: #7d5221;color: #ddd;border-color:#a76316}
+.leftbar #marketSearch{ height:38px;margin-bottom: 0}
+.sorting{ background-color: transparent}
+.top-con{ position: relative}
+.qqtel{position: absolute;right: 12px;top: 78px;z-index: 88889;}
+.mairu-form,.maichu-form{ width: 50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.mairu-form{ padding-left: 30px;float: left;}
+.maichu-form{ padding-right: 30px;border-right: 1px dashed #c8dae2;position: relative;float: left;}
+.maichu-form:before,.maichu-form:after{ content: ''; position: absolute;top:0; right: -2px; background: #fff; width: 3px; height: 40px; display: block}
+.maichu-form:after{ bottom:0; top: auto; height: 15px}
+.en-body .mairu-form {padding-right: 30px; padding-left:0;border-right: 1px dashed #c8dae2}
+.en-body .maichu-form {padding-left: 30px; padding-right: 0; border-right: none}
+.m_title{ font-size: 17px}
+.myacc-con .m_title{ font-size: 20px}
+.myacc-con .m_title h4{ /*text-align: center;*/}
+.kline-title{ position: absolute; top:20px; z-index:9995;font-size: 17px; cursor: default; display: none}
+.title-line b,.dealtop{ font-weight: normal}
+.dealbox td{padding-right: 0}
+.dealbox .input-td{ width: 100% !important; position: relative;padding: 5px 0}
+.input-title{ position: absolute;top:16px; left: 10px}
+.top-risk-tip{position: absolute;z-index: 66;top: 12px;left: 2px}
+#marketlist_controller{background: none}
+
+.market-risk-tip{ display:none;position: absolute; top:0;z-index: 9998; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+.risk-tip{ display:none;position: absolute; top:0;z-index: 9998; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+.tip-con{width:550px;margin: 0 auto;margin-top: 11%;background: #fff;padding: 30px 30px 15px;line-height: 26px;}
+.risk-tip-kr .tip-con{width:970px;max-height: 100%;margin-top: 0;overflow: auto;box-sizing:  border-box;}
+.r-t-box{ width: 100%; height: 100%}
+.tip-con h3{ text-align: center; margin-bottom: 10px; font-size:18px;border-bottom: 1px solid #ddd;padding-bottom: 20px;}
+.tip-con li{ margin-bottom: 5px; list-style: disc}
+.tip-list{ padding-left: 15px;margin: 20px 0;}
+div .tip-con .sub-btn{ width: 100%;display: inline-block;text-align: center;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.openmarket-tip{ display:block}
+
+/*验证手机号+邮箱验证 yangfengyun*/.hidden {display:none;color:#d45858;font-size:15px;margin:10px 0;}
+.ok {color:#3c763d;font-size:15px;}
+.err {color:#a94442;font-size:14px;}
+.proving_err {border-color:#a94442 !important;}
+.proving_ok {border-color:#3c763d !important;}
+.proving_true:before {content:"\221A";}
+.proving_true {color:#0da77d;font-size:18px;font-weight:bold;position:absolute;top:62px;right:0;width:34px;height:34px;line-height:34px;text-align:center;display:none;}
+.proving_dt {margin-top:15px;}
+/*警告  yangfengyun*/
+#veriCon {position:fixed;bottom:0;z-index: 9997;width:100%;}
+#veriCon > div {padding:0 14px;font-size:16px;opacity:0.95;min-width: 1258px !important;}
+#veriCon > div:hover {opacity:1;}
+.veri_c2c {background-color:rgb(176,18,0);}
+.veri_rz {background-color:rgb(133,0,26);}
+.veri_gg {background-color:rgb(12,78,60);}
+.veri_phone {background-color:rgb(129,97,0);}
+.veri_dl {background-color:rgb(9,28,63);}
+#veriCon .r-btn {padding:0;background:#f60;border-radius:3px;float:right;line-height:32px;margin-top:2px;width:128px;text-align:center;}
+#veriCon .r-btn:hover {background:#f90;}
+.n-link {color:#fff;display:inline-block;width:97%;float:left;line-height:36px;cursor:pointer;}
+.n-link em {font-style:normal;display:inline-block;width:calc(100% - 128px);}
+#veriCon .close {margin-top:10px;}
+#veriCon .close:after {color:#aaa;}
+.n-link:hover,#veriCon .close:hover:after,#siteNoty .close:hover:after {color:#ffa;}
+
+
+@media only screen and (min-width: 1170px){
+    #tradelist .dataTable td:first-child span:last-child{ color: #555}
+    .dark-body #tradelist .dataTable td:first-child span:last-child{ color: #aaa}
+}
+@media screen and (min-width: 1680px) {
+    .left_con .marketlist #leftbarupdn{ padding:0}
+}
+@media screen and (max-width: 1800px) {
+    .trade-main .dealbox td:first-child{width: 15%}
+}
+@media screen and (max-width: 1680px) {
+    .en-body,.leftbar .marketlist .odd > td, .leftbar .marketlist .even > td,.sortable,.sorting_disabled,.en-body .left_btn{ font-size: 13px}
+    .righttopnews { width: 50% }
+    .twc h5 { font-size: 18px }
+    .funds-p-tier b{ width: 26%}
+    div.formbox .sfz {min-height: 372px}
+    .trade-main .dealbox td:first-child{width: 18%}
+    .trade-main .dealbox td:nth-child(2){width: 60%}
+    .right-align.price{width: 47%}
+    #tableAskList .right-align.price{width: 41%}
+    #tableAskList .total.right-align{ width: 32%}
+    .en-body #tableAskList .total.right-align{ width: 32%}
+    .volume.right-align{width: 27%}
+    .title-line .price b:before{margin-right: 20px !important}
+    #ul-ask-list .price:before{margin-right: 23px !important}
+    #ul-bid-list .price:before{margin-right: 23px !important}
+    #tradelist{ padding: 0 15px}
+    .leftbar .icon-16{ margin-left: 4px}
+    .volume.right-align{ padding-right: 0}
+    .bizhong_en{ padding: 0 3px;float: left}
+    div .high-low{ font-size: 12px}
+    #top_last_rate_change dl:nth-child(2){display: none}
+    #top_last_rate_change dl:first-child{ border: none}
+    .left-price-type{letter-spacing: -1px;font-size: 12px}
+    #tradelist .dataTable th:after{ width: 8px; margin-left: 1px}
+    #tradelist .dataTable td:first-child span:last-child{width: 60px; margin-left:3px; color: #666;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; display: inline-block}
+    #tradelist .dataTable td:first-child .bizhong_en:last-child{ margin-left: 0;width: auto}
+    #tradelist #marketlist_custom td:first-child span{margin-top:0}
+}
+@media screen and (max-width: 1410px) {
+    .righttopnews { width: 40% }
+    .twc h5 { line-height: 28px; font-size: 16px }
+    .invest_mode img{ width:100%}.title{ top:360px}
+
+    .index-content .main_title h1,.index-content .main_title h1 strong,.main_content .m_title,.main_title h1 em{ font-size: 16px}
+    .top-nav .navlist .nav-btn{ margin: 0}
+    .gateio-nav{ margin-left: 0}
+    ul.gateio-nav > li > a{ padding-right: 8px}
+    .ask_ans{ margin-left: 0}
+    body,.table-inacc{ font-size: 13px}
+    .en-body,.table-inacc-body tr td:nth-child(4),#marketlistTabCon th,#smsbtn, #voicebtn,.gm-head,#ulGlobalMarkets .green,#ulGlobalMarkets{ font-size: 12px}
+    .dealbox td:first-child{ width: 15%}
+    .dealbox td:nth-child(2){ width: 62%;padding: 3px 0}
+    #tradelist,.main_content {padding: 0 20px}
+    .trade-list_re li .time{ width: 17%}
+    #coin_about .btn .text,.left_btn,ul.curr-coin-info li{ font-size: 14px}
+    .funds-p-tier b{ width: 29%}
+    div.formbox .sfz {min-height: 308px}
+    .trade-main .dealbox td:first-child{width: 20%}
+    #ul-ask-list .price:before{margin-right: 16px !important}
+    #ul-bid-list .price:before{margin-right: 16px !important}
+    #tradelist{ padding: 0 10px}
+    .dealbox i{ font-size: 12px}
+    .en-body #tableAskList .total.right-align{ width: 27%}
+    div.tip-con{ margin-top: 9%}
+    .bizhong_en{ padding-right: 0}
+    #tableAskList .right-align.price{width: 40%}
+    .volume.right-align{width: 28%}
+    div .trade-main,div.k-line-container{ width: 68%}
+    div .buy-sell-order,#globalInfoCon{ width: 32%}
+    .dealbox td{ padding: 2px}
+    #my-fund-list .right-align,#my-fund-title .right-align{ width: 21%}
+    div#fund-info-box .right-align:nth-child(2) {width: 40%}
+    #tradelist .dataTable th:after {width: 5px;height: 14px;margin-top: 13px;background-size: cover}
+    #top_last_rate_change small{ line-height: 26px}
+    .topprice li:last-child{ display: none}
+    #veriCon > div{ font-size: 14px}
+}
+@media screen and (max-width: 1280px) {
+    .leftbar .icon-16{ display: none}
+    #tradelist table tr td:first-child{ width: 36%}
+    .leftbar{ width: 24%}
+    .main_content{ width: 76%}
+    div .trade-main,div.k-line-container{ width: 65%; padding-right: 10px}
+    div .buy-sell-order,#globalInfoCon{ width: 34%}
+    .dealbox td{ padding: 3px 0}
+    .line-type .choosen {margin-right: 10px !important}
+    .line-type button{ padding: 1px 3px !important}
+    div .line-option ul:before{ left: 26px}
+    div .line-option{ right: 23px}
+    #mianTlist li a,#top_last_rate_change .price-dl em{ margin-right: 5px}
+    div .room-title{margin: 10px 0 0 5px;font-size: 14px;}
+}
+@media screen and (max-width: 996px) {
+    html,body,.risk-tip,.market-risk-tip{ font-size: 13px;min-width: 0}
+    .header,.footer,#full-screen-slider,.left_con_login,.topspace,.content{min-width:0 !important}
+}
+/*奖品大赛媒体查询 yangfengyun*/
+@media screen and (max-width: 1550px) {
+    #ulRace,.gm-details span,.gm-head{font-size:12px !important;white-space: nowrap;}
+    .gm-details span:nth-child(3){overflow:hidden;text-overflow :ellipsis;}
+    #gInfoTitle{font-size:15px;}
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.warn{height: 38px; line-height: 52px; color: #b83826; font-size: 15px;}
+.warn i{display: inline-block;width: 18px;height: 18px;line-height: 17px;text-align: center;border-radius: 50%;margin-right: 5px;font-style: normal;color: #fff;background: #b83826;}

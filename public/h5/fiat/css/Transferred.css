@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+div#Transferred{
+	padding: 10px 3% 0;
+}
+div#header{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+div#header img{
+	width: 20px;
+}
+
+
+
+div#transfer .h1{
+	font-size: 2.4rem;
+}
+div#transfer table{
+	width: 100%;
+	height: 50px;
+	margin-bottom: 50px;
+	font-size: 1rem;
+}
+div#transfer table tr{
+	height: 26px;
+	line-height: 26px;
+}
+div#transfer table tr:nth-child(1) td{
+	padding-bottom: 20px;
+}
+div#transfer table tr td{
+	width: 63%;
+	font-size: 14px;
+}
+div#transfer table tr td:nth-child(1){
+	color: #86aab0;
+	outline: none;
+}
+div#transfer table tr td span{	
+	display: inline-block;
+	color: #ccc;
+	width: 45%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #eee;
+}
+
+div#transfer table tr td span:last-child{
+	margin-left: 8%;
+}
+.back{
+	background: linear-gradient(to right, #6596e3, #5988cf) !important;
+	color: #fff!important;
+}
+div#transfer table tr td i{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	margin-left:10px ;
+	border: 1px solid #ccc;
+}
+div#transfer table tr td i img{
+	width: 18px;
+}
+
+div#transfer div.num{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+div#transfer div.num input{
+	height: 100%;
+	line-height: 45px;
+	border: none;
+	outline: none;
+	width: 60%;
+}
+div#transfer div.num input:focus{
+	border: none;
+	outline: none;
+}
+div#transfer div.num ul{
+	overflow: hidden;
+	list-style: none;
+}
+div#transfer div.num ul li{
+	float: left;
+	padding: 12px 5px;
+	color: #ccc;
+}
+div#transfer div.num ul li:nth-child(3){
+	color: #000;
+}
+div#transfer div.num p{
+	margin-top: 10px;
+	color: #b2bbbe;
+}
+div#transfer div.num p img{
+	margin-top:-5px ;
+}
+
+
+div#bottom{
+	position: fixed;
+	bottom: 10px;
+	width: 96%;
+	margin: 0 auto;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #cfdade;
+	color: #fff;
+	background: -webkit-linear-gradient(left, #cfdade , #cfdadd,#cfdade); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #cfdade , #cfdadd,#cfdade); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #cfdade , #cfdadd,#cfdade); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #cfdade , #cfdadd,#cfdade); /* 标准的语法 */
+}
+
+

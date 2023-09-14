@@ -1,0 +1,263 @@
+
+<div>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12">
+            <div class="layui-card">
+                <div class="layui-card-header">订单编号 ：20181209989979HGIF84354</div>
+                <div class="layui-card-header">订单状态 ：<span class="layui-badge">交易中</span></div>
+                <div class="layui-card-header">最新进度 ：<span class="layui-badge-rim">2018-12-09 12:36:09</span><span class="layui-badge layui-bg-blue">平仓</span></div>
+                <br>
+                <br>
+                <!--<div class="layui-card-body">-->
+                    <!--<div class="layui-progress layui-progress-big">-->
+                        <!--<div class="layui-progress-bar" lay-percent="1/6"><span class="layui-progress-text">2 / 6</span></div>-->
+                    <!--</div>-->
+
+                    <!--<div class="layui-row">-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon layui-icon-face-smile" style="font-size: 20px; color: #009688;"></i> <span class="layui-badge  layui-bg-green">订单创建成功</span></h3>-->
+                            <!--<span>4月28日 00:00</span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon layui-icon-loading" style="font-size: 20px; color: #ff3331;"></i> <span class="layui-badge">交易中</span></h3>-->
+                            <!--<span>4月28日 00:00</span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon" style="font-size: 20px; color: #ff3331;"></i> <span class="layui-badge-rim">平仓中</span></h3>-->
+                            <!--<span>-/-</span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon" style="font-size: 20px; color: #ff3331;"></i> <span class="layui-badge-rim">已平仓</span></h3>-->
+                            <!--<span>-/-</span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon" style="font-size: 20px; color: #ff3331;"></i> <span class="layui-badge-rim">未结算</span></h3>-->
+                            <!--<span>-/-</span>-->
+                        <!--</div>-->
+                        <!--<div class="layui-col-sm2" style="text-align: center">-->
+                            <!--<h3><i class="layui-icon" style="font-size: 20px; color: #ff3331;"></i> <span class="layui-badge-rim">已结算</span></h3>-->
+                            <!--<span>-/-</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+                <br>
+                <br>
+            </div>
+        </div>
+
+
+        <div class="layui-col-sm12">
+            <div class="layui-card">
+                <div class="layui-card-body" >
+                    <div class="layui-row">
+                        <div class="layui-col-sm4">
+                            <div class="layui-card-header">交易信息</div>
+                            <ul class="layui-timeline">
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            买卖类型 ： {{ d.params.type }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            用户 ： {{ d.params.user_id }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            交易货币 ： {{ d.params.currency }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            法币货币 ： {{ d.params.legal }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            手数 ： {{ d.params.share }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            倍数 ： {{ d.params.multiple }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+                            </ul>
+                        </div>
+                        <div class="layui-col-sm4">
+                            <div class="layui-card-header">资金信息</div>
+                            <ul class="layui-timeline">
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            初始保证金 ： {{ d.params.origin_caution_money }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            当前可用保证金 ： {{ d.params.caution_money }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            最终盈亏 ： {{ d.params.fact_profits }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            交易手续费 ： {{ d.params.trade_fee }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            隔夜费率 ： {{ d.params.overnight }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+                            </ul>
+                        </div>
+                        <div class="layui-col-sm4">
+                            <div class="layui-card-header">状态及时间</div>
+                            <ul class="layui-timeline">
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            交易状态 ： {{ d.params.status }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            结算状态 ： {{ d.params.settled }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            创建时间 ： {{ d.params.create_time }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            价格刷新时间 ： {{ d.params.update_time }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            平仓时间 ： {{ d.params.handle_time }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+
+                                <script type="text/html" template>
+                                <li class="layui-timeline-item">
+                                    <i class="layui-icon layui-timeline-axis"></i>
+                                    <div class="layui-timeline-content layui-text">
+                                        <div class="layui-timeline-title">
+                                            完成时间 ： {{ d.params.complete_time }}
+                                        </div>
+                                    </div>
+                                </li>
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    layui.use('sample', layui.factory('sample'));
+</script>

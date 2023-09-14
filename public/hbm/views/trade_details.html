@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>交易明细</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+</head>
+<style type="text/css">
+    
+</style>
+<body>
+    <header style="background:#fff;">
+        <i class="iconfont icon-jianzuo font24  fontc_6 backPage"></i>
+        <h1 class="fontc_3">交易明细</h1>
+    </header>
+    <div class="mgthead" id="user_info" data-address="<%= address %>">
+        <section class="trade_Tit">
+            <div class="">
+                <div class="trade_money">
+                    <h5 class="font24 number">0.00</h5>
+                    <p class="fontc_9 font14">交易成功</p>
+                    <!--<div class="trade_state  state_ok">已完成 </div>-->
+                    <!--state_no 未完成/等待中  state_ing-->
+                    
+                </div>
+            </div>
+        </section>
+        <div class="trade_item">
+            <ul>
+                <li class="mgb10">
+                    <p class="trade_item_name">发款方</p>
+                    <p class="from_user font14"></p>
+                </li>
+                <li class="mgb10">
+                    <p class="trade_item_name">发款方地址</p>
+                    <p class="from_user_address font14" style="width:100%;word-break: break-all;text-align: right;"></p>
+                </li>
+                <li class="mgb10">
+                    <p class="trade_item_name">收款方</p>
+                    <p class="to_user font14"></p>
+                </li>
+                <li class="mgb10">
+                    <p class="trade_item_name">收款方地址</p>
+                    <p class="to_user_address font14" style="width:100%;word-break: break-all;text-align: right;"></p>
+                </li>
+                <li class="mgb10">
+                    <p class="trade_item_name">备注</p>
+                    <p class="remarks font14"></p>
+                </li>
+                <li class="mgb10">
+                    <p class="trade_item_name">交易时间</p>
+                    <p class="time font14">2018/06/29 14:42:04</p>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/trade_details.js"></script>
+    <script type="text/javascript">
+        var id = "<%= id %>"
+    </script>
+    
+</body>
+</html>

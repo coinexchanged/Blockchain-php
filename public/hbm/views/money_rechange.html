@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>充币</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+	.rechange_con{
+		padding:.6rem;
+	}
+	.rechange_con .rechange_ewm{
+		width:9rem;
+		height:9rem;
+		margin:2rem auto 1rem;
+	}
+	.rechange_con .gobuy_btn{
+		display:block;width:40%;margin-left:26%;text-align:center;padding:.5rem .8rem;
+	}
+	.rechange_con .rechange_copy{
+		margin-top:2rem;
+	}
+	#code{
+		width: 200px;
+		height: 200px;
+		margin: 50px auto 20px auto;
+	}
+</style>
+<body >
+	<header class="borderB backF " >
+		<i class="iconfont icon-zuo font24  fontc_6" onclick="javascript:history.go(-1)"></i>
+		<h1 class="fontc_3"><span  class="titles"></span>	充币</h1>
+	</header>
+
+	<section class="mgthead" >
+		<div class="rechange_con">
+			<div>
+				<div class="codebox">
+					<div id="code"></div>
+				</div>
+				<div class="rechange_copy">
+					<p class="mgb10 address" id="#addr"  style="width: 100%;overflow-y: scroll;"> </p>
+					<button class="gobuy_btn copy" style="border:0;" >复制地址</button>
+				</div>
+			</div>
+
+			<div class="money_exit_txt" style="background:none;">
+				<p>请勿向上述地址充值任何非<span class="titles"></span>资产，否则资产将不可找回。</p>
+				<p><span class="titles"></span>充币仅支持simple send的方法，使用其他方法的充币暂时无法上账，请您谅解。</p>
+				<p>您充值至上述地址后，需要整个网络节点的确认，1次网络确认后到账，6次网络确认可提币。</p>
+				<p>最小充值金额：<span class="mainnum"></span> <span class="titles"></span>,小于最小金额的充值将不会上账且无法退回。</p>
+				<p>您的充值地址不会经常改变，可以重复充值;如有更改，我们会尽量通过网络公告或邮件通知您</p>
+				<p>请务必确认电脑及浏览器安全，防止信息被篡改或泄露。</p>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/vue.min.js"></script> -->
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/jquery.qrcode.min.js"></script>
+	
+	<script>
+		$(function(){
+			var token = get_user_login();
+			var currency=get_param('id');
+			var name=get_param('name');
+			console.log(currency);
+			console.log(name);
+			$('.titles').html(name);
+			function getData(){
+				layer_loading();
+				$.ajax({
+					type: "POST",
+					url: _API + 'wallet/get_in_address',
+					data: {
+						currency:currency
+					},
+					dataType: "json",
+					async: true,
+					beforeSend: function beforeSend(request) {
+						request.setRequestHeader("Authorization", token);
+					},
+					success: function(res){
+						layer_close();
+
+						if (res.type=="ok"){
+							console.log(res);
+							console.log(22)
+							$('.address').html(res.message)
+							code(res.message);
+							copy(res.message)
+						}else{
+							layer_msg(res.message)
+						}
+					}
+				})
+			}
+			function getrate(){
+				$.ajax({
+					type: "POST",
+					url: _API + 'wallet/get_info',
+					data: {
+						currency:currency
+					},
+					dataType: "json",
+					async: true,
+					beforeSend: function beforeSend(request) {
+						request.setRequestHeader("Authorization", token);
+					},
+					success: function(res){
+						layer_close();
+						if (res.type=="ok"){
+							console.log(res)
+							$('.mainnum').html(res.message.min_number)
+						}else{
+							layer_msg(res.message)
+						}
+					}
+				})
+			}
+			getData();   
+			getrate();
+			// 生成二维码
+			function code(addre){
+				$('#code').qrcode({
+					width: 200, //宽度
+					height:200, //高度
+					text:addre
+				});
+			}
+			// 复制地址
+			function copy(addre){
+				console.log(addre)
+				var content = addre;
+				var clipboard = new ClipboardJS('.copy', {
+					text: function () {
+						return content;
+					}
+				});
+				clipboard.on('success', function (e) {
+					layer_msg("复制成功")
+				});
+
+				clipboard.on('error', function (e) {
+					layer_msg("请重新复制")
+				});
+			}
+			
+
+		})
+	</script>
+</body>
+</html>

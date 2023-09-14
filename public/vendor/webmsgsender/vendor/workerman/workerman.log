@@ -1,0 +1,586 @@
+2022-04-17 21:43:43 pid:18080 Workerman[start.php] start in DAEMON mode
+2022-04-17 21:49:40 pid:18851 Workerman[start.php] start in DAEMON mode
+2022-04-18 00:26:46 pid:22113 Workerman[start.php] start in DAEMON mode
+2022-04-18 01:30:01 pid:26180 Workerman[start.php] start in DAEMON mode
+2022-04-18 01:30:01 pid:26180 Workerman[start.php] already running
+2022-04-18 10:24:36 pid:25885 Workerman[start.php] start in DAEMON mode
+2022-04-18 10:24:36 pid:25885 Workerman[start.php] already running
+2022-04-19 10:06:51 pid:22116 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-04-19 10:06:51 pid:22115 worker[PHPSocketIO:22116] exit with status 65280
+2022-04-19 17:26:25 pid:19481 Workerman[start.php] start in DAEMON mode
+2022-04-19 17:26:25 pid:19481 Workerman[start.php] already running
+2022-04-20 00:33:06 pid:22848 Error: Call to a member function send() on null in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transports/WebSocket.php:39
+Stack trace:
+#0 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php(318): PHPSocketIO\Engine\Transports\WebSocket->send(Array)
+#1 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php(79): PHPSocketIO\Engine\Socket->flush()
+#2 [internal function]: PHPSocketIO\Engine\Socket->onUpgradePacket(Array)
+#3 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Event/Emitter.php(91): call_user_func_array(Array, Array)
+#4 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transport.php(56): PHPSocketIO\Event\Emitter->emit('packet', Array)
+#5 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transport.php(61): PHPSocketIO\Engine\Transport->onPacket(Array)
+#6 [internal function]: PHPSocketIO\Engine\Transport->onData('5')
+#7 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transports/WebSocket.php(26): call_user_func(Array, '5')
+#8 [internal function]: PHPSocketIO\Engine\Transports\WebSocket->onData2(Object(Workerman\Connection\TcpConnection), '5')
+#9 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '5')
+#10 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #2570)
+#11 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#12 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#13 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1294): Workerman\Worker->run()
+#14 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#15 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#16 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#17 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#18 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#19 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/start.php(24): Workerman\Worker::runAll()
+#20 {main}
+2022-04-20 00:33:06 pid:22848 Worker process terminated
+2022-04-20 00:33:06 pid:22115 worker[PHPSocketIO:22848] exit with status 64000
+2022-04-20 21:44:37 pid:13302 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 596"
+2022-04-20 21:44:37 pid:22115 worker[PHPSocketIO:13302] exit with status 65280
+2022-04-21 01:55:58 pid:11854 Workerman[start.php] start in DAEMON mode
+2022-04-21 01:55:58 pid:11854 Workerman[start.php] already running
+2022-04-21 20:36:52 pid:18078 Workerman[start.php] start in DAEMON mode
+2022-04-21 20:36:52 pid:18078 Workerman[start.php] already running
+2022-04-25 01:30:01 pid:9263 Workerman[start.php] start in DAEMON mode
+2022-04-25 01:30:01 pid:9263 Workerman[start.php] already running
+2022-04-26 02:15:02 pid:28628 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-04-26 02:15:02 pid:22115 worker[PHPSocketIO:28628] exit with status 65280
+2022-04-26 21:37:50 pid:25901 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-04-26 21:37:51 pid:22115 worker[PHPSocketIO:25901] exit with status 65280
+2022-05-02 01:30:04 pid:14834 Workerman[start.php] start in DAEMON mode
+2022-05-02 01:30:04 pid:14834 Workerman[start.php] already running
+2022-05-04 00:57:47 pid:21093 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 827392 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 369"
+2022-05-04 00:57:49 pid:22115 worker[PHPSocketIO:21093] exit with status 65280
+2022-05-04 01:11:27 pid:31173 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-04 01:11:29 pid:22115 worker[PHPSocketIO:31173] exit with status 65280
+2022-05-04 02:14:54 pid:31772 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-04 02:14:56 pid:22115 worker[PHPSocketIO:31772] exit with status 65280
+2022-05-05 02:13:27 pid:1610 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-05 02:13:29 pid:22115 worker[PHPSocketIO:1610] exit with status 65280
+2022-05-05 02:33:57 pid:4515 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 61440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-05 02:33:58 pid:22115 worker[PHPSocketIO:4515] exit with status 65280
+2022-05-06 01:41:58 pid:5323 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 01:41:59 pid:22115 worker[PHPSocketIO:5323] exit with status 65280
+2022-05-06 02:02:16 pid:2500 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 02:02:17 pid:22115 worker[PHPSocketIO:2500] exit with status 65280
+2022-05-06 02:03:40 pid:3548 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 61440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 02:03:40 pid:22115 worker[PHPSocketIO:3548] exit with status 65280
+2022-05-06 02:43:44 pid:3608 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 02:43:45 pid:22115 worker[PHPSocketIO:3608] exit with status 65280
+2022-05-06 02:45:01 pid:5747 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-06 02:45:02 pid:22115 worker[PHPSocketIO:5747] exit with status 65280
+2022-05-06 02:46:15 pid:5803 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-06 02:46:16 pid:22115 worker[PHPSocketIO:5803] exit with status 65280
+2022-05-06 02:47:31 pid:5860 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-06 02:47:31 pid:22115 worker[PHPSocketIO:5860] exit with status 65280
+2022-05-06 02:49:21 pid:5906 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-06 02:49:21 pid:22115 worker[PHPSocketIO:5906] exit with status 65280
+2022-05-06 03:13:25 pid:6013 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 03:13:26 pid:22115 worker[PHPSocketIO:6013] exit with status 65280
+2022-05-06 03:14:54 pid:7011 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-06 03:14:55 pid:22115 worker[PHPSocketIO:7011] exit with status 65280
+2022-05-06 03:25:58 pid:7063 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 03:26:00 pid:22115 worker[PHPSocketIO:7063] exit with status 65280
+2022-05-06 07:38:37 pid:7507 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1294336 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-06 07:38:39 pid:22115 worker[PHPSocketIO:7507] exit with status 65280
+2022-05-06 07:52:02 pid:19793 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 07:52:03 pid:22115 worker[PHPSocketIO:19793] exit with status 65280
+2022-05-06 07:53:58 pid:20421 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-06 07:54:00 pid:22115 worker[PHPSocketIO:20421] exit with status 65280
+2022-05-06 08:16:01 pid:20503 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-06 08:16:02 pid:22115 worker[PHPSocketIO:20503] exit with status 65280
+2022-05-06 08:25:25 pid:21457 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 659456 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-06 08:25:26 pid:22115 worker[PHPSocketIO:21457] exit with status 65280
+2022-05-06 10:13:52 pid:21831 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-06 10:13:54 pid:22115 worker[PHPSocketIO:21831] exit with status 65280
+2022-05-07 02:00:57 pid:26806 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 02:00:58 pid:22115 worker[PHPSocketIO:26806] exit with status 65280
+2022-05-07 02:02:16 pid:1430 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 02:02:16 pid:22115 worker[PHPSocketIO:1430] exit with status 65280
+2022-05-07 02:03:52 pid:1488 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 02:03:53 pid:22115 worker[PHPSocketIO:1488] exit with status 65280
+2022-05-07 02:17:26 pid:1564 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 212992 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-07 02:17:28 pid:22115 worker[PHPSocketIO:1564] exit with status 65280
+2022-05-07 02:25:26 pid:2040 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 61440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 02:25:27 pid:22115 worker[PHPSocketIO:2040] exit with status 65280
+2022-05-07 02:44:23 pid:2351 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 02:44:25 pid:22115 worker[PHPSocketIO:2351] exit with status 65280
+2022-05-07 02:45:57 pid:3204 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 02:45:57 pid:22115 worker[PHPSocketIO:3204] exit with status 65280
+2022-05-07 02:47:30 pid:3268 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 02:47:32 pid:22115 worker[PHPSocketIO:3268] exit with status 65280
+2022-05-07 03:04:26 pid:3335 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 03:04:29 pid:22115 worker[PHPSocketIO:3335] exit with status 65280
+2022-05-07 03:06:03 pid:4192 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 03:06:04 pid:22115 worker[PHPSocketIO:4192] exit with status 65280
+2022-05-07 03:36:43 pid:4297 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-07 03:36:45 pid:22115 worker[PHPSocketIO:4297] exit with status 65280
+2022-05-07 08:21:04 pid:6027 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1204224 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 369"
+2022-05-07 08:21:06 pid:22115 worker[PHPSocketIO:6027] exit with status 65280
+2022-05-07 08:53:44 pid:19157 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 08:53:46 pid:22115 worker[PHPSocketIO:19157] exit with status 65280
+2022-05-07 08:55:34 pid:20543 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-07 08:55:34 pid:22115 worker[PHPSocketIO:20543] exit with status 65280
+2022-05-07 08:57:35 pid:20610 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 49152 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 08:57:35 pid:22115 worker[PHPSocketIO:20610] exit with status 65280
+2022-05-07 09:07:31 pid:20683 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-07 09:07:33 pid:22115 worker[PHPSocketIO:20683] exit with status 65280
+2022-05-08 00:13:14 pid:21050 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 00:13:16 pid:22115 worker[PHPSocketIO:21050] exit with status 65280
+2022-05-08 00:15:18 pid:6058 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-08 00:15:19 pid:22115 worker[PHPSocketIO:6058] exit with status 65280
+2022-05-08 01:15:27 pid:6147 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 01:15:29 pid:22115 worker[PHPSocketIO:6147] exit with status 65280
+2022-05-08 01:43:14 pid:9130 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 147456 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-08 01:43:15 pid:22115 worker[PHPSocketIO:9130] exit with status 65280
+2022-05-08 01:44:43 pid:10446 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 01:44:43 pid:22115 worker[PHPSocketIO:10446] exit with status 65280
+2022-05-08 01:46:20 pid:10521 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 01:46:20 pid:22115 worker[PHPSocketIO:10521] exit with status 65280
+2022-05-08 01:59:25 pid:10594 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 01:59:27 pid:22115 worker[PHPSocketIO:10594] exit with status 65280
+2022-05-08 02:01:07 pid:11265 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 02:01:08 pid:22115 worker[PHPSocketIO:11265] exit with status 65280
+2022-05-08 02:39:53 pid:11351 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 49152 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 02:39:55 pid:22115 worker[PHPSocketIO:11351] exit with status 65280
+2022-05-08 02:41:41 pid:13156 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 02:41:42 pid:22115 worker[PHPSocketIO:13156] exit with status 65280
+2022-05-08 02:43:16 pid:13236 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 02:43:17 pid:22115 worker[PHPSocketIO:13236] exit with status 65280
+2022-05-08 02:44:42 pid:13314 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 02:44:42 pid:22115 worker[PHPSocketIO:13314] exit with status 65280
+2022-05-08 03:06:28 pid:13381 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 03:06:29 pid:22115 worker[PHPSocketIO:13381] exit with status 65280
+2022-05-08 03:34:00 pid:14522 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 03:34:02 pid:22115 worker[PHPSocketIO:14522] exit with status 65280
+2022-05-08 09:21:07 pid:15750 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 09:21:10 pid:22115 worker[PHPSocketIO:15750] exit with status 65280
+2022-05-08 09:22:43 pid:368 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 09:22:44 pid:22115 worker[PHPSocketIO:368] exit with status 65280
+2022-05-08 09:26:23 pid:421 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 09:26:24 pid:22115 worker[PHPSocketIO:421] exit with status 65280
+2022-05-08 09:28:02 pid:539 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 09:28:04 pid:22115 worker[PHPSocketIO:539] exit with status 65280
+2022-05-08 09:29:46 pid:585 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-08 09:29:47 pid:22115 worker[PHPSocketIO:585] exit with status 65280
+2022-05-08 09:34:18 pid:635 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-08 09:34:20 pid:22115 worker[PHPSocketIO:635] exit with status 65280
+2022-05-08 09:36:18 pid:781 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-08 09:36:20 pid:22115 worker[PHPSocketIO:781] exit with status 65280
+2022-05-09 01:30:04 pid:14251 Workerman[start.php] start in DAEMON mode
+2022-05-09 01:30:04 pid:14251 Workerman[start.php] already running
+2022-05-09 23:14:04 pid:843 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-09 23:14:07 pid:22115 worker[PHPSocketIO:843] exit with status 65280
+2022-05-09 23:44:32 pid:2442 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 466944 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-09 23:44:32 pid:22115 worker[PHPSocketIO:2442] exit with status 65280
+2022-05-09 23:46:01 pid:3690 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-09 23:46:02 pid:22115 worker[PHPSocketIO:3690] exit with status 65280
+2022-05-09 23:48:03 pid:3763 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-09 23:48:04 pid:22115 worker[PHPSocketIO:3763] exit with status 65280
+2022-05-10 01:01:59 pid:3872 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 01:02:00 pid:22115 worker[PHPSocketIO:3872] exit with status 65280
+2022-05-10 01:03:28 pid:6620 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 01:03:29 pid:22115 worker[PHPSocketIO:6620] exit with status 65280
+2022-05-10 01:17:09 pid:6687 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 01:17:10 pid:22115 worker[PHPSocketIO:6687] exit with status 65280
+2022-05-10 01:20:47 pid:7291 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 01:20:48 pid:22115 worker[PHPSocketIO:7291] exit with status 65280
+2022-05-10 01:22:31 pid:7452 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 01:22:32 pid:22115 worker[PHPSocketIO:7452] exit with status 65280
+2022-05-10 01:27:24 pid:7515 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 716800 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 01:27:25 pid:22115 worker[PHPSocketIO:7515] exit with status 65280
+2022-05-10 01:29:15 pid:7706 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 01:29:16 pid:22115 worker[PHPSocketIO:7706] exit with status 65280
+2022-05-10 01:41:57 pid:7773 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 475136 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 01:41:58 pid:22115 worker[PHPSocketIO:7773] exit with status 65280
+2022-05-10 02:04:55 pid:8219 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:04:55 pid:22115 worker[PHPSocketIO:8219] exit with status 65280
+2022-05-10 02:06:35 pid:9079 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:06:36 pid:22115 worker[PHPSocketIO:9079] exit with status 65280
+2022-05-10 02:08:17 pid:9159 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:08:18 pid:22115 worker[PHPSocketIO:9159] exit with status 65280
+2022-05-10 02:10:15 pid:9242 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:10:15 pid:22115 worker[PHPSocketIO:9242] exit with status 65280
+2022-05-10 02:24:44 pid:9308 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 02:24:45 pid:22115 worker[PHPSocketIO:9308] exit with status 65280
+2022-05-10 02:26:16 pid:9910 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:26:17 pid:22115 worker[PHPSocketIO:9910] exit with status 65280
+2022-05-10 02:28:07 pid:9962 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 02:28:07 pid:22115 worker[PHPSocketIO:9962] exit with status 65280
+2022-05-10 02:30:02 pid:10030 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 02:30:02 pid:22115 worker[PHPSocketIO:10030] exit with status 65280
+2022-05-10 02:31:45 pid:10108 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:31:45 pid:22115 worker[PHPSocketIO:10108] exit with status 65280
+2022-05-10 02:33:59 pid:10174 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 73728 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 02:33:59 pid:22115 worker[PHPSocketIO:10174] exit with status 65280
+2022-05-10 02:35:37 pid:10241 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 02:35:37 pid:22115 worker[PHPSocketIO:10241] exit with status 65280
+2022-05-10 02:48:25 pid:10295 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:48:26 pid:22115 worker[PHPSocketIO:10295] exit with status 65280
+2022-05-10 02:50:05 pid:10759 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 02:50:05 pid:22115 worker[PHPSocketIO:10759] exit with status 65280
+2022-05-10 02:52:31 pid:10820 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 434176 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 02:52:32 pid:22115 worker[PHPSocketIO:10820] exit with status 65280
+2022-05-10 03:08:24 pid:10912 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 03:08:24 pid:22115 worker[PHPSocketIO:10912] exit with status 65280
+2022-05-10 03:09:56 pid:11559 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 03:09:56 pid:22115 worker[PHPSocketIO:11559] exit with status 65280
+2022-05-10 03:11:21 pid:11627 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 03:11:21 pid:22115 worker[PHPSocketIO:11627] exit with status 65280
+2022-05-10 03:13:34 pid:11676 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 49152 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 03:13:34 pid:22115 worker[PHPSocketIO:11676] exit with status 65280
+2022-05-10 03:19:24 pid:11755 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 03:19:25 pid:22115 worker[PHPSocketIO:11755] exit with status 65280
+2022-05-10 03:47:07 pid:12003 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 03:47:08 pid:22115 worker[PHPSocketIO:12003] exit with status 65280
+2022-05-10 06:45:53 pid:13138 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 528384 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-10 06:45:54 pid:22115 worker[PHPSocketIO:13138] exit with status 65280
+2022-05-10 06:48:08 pid:20477 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 06:48:08 pid:22115 worker[PHPSocketIO:20477] exit with status 65280
+2022-05-10 08:12:43 pid:20571 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:12:45 pid:22115 worker[PHPSocketIO:20571] exit with status 65280
+2022-05-10 08:14:18 pid:24019 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 08:14:19 pid:22115 worker[PHPSocketIO:24019] exit with status 65280
+2022-05-10 08:15:53 pid:24078 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:15:53 pid:22115 worker[PHPSocketIO:24078] exit with status 65280
+2022-05-10 08:17:15 pid:24134 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:17:16 pid:22115 worker[PHPSocketIO:24134] exit with status 65280
+2022-05-10 08:18:47 pid:24191 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:18:47 pid:22115 worker[PHPSocketIO:24191] exit with status 65280
+2022-05-10 08:20:19 pid:24249 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:20:19 pid:22115 worker[PHPSocketIO:24249] exit with status 65280
+2022-05-10 08:21:47 pid:24306 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 08:21:47 pid:22115 worker[PHPSocketIO:24306] exit with status 65280
+2022-05-10 08:23:21 pid:24368 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:23:21 pid:22115 worker[PHPSocketIO:24368] exit with status 65280
+2022-05-10 08:54:27 pid:24455 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 61440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:54:28 pid:22115 worker[PHPSocketIO:24455] exit with status 65280
+2022-05-10 08:56:00 pid:25668 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 08:56:01 pid:22115 worker[PHPSocketIO:25668] exit with status 65280
+2022-05-10 08:57:49 pid:25722 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 08:57:50 pid:22115 worker[PHPSocketIO:25722] exit with status 65280
+2022-05-10 08:59:36 pid:25779 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 08:59:37 pid:22115 worker[PHPSocketIO:25779] exit with status 65280
+2022-05-10 09:01:13 pid:25847 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 09:01:13 pid:22115 worker[PHPSocketIO:25847] exit with status 65280
+2022-05-10 09:02:47 pid:25919 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 09:02:48 pid:22115 worker[PHPSocketIO:25919] exit with status 65280
+2022-05-10 09:20:35 pid:25968 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 09:20:36 pid:22115 worker[PHPSocketIO:25968] exit with status 65280
+2022-05-10 09:22:36 pid:26599 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 09:22:37 pid:22115 worker[PHPSocketIO:26599] exit with status 65280
+2022-05-10 13:12:24 pid:26670 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 978944 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-10 13:12:26 pid:22115 worker[PHPSocketIO:26670] exit with status 65280
+2022-05-10 23:39:53 pid:2955 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-10 23:39:55 pid:22115 worker[PHPSocketIO:2955] exit with status 65280
+2022-05-10 23:46:55 pid:28974 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-10 23:46:55 pid:22115 worker[PHPSocketIO:28974] exit with status 65280
+2022-05-11 01:19:10 pid:29243 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:19:11 pid:22115 worker[PHPSocketIO:29243] exit with status 65280
+2022-05-11 01:20:55 pid:32743 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 01:20:55 pid:22115 worker[PHPSocketIO:32743] exit with status 65280
+2022-05-11 01:22:36 pid:370 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 01:22:36 pid:22115 worker[PHPSocketIO:370] exit with status 65280
+2022-05-11 01:24:05 pid:432 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 01:24:05 pid:22115 worker[PHPSocketIO:432] exit with status 65280
+2022-05-11 01:25:34 pid:478 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:25:35 pid:22115 worker[PHPSocketIO:478] exit with status 65280
+2022-05-11 01:27:16 pid:520 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:27:17 pid:22115 worker[PHPSocketIO:520] exit with status 65280
+2022-05-11 01:28:48 pid:585 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:28:49 pid:22115 worker[PHPSocketIO:585] exit with status 65280
+2022-05-11 01:30:27 pid:642 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 01:30:27 pid:22115 worker[PHPSocketIO:642] exit with status 65280
+2022-05-11 01:32:01 pid:698 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:32:01 pid:22115 worker[PHPSocketIO:698] exit with status 65280
+2022-05-11 01:33:46 pid:749 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:33:47 pid:22115 worker[PHPSocketIO:749] exit with status 65280
+2022-05-11 01:35:54 pid:808 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1392640 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-11 01:35:55 pid:22115 worker[PHPSocketIO:808] exit with status 65280
+2022-05-11 01:44:31 pid:873 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 01:44:32 pid:22115 worker[PHPSocketIO:873] exit with status 65280
+2022-05-11 01:46:09 pid:1176 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 01:46:09 pid:22115 worker[PHPSocketIO:1176] exit with status 65280
+2022-05-11 01:51:48 pid:1226 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 01:51:49 pid:22115 worker[PHPSocketIO:1226] exit with status 65280
+2022-05-11 01:53:25 pid:1449 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 01:53:26 pid:22115 worker[PHPSocketIO:1449] exit with status 65280
+2022-05-11 01:58:18 pid:1493 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 335872 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-11 01:58:19 pid:22115 worker[PHPSocketIO:1493] exit with status 65280
+2022-05-11 02:03:27 pid:1638 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 02:03:27 pid:22115 worker[PHPSocketIO:1638] exit with status 65280
+2022-05-11 02:05:33 pid:1814 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 02:05:33 pid:22115 worker[PHPSocketIO:1814] exit with status 65280
+2022-05-11 02:13:35 pid:1889 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 02:13:36 pid:22115 worker[PHPSocketIO:1889] exit with status 65280
+2022-05-11 02:16:07 pid:2156 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1167360 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-11 02:16:08 pid:22115 worker[PHPSocketIO:2156] exit with status 65280
+2022-05-11 02:37:58 pid:2234 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 02:37:59 pid:22115 worker[PHPSocketIO:2234] exit with status 65280
+2022-05-11 03:18:38 pid:2977 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 03:18:39 pid:22115 worker[PHPSocketIO:2977] exit with status 65280
+2022-05-11 03:20:15 pid:4822 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 03:20:15 pid:22115 worker[PHPSocketIO:4822] exit with status 65280
+2022-05-11 08:13:19 pid:4903 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 08:13:20 pid:22115 worker[PHPSocketIO:4903] exit with status 65280
+2022-05-11 08:15:00 pid:16784 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 08:15:00 pid:22115 worker[PHPSocketIO:16784] exit with status 65280
+2022-05-11 08:16:50 pid:16851 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 08:16:51 pid:22115 worker[PHPSocketIO:16851] exit with status 65280
+2022-05-11 08:37:06 pid:16915 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 08:37:07 pid:22115 worker[PHPSocketIO:16915] exit with status 65280
+2022-05-11 08:38:43 pid:17557 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 08:38:44 pid:22115 worker[PHPSocketIO:17557] exit with status 65280
+2022-05-11 08:40:12 pid:17606 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 08:40:12 pid:22115 worker[PHPSocketIO:17606] exit with status 65280
+2022-05-11 08:41:50 pid:17648 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 08:41:50 pid:22115 worker[PHPSocketIO:17648] exit with status 65280
+2022-05-11 08:44:05 pid:17696 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 249856 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-11 08:44:05 pid:22115 worker[PHPSocketIO:17696] exit with status 65280
+2022-05-11 08:46:18 pid:17779 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 258048 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-11 08:46:19 pid:22115 worker[PHPSocketIO:17779] exit with status 65280
+2022-05-11 09:20:58 pid:17841 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-11 09:20:59 pid:22115 worker[PHPSocketIO:17841] exit with status 65280
+2022-05-11 09:22:38 pid:19082 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 09:22:38 pid:22115 worker[PHPSocketIO:19082] exit with status 65280
+2022-05-11 09:24:08 pid:19143 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 09:24:08 pid:22115 worker[PHPSocketIO:19143] exit with status 65280
+2022-05-11 09:25:35 pid:19187 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 09:25:35 pid:22115 worker[PHPSocketIO:19187] exit with status 65280
+2022-05-11 09:27:02 pid:19263 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 09:27:02 pid:22115 worker[PHPSocketIO:19263] exit with status 65280
+2022-05-11 09:28:42 pid:19307 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 09:28:42 pid:22115 worker[PHPSocketIO:19307] exit with status 65280
+2022-05-11 09:30:19 pid:19366 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 09:30:20 pid:22115 worker[PHPSocketIO:19366] exit with status 65280
+2022-05-11 10:18:52 pid:19422 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 10:18:53 pid:22115 worker[PHPSocketIO:19422] exit with status 65280
+2022-05-11 10:20:24 pid:21707 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 61440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-11 10:20:24 pid:22115 worker[PHPSocketIO:21707] exit with status 65280
+2022-05-11 23:40:18 pid:21787 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-11 23:40:20 pid:22115 worker[PHPSocketIO:21787] exit with status 65280
+2022-05-12 00:09:18 pid:20654 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 00:09:19 pid:22115 worker[PHPSocketIO:20654] exit with status 65280
+2022-05-12 01:01:30 pid:21701 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 01:01:31 pid:22115 worker[PHPSocketIO:21701] exit with status 65280
+2022-05-12 01:03:14 pid:23527 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 01:03:15 pid:22115 worker[PHPSocketIO:23527] exit with status 65280
+2022-05-12 01:08:56 pid:23602 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 01:08:57 pid:22115 worker[PHPSocketIO:23602] exit with status 65280
+2022-05-12 01:10:47 pid:23841 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 01:10:48 pid:22115 worker[PHPSocketIO:23841] exit with status 65280
+2022-05-12 01:27:19 pid:23898 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 57344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 01:27:20 pid:22115 worker[PHPSocketIO:23898] exit with status 65280
+2022-05-12 01:29:02 pid:24472 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 01:29:02 pid:22115 worker[PHPSocketIO:24472] exit with status 65280
+2022-05-12 01:31:34 pid:24534 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-12 01:31:34 pid:22115 worker[PHPSocketIO:24534] exit with status 65280
+2022-05-12 02:10:58 pid:24627 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 02:11:00 pid:22115 worker[PHPSocketIO:24627] exit with status 65280
+2022-05-12 02:14:57 pid:26503 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 02:14:58 pid:22115 worker[PHPSocketIO:26503] exit with status 65280
+2022-05-12 02:16:34 pid:26691 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 02:16:34 pid:22115 worker[PHPSocketIO:26691] exit with status 65280
+2022-05-12 02:18:15 pid:26812 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 02:18:15 pid:22115 worker[PHPSocketIO:26812] exit with status 65280
+2022-05-12 02:19:57 pid:26956 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 02:19:57 pid:22115 worker[PHPSocketIO:26956] exit with status 65280
+2022-05-12 02:21:41 pid:27087 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 02:21:41 pid:22115 worker[PHPSocketIO:27087] exit with status 65280
+2022-05-12 02:59:34 pid:27216 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 02:59:35 pid:22115 worker[PHPSocketIO:27216] exit with status 65280
+2022-05-12 03:02:39 pid:28996 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 03:02:40 pid:22115 worker[PHPSocketIO:28996] exit with status 65280
+2022-05-12 04:06:21 pid:29149 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 04:06:22 pid:22115 worker[PHPSocketIO:29149] exit with status 65280
+2022-05-12 04:08:05 pid:31743 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 04:08:06 pid:22115 worker[PHPSocketIO:31743] exit with status 65280
+2022-05-12 08:35:57 pid:31812 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 08:35:59 pid:22115 worker[PHPSocketIO:31812] exit with status 65280
+2022-05-12 08:37:44 pid:9440 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 08:37:44 pid:22115 worker[PHPSocketIO:9440] exit with status 65280
+2022-05-12 08:39:43 pid:9487 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 45056 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 08:39:44 pid:22115 worker[PHPSocketIO:9487] exit with status 65280
+2022-05-12 08:42:18 pid:9555 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 08:42:19 pid:22115 worker[PHPSocketIO:9555] exit with status 65280
+2022-05-12 08:53:27 pid:9637 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 08:53:28 pid:22115 worker[PHPSocketIO:9637] exit with status 65280
+2022-05-12 08:55:19 pid:9974 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 08:55:19 pid:22115 worker[PHPSocketIO:9974] exit with status 65280
+2022-05-12 09:14:16 pid:10036 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 09:14:16 pid:22115 worker[PHPSocketIO:10036] exit with status 65280
+2022-05-12 09:16:03 pid:10631 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 09:16:04 pid:22115 worker[PHPSocketIO:10631] exit with status 65280
+2022-05-12 09:42:09 pid:10692 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 266240 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-12 09:42:10 pid:22115 worker[PHPSocketIO:10692] exit with status 65280
+2022-05-12 09:43:45 pid:11496 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 09:43:45 pid:22115 worker[PHPSocketIO:11496] exit with status 65280
+2022-05-12 09:45:20 pid:11557 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-12 09:45:21 pid:22115 worker[PHPSocketIO:11557] exit with status 65280
+2022-05-12 10:32:05 pid:11608 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-12 10:32:06 pid:22115 worker[PHPSocketIO:11608] exit with status 65280
+2022-05-12 10:33:59 pid:13962 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Event/Emitter.php on line 89"
+2022-05-12 10:34:00 pid:22115 worker[PHPSocketIO:13962] exit with status 65280
+2022-05-12 22:55:08 pid:14031 Error: Call to a member function send() on null in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transports/WebSocket.php:39
+Stack trace:
+#0 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php(318): PHPSocketIO\Engine\Transports\WebSocket->send(Array)
+#1 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php(79): PHPSocketIO\Engine\Socket->flush()
+#2 [internal function]: PHPSocketIO\Engine\Socket->onUpgradePacket(Array)
+#3 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Event/Emitter.php(91): call_user_func_array(Array, Array)
+#4 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transport.php(56): PHPSocketIO\Event\Emitter->emit('packet', Array)
+#5 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transport.php(61): PHPSocketIO\Engine\Transport->onPacket(Array)
+#6 [internal function]: PHPSocketIO\Engine\Transport->onData('5')
+#7 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Transports/WebSocket.php(26): call_user_func(Array, '5')
+#8 [internal function]: PHPSocketIO\Engine\Transports\WebSocket->onData2(Object(Workerman\Connection\TcpConnection), '5')
+#9 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '5')
+#10 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #1692)
+#11 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#12 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#13 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1294): Workerman\Worker->run()
+#14 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#15 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#16 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#17 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#18 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#19 /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/start.php(24): Workerman\Worker::runAll()
+#20 {main}
+2022-05-12 22:55:08 pid:14031 Worker process terminated
+2022-05-12 22:55:09 pid:22115 worker[PHPSocketIO:14031] exit with status 64000
+2022-05-13 00:43:21 pid:7449 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 671744 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-13 00:43:23 pid:22115 worker[PHPSocketIO:7449] exit with status 65280
+2022-05-13 01:12:30 pid:10891 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 01:12:31 pid:22115 worker[PHPSocketIO:10891] exit with status 65280
+2022-05-13 01:14:42 pid:12156 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 01:14:42 pid:22115 worker[PHPSocketIO:12156] exit with status 65280
+2022-05-13 01:16:36 pid:12229 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 01:16:36 pid:22115 worker[PHPSocketIO:12229] exit with status 65280
+2022-05-13 01:18:30 pid:12298 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 01:18:31 pid:22115 worker[PHPSocketIO:12298] exit with status 65280
+2022-05-13 01:20:17 pid:12362 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 01:20:18 pid:22115 worker[PHPSocketIO:12362] exit with status 65280
+2022-05-13 01:22:13 pid:12432 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 01:22:14 pid:22115 worker[PHPSocketIO:12432] exit with status 65280
+2022-05-13 01:25:03 pid:12505 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1085440 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-13 01:25:03 pid:22115 worker[PHPSocketIO:12505] exit with status 65280
+2022-05-13 01:27:17 pid:12601 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 339968 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-13 01:27:18 pid:22115 worker[PHPSocketIO:12601] exit with status 65280
+2022-05-13 01:35:29 pid:12672 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 01:35:30 pid:22115 worker[PHPSocketIO:12672] exit with status 65280
+2022-05-13 01:37:20 pid:12937 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-13 01:37:21 pid:22115 worker[PHPSocketIO:12937] exit with status 65280
+2022-05-13 01:39:33 pid:12991 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1241088 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 369"
+2022-05-13 01:39:34 pid:22115 worker[PHPSocketIO:12991] exit with status 65280
+2022-05-13 01:49:19 pid:13064 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 01:49:19 pid:22115 worker[PHPSocketIO:13064] exit with status 65280
+2022-05-13 01:53:44 pid:13358 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 442368 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-13 01:53:45 pid:22115 worker[PHPSocketIO:13358] exit with status 65280
+2022-05-13 01:56:29 pid:13505 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 40960 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 01:56:30 pid:22115 worker[PHPSocketIO:13505] exit with status 65280
+2022-05-13 01:59:03 pid:13588 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1081344 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/Http/Response.php on line 113"
+2022-05-13 01:59:03 pid:22115 worker[PHPSocketIO:13588] exit with status 65280
+2022-05-13 02:17:36 pid:13659 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 720896 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 401"
+2022-05-13 02:17:37 pid:22115 worker[PHPSocketIO:13659] exit with status 65280
+2022-05-13 02:35:52 pid:14325 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-13 02:35:53 pid:22115 worker[PHPSocketIO:14325] exit with status 65280
+2022-05-13 02:37:47 pid:14916 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 02:37:48 pid:22115 worker[PHPSocketIO:14916] exit with status 65280
+2022-05-13 02:50:53 pid:14979 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 49152 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 02:50:54 pid:22115 worker[PHPSocketIO:14979] exit with status 65280
+2022-05-13 02:53:05 pid:15358 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Protocols/WebSocket/RFC6455.php on line 212"
+2022-05-13 02:53:06 pid:22115 worker[PHPSocketIO:15358] exit with status 65280
+2022-05-13 03:22:48 pid:15425 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 03:22:49 pid:22115 worker[PHPSocketIO:15425] exit with status 65280
+2022-05-13 08:14:53 pid:16352 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 135168 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 286"
+2022-05-13 08:14:54 pid:22115 worker[PHPSocketIO:16352] exit with status 65280
+2022-05-13 08:17:15 pid:27008 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 08:17:15 pid:22115 worker[PHPSocketIO:27008] exit with status 65280
+2022-05-13 08:19:32 pid:27104 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 08:19:33 pid:22115 worker[PHPSocketIO:27104] exit with status 65280
+2022-05-13 08:21:43 pid:27183 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 53248 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 08:21:44 pid:22115 worker[PHPSocketIO:27183] exit with status 65280
+2022-05-13 08:36:47 pid:27270 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 08:36:48 pid:22115 worker[PHPSocketIO:27270] exit with status 65280
+2022-05-13 09:03:24 pid:27884 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-13 09:03:25 pid:22115 worker[PHPSocketIO:27884] exit with status 65280
+2022-05-13 09:07:19 pid:28806 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Socket.php on line 275"
+2022-05-13 09:07:20 pid:22115 worker[PHPSocketIO:28806] exit with status 65280
+2022-05-14 00:29:02 pid:28973 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 1511424 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 369"
+2022-05-14 00:29:04 pid:22115 worker[PHPSocketIO:28973] exit with status 65280
+2022-05-14 00:59:09 pid:31337 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 765952 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/phpsocket.io/src/Engine/Parser.php on line 238"
+2022-05-14 00:59:10 pid:22115 worker[PHPSocketIO:31337] exit with status 65280
+2022-05-14 01:11:25 pid:32503 Worker process terminated with ERROR: E_ERROR "Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /www/wwwroot/www.aiccoinus.com/public/vendor/webmsgsender/vendor/workerman/workerman/Connection/TcpConnection.php on line 648"
+2022-05-14 01:11:26 pid:22115 worker[PHPSocketIO:32503] exit with status 65280
+2022-05-14 01:53:46 pid:22115 Workerman[start.php] stopping ...
+2022-05-14 01:53:47 pid:511 worker[511] remains 10 connection(s)
+2022-05-14 01:53:47 pid:511 worker[511] remains 5 connection(s)
+2022-05-14 01:53:47 pid:511 worker[511] remains 0 connection(s)
+2022-05-14 01:53:47 pid:22115 Workerman[start.php] has been stopped
+2022-05-15 03:05:13 pid:6484 Workerman[start.php] start in DAEMON mode
+2022-05-15 03:26:44 pid:15296 Workerman[start.php] start in DAEMON mode
+2022-05-15 18:59:39 pid:15322 Workerman[start.php] stopping ...
+2022-05-15 18:59:39 pid:15322 Workerman[start.php] has been stopped
+2022-05-15 19:04:10 pid:8314 Workerman[start.php] start in DAEMON mode
+2022-05-15 19:11:57 pid:8840 Workerman[start.php] start in DAEMON mode
+2022-05-15 19:11:57 pid:8840 Workerman[start.php] already running
+2022-05-15 19:26:26 pid:9190 Workerman[start.php] stop 
+2022-05-15 19:26:26 pid:9190 Workerman[start.php] is stoping ...
+2022-05-15 19:26:26 pid:8319 Workerman[start.php] stopping ...
+2022-05-15 19:26:26 pid:8319 Workerman[start.php] has been stopped
+2022-05-15 19:26:26 pid:9190 Workerman[start.php] stop success
+2022-05-15 19:26:31 pid:9191 Workerman[start.php] start in DEBUG mode
+2022-05-15 19:40:06 pid:9429 Workerman[start.php] start in DAEMON mode
+2022-05-16 01:02:32 pid:16269 Workerman[start.php] start in DAEMON mode
+2022-05-16 01:02:32 pid:16269 Workerman[start.php] already running
+2022-05-25 17:06:10 pid:8525 Workerman[start.php] start in DAEMON mode
+2022-05-25 17:10:47 pid:17422 Workerman[start.php] stop 
+2022-05-25 17:10:47 pid:17422 Workerman[start.php] not run
+2022-05-25 17:10:51 pid:18379 Workerman[start.php] start in DAEMON mode
+2022-05-26 00:11:53 pid:14377 Workerman[start.php] start in DAEMON mode
+2022-06-24 15:53:39 pid:7247 Workerman[start.php] start in DAEMON mode
+2023-03-23 17:00:54 pid:18163 Workerman[start.php] start in DAEMON mode
+2023-03-23 17:49:21 pid:19755 Workerman[start.php] start in DAEMON mode
+2023-03-23 17:49:21 pid:19755 Workerman[start.php] already running
+2023-03-25 11:33:57 pid:27722 Workerman[start.php] start in DAEMON mode
+2023-03-25 11:41:48 pid:29254 Workerman[start.php] start in DAEMON mode
+2023-03-25 11:41:48 pid:29254 Workerman[start.php] already running
+2023-03-25 11:43:02 pid:30112 Workerman[start.php] start in DAEMON mode
+2023-03-25 11:43:02 pid:30112 Workerman[start.php] already running
+2023-03-26 14:58:26 pid:25851 Workerman[start.php] start in DAEMON mode
+2023-03-27 01:30:06 pid:35142 Workerman[start.php] start in DAEMON mode
+2023-03-27 01:30:06 pid:35142 Workerman[start.php] already running
+2023-04-03 01:30:10 pid:4593 Workerman[start.php] start in DAEMON mode
+2023-04-03 01:30:11 pid:4593 Workerman[start.php] already running
+2023-04-06 18:59:30 pid:16985 Workerman[start.php] start in DAEMON mode
+2023-04-06 18:59:31 pid:16985 Workerman[start.php] already running
+2023-04-06 21:50:40 pid:20670 Workerman[start.php] start in DAEMON mode
+2023-04-06 21:50:40 pid:20670 Workerman[start.php] already running
+2023-04-07 09:41:31 pid:33157 Workerman[start.php] start in DAEMON mode
+2023-04-07 09:41:32 pid:33157 Workerman[start.php] already running
+2023-04-07 14:39:31 pid:51601 Workerman[start.php] start in DAEMON mode
+2023-04-07 14:39:31 pid:51601 Workerman[start.php] already running
+2023-04-07 15:22:31 pid:52452 Workerman[start.php] start in DAEMON mode
+2023-04-07 15:22:31 pid:52452 Workerman[start.php] already running
+2023-04-07 22:12:17 pid:652 Workerman[start.php] start in DAEMON mode
+2023-04-07 22:12:17 pid:652 Workerman[start.php] already running
+2023-04-07 22:44:47 pid:1230 Workerman[start.php] start in DAEMON mode
+2023-04-07 22:44:47 pid:1230 Workerman[start.php] already running
+2023-04-08 00:15:56 pid:2552 Workerman[start.php] start in DAEMON mode
+2023-04-08 00:15:56 pid:2552 Workerman[start.php] already running
+2023-04-08 14:43:33 pid:16309 Workerman[start.php] start in DAEMON mode
+2023-04-08 14:43:33 pid:16309 Workerman[start.php] already running
+2023-04-08 20:04:59 pid:25812 Workerman[start.php] start in DAEMON mode
+2023-04-08 20:04:59 pid:25812 Workerman[start.php] already running
+2023-04-09 13:28:19 pid:47523 Workerman[start.php] start in DAEMON mode
+2023-04-09 13:28:19 pid:47523 Workerman[start.php] already running
+2023-04-09 22:18:43 pid:54366 Workerman[start.php] start in DAEMON mode
+2023-04-09 22:18:43 pid:54366 Workerman[start.php] already running
+2023-04-10 01:30:03 pid:58770 Workerman[start.php] start in DAEMON mode
+2023-04-10 01:30:03 pid:58770 Workerman[start.php] already running
+2023-04-10 18:10:13 pid:7191 Workerman[start.php] start in DAEMON mode
+2023-04-10 18:10:13 pid:7191 Workerman[start.php] already running
+2023-04-10 19:24:32 pid:25855 Workerman[start.php] stopping ...
+2023-04-10 19:24:37 pid:25855 Workerman[start.php] has been stopped
+2023-04-10 20:05:46 pid:11480 Workerman[start.php] start in DAEMON mode
+2023-04-11 20:00:57 pid:38879 Workerman[start.php] start in DAEMON mode
+2023-04-11 20:00:57 pid:38879 Workerman[start.php] already running
+2023-04-17 01:30:13 pid:39351 Workerman[start.php] start in DAEMON mode
+2023-04-17 01:30:13 pid:39351 Workerman[start.php] already running

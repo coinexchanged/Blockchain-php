@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style type="text/css">
+    .code{
+        height:26px;
+        width:80px;
+        text-align: center;
+        border-radius: 6px;
+        color:#ff5e43;
+        font-size:14px;
+        line-height: 26px;
+    }
+    .disabled{
+        background:#ddd;
+    }
+    .place_box{display:flex;margin-top:10px;}
+    .radio_box label{border:1px solid #fff !important;}
+    .login_btn{height:50px;line-height: 50px;}
+
+    .btn-default {
+    background: #d0d9de;
+    color: #fff;
+    border-color: #d0d9de;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 35px;
+    border-radius: 0;
+    padding: 10px 0;
+} 
+.login_btn{
+    background: #d0d9de;
+}
+.agree {
+    background: #10172b;
+    border-color: #10172b;
+}
+
+</style>
+<body style="background:#f6f6f6;">
+  <header >
+    <i class="iconfont icon-zuo font24  fontc_9 backPage"></i>
+  </header>
+   <div class="mgthead1">
+        <div style="margin:5rem 0 3rem 2rem;">
+                <h5 class="font24 fontc_hdl">设置密码</h5>
+                <span  class="font14 fontc_9">6-20个字符，不可以是纯数字 </span>
+            </div>
+        <form id="form_content" action="/users/creataccounts" method="post">
+            <div class="login_box">
+                <div class="login_tab" >
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input type="text" style="display: none;" id="name" value="">
+                        <input type="text" style="display: none;" id="verificate" value="">
+                        <input  type="password" id="setpassword" name="password"  value="" placeholder="请输入密码" class="mgl10" />
+                    </div>
+                    <div class="input-con">
+                        <img src="../img/icon/icon_pass.png" alt="" width="24">
+                        <input  type="password" id="verifypassword" name="confirm_password" value="" placeholder="确认密码" class="mgl10" />
+                    </div>
+                    <div class="input-con">
+                        <img src="../img/icon/icon_yqm.png" alt="" width="24">
+                        <input  type="text" value="" id="invite" name="invite" placeholder="邀请码（选填）" class="mgl10" />
+                    </div>
+                    <div class="checkbox" >
+                            <label class="font14 fontc_9">
+                              <input type="checkbox" id="agree" > 我同意
+                                <a href="###" class="font14 fontc_hdl">《用户协议及隐私政策》</a>
+                            </label>
+                          </div>
+                          <a class="login_btn" href="javascript:;" id="sendSet" disabled="disabled">注册</a>
+                </div>
+                
+            </div>
+           
+        </form>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/register.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>提币地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+</head>
+<style>
+
+    .part1{
+        width:80%;
+        margin-left:10%;
+        margin-top:8.8rem;
+    }
+    .part1 img{width:80%;margin-left:10%;margin-bottom:1rem;}
+		.part{
+			width: 90%;
+			margin: 0 auto;
+			text-align:center;
+			overflow: hidden;
+		}
+		.part li{
+			display:inline-block;
+			float: left;
+			width:95%;
+			border-bottom:1px solid;
+			text-align:left;
+			overflow: hidden;
+		}
+		.part li>h4{
+			overflow: hidden;
+			line-height:60px;
+			font-size:28px;
+		}
+		.part li>h4>img{
+			float: left;
+			width: 26px;
+			height: 34px;
+			margin-top:13px;
+			margin-right:20px;
+			
+		}
+		.part li>p{
+			margin-left:46px;
+			font-size:22px;
+			line-height:50px;
+		}
+		
+
+		.dele{
+			width:120px;
+			line-height:45px;
+			font-size:26px;
+			background:#2984f3;
+			border: none;
+			float: right;
+			text-align: center;
+			color:#fff;
+			border-radius:5px;
+		}
+		#mask1 {
+	          position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	display: none;
+	background: rgba(130, 129, 129, 0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+.layui-m-layercont{
+	font-size:28px;
+}
+.layui-m-layerbtn>span{
+	font-size:28px;
+}
+		</style>
+<body style="background:#f5f5f5;">
+    <div  id="app">
+        <header class="borderB backF " >
+            <i class="iconfont icon-zuo font24  fontc_6" onclick="javascript:history.go(-1)"></i>
+            <h1 class="fontc_3">地址</h1>
+        </header>
+        <div class="part mgbfoot ">
+            <div class="part1">
+                <img src="../img/address_blank.jpg" alt="" />
+                <span class="font18 fontc_9">你还没有地址</span>
+            </div>
+            <ul>
+                <li v-for="(aa) in List">
+                    <h4><i class="iconfont icon-hongqi-chengse font24  fontc_hdl"></i>{{aa.notes}}</h4>
+                    <p>{{aa.address}} <batton @click="dele(aa.id)" class="dele">删除</batton></p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+                <div>
+                  <a href="#" class="login_btn" style="background: #10172b;" @click="add(id,name,has_address_num)">添加地址</a>
+                </div>
+              </div>
+              <div id="mask1">
+                 <div id="Limited">
+                     <ul>
+                         <li></li>
+                         <li class="cancel">取消</li>
+                     </ul>
+                 </div>
+             </div>	
+    </div>
+    
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script>
+        var vue = new Vue({
+		el: '#app',
+		data: {
+		List: [],
+		name:'',
+		id:'',
+		has_address_num:''
+		},
+		mounted: function () {
+          var self = this;
+          var id = getUrlParam("id");
+          var has_address_num = getUrlParam("has_address_num");
+          var name = getUrlParam("name");
+          self.name=name;
+          self.id=id;
+          self.has_address_num=has_address_num;
+		  var token = get_user_login();
+           $.ajax({
+			url: _API + "wallet/get_address",
+			type: "POST",
+           	dataType: "json",
+           	async: true,
+           	data: {
+           		currency: id
+           	},
+           	beforeSend: function beforeSend(request) {
+           		request.setRequestHeader("Authorization",
+           			token);
+           	},
+           	success: function success(data) {
+					self.List = data.message;
+           		if (data.type == "ok") {
+                   $(".part1").css("display","none") 
+           		}else{
+           		   $(".part1").css("display","block");
+           		   $(".part>ul").css("display","none")
+           		}
+           	}
+           })
+		},
+		methods:{
+			add:function(id,name,has_address_num){
+				window.location =_SERVER+'AddAddress.html?id='+id+'&name='+name+'&has_address_num='+has_address_num;
+			},
+			dele:function(id){
+
+				layer.open({
+					
+		            content: '确定删除吗？'
+		            ,btn: ['确定', '取消']
+		            ,yes: function(index){
+		            	//console.log(id);return false;
+		            	var token = get_user_login();
+			           $.ajax({
+						url: _API + "wallet/deladdress",
+						type: "POST",
+			           	dataType: "json",
+			           	async: true,
+			           	data: {
+			           		address_id: id
+			           	},
+			           	beforeSend: function beforeSend(request) {
+			           		request.setRequestHeader("Authorization",
+			           			token);
+			           	},
+			           	success: function success(data) {
+								//console.log(data);
+
+			           		if (data.type == "ok") {
+			                  layer_msg('删除成功');
+			                  window.location.reload();
+			           		}else{
+			           		  layer_msg('删除失败');
+			           		}
+			           	}
+			           })
+
+		               
+		            }
+	           });
+
+	
+			}
+		}
+	});
+		function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+    </script>
+</body>
+</html>

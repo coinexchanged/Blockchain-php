@@ -1,0 +1,91 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": ">=7.0.0",
+    "barryvdh/laravel-ide-helper": "^2.5",
+    "doctrine/dbal": "^2.8",
+    "elasticsearch/elasticsearch": "^6.0",
+    "endroid/qr-code": "^2.5",
+    "fideloper/proxy": "~3.3",
+    "guzzlehttp/guzzle": "^6.3",
+    "jenssegers/agent": "^2.6",
+    "laravel/framework": "5.5.*",
+    "laravel/tinker": "~1.0",
+    "maatwebsite/excel": "~2.1.0",
+    "phpmailer/phpmailer": "^6.0",
+    "predis/predis": "^1.1",
+    "workerman/gateway-worker": "^3.0"
+  },
+  "require-dev": {
+    "filp/whoops": "~2.0",
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "classmap": [
+      "database/seeds",
+      "database/factories"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": [
+      "common/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+        "dont-discover": [],
+        "providers": [
+            "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider"
+        ]
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ],
+    "post-install-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+      "php -r \"file_exists('./public/upload') || mkdir('./public/upload', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/framework/cache') || mkdir('./storage/framework/cache', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/framework/sessions') || mkdir('./storage/framework/sessions', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/framework/views') || mkdir('./storage/framework/views', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/blockchain') || mkdir('./storage/logs/blockchain', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/wallet') || mkdir('./storage/logs/wallet', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/esearch') || mkdir('./storage/logs/esearch', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/lever') || mkdir('./storage/logs/lever', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/market') || mkdir('./storage/logs/market', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/socket') || mkdir('./storage/logs/socket', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/wss') || mkdir('./storage/logs/wss', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/release') || mkdir('./storage/logs/release', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/reward/lever_trade') || mkdir('./storage/logs/reward/lever_trade', 0777, true) ;\"",
+      "php -r \"file_exists('./storage/logs/microtrade') || mkdir('./storage/logs/microtrade', 0777, true) ;\""
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "repositories": {
+
+  }
+}

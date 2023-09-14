@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充值码</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/lead.css"/>
+    <link rel="stylesheet" href="css/trade.css" />
+    <link rel="stylesheet" href="css/usercenter.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<style>
+    .sub-menu{border-left:18px solid #b83826;box-sizing: border-box;background: #eee;}
+    #tradelist{padding: 0;}
+    .m_title {border-bottom:1px solid #d8d8d8;}
+</style>
+<body>
+<div class="header clearfix">
+
+</div>
+<!--左边内容区-->
+<div class="content">
+    <table class="leftbar" style="padding-top: 15px; height: 1663px;">
+        <tbody><tr>
+            <td style="border-bottom:0;" valign="top">
+                <div id="marketlist_wrapper" class="dataTables_wrapper" role="grid">
+                    <table class="marketlist dataTable" id="tradelist" cellspacing="0" cellpadding="0">
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <tr>
+                            <td class="no-wrap alignRight" style=" width:100%;border:none">
+                                <div id="wrapper-250">
+                                    <ul class="accordion">
+                                        <li id="adn1" class="files">
+                                            <a href="javascript:;" class="menu-hide" style="border-top: none;">
+                                                <img src="img/funds/zijin.png" alt="我的资金">
+                                                我的资金
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myfunds"  href="myfunds.html">帐户资金</a></li>
+                                                <!--
+                                                <li><a data-id='interest' href="/myaccount/interest">每日利息</a></li>
+                                                <li><a data-id='dividend' href="/myaccount/dividend">我的分红</a></li>
+                                                -->
+                                                <li><a data-id="myreferrals" href="myreferrals.html">推广佣金</a></li>
+                                                <li><a data-id="mypurselog" href="javascript:;">账单明细</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn2" class="cloud">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/jiaoyi.png" alt="交易挂单">
+                                                交易挂单<span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li><a data-id="myorders" href="myorders.html">我的挂单</a></li>
+                                                <li><a data-id="myhistory" href="javascript:;">成交记录</a></li>
+                                                <li><a data-id="myc2chistory" href="javascript:;">C2C成交记录</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn3" class="mail">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/chongzhi.png" alt="充值提现">
+                                                充值提现
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">购买USDT(C2C)</a></li>
+                                                <li class="hot-item"><a data-id="usdt_cny" href="javascript:;">点对点充值提现(C2C)</a></li>
+                                                <li><a data-id="deposit_coin" href="javascript:;">数字货币充值</a></li>
+                                                <li><a data-id="withdraw_coin" href="javascript:;">数字货币提现</a></li>
+                                                <li><a class="mactive" data-id="deposit_code" href="deposit_code.html">充值码</a></li>
+                                                <li><a data-id="mydeposits" href="mydeposits.html">最近充值记录</a></li>
+                                                <li><a data-id="mywithdrawals" href="mywithdrawals.html">最近提现记录</a></li>
+                                                <li><a data-id="lockbook" href="lockbook.html">领“通证”（分叉币提前领）</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li id="adn4" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/anquan.png" alt="安全设置">
+                                                安全设置
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="id_setup" href="javascript:;">身份认证</a></li>
+                                                <li><a data-id="id_setup2" href="javascript:;">高级认证</a></li>
+                                                <!--<li><a data-id='id_setup3' href="/myaccount/id_setup3">视频认证</a></li>-->
+                                                <li><a data-id="totp" href="totp.html">谷歌验证器绑定</a></li>
+                                                <li><a data-id="sms_setup" href="sms_setup.html;">手机绑定</a></li>
+                                                <li><a data-id="login2_setup"  href="login2_setup.html">两步登录保护</a></li>
+                                                <li><a data-id="apikeys" href="apikeys.html">API Keys</a></li>
+                                                <li><a data-id="resetpw" href="javascript:;">修改登录密码（自动登出）</a></li>
+                                                <li><a data-id="resetfpw" href="javascript:;">修改资金密码（自动登出）</a></li>
+                                                <li><a data-id="email_setup" href="javascript:;">邮箱绑定</a></li>
+                                                <li><a data-id="antiphishcode" href="javascript:;">防钓鱼码</a></li>
+                                                <li><a data-id="payment_setup" href="javascript:;">支付设置</a></li>
+                                                <li class="new-item"><a data-id="tradepassfrequency" href="javascript:;">交易密码输入频率</a></li>
+                                                <li><a data-id="mylogs" href="javascript:;">安全日志</a></li>
+                                                <li><a data-id="notify" href="javascript:;">通知设置</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="adn5" class="sign">
+                                            <a href="javascript:;" class="menu-hide">
+                                                <img src="img/funds/gongdan.png" alt="我的工单">
+                                                我的工单
+                                                <span class="umicon"></span>
+                                            </a>
+                                            <ul class="sub-menu" >
+                                                <li><a data-id="ticket" href="javascript:;">提交工单</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="main_content acc-m-con">
+        <div class="warn">
+            <i>!</i>您尚未实名认证！为保障您的资金安全，在完成实名认证之前，您将不能进行c2c交易、提币等操作。
+            <a class="r-btn" href="/myaccount/id_setup">立即去认证</a>
+        </div>
+        <div class="right_mcontent myacc-con pddlr-30">
+            <div class="m_title"><h4>使用 充值码(GateCode) 充值</h4></div>
+            <div class="sectioncont">
+                <p><b>请输入您的充值码，点击提交：(<a href="https://www.gateio.io/article/16402">详细使用说明</a>)</b></p>
+                <form action="/myaccount/deposit_gatecode" method="post" name="E_FORM" target="_top">
+                    <table>
+                        <tbody><tr>
+                            <td align="right" width="200">充值码：</td>
+                            <td><input name="gatecode" id="gatecode" type="text" value="" size="40"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">图片验证码：</td>
+                            <td>
+                                <input type="text" name="captcha" id="captcha">
+                                <img id="btrCaptcha" src="/captcha?0.38813764221794744" alt="Captcha" title="看不清？换一张" onclick="document.getElementById('btrCaptcha').src = '/captcha?' + Math.random(); return false">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input type="submit" name="submit" id="submit" value="  提交充值码  " class="sub-btn" style="margin-top: 10px"></td>
+                        </tr>
+                        </tbody></table>
+                    <br>
+                    <br>
+
+                    <p>充值码分为前后两段，中间以“-”隔开，只提交前半段，可查询充值码面额，也可进一步锁定充值码，提交完整的充值码，可完成充值。</p>
+                    <p><span>充值码仅限于在平台账户间转账使用，平台不提供充值码交易渠道，禁止跟陌生人交易充值码！如已购买，请务必先提交前半段，并锁定充值码以后，再进行付款，防止受骗。充值码切勿泄露给其他人！</span></p>
+                    <p>您锁定充值码以后可以完成支付，从转让者手中获得完整充值码，并在此提交，完成充值。</p>
+                    <p>被锁定的充值码，如2小时内未完成充值，将自动解锁，不再继续受到保护。</p>
+
+                </form></div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<footer></footer>
+<script>
+    load_header();
+    load_footer();
+</script>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>订单记录</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        img {
+            width: 15px;
+            vertical-align: middle;
+        }
+
+        .arrow {
+            width: 10px;
+            margin-left: 5px;
+        }
+
+        .circle {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #FA693E;
+            margin-right: 5px;
+        }
+
+        .select {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .select>div {
+            width: 20%;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            text-align: center;
+            margin: 0 5px 10px;
+            color: #728DAF;
+        }
+
+        .sx_show {
+            display: none;
+        }
+
+        .sx_box {
+            border-top: 1px solid #f1f1f1;
+            background-color: #fff;
+        }
+
+        .active {
+            background-color: #f0b90b;
+            color: #fff !important;
+        }
+
+        .goumai>a,
+        .chushou>a {
+            display: block;
+        }
+
+        .pt40 {
+            padding-top: 48px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header  mainbg">
+        <a class="back" href="javascript:;" onclick="javascript:history.go(-1);"></a>
+        <div class="tc title" data-localize="td.drecord">订单记录</div>
+    </header>
+    <div class="reltive">
+        <div class="flex alcenter between pt40 mt10 plr10 mb20 ">
+            <p class="ft20 color1 bold" data-localize="td.drecord">订单记录</p>
+            <div class="color1 shaixuan" data-localize="td.filter">筛选</div>
+        </div>
+        <div class="sx_show">
+            <div class="sx_box ">
+                <div class="mt15 plr10 ft10 ">
+                    <!-- <p class="color1 ft14" data-localize="td.tdtype">交易类型</p> -->
+                    <!-- <div class="select deal_type mt10  mb10 ">
+                        <div class="white" data-type='sell' data-localize="td.buy">购买</div>
+                        <div class="white" data-type='buy' data-localize="td.sell">出售</div>
+                    </div> -->
+                    <p class="color1 ft14" data-localize="td.dstatus">订单状态</p>
+                    <div class="select deal_statu mt10 mb10 ">
+                        <div class="bgGray" data-statu="0" data-localize="td.nofinish">未完成</div>
+                        <div class="bgGray" data-statu="1" data-localize="td.finished">已完成</div>
+                        <div class="bgGray" data-statu="2" data-localize="td.ceiled">已取消</div>
+                        <div class="bgGray" data-statu="3" data-localize="td.payed">已付款</div>
+                    </div>
+                    <!-- <p class="color1 ft14" data-localize="td.tdtype">交易类型</p>
+                    <div class="select deal_type mt10 mb10">
+                        <div class="bgGray" data-localize="td.buy">购买</div>
+                        <div class="bgGray" data-localize="td.sell">出售</div>
+                    </div> -->
+                </div>
+                <!-- <div class="bdt flex alcenter">
+                    <div class="flex1 tc ptb10 reset white_gray" data-localize="td.reset">重置</div>
+                    <div class="active flex1 tc ptb10 confirm" data-localize="td.confirm">确定</div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="">
+        <div class="plr10 bdb  goumai bgWhite">
+        </div>
+        <div class="plr10 bdb chushou bgWhite">
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.localize.min.js"></script>
+    <script type="text/javascript" src="lib/language_cookie.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script>
+        $(function () {
+            // FastClick.attach(document.body);
+            var type = null,
+                is_sure = null;
+            var id = get_param('id'),
+                page = 1;
+            var is_change = null;
+            getData(page, type, is_sure)
+
+            function getData(page, type, is_sure) {
+                dataA = {
+                    id,
+                    page
+                }
+                if (type) {
+                    dataA.type = type;
+                }
+                if (is_sure != undefined) {
+                    dataA.is_sure = is_sure;
+                }
+
+
+                initDataToken({
+                    url: 'legal_send_deal_list',
+                    data: dataA
+                }, function (res) {
+                    var data = res.data;
+                    if (data && data.length > 0) {
+                        var goumaiHtml = '',
+                            chushouHtml = '';
+                        for (var i in data) {
+                            var text = '',
+                                url = 'shop_fiatrad_pay_cancel.html',
+                                color = '';
+                            switch (data[i].is_sure) {
+                                case 0:
+                                    text = getlg('nofinish');
+                                    color = 'blue2';
+                                    break;
+                                case 1:
+                                    text = getlg('finished');
+                                    color = 'green';
+                                    break;
+                                case 2:
+                                    text = getlg('ceiled');
+                                    color = 'color1';
+                                    break;
+                                case 3:
+                                    text = getlg('payed');
+                                    color = 'yellow';
+                                    break;
+                            }
+                            if (data[i].type == 'sell') {
+                                goumaiHtml += ` <a href="${url}?id=${data[i].id}" class='ptb10'>
+                                <div class="flex alcenter between">
+                                    <div class="bold  ft14 whihte"><span class="blue2">${getlg('buyin')}</span> ${data[i].currency_name}</div>
+                                    <div class="${color} ft12 flex alcenter">
+                                        <span class="circle"></span>${text}<img src="images/mores.png" alt="" class="arrow"></div>
+                                </div>
+                                <div class="flex alcenter ft10 color1 mt10">
+                                    <div class="flex1">
+                                        <p>${getlg('time')}</p>
+                                        <p>${data[i].create_time}</p>
+                                    </div>
+                                    <div class="flex1 tc">
+                                        <p>${getlg('tnum')}(${data[i].currency_name})</p>
+                                        <p>${iTofixed(data[i].number,3)}</p>
+                                    </div>
+                                    <div class="flex1 tr">
+                                        <p>${getlg('ttotal')}（CNY）</p>
+                                        <p>${iTofixed(data[i].deal_money,3)}</p>
+                                    </div>
+                                </div>
+                                <div class="mt10 ft14 bold">
+                                    ${data[i].account_number}
+                                </div>
+
+                            </a>`
+                            } else {
+                                chushouHtml += `<a href="${url}?id=${data[i].id}" class='ptb10 '>
+                            <div class="flex alcenter between">
+                                <div class="bold  ft14"><span class="red">${getlg('sellout')}</span> ${data[i].currency_name}</div>
+                                <div class="${color} ft12 flex alcenter"><span class="circle"></span>${text}<img src="images/mores.png" alt="" class="arrow"></div>
+                            </div>
+                            <div class="flex alcenter ft10 color1 mt10">
+                                <div class="flex1">
+                                    <p>${getlg('time')}</p>
+                                    <p>${data[i].create_time}</p>
+                                </div>
+                                <div class="flex1 tc">
+                                    <p>${getlg('tnum')}(${data[i].currency_name})</p>
+                                    <p>${iTofixed(data[i].number,3)}</p>
+                                </div>
+                                <div class="flex1 tr">
+                                    <p>${getlg('ttotal')}（CNY）</p>
+                                    <p>${iTofixed(data[i].deal_money,3)}</p>
+                                </div>
+                            </div>
+                            <div class="mt10 ft14 bold">
+                                    ${data[i].account_number}
+                            </div>
+                        </a>`
+                            }
+                        }
+                        if (is_change == 1) {
+                            $('.goumai').html('')
+                            $('.chushou').html('')
+                        }
+                        is_change = null;
+                        $('.goumai').append(goumaiHtml)
+                        $('.chushou').append(chushouHtml)
+                    } else {
+                        if (is_change == 1) {
+                            $('.goumai').html('')
+                            $('.chushou').html('')
+                        }
+                        is_change = null;
+                        // layer_msg('没有更多数据...')
+                    }
+
+
+                })
+            }
+
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                var scrollHeight = $(document).height();
+                var windowHeight = $(this).height();
+                if (scrollTop + windowHeight == scrollHeight) {
+                    page++;
+                    getData(page, type, is_sure);
+                }
+            })
+
+            // 筛选
+            $('.shaixuan').click(function () {
+                layer.open({
+                    type: 1,
+                    // title: '<img class="modal-logo" src="images/modal-logo.png" alt="">',
+                    title:false,
+					shadeClose: true,
+                    area: ['90%', 'auto'],
+                    skin: 'btn-text',
+                    content: $('.sx_show'),
+                    btn: [getlg('ceil'), getlg('sure')],
+                    btn2: function () {
+                        $('.goumai').html('')
+                        $('.chushou').html('')
+                        page = 1;
+                        getData(page, type, is_sure);
+                    }
+
+                })
+            })
+            $('.sx_show').click(function () {
+                $(this).slideUp();
+            })
+            $('.sx_box').click(function () {
+                return false;
+            })
+            $('.select>div').click(function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+            $('.reset').click(function () {
+                $('.select>div').removeClass('active')
+                type = null;
+                is_sure = null;
+            })
+            $('.deal_type>div').click(function () {
+                type = $(this).data('type')
+                is_change = 1;
+            })
+            $('.deal_statu>div').click(function () {
+                is_sure = $(this).data('statu');
+                is_change = 1;
+            })
+            $('.confirm').click(function () {
+                $('.sx_show').hide();
+                $('.goumai').html('')
+                $('.chushou').html('')
+                page = 1;
+                getData(page, type, is_sure);
+            })
+        })
+    </script>
+</body>
+
+</html>

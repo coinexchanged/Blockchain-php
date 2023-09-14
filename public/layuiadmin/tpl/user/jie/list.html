@@ -1,0 +1,196 @@
+
+
+<title>代理商</title>
+
+<div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+        <a lay-href="">主页</a>
+        <a><cite>代理商</cite></a>
+        <a><cite>代理商用户</cite></a>
+    </div>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="layadmin-userfront-formlist">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">开始日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="start" id="datestart" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">结束日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="end" id="dateend" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+                        结算订单
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <div class="layui-fluid">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <!--<div class="layui-card-header">标准柱状图</div>-->
+                            <div class="layui-card-body">
+
+                                <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-normcol">
+                                    <div carousel-item id="LAY-index-normcol">
+                                        <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    layui.define(function(exports){
+
+
+        layui.use('useradmin', layui.factory('useradmin')).use(['admin',  'layer' , 'laydate' , 'form'], function(){
+            var $ = layui.$
+                ,admin = layui.admin
+                ,laydate = layui.laydate
+                ,form = layui.form;
+
+            //日期
+            laydate.render({
+                elem: '#datestart'
+            });
+            laydate.render({
+                elem: '#dateend'
+            });
+
+            //监听搜索
+            form.on('submit(LAY-user-front-search)', function(data){
+                var field = data.field;
+
+                admin.req( {
+                    type : "POST",
+                    url : '/agent/dojie',
+                    dataType : "json",
+                    data : field,
+                    done : function(result) { //返回数据根据结果进行相应的处理
+                        layui.layer.msg(result.msg, {icon: 6 });
+                    }
+                });
+            });
+
+            admin.req( {
+                type : "POST",
+                url : '/agent/jie',
+                dataType : "json",
+                data : {type : 'all'},
+                done : function(result) { //返回数据根据结果进行相应的处理
+                    //提交 Ajax 成功后，关闭当前弹层并重载图表
+                    show_table(result.data);
+                }
+            });
+        });
+
+        //区块轮播切换
+        layui.use(['admin', 'carousel'], function(){
+            var $ = layui.$
+                ,admin = layui.admin
+                ,carousel = layui.carousel
+                ,element = layui.element
+                ,device = layui.device();
+
+            //轮播切换
+            $('.layadmin-carousel').each(function(){
+                var othis = $(this);
+                carousel.render({
+                    elem: this
+                    ,width: '100%'
+                    ,arrow: 'none'
+                    ,interval: othis.data('interval')
+                    ,autoplay: othis.data('autoplay') === true
+                    ,trigger: (device.ios || device.android) ? 'click' : 'hover'
+                    ,anim: othis.data('anim')
+                });
+            });
+
+        });
+
+        function show_table (returnData){
+            //柱状图
+            layui.use(['echarts'], function(){
+                var $ = layui.$
+                    ,echarts = layui.echarts;
+
+
+
+                //标准柱状图
+                var echnormcol = [], normcol = [
+                    {
+                        title : {
+                            text: '最近52周【未结算订单】图表',
+                            subtext: '单位：个'
+                        },
+                        tooltip : {
+                            trigger: 'axis'
+                        },
+                        legend: {
+                            data:['订单数量']
+                        },
+                        calculable : true,
+                        xAxis : [
+                            {
+                                type : 'category',
+                                data :   returnData.xAxis //['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value'
+                            }
+                        ],
+                        series : [
+                            {
+                                name:'订单数量',
+                                type:'bar',
+                                data: returnData.series, //[2.0, 4.9, 7.0, 23.2, 245.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                                markPoint : {
+                                    data : [
+                                        {type : 'max', name: '最大值'},
+                                        {type : 'min', name: '最小值'}
+                                    ]
+                                },
+                                markLine : {
+                                    data : [{type : 'average', name: '平均值'}]
+                                }
+                            }
+                        ]
+                    }
+                ]
+                    ,elemNormcol = $('#LAY-index-normcol').children('div')
+                    ,renderNormcol = function(index){
+                    echnormcol[index] = echarts.init(elemNormcol[index], layui.echartsTheme);
+                    echnormcol[index].setOption(normcol[index]);
+                    window.onresize = echnormcol[index].resize;
+                };
+                if(!elemNormcol[0]) return;
+                renderNormcol(0);
+
+            });
+
+        }
+    });
+
+</script>

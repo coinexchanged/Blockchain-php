@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>邀请返佣</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="../css/swiper-3.4.2.min.css" />
+	<!-- <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css"> -->
+</head>
+
+<body class="backf5">
+	<header class="borderB backF " >
+		<i class="iconfont icon-zuo font24  fontc_6 backPage"></i>
+		<h1 class="fontc_3">邀请返佣</h1>
+	</header>
+
+	<div id="app">
+		<!-- content -->
+		<section class="backF mgthead">
+			<div>
+				<div class="chat_banner">
+					<img src="../img/banner_cashback.png" alt="" />
+				</div>
+				<!-- 轮播 -->
+				<div class="coin_scroll cashback_label">
+					<div class="swiper-container" style="padding-bottom:20px;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="coin_roll" style="margin-top: 1rem;">
+									<img src="../img/icon/icon_2.png"   width="70" style="margin:0 auto;" alt="">
+									<p class=" font12 mgt10">{{List2.account}}</p>
+									<span class="font_9 font12">{{List2.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="coin_roll">
+									<img src="../img/icon/icon_1.png" width="80" style="margin:0 auto;"  alt="">
+									<p class=" font12 mgt10">{{List1.account}}</p>
+									<span class="font_9 font12">{{List1.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="coin_roll" style="margin-top: 1rem;">
+									<img src="../img/icon/icon_3.png" width="70" style="margin:0 auto;"  alt="">
+									<p class=" font12 mgt10">{{List3.account}}</p>
+									<span class="font_9 font12">{{List3.total}}USTD</span>
+									<!-- <p class="font_9 font12">1546328.01.pts</p> -->
+								</div>
+							</div>
+						</div>
+						<div style="text-align:center;margin-top:20px;"><a href="cashbacks.html" class="fontc_blue">查看完整榜单</a></div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination" style="bottom:10px;"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		<section class="backF" style="margin-bottom:1rem;">
+			<div class="chat_banner">
+				<img src="../img/banner_cashback1.png" style="margin:0 auto;width:50%;"alt="" />
+				<div class="chat_iconbox fontc_hdl">
+					<img src="../img/icon/icon_jiaoliu.png" width="40" alt="">
+					<p class="font24 font_bold" style="letter-spacing:2px;">[Huadunlian]交流群</p>
+					<p class="font12">马上入群和高手过招</p>
+					<a href="javascript:;" class="btn font_bold font14">马上入群</a>
+				</div>
+			</div>
+		</section>
+	
+		<section class="backF" style="padding:1rem;">
+			<div class="invite_code">
+				<p>邀请码：<span id="invite_code">dzmn2</span></p>
+				<button class="cop font14" data-clipboard-action="copy" data-clipboard-target="#invite_code">
+					<img src="../img/icon/icon_copy.png" width="14" height="14" alt="">
+					<span style="margin-left:6px;"  >复制</span>
+				</button> 
+			</div>
+			<button class="btn font_f font14 mgt10" id="share_btn" style="width: 100%;height:40px;" >马上邀请好友加入</button>
+			<div class="bdsharebuttonbox  share_icon hide">
+				<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" ></a>
+				<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友" ></a>
+				<button class="btn font_f font14 mgt10" id="share_close" style="width: 92%;height:40px;" >取消</button>
+			</div>
+			<div class="mask_box" ></div>
+		</section>
+	</div>
+
+
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/lib/layer_mobile/layer.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<!-- <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script> -->
+	<script> 
+		var announcementSwiper = new Swiper('#announcement', {
+			direction: 'vertical',
+			loop: true,
+			autoplay: 4000,
+		})
+		var mySwiper = new Swiper('.coin_scroll .swiper-container ',{
+			slidesPerView : 3,
+			slidesPerGroup : 3,
+		})
+
+		var h = $(".coin_scroll .swiper-slide").width()-12;
+		$(".coin_scroll .swiper-slide").css("width",h);
+		
+		// 分享
+		$("#share_btn").click(function(){
+			$(".mask_box").css("display","block");
+			$(".share_icon").removeClass("hide");
+		})
+		$(".mask_box,#share_close").click(function(){
+			$(".mask_box").css("display","none");
+			$(".share_icon").addClass("hide");
+		})
+		window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"http://www.huoma.red/users/creatword?cod=1","bdMini":"1","bdMiniList":["weixin","sqq"],"bdPic":"","bdStyle":"1","bdUrl":"http://www.huoma.red/users/creatword?cod=1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+		// 复制
+		var content = $("#invite_code").val();
+		console.log(content)
+		var clipboard = new ClipboardJS('.cop', {
+			text: function() {
+				return content;
+			}
+		});
+		clipboard.on('success', function(e) {
+			layer_msg("复制成功");
+		});
+	
+		clipboard.on('error', function(e) {
+			layer_msg("请重新复制");
+		});
+	</script>
+	<script>
+		$(function(){
+			
+			var vue = new Vue({
+				el: '#app',
+				data: {
+				List:[],
+				List1:[],
+				List2:[],
+				List3:[],
+				invite:'',
+				poster1:[],
+				poster2:[],
+				poster3:[]
+				
+				},
+				mounted: function () {
+					var self = this;
+					var token = get_user_login();
+					$.ajax({
+						url: _API + "user/invite",
+						type: "GET",
+						dataType: "json",
+						async: true,
+						beforeSend: function beforeSend(request) {
+							request.setRequestHeader("Authorization", token);
+						},
+						success: function success(data) {
+							console.log(data)
+							
+							if (data.type == 'ok') {
+								self.List = data.message.ad;
+								self.List1 = data.message.inviteList[0];
+								self.List2 = data.message.inviteList[1];
+								self.List3 = data.message.inviteList[2];
+								self.invite=data.message.extension_code;
+								console.log(self.List);
+							} else if(data.type == '999'){
+							window.location = _DOMAIN +  '/mobile/login.html';
+							}
+						}
+					});	
+				},
+					methods:{
+					particulars:function(id,name,has_address_num){
+						window.location ='/mobile/detailed.html?id='+ id+'&name='+name+'&has_address_num='+has_address_num;
+					},
+					my_poster:function(){
+					var self = this;
+					var token = get_user_login();
+					$.ajax({
+					url: _API + "user/my_poster",
+					type: "GET",
+					dataType: "json",
+					async: true,
+					beforeSend: function beforeSend(request) {
+						request.setRequestHeader("Authorization", token);
+					},
+					success: function success(data) {
+						console.log(data)
+						if (data.type == 'ok') {
+							self.poster1=data.message.pics[0];
+							self.poster2=data.message.pics[1];
+							self.poster3=data.message.pics[2];
+						} else if(data.type == '999'){
+						window.location = _SERVER+'login.html';
+						}
+					}
+				});		
+				}
+			}
+			});
+	
+		})
+	</script>
+</body>
+</html>
